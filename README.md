@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.78</b><br><sub>Complexity & Test-evidence Admission</sub>
+  <b>v10.79</b><br><sub>Portable Skill Library</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Rules released</b><br><sub>Installed · public tag verified</sub>
+  <b>6 on-demand Skills</b><br><sub>Source library · separate install</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current source:** [`v10.78 / P073-23`](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.78) adds practical criteria for unnecessary implementation and test complexity in Coding1.11. Compare an addition with a simpler complete alternative and its carrying cost; expand tests for a material evidence gap or distinct fault. Required safeguards and useful test layers stay intact. Node54/54, native Linux installer fixtures, actual Main19 parity and fresh-public payload/isolated installation passed in scope. The [phase](phase/phase-073-23-complexity-and-test-evidence-admission.md) records proof and limits. Main Runtime membership stays nineteen; no model-behavior improvement or active-session reload is claimed.
+> **Current source:** `v10.79 / P152` adds [six portable on-demand Skills](#on-demand-skills) for diagnosis, verification, continuity, communication, guidance authoring and coverage reconciliation. Main Runtime remains the same nineteen Rules; the existing launcher does not deploy Skills. Source tests, bounded paired interpretation and unchanged Rules installation are verified; publication proof is tracked in [P152](phase/phase-152-portable-skill-library.md). The [v10.78 release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.78) remains the latest published baseline until this wave is released.
 
 <!-- CTA Buttons -->
 <p>
@@ -56,6 +56,7 @@
 
 - [⚡ Quick Start](#-quick-start)
 - [✨ Features](#-features)
+- [On-demand Skills](#on-demand-skills)
 - [📁 Rule Files](#-rule-files)
 - [📦 Installation](#-installation)
 - [🔌 Companion Plugins](#-companion-plugins)
@@ -246,6 +247,27 @@ These capabilities summarize the current operating model at the front-page level
 
 ---
 
+## On-demand Skills
+
+Rules define the behavioral baseline; Skills provide a procedure when a matching task needs it. The six curated Skills in [`skill/`](skill/) are reusable across projects without a required browser CLI, language, provider or business system.
+
+| Skill | Use it for |
+|---|---|
+| [Evidence-based diagnosis and remediation](skill/evidence-based-diagnosis-and-remediation/SKILL.md) | Discriminate causes, evaluate findings and research feasible remedies |
+| [Software test validation](skill/software-test-validation/SKILL.md) | Select useful proof, reuse the fitting harness and interpret failures |
+| [Workflow continuity](skill/workflow-continuity/SKILL.md) | Resume checked work, preserve passed gates and hand off exact blockers |
+| [Technical communication](skill/technical-communication/SKILL.md) | Explain checked meaning, results and next actions clearly |
+| [Validating agent guidance](skill/validating-agent-guidance/SKILL.md) | Evaluate instruction drafts and extract provenance-bound reusable lessons |
+| [Coverage receipt reconciliation](skill/coverage-receipt-reconciliation/SKILL.md) | Reconcile existing reports, reached assertions and overlapping coverage |
+
+**Source and use:** start with the linked `SKILL.md`; read its linked references only when that procedure needs them. This repository's singular `skill/` directory is authoring/release source, not a Claude Code auto-discovery directory. An explicitly selected deployment would place one whole selected Skill directory, including its linked references, under `<project-root>/.claude/skills/` or the user's runtime Skill directory. Inspect the destination owner and any same-name collision first; do not overwrite an independently managed Skill or create a second writer. No Skill installer or automatic synchronization is provided in this release.
+
+The existing launcher still installs only the nineteen Rules to `.claude/rules/`. It does not deploy this library or change companion plugins. These curated versions omit personal/project policy, tool-specific commands and local operational history; the original personal library is not overwritten or migrated. Plugin-bundled Skills continue to install through their own packages, without standalone duplicates.
+
+[Library design](design/design/skill-library.design.md) defines the ownership boundary; [P152](phase/phase-152-portable-skill-library.md) records verification and publication limits. Skill/source checks and synthetic interpretation do not establish measured AI benefit or current-session discovery.
+
+---
+
 ## 📁 Rule Files
 
 <div align="center">
@@ -307,7 +329,7 @@ These capabilities summarize the current operating model at the front-page level
 
 </div>
 
-**Current source state: `v10.78 / P073-23`, source/install/publication verified**
+**Preserved released baseline: `v10.78 / P073-23`, source/install/publication verified**
 
 Coding1.11 adds two criteria in existing sections: compare supported benefit against a simpler complete alternative and its carrying cost; identify material evidence gaps before adding tests, fixtures or runners. Passing tests does not establish architectural necessity. Required safeguards, hard-to-reverse contract analysis and distinct-fault test layers remain intact.
 

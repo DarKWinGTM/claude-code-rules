@@ -72,6 +72,10 @@ flowchart TB
     Explain["explanation-and-presentation.md<br/>Inline explanation / text-diagram boundary"]
   end
 
+  subgraph Procedures[On-demand Skill Source]
+    SkillSource["skill/name/SKILL.md<br/>Six portable procedures, separate from Main19"]
+  end
+
   subgraph Design[Textual Target-State Truth]
     DesignRoot["design/*.design.md<br/>Target-state / rationale / constraints"]
     DocGovDesign["design/document-governance.design.md"]
@@ -104,6 +108,9 @@ flowchart TB
   end
 
   README --> RootRules
+  README --> SkillSource
+  DesignRoot --> SkillSource
+  RootRules -. govern selected work .-> SkillSource
   README --> DesignRoot
   README --> Structure
   README --> MasterChangelog
@@ -163,6 +170,7 @@ flowchart TB
 ## Authority boundaries
 
 - `design/` owns semantic truth and target-state meaning.
+- `skill/` owns six curated on-demand procedures under the [Skill library design](../design/design/skill-library.design.md); it is source, not runtime discovery or part of the nineteen-Rule installer. Personal Skills and plugin packages retain separate deployment/ownership boundaries.
 - `diagram/` owns Kroki-compatible visual synthesis and relationship explanation.
 - If text and diagram differ, `design/` wins semantically.
 - `diagram/STRUCTURE.md` is the global structural view, not a substitute for design semantics.

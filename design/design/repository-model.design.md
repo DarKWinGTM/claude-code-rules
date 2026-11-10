@@ -1,8 +1,8 @@
 # Repository Model - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.11
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e (2026-08-11)
+> **Current Version:** 10.79
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Section:** Active repository model
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
 > **Status:** Active target-state shard
@@ -16,6 +16,7 @@
 | Project source | user- or project-selected Active Project Root | Sole source/governed/config/script/test/plugin-support-tooling/commit/release-input authority for the active objective |
 | Overview | `README.md` | Repository overview and usage guidance only |
 | Runtime payload | exact ordered 19 root `*.md` rules selected by installer sources | Active runtime behavior and installation payload; not the whole project source set |
+| On-demand procedures | `skill/<name>/SKILL.md` and linked portable references | Repository-owned six-Skill source library; separate from Main19, personal extraction inputs and plugin packages; deployment is separately selected |
 | Design | `design/*.design.md`, `design/<slug>/*.design.md` | Active target-state guidance with compact parent indexes plus governed child or sibling shards chosen by declared chain shape |
 | Phase | `phase/SUMMARY.md`, `phase/phase-NNN-*.md`, `phase/phase-NNN-NN-*.md`, `phase/phase-NNN-NN-NN-*.md`, `phase/history/`, `phase/done/` | Compact live roadmap/index and phased execution detail with explicit forward-valid numeric phase grammar plus referenced inactive history |
 | Patch | `patch/<context>.patch.md`, `patch/done/` | Governed before/after review artifacts outside live phase planning |

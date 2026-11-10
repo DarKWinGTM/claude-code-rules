@@ -3,11 +3,11 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.78
+> **Current Version:** 10.79
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
-> **Selected Target:** v10.78 enriches Coding1.11 with simpler-complete-alternative and distinct-test-evidence admission criteria; nineteen-owner membership, required safeguards and existing scope/closure authority remain intact
+> **Selected Target:** v10.79 adds six curated portable on-demand Skills under `skill/`; Main19 behavior/install membership, personal Skills and plugin ownership remain unchanged
 
 ---
 
@@ -15,7 +15,9 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-Selected `v10.78 / P073-23` enriches [Coding Discipline](coding-discipline.design.md) v1.11 at its existing structure and verification owners. Compare additions with a simpler complete alternative and supported benefit versus carrying cost, including support work the proposal itself creates. Preserve hard-to-reverse contract analysis and necessary safeguards. Test expansion identifies a material evidence gap and distinct fault; reuse existing proof where sufficient and retain justified multi-layer checks. Counts, coverage percentages and LOC ratios alone justify neither growth nor removal; passing tests does not establish structural necessity. No new Rule, score, worksheet, runner or framework is selected. [P073-23](../phase/phase-073-23-complexity-and-test-evidence-admission.md) owns the explicit install/publication gates.
+Selected `v10.79 / P152` adds a [portable Skill library](design/skill-library.design.md) of six general on-demand procedures under `skill/`, curated from personal-library inputs without deploying, overwriting or migrating those inputs. Rules retain behavioral authority; Skills supply task procedures, not another policy layer. Main19 and plugin installers remain unchanged. [P152](../phase/phase-152-portable-skill-library.md) owns source/procedure proof, unchanged Rules installation and scoped publication.
+
+Preserved `v10.78 / P073-23` enriches [Coding Discipline](coding-discipline.design.md) v1.11 at its existing structure and verification owners. Compare additions with a simpler complete alternative and supported benefit versus carrying cost, including support work the proposal itself creates. Preserve hard-to-reverse contract analysis and necessary safeguards. Test expansion identifies a material evidence gap and distinct fault; reuse existing proof where sufficient and retain justified multi-layer checks. Counts, coverage percentages and LOC ratios alone justify neither growth nor removal; passing tests does not establish structural necessity. No new Rule, score, worksheet, runner or framework is selected. [P073-23](../phase/phase-073-23-complexity-and-test-evidence-admission.md) owns the explicit install/publication gates.
 
 Preserved `v10.77 / P073-22` enriches [Execution](execution-and-goal-frame.design.md) v1.39 and [Evidence](evidence-discipline.design.md) v1.11 within the existing nineteen owners. Treat user-suggested methods as tentative unless binding constraints are explicit. Investigate decisive technical unknowns and connect the actual platform/control boundary through its intended consumer to the user's desired outcome before endorsing costly dependent elaboration; self-defined component checks do not establish that causal link. Provisional design, source/contract inspection and appropriate authorized reversible experiments remain available. Missing precedent proves neither impossibility nor novelty, and a mechanism-backed hypothesis is not verified capability, suitability or benefit. Routine/already-supported work needs no universal PoC, live check, precedent search, alternative count or new artifact. The separate managed research-synthesis procedure remains user-library content, not Main install or repository-release payload. [P073-22](../phase/phase-073-22-mechanism-backed-design-feasibility.md) owns staged proof/publication, not this target design.
 
@@ -145,6 +147,7 @@ Open the smallest shard that answers the question.
 
 - [repository-model.design.md](design/repository-model.design.md) — active surface roles and normalized documentation model
 - [runtime-architecture.design.md](design/runtime-architecture.design.md) — 19-rule runtime inventory and category view
+- [skill-library.design.md](design/skill-library.design.md) — six portable on-demand procedures, curation and source/deployment boundaries
 - [runtime-compaction.design.md](design/runtime-compaction.design.md) — unchanged compaction, mechanism preservation, additional disposition and source/install boundaries; v10.69 measurement history remains in changelog
 - [governance-contracts.design.md](design/governance-contracts.design.md) — metadata, sync order, startup, phase, rollover, and memory contracts
 - [installer-architecture.design.md](design/installer-architecture.design.md) — project-local Claude Code helper install contract, cleanup boundary, and verification model

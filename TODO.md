@@ -2,7 +2,7 @@
 
 > **Last Updated:** 2026-11-10
 > **Current Release:** v10.78 published; source, actual Main19 and fresh-public payload/isolated installation verified-in-scope
-> **Active Wave:** P073-23/v10.78 source/install/publication gates complete; receipt reconciled below. Earlier slices stay closed; no plugin/config change or successor selected
+> **Active Wave:** P152/v10.79 portable Skill source, verification and publication; Main19 is unchanged and personal Skill deployment is excluded
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,7 +10,7 @@
 
 ## Active / In Progress
 
-No new Main Runtime wave or successor is selected.
+- [ ] **P152 / v10.79 portable Skill library:** curate the selected six generic procedures under `skill/`, verify source/scenarios and unchanged Main19 installation, then scoped non-force push/tag/Release and fresh-public proof. Personal Skill deployment, tool-specific Skills and plugin changes are excluded. [Phase](phase/phase-152-portable-skill-library.md); [design](design/design/skill-library.design.md).
 
 No active MCI corrective work remains at the selected source/document gate. P073-18 Main remains verified and closed. Earlier settings evidence and the prior internal-agent restriction violation remain separately unresolved; this source correction does not authorize restoration or model validation.
 
