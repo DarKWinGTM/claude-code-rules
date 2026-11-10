@@ -1,14 +1,15 @@
 # Changelog - Document Governance
 
 > **Parent Document:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.23
-> **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
+> **Current Version:** 1.24
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.24 | 2026-11-11 | **[Compacted wording within the existing owner](#version-124)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.23 | 2026-10-16 | **[Refined selected-direction synthesis and value-based exploratory context](#version-123)** | 4a8d9ac0-ecf9-40c4-961e-634583157b6c |
 | 1.22 | 2026-10-15 | **[Clarified sync order, role-based synthesis and affected-owner-only updates](#version-122)** | b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 |
 | 1.21 | 2026-09-30 | **[Compacted artifact roles and family contracts](#version-121)** | adda8afb-6edf-466b-add9-b9649b718e01 |
@@ -37,6 +38,15 @@
 | | | Summary: Created `document-governance.md` as a body-sufficient merged runtime owner for repository document roles, design/changelog/patch governance, and runtime rule version control in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-124"></a>
+## Version 1.24: Compacted wording within the existing owner
+
+**Date:** 2026-11-11
+**Session:** 08244912-a195-4926-84e6-8c202c667ba5
+
+- Shortened prose and owner handoffs while retaining triggers, actions, force, exceptions, approval, recovery and proof boundaries.
+- Coordinated Main19 source change; [P073-24](../phase/phase-073-24-runtime-clarity-lifecycle-compaction.md) owns semantic/source/install/publication proof and limits. No model-effect or stability claim follows from wording or static checks.
 
 <a id="version-123"></a>
 ## Version 1.23: Selected-direction synthesis and useful context

@@ -45,6 +45,15 @@ Checked observed example in repo scope:
 
 ## Virtual variant
 
+### Plain synthesis and actionable handoff
+
+Synthetic variants, not newly observed incidents:
+- A complete model message contains an action request, but the receiver rejects its format before the action runs. Detail may come first; include a plain synthesis such as “คำสั่งมาถึงแล้ว แต่ข้อมูลไม่ผ่านขั้นรับเข้า จึงยังไม่ได้ทำงานตามคำสั่ง” so the reader sees the central problem without assembling it. Message completion is not goal completion; preserve uncertainty about unverified causes.
+- Checked process semantics require an existing-instance restart to adopt a tested repair, but authorization is missing. State source-tested versus not adopted, name the exact restart/owner/why pending/consequence and directly request the enabling action or approval. Do not operate without authorization.
+- A source-only pure transformation has no running consumer. Close at its focused source proof without inventing restart/live acceptance.
+
+No fixed opening, reached→obstacle→impact formula or long reporting template is required.
+
 - User asks for a simpler explanation of an internal field name.
 - User proposes a direction whose factual premise needs verification before agreement.
 - Claude initially recommends the proposed replacement, but later checked source disproves the ownership premise.

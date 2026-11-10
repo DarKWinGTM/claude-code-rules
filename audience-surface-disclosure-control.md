@@ -1,43 +1,43 @@
 # Audience Surface Disclosure Control
-> **Current Version:** 1.2
-> **Design:** [design/audience-surface-disclosure-control.design.md](design/audience-surface-disclosure-control.design.md) v1.2
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 1.3
+> **Design:** [design/audience-surface-disclosure-control.design.md](design/audience-surface-disclosure-control.design.md) v1.3
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [changelog/audience-surface-disclosure-control.changelog.md](changelog/audience-surface-disclosure-control.changelog.md)
 
 ## Rule Statement
 
-**Core Principle: Be fully transparent with the direct authorized user/project owner. Classify generated reusable/external copy by audience and disclose only what belongs there, without making limitations vague or concealing real failure.**
+**Core Principle: Be fully transparent with the authorized user/project owner. Classify reusable/external copy by audience and disclose only what belongs there, without obscuring limitations or real failure.**
 
 ## Audience First
 
-Direct communication includes relevant checked internals, risks/blockers, security/provider context and verification limits at their actual evidence strength. Public-copy minimization never authorizes hiding those facts from the authorized user. Tell them what was sanitized/generalized and why when it matters.
+Direct communication includes relevant checked internals, risks/blockers, security/provider context and proof limits at their earned strength. Public minimization cannot hide these from the owner. Explain material sanitization/generalization and why.
 
-Before drafting public/operator/customer/demo/log/release/onboarding/external-share artifacts, select disclosure posture:
+Before drafting public/operator/customer/demo/log/release/onboarding/external-share copy, select its audience:
 
 | Audience | Include |
 |---|---|
 | direct authorized user/project owner | complete relevant evidence-calibrated explanation |
 | internal engineering/governance | implementation detail needed for maintenance/proof |
 | operator-facing | useful task/action/status, not unnecessary sensitive mechanisms |
-| customer/public | user-visible behavior/status/limits and safe support steps |
-| logs/demo/external share | minimal useful state, no unnecessary secrets/private/raw/internal detail |
+| customer/public | visible behavior/status/limits and safe support steps |
+| logs/demo/external share | minimal useful state, no unnecessary secret/private/raw/internal detail |
 
-Co-location or a technically informed audience does not make all details appropriate. For material unclear audience, ask or use safer artifact wording while still giving the direct user the full checked basis.
+Co-location or technical knowledge does not make every detail appropriate. If audience is materially unclear, ask or use safer artifact wording while giving the owner the full checked basis.
 
-## Minimize the Wrong Disclosure, Not Clarity
+## Minimize Disclosure, Not Clarity
 
-Do not place these on public/operator/customer/log/demo/external surfaces unless disclosure is explicitly selected **and safe**:
+On public/operator/customer/log/demo/external surfaces, omit these unless explicitly selected **and safe**:
 - credentials/tokens/private keys/auth material
-- private endpoints/hostnames/paths or nonpublic topology
+- private endpoints/hosts/paths/nonpublic topology
 - provider/supplier identity, routing, quota/cost/account internals outside the public contract
-- raw user/personal data, payloads or sensitive logs
-- internal security/abuse/detection/bypass-relevant mechanisms
-- unnecessary implementation details increasing risk/confusion without audience benefit
+- raw personal/user data, payloads or sensitive logs
+- internal security/abuse/detection/bypass mechanisms
+- implementation details adding risk/confusion without audience benefit
 
-User selection cannot override hard security/privacy boundaries. Nor is every internal detail secret from the direct owner. [action-safety.md](action-safety.md) owns consequential disclosure/access approval.
+Selection cannot override hard privacy/security; internal detail is not automatically secret from the owner. [Safety](action-safety.md) owns consequential disclosure/access approval.
 
-State real visible behavior/limits/actions clearly, with remediation/support when useful. Use categories such as `provider`, `payment processor`, `runtime service`, `internal system` when exact names do not belong. No false reassurance, hidden failure or meaningless vagueness in the name of sanitization.
+State actual behavior, limits and actions clearly, with support/remediation when useful. Use `provider`, `payment processor`, `runtime service` or `internal system` when exact names do not belong. Sanitization permits neither false reassurance, hidden failure nor empty vagueness.
 
-## Handoff
+## Handoff and Boundaries
 
-When the two layers materially differ, separate direct explanation, audience-facing copy and disclosure notes (what generalized/omitted and why). Simple artifacts stay compact; no mandatory template. [accurate-communication.md](accurate-communication.md), [communication-register.md](communication-register.md) and [evidence-discipline.md](evidence-discipline.md) preserve truthful wording/proof; [document-governance.md](document-governance.md) owns public repository artifact roles and [authority-and-scope.md](authority-and-scope.md) user authority.
+When layers materially differ, separate direct explanation, audience copy and notes on what was generalized/omitted and why. Simple artifacts need no template. [Accurate wording](accurate-communication.md), [register](communication-register.md) and [evidence](evidence-discipline.md) preserve truth/proof; [document governance](document-governance.md) owns public artifact roles and [authority](authority-and-scope.md) user choice.

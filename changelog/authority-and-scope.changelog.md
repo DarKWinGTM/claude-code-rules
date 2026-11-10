@@ -1,8 +1,8 @@
 # Changelog - Authority and Scope
 
 > **Parent Document:** [../authority-and-scope.md](../authority-and-scope.md)
-> **Current Version:** 2.9
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 2.10
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.10 | 2026-11-11 | **[Compacted wording within the existing owner](#version-210)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 2.9 | 2026-09-30 | **[Consolidated authority and source-root decisions](#version-29)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 2.8 | 2026-08-11 | **[Locked development to the Active Project Root](#version-28)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 2.7 | 2026-08-09 | **[Compacted authority integration handoffs](#version-27)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -39,6 +40,15 @@
 | | | Summary: Migrated to standard template | |
 
 ---
+
+<a id="version-210"></a>
+## Version 2.10: Compacted wording within the existing owner
+
+**Date:** 2026-11-11
+**Session:** 08244912-a195-4926-84e6-8c202c667ba5
+
+- Shortened prose and owner handoffs while retaining triggers, actions, force, exceptions, approval, recovery and proof boundaries.
+- Coordinated Main19 source change; [P073-24](../phase/phase-073-24-runtime-clarity-lifecycle-compaction.md) owns semantic/source/install/publication proof and limits. No model-effect or stability claim follows from wording or static checks.
 
 <a id="version-29"></a>
 ## Version 2.9: Consolidated authority and source-root decisions

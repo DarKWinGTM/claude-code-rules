@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.8
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 1.9
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [../changelog/external-verification-and-source-trust.changelog.md](../changelog/external-verification-and-source-trust.changelog.md)
 
 ---

@@ -1,13 +1,18 @@
 # Design - Execution and Goal Frame
 
 > **Parent Rule:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.39
-> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+> **Current Version:** 1.40
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [../changelog/execution-and-goal-frame.changelog.md](../changelog/execution-and-goal-frame.changelog.md)
 
 ---
 
 ## Target State
+
+### Operational clarification
+
+Reconcile selected obligations, current evidence and remaining work at start/resume, correction/failure/scope change and before material status/closeout. Keep unaffected passed proof; reuse existing continuation records. This is not a per-command checklist, new task/reviewer mandate or permission to rerun unchanged proof.
+
 
 `execution-and-goal-frame.md` is the active runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries.
 

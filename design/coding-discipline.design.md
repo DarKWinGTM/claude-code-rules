@@ -1,13 +1,18 @@
 # Design - Coding Discipline
 
 > **Parent Rule:** [../coding-discipline.md](../coding-discipline.md)
-> **Current Version:** 1.11
+> **Current Version:** 1.12
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [../changelog/coding-discipline.changelog.md](../changelog/coding-discipline.changelog.md)
 
 ---
 
 ## Target State
+
+### Operational clarification
+
+Choose storage by required lifetime, ownership, resume/reproduce dependency, recreation/recovery, loss impact, sensitivity and cleanup/rebuild lifecycle. Reusable logic belongs at the canonical source owner; approval/resume evidence needs retained private owner-controlled storage; disposable recreatable probes may be temporary. Sandbox/cache/container/tool workspaces and project `.tmp/` names confer no durability. Missing approval evidence cannot authorize an invented replacement baseline.
+
 
 `coding-discipline.md` is the active runtime owner for maintainable code structure, proportionate verification, and tactical-to-strategic convergence.
 

@@ -1,7 +1,7 @@
 # Document Governance
-> **Current Version:** 1.23
-> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.23
-> **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
+> **Current Version:** 1.24
+> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.24
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [changelog/document-governance.changelog.md](changelog/document-governance.changelog.md)
 > **Absorbed:** project-documentation-standards v2.41, document-design-control v1.12, document-changelog-control v4.12, document-patch-control v2.9, unified-version-control-system v1.3
 
@@ -29,11 +29,11 @@ Allowed inactive preservation: `todo/history/`, `todo/done/`, `phase/history/`, 
 
 Default sync: design → diagram when materially triggered → runtime rule → changelog → TODO → affected Patch metadata final sync. This is ownership/dependency order, not recurrence after every attempt. Design/approval prerequisites precede dependent implementation; [execution-and-goal-frame.md](execution-and-goal-frame.md) owns result-sync cadence. Markdown Runtime Rules are source implementation, not final-result bookkeeping. Use real session identifiers. [phase-todo-artifact.md](phase-todo-artifact.md) owns initiation/lineage and task-evidence handoff; no artifact opens merely because another exists.
 
-Synthesize settled decisions and actual results by role, leading with the selected direction and the rationale, proof, limits and pending obligations needed to understand and maintain it. Exploratory or unselected approaches are supporting context where they still explain material trade-offs, constraints, recovery or costly rediscovery, not equal-weight current choices or a transcript; their mere existence need not create another artifact. Design owns the selected target; changelog the material change/history; phase/TODO execution/proof/remaining obligations. Update affected owners/references only; no semantic/reference delta needs no artificial diff. Preserve meaningful history without copying tentative iterations/task logs into every document, manufacturing a final-only success narrative or creating a retrospective checklist Patch. A triggered Patch remains prospective before/during execution.
+Synthesize settled direction/results by role with needed rationale, proof, limits and remainder. Exploration/unselected paths remain supporting context only for material trade-offs/constraints/recovery/costly rediscovery, not equal current choices or transcripts; existence earns no artifact. Design owns target, changelog change/history, phase/TODO execution/proof/remainder. Update affected owners/references only; no delta means no artificial diff. Preserve history without duplicating iterations/task logs, inventing a final-only success story or retrospective checklist Patch. Patch remains prospective before/during execution.
 
-Start scans at README, compact active design/changelog parents and selected children, diagram entrypoint when applicable, TODO, phase summary/active children, selected Patch and implementation. Open history/done/archive through references or a history/audit/rollback/provenance need. Classify broad work as focused edit, owner-aligned sync, release/no-drift audit, rollover or review; split by actual owners without tiny-fix lanes. Capture/routing belongs to [safe-io.md](safe-io.md) and [worker-routing-and-context.md](worker-routing-and-context.md).
+Start at README, compact active design/changelog parents and selected children, applicable diagram entry, TODO/phase summary/children, selected Patch and source. History/done/archive needs a reference or history/audit/rollback/provenance purpose. Classify focused edit/owner sync/release-no-drift audit/rollover/review and divide by real owners, not tiny fixes. [I/O](safe-io.md)/[routing](worker-routing-and-context.md) own capture/helpers.
 
-Design cannot absorb chronology/audit snapshots/execution/rollback journals; changelog cannot become target design/roadmap/TODO/README prose; phase cannot become design/Patch or source naming authority; Patch cannot become generic plans/retrospective summaries. Source comments are bounded rationale/references, not parallel policy. Cross-Rule repetition is exceptional: retain only a synchronized literal/order/local consequence preventing a likely execution/safety/proof error and name its complete owner.
+Keep chronology/audit/execution/rollback out of design; target/roadmap/TODO/README out of changelog; design/Patch/source naming out of phase; generic plans/retrospectives out of Patch. Comments are local rationale, not policy. Repeat cross-Rule text only for a synchronized literal/order/local consequence preventing likely execution/safety/proof error, naming the complete owner.
 
 Active parents/maps/manifests/install/generated inputs select current authority only. History/done/quarantine is reachable provenance, not active resolution, automatic fallback, generated input or normal runtime/install discovery. [document-integrity.md](document-integrity.md) owns reference/inactivity and losslessness checks.
 
@@ -47,9 +47,9 @@ Before append/split/normalize resolve namespace, actual subject, one active pare
 - `same-stem-subfolder-normalized`: broad/multi-shard/root-heavy/God-pressure chain with checked opening basis
 - `archive-history-reference-only`: inactive reference, never ordinary active detail/fallback
 
-Record bootstrap exit/shard opening/append basis and map updates; do not infer nested directories from a filename. Parents stay bodyful gateways declaring shape/map; children identify scope, backlink, remain reachable/coherent/nonduplicative. Classify proposed detail as current state/history/verification/risk/next work before growth. Owner ambiguity stops the affected append, not unrelated safe work.
+Record bootstrap exit/shard/append basis and map updates; filenames do not imply subdirectories. Parents remain bodyful shape/map gateways; children declare scope/backlink and stay reachable/coherent/nonduplicative. Classify current truth/history/proof/risk/next work before growth. Ambiguity blocks that append only.
 
-Keep observed project example, extracted doctrine, selected target and verified equivalence separate. Placeholder examples and stricter inspired targets are not facts about the observed project.
+Separate observed example, extracted doctrine, selected target and proved equivalence. Placeholders or stricter inspired targets are not observed project facts.
 
 ### Design requirements
 
@@ -92,9 +92,9 @@ Align Patch/companion versions and existing target design/version; `LEGACY-*` is
 
 ## UDVC-1 Runtime Eligibility
 
-UDVC-1 is the only governed RULES version mechanism; the role ledger remains one authority per role. Design/changelog cannot replace a missing runtime body or prove its behavior. README install arrays define only the source-owned active Runtime set, not design/changelog/TODO/phase/Patch/support or all co-located destination files.
+UDVC-1 is the only governed RULES version mechanism, one authority per role. Design/changelog cannot replace Runtime body/proof. README arrays select source-owned active Runtime only—not governance/support or all destination files.
 
-Active root Runtime Rules require `Current Version`, `Design`, `Session`, `Full history`; `Design:` is canonical, `Based on:` retired. Eligibility requires source-root existence, canonical aligned metadata, substantive rule/operational guidance and relevant boundaries/triggers/anti-patterns/proof/integration—not metadata or a pointer alone. Missing body, mixed metadata, widened payload or hash-only checks invalidate install/parity/release-ready claims. Verify body sufficiency in addition to bytes/modes.
+Active root Rules require aligned `Current Version`, `Design`, `Session`, `Full history`; `Based on:` is retired. Source-root existence, substantive operations and relevant boundaries/triggers/anti-patterns/proof/integration are required, not metadata/pointers alone. Missing bodies, mixed metadata, widened payload or hash-only checks invalidate install/parity/release-ready claims. Check body sufficiency and bytes/modes.
 
 Public README/onboarding/install separates portable source and destination under [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md). Resolve other-owner scope before managing shared runtime files.
 

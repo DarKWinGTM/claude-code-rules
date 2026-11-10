@@ -3,11 +3,11 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.79
+> **Current Version:** 10.80
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
-> **Selected Target:** v10.79 adds six curated portable on-demand Skills under `skill/`; Main19 behavior/install membership, personal Skills and plugin ownership remain unchanged
+> **Selected Target:** v10.80 clarifies actionable handoff, plain synthesis, status separation, issue continuity and storage lifetime while compacting the same nineteen Runtime owners; MCI0.9.43 separately admits trace-supported incremental rule enrichment
 
 ---
 
@@ -15,7 +15,9 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-Selected `v10.79 / P152` adds a [portable Skill library](design/skill-library.design.md) of six general on-demand procedures under `skill/`, curated from personal-library inputs without deploying, overwriting or migrating those inputs. Rules retain behavioral authority; Skills supply task procedures, not another policy layer. Main19 and plugin installers remain unchanged. [P152](../phase/phase-152-portable-skill-library.md) owns source/procedure proof, unchanged Rules installation and scoped publication.
+Selected `v10.80 / P073-24` keeps the [nineteen owners](design/runtime-architecture.design.md) and [compaction contract](design/runtime-compaction.design.md). Necessary activation handoff names action/owner/why pending/consequence without inventing restart or live proof. Complex answers include a plain synthesis of the central pain point wherever it helps; details may come first. Completed, remaining, blocked and unselected proposals stay visibly distinct. Execution reviews selected obligations at meaningful continuity boundaries, not every command. Coding owns lifetime-based placement for reusable source, retained approval/resume evidence and disposable scratch across temp/sandbox/cache/container/tool storage; `.tmp/` is no durability promise. [P073-24](../phase/phase-073-24-runtime-clarity-lifecycle-compaction.md) owns proof/install/publication; no hook, new Rule, causal model benefit or session reload is implied. The coordinated [MCI075-01](../plugin/memory-context-intelligence/phase/phase-075-01-incremental-rule-enrichment.md) changes its existing Skill gate, not Main ownership or analysis-engine state.
+
+Preserved `v10.79 / P152` adds a [portable Skill library](design/skill-library.design.md) of six general on-demand procedures under `skill/`, curated from personal-library inputs without deploying, overwriting or migrating those inputs. Rules retain behavioral authority; Skills supply task procedures, not another policy layer. Main19 and plugin installers remain unchanged. [P152](../phase/phase-152-portable-skill-library.md) owns source/procedure proof, unchanged Rules installation and scoped publication.
 
 Preserved `v10.78 / P073-23` enriches [Coding Discipline](coding-discipline.design.md) v1.11 at its existing structure and verification owners. Compare additions with a simpler complete alternative and supported benefit versus carrying cost, including support work the proposal itself creates. Preserve hard-to-reverse contract analysis and necessary safeguards. Test expansion identifies a material evidence gap and distinct fault; reuse existing proof where sufficient and retain justified multi-layer checks. Counts, coverage percentages and LOC ratios alone justify neither growth nor removal; passing tests does not establish structural necessity. No new Rule, score, worksheet, runner or framework is selected. [P073-23](../phase/phase-073-23-complexity-and-test-evidence-admission.md) owns the explicit install/publication gates.
 
@@ -120,7 +122,7 @@ Current target-state priorities:
 - deeper hybrid forms such as `phase-NNN-NN-NNb` should not be treated as forward-valid grammar by default
 - Claude Code helper installs should prefer project-local `.claude/rules/` as the primary runtime target, use owner-aware manifest cleanup, and avoid overclaiming unsupported non-native harnesses for that install surface
 - AI explanation should stay meaning-first: explain what an identifier is, what it does, and what changes if it changes before leaning on raw field or variable names alone
-- non-trivial answers should usually open with one short plain-language summary, use a small table when several axes matter, continue with grouped explanation by concept, and end with a concise decision-ready close
+- complex answers need an explicit plain-language synthesis of their central pain point and causal meaning; details may precede it, while grouping/tables/closing follow actual content rather than a mandatory opening or template
 - flow/process/queue/order/concurrency explanations may prefer an overview → small table → grouped explanation → concise summary shape when that structure reduces cognitive load
 - nested keys should normally be explained parent → child, and UI mental model versus storage model should stay explicit when that distinction matters to understanding
 - readable grouping of verified fact, inference, and hypothesis belongs to the communication owners, while proof thresholds and evidence semantics stay with `evidence-discipline.md`

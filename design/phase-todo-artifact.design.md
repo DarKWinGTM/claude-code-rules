@@ -1,13 +1,18 @@
 # Design - Phase, TODO, and Artifact Initiation
 
 > **Parent Rule:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.39
-> **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
+> **Current Version:** 1.40
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [../changelog/phase-todo-artifact.changelog.md](../changelog/phase-todo-artifact.changelog.md)
 
 ---
 
 ## Target State
+
+### Operational clarification
+
+At Execution-owned continuity boundaries reconcile done/remaining/blocked obligations in the existing outcome-sized task/phase record; do not manufacture tasks, command checklists or proposal obligations.
+
 
 `phase-todo-artifact.md` is the active runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking.
 

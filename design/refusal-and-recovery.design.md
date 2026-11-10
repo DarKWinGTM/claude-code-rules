@@ -1,8 +1,8 @@
 # Design - Refusal and Recovery Chain
 
 > **Parent Rule:** [../refusal-and-recovery.md](../refusal-and-recovery.md)
-> **Current Version:** 1.5
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 1.6
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [../changelog/refusal-and-recovery.changelog.md](../changelog/refusal-and-recovery.changelog.md)
 
 ---

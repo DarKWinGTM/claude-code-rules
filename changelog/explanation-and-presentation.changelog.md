@@ -1,14 +1,15 @@
 # Changelog - Explanation and Presentation
 
 > **Parent Document:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.27
-> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+> **Current Version:** 1.28
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.28 | 2026-11-11 | **[Clarified lifecycle and operational reporting](#version-128)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.27 | 2026-10-25 | **[Preserved complete inventories and visible needed action](#version-127)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
 | 1.26 | 2026-09-30 | **[Put current execution outcomes before reporting detail](#version-126)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.25 | 2026-09-30 | **[Consolidated explanation patterns and bounded closeout](#version-125)** | adda8afb-6edf-466b-add9-b9649b718e01 |
@@ -41,6 +42,15 @@
 | | | Summary: Created `explanation-and-presentation.md` as a body-sufficient merged runtime owner for plain-language explanation, scan-friendly presentation, diagram discipline, and concise action framing in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-128"></a>
+## Version 1.28: Clarified lifecycle and operational reporting
+
+**Date:** 2026-11-11
+**Session:** 08244912-a195-4926-84e6-8c202c667ba5
+
+- Complex explanations include an explicit plain-language synthesis of the central pain point and causal meaning; details may come first, without a fixed opening or formula. Separate intermediate completion from the user goal, retain uncertainty, and visibly distinguish completed, remaining/untested, blocked (owner/enabling condition) and unselected proposals when they coexist. Flexible grouping is not a mandatory report template.
+- Coordinated Main19 source change; [P073-24](../phase/phase-073-24-runtime-clarity-lifecycle-compaction.md) owns semantic/source/install/publication proof and limits. No model-effect or stability claim follows from wording or static checks.
 
 <a id="version-127"></a>
 ## Version 1.27: Complete inventories and visible action

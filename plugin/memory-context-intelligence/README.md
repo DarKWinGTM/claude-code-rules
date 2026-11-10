@@ -1,9 +1,9 @@
 # memory-context-intelligence
 
-> **Status:** Package `0.9.42` is [released](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/memory-context-intelligence--v0.9.42) and updated in the existing local project scope. Analysis asks only for missing period/Topic-target choices and enforces1–14 calendar days including today, with shorter1/3/7-day choices and frozen continuation. The211-test source suite passed; fresh public verification matched22 selected files and installed verification matched21 runtime files by bytes/modes. Main Rules `v10.79` remains latest. Reload is left to the user; corrected native slash behavior and measured model benefit are not yet proved. Receipt and post-install documentation-parity exclusions: [guided calendar-window correction](changelog/v0.1.90-guided-calendar-window.changelog.md).
-> **Current Version:** 0.1.90
-> **Plugin Package Version:** 0.9.42
-> **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-10)
+> **Status:** Package `0.9.43` / governed `0.1.91` is a source candidate: trace-supported ambiguity or missing procedure may enrich an existing RULES owner, while pure duplicates, violation-only repeats, completed and unresolved candidates remain suppressed. Skill35/35, package212/212 and native source validation passed. Final manifest1/1/native validation and bounded full-guidance interpretation also passed; the baseline likewise retained enrichment, so no behavioral gain is demonstrated. Selected installation/publication remains pending; released/installed0.9.42 remains the prior baseline. No current-session reload, real corpus analysis or measured model benefit claimed. [Phase075-01](phase/phase-075-01-incremental-rule-enrichment.md) owns proof.
+> **Current Version:** 0.1.91
+> **Plugin Package Version:** 0.9.43
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-11)
 
 ---
 
@@ -174,7 +174,7 @@ After setup, your normal review command remains:
 If one or more candidates pass the eligibility gate, each eligible candidate appears as a topic card, for example:
 - `Topic 1`, `Topic 2`, `Topic 3`
 
-The output may contain zero cards when evidence is insufficient or every candidate is suppressed as unsupported, already covered, completed, duplicated, or unverifiable.
+The output may contain zero cards when evidence is insufficient or candidates are unsupported, covered without an incremental contribution, completed, duplicated or unverifiable. Existing RULES coverage is an absorption point: trace-supported ambiguity or missing operational procedure may justify a specific improvement in that owner. A violation alone or a restated principle does not.
 - each card explains what the topic is about
 - why it surfaced from evidence
 - what the before/after behavior looks like

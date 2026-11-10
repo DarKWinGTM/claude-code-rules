@@ -1,7 +1,7 @@
 # Safe I/O (File Reading + Terminal Output)
-> **Current Version:** 1.10
-> **Design:** [design/safe-io.design.md](design/safe-io.design.md) v1.10
-> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+> **Current Version:** 1.11
+> **Design:** [design/safe-io.design.md](design/safe-io.design.md) v1.11
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [changelog/safe-io.changelog.md](changelog/safe-io.changelog.md)
 
 ## Rule Statement
@@ -28,9 +28,9 @@ If active entrypoint size/failed reads/compact thrash blocks useful intake, insp
 
 ## Commands and Temporary Output
 
-Use direct low-output tools when sufficient. Before high-output shell/log/build/search/HTTP work choose deterministic line/character caps, capture/filter strategy and session-unique temporary output or an existing project-owned output root under its contract. Never dump unknown recursive output, bodies, generated/minified/binary/base64 into the conversation.
+Use low-output tools when sufficient. Before noisy shell/log/build/search/HTTP work select deterministic caps and capture/filter strategy. Bind capture placement and required lifetime to [coding-discipline.md](coding-discipline.md): resume/approval evidence needs retained storage, while disposable captures may use session-unique temporary output. Do not dump unknown recursive output, bodies or generated/minified/binary/base64 content.
 
-Temporary captures are run artifacts, not the default home for reusable tool/test implementation; [coding-discipline.md](coding-discipline.md) owns that lifecycle. Avoid ordinary stray repo-local debug artifacts without excluding legitimate source tools or governed test fixtures.
+Captures are run artifacts, not reusable source/test implementation. Avoid stray repo debug files without excluding legitimate tools/fixtures; a temporary-looking path does not decide its lifecycle.
 
 Keep command, exit status, material stderr and failure summary visible. Disclose truncation/partial scope and persisted output location; caps are not verification and cannot hide a failure. Prefer focused reruns/searches over blind expansion; cross-file/multi-pass output passes the aggregate gate. Temporary cleanup is permitted; repo-file removal still needs [action-safety.md](action-safety.md)'s destructive confirmation.
 

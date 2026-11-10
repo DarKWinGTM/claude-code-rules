@@ -1,14 +1,15 @@
 # Changelog - Document Integrity
 
 > **Parent Document:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.15
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 1.16
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.16 | 2026-11-11 | **[Clarified lifecycle and operational reporting](#version-116)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.15 | 2026-09-30 | **[Consolidated reference and preservation proof](#version-115)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.14 | 2026-08-11 | **[Separated Runtime payload parity from Active Project Root convergence](#version-114)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 1.13 | 2026-08-09 | **[Added evidence-bound Patch rename and reference integrity](#version-113)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -28,6 +29,15 @@
 | | | Summary: Created `document-integrity.md` as a body-sufficient merged runtime owner for cross-reference consistency, rollover integrity, hygiene boundaries, and no-delete-by-cleanup discipline in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-116"></a>
+## Version 1.16: Clarified lifecycle and operational reporting
+
+**Date:** 2026-11-11
+**Session:** 08244912-a195-4926-84e6-8c202c667ba5
+
+- Creation of necessary run evidence follows Coding Discipline storage lifetime and retention, not a special exemption tied to `/tmp`. Preserve existing ownership, no-loss and destructive-approval boundaries.
+- Coordinated Main19 source change; [P073-24](../phase/phase-073-24-runtime-clarity-lifecycle-compaction.md) owns semantic/source/install/publication proof and limits. No model-effect or stability claim follows from wording or static checks.
 
 <a id="version-115"></a>
 ## Version 1.15: Consolidated reference and preservation proof

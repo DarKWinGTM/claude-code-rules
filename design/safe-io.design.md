@@ -1,13 +1,18 @@
 # Design - Safe I/O
 
 > **Parent Rule:** [../safe-io.md](../safe-io.md)
-> **Current Version:** 1.10
-> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+> **Current Version:** 1.11
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [../changelog/safe-io.changelog.md](../changelog/safe-io.changelog.md)
 
 ---
 
 ## Target State
+
+### Operational clarification
+
+Capture placement and required lifetime follow Coding Discipline: retained resume/approval evidence differs from disposable output. Keep bounded capture distinct from reusable source logic; a temporary-looking name does not determine lifecycle.
+
 
 `safe-io.md` is the active runtime owner for bounded file reading and terminal output with parent-index-first and worker-first behavior.
 

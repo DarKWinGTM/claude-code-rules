@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.90
-> **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-10)
+> **Current Version:** 0.1.91
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-11)
 > **Selected Parent Model:** generic parent
 > **Selected Chain Shape:** flat-sibling-shards
 
@@ -56,7 +56,9 @@ The capsule no longer stays `single-file-bootstrap` because the design had alrea
 
 The complete phase program is defined in [../phase/SUMMARY.md](../phase/SUMMARY.md). This design parent intentionally keeps only the compact design boundary instead of duplicating the phase table.
 
-Selected target: package `0.9.42` / governed `0.1.90` keeps natural-language intent interpretation and adds guided per-run period/Topic-target choices. Analysis stays inside 1–14 calendar days including today; no missing-day replacement, minimum-topic widening or unrestricted legacy continuation. [02](02-topic-list-and-choice-flow.design.md) owns the missing-choice interaction; [07](07-recall-scoping-and-time-window.design.md) owns date filtering before acquisition, exact window progress identity and frozen continuation; [09](09-init-configuration-surface.design.md) keeps stored config subordinate to that interval. One incremental batch or explicit within-period catch-up uses the same prepare → semantic analysis → complete cycle. Existing canonical evidence, strict eligibility and [08](08-memory-evidence-source-model.design.md) provenance remain; explicit narrow/supplemental inspection is non-advancing, direct intake/replay/trial remains compatible and legacy pending stays unchanged in the same progress store. No parser, config schema, background entity or second progress owner is added. Phase078 retains the earlier implementation/publication history; source/local or synthetic interpretation proof does not establish installation, native model benefit or stability.
+Selected target: package `0.9.43` / governed `0.1.91` changes the [02 eligibility gate](02-topic-list-and-choice-flow.design.md) from blanket covered-principle suppression to trace-supported incremental contribution. Pure duplicates and violations of otherwise complete guidance stay suppressed; checked ambiguity, difficult application or missing procedure may support a residual improvement at the existing owner. Completed-outcome matching, entailment, deduplication, fail-closed, zero topics and no rejected-candidate rescue remain. [Phase075-01](../phase/phase-075-01-incremental-rule-enrichment.md) supersedes only the strict blanket gate, preserving Phase075's actual historical selection. No engine, config, progress or acquisition architecture changes.
+
+Preserved package `0.9.42` / governed `0.1.90` keeps natural-language intent interpretation and adds guided per-run period/Topic-target choices. Analysis stays inside 1–14 calendar days including today; no missing-day replacement, minimum-topic widening or unrestricted legacy continuation. [02](02-topic-list-and-choice-flow.design.md) owns the missing-choice interaction; [07](07-recall-scoping-and-time-window.design.md) owns date filtering before acquisition, exact window progress identity and frozen continuation; [09](09-init-configuration-surface.design.md) keeps stored config subordinate to that interval. One incremental batch or explicit within-period catch-up uses the same prepare → semantic analysis → complete cycle. Existing canonical evidence, strict eligibility and [08](08-memory-evidence-source-model.design.md) provenance remain; explicit narrow/supplemental inspection is non-advancing, direct intake/replay/trial remains compatible and legacy pending stays unchanged in the same progress store. No parser, config schema, background entity or second progress owner is added. Phase078 retains the earlier implementation/publication history; source/local or synthetic interpretation proof does not establish installation, native model benefit or stability.
 
 The program keeps:
 - phases 001-006 as the existing design concept lineage

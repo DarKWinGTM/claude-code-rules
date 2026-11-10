@@ -1,14 +1,15 @@
 # Changelog - Safe I/O
 
 > **Parent Document:** [../safe-io.md](../safe-io.md)
-> **Current Version:** 1.10
-> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+> **Current Version:** 1.11
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.11 | 2026-11-11 | **[Clarified lifecycle and operational reporting](#version-111)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.10 | 2026-10-21 | **[Bounded evidence allocation before parsing](#version-110)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
 | 1.9 | 2026-10-15 | **[Distinguished temporary run captures from source-tool implementation](#version-19)** | b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 |
 | 1.8 | 2026-09-30 | **[Consolidated bounded read and output gates](#version-18)** | adda8afb-6edf-466b-add9-b9649b718e01 |
@@ -24,6 +25,15 @@
 | | | Summary: Created `safe-io.md` as a body-sufficient merged runtime owner for bounded file reading and terminal output with parent-index-first and worker-first behavior in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-111"></a>
+## Version 1.11: Clarified lifecycle and operational reporting
+
+**Date:** 2026-11-11
+**Session:** 08244912-a195-4926-84e6-8c202c667ba5
+
+- Capture placement and required lifetime follow Coding Discipline: retained resume/approval evidence differs from disposable output. Keep bounded capture distinct from reusable source logic; a temporary-looking name does not determine lifecycle.
+- Coordinated Main19 source change; [P073-24](../phase/phase-073-24-runtime-clarity-lifecycle-compaction.md) owns semantic/source/install/publication proof and limits. No model-effect or stability claim follows from wording or static checks.
 
 <a id="version-110"></a>
 ## Version 1.10: Bounded evidence allocation before parsing

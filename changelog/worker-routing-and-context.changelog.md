@@ -1,14 +1,15 @@
 # Changelog - Worker Routing and Context Control
 
 > **Parent Document:** [../worker-routing-and-context.md](../worker-routing-and-context.md)
-> **Current Version:** 1.18
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 1.19
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.19 | 2026-11-11 | **[Compacted wording within the existing owner](#version-119)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.18 | 2026-09-30 | **[Consolidated helper routing and lifecycle](#version-118)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.17 | 2026-08-09 | **[Owned Agent Team teammate lifecycle after failure classification](#version-117)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.16 | 2026-08-08 | **[Established leader-owned source and explicit helper invocation routing](#version-116)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -33,6 +34,15 @@
 | | | Summary: Created `worker-routing-and-context.md` as a body-sufficient merged runtime owner for leader-context protection, worker routing, custom-agent selection, and document-density control in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-119"></a>
+## Version 1.19: Compacted wording within the existing owner
+
+**Date:** 2026-11-11
+**Session:** 08244912-a195-4926-84e6-8c202c667ba5
+
+- Shortened prose and owner handoffs while retaining triggers, actions, force, exceptions, approval, recovery and proof boundaries.
+- Coordinated Main19 source change; [P073-24](../phase/phase-073-24-runtime-clarity-lifecycle-compaction.md) owns semantic/source/install/publication proof and limits. No model-effect or stability claim follows from wording or static checks.
 
 <a id="version-118"></a>
 ## Version 1.18: Consolidated helper routing and lifecycle

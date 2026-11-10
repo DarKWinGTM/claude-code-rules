@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.79</b><br><sub>Portable Skill Library</sub>
+  <b>v10.80 candidate</b><br><sub>Runtime Clarity and Lifecycle</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current release:** [v10.79](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.79) ships [six portable on-demand Skills](#on-demand-skills) for diagnosis, verification, continuity, communication, guidance authoring and coverage reconciliation. Main Runtime remains the same nineteen Rules; the existing launcher does not deploy Skills. Source checks, bounded paired interpretation, actual unchanged Rules installation and fresh-public payload/identity checks passed in scope. [P152](phase/phase-152-portable-skill-library.md) records the release evidence and limits; personal Skill deployment is not included.
+> **Current candidate:** v10.80 candidate clarifies actionable handoff, plain synthesis, distinct work states, issue continuity and storage lifetime while compacting Main19. Source Node56/56, native Linux fixtures, scoped preservation and semantic review passed. Full-guidance synthetic interpretation was accepted with a feedback-corrected handoff omission and no demonstrated baseline-to-candidate behavioral gain; selected installation/publication and receipts remain pending. MCI0.9.43 separately adds trace-supported enrichment at existing owners; no session reload/model-benefit claim. [P073-24](phase/phase-073-24-runtime-clarity-lifecycle-compaction.md) tracks proof; [v10.79](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.79) remains the released baseline until publication.
 
 <!-- CTA Buttons -->
 <p>

@@ -1,8 +1,8 @@
 # Changelog - Memory Governance and Session Boundary
 
 > **Parent Document:** [../memory-governance-and-session-boundary.md](../memory-governance-and-session-boundary.md)
-> **Current Version:** 2.0
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 2.1
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.1 | 2026-11-11 | **[Compacted wording within the existing owner](#version-21)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 2.0 | 2026-09-30 | **[Aligned current owner references after compaction](#version-20)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.9 | 2026-09-30 | **[Compacted scoped memory and active-index contract](#version-19)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.8 | 2026-08-09 | **[Compacted memory integration handoffs](#version-18)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -24,6 +25,15 @@
 | | | Summary: Created a new design/runtime/changelog triad that governs memory role boundaries, root `MEMORY.md` index behavior, `global/path/archive` taxonomy, path-primary applicability, session provenance, canonical `SCOPE.md`, and archive lifecycle | |
 
 ---
+
+<a id="version-21"></a>
+## Version 2.1: Compacted wording within the existing owner
+
+**Date:** 2026-11-11
+**Session:** 08244912-a195-4926-84e6-8c202c667ba5
+
+- Shortened prose and owner handoffs while retaining triggers, actions, force, exceptions, approval, recovery and proof boundaries.
+- Coordinated Main19 source change; [P073-24](../phase/phase-073-24-runtime-clarity-lifecycle-compaction.md) owns semantic/source/install/publication proof and limits. No model-effect or stability claim follows from wording or static checks.
 
 <a id="version-20"></a>
 ## Version 2.0: Aligned current owner references after compaction

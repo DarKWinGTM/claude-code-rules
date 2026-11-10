@@ -1,7 +1,7 @@
 # Explanation and Presentation
-> **Current Version:** 1.27
-> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.27
-> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+> **Current Version:** 1.28
+> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.28
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [changelog/explanation-and-presentation.changelog.md](changelog/explanation-and-presentation.changelog.md)
 > **Absorbed:** answer-presentation v1.28, explanation-quality v2.23, flow-diagram-no-frame v1.2, response-closing-and-action-framing v1.3
 
@@ -13,9 +13,11 @@
 
 ## Explanation Flow
 
-Open diagnosis/test/design/recommendation/update with the simplest truthful point or purpose, not setup/background. For a material execution update, closeout or status question, state the current user-facing outcome first, then only the relevant actions/changes, matching checks/results and material remaining work/reasons. A short paragraph or a few bullets can cover these facts; no fixed headings or empty sections are required. Do not attach an older proposal to a status answer unless it changes the current decision; label it advisory and not executed. Do not add a separate framing sentence when the first already does the job. When depth matters preserve **Claim → Mechanism → Implication**: what is true, why/how, and what it means for the user. Do not stop at a claim when its mechanism changes the decision.
+Make the answer's point clear without ceremonial setup. Material updates/closeouts/status answers lead with the current user-facing outcome, then relevant changes, checks and remainder. Use a short paragraph or bullets; omit empty sections and repeated framing. Include an older proposal only if decision-relevant and label it unselected/not executed.
 
-For non-trivial answers prefer useful orientation → small comparison table if repeated axes → grouped explanation → concise synthesis/action. Abstract/recommendation-heavy answers need one concrete clarifier unless already simple: request/response, state transition, failure example, before/after or scoped walkthrough. Explain one causal change at a time before side effects. A simple-plus-technical split is optional, not a rigid template.
+Complex explanations need a plain-language synthesis of the central problem or pain point and its causal meaning, so the reader need not assemble the details. Details may come first: place the synthesis where it makes the whole issue click, not at a fixed opening or in a mandatory template. For example, “The instruction arrived, but the receiver rejected its format before the action ran” separates intermediate completion from the user's goal. Preserve uncertainty; do not invent a cause to make the summary tidy.
+
+When depth matters preserve **Claim → Mechanism → Implication**. Group related detail, use a small comparison table for repeated axes, and clarify abstract recommendations with one concrete request/response, state change, failure, before/after or scoped walkthrough unless already clear. Explain one causal change before side effects; a simple/technical split is optional.
 
 Use checked evidence that changes the answer and distinguish proof/inference/unresolved; preserve real alternatives rather than pretend ordinary evidence rules them out. [evidence-discipline.md](evidence-discipline.md) owns thresholds, [accurate-communication.md](accurate-communication.md) status/identifier/capture wording, [communication-register.md](communication-register.md) language/tone/content admission. Necessary risk/approval/recovery/limit explanation sits beside the relevant decision, not hidden in an appendix.
 
@@ -31,27 +33,27 @@ Use checked evidence that changes the answer and distinguish proof/inference/unr
 | analysis/design | meaningful headings with one concept per unit |
 | branching/dependency | short unframed flow only if clearer than prose |
 
-For a requested complete inventory, retain every in-scope item and its disposition; do not silently replace it with a shortlist. Completeness and priority are separate: recommend a subset only while preserving the requested coverage. Merge overlapping items only when their meaning remains traceable and the merge is explained.
+For a requested complete inventory, retain every in-scope item and its disposition; do not silently replace it with a shortlist. Completeness and priority are separate: preserve coverage when recommending a subset, and explain merges with traceable meaning.
 
-Headings mark real boundaries; bullets group, numbers order, tables compare. Keep wrap-safe short groups and spacing, not decorative hierarchy/heavy tables. Do not expand when exact lookup/concise output is requested, mechanism adds no decision value or sufficiency is reached.
+Use headings for real boundaries, bullets to group, numbers to order and tables to compare. Prefer short wrap-safe groups over decorative hierarchy/heavy tables. Stop at sufficient/exact/concise output when more mechanism adds no decision value.
 
 ### Context and scope patterns
 
-Render execution-selected working interpretation in one compact sentence, not prompt restatement. Diagnosis may show symptom → checked evidence → likely cause → next discriminating check. Governing-basis ambiguity gets one bounded question before deeper branching. Post-compact/memory continuation separates active objective, relevant carried context and exact needs-recheck facts; layout cannot make recall fresh proof.
+Render execution's working interpretation in one compact sentence, not prompt restatement. Diagnosis may show symptom → evidence → likely cause → discriminating check. Ask once about unresolved governing basis before deep branching. After compact/recall distinguish objective, relevant carried context and exact needs-recheck facts; layout cannot refresh evidence.
 
-Make current/future, active/deferred and UI/storage distinctions visible only where confusion is likely. Group related identifiers and use the accurate-communication owner's meaning-first role gloss. Easy language stays across the answer; headings like `อะไรคืออะไร`, `ทำไมต้องมี`, `ถ้าลืมจะเกิดอะไร` may help without turning every symbol into a tutorial.
+Show current/future, active/deferred and UI/storage distinctions when confusion is likely. Group identifiers with meaning-first role glosses; keep easy language throughout. Plain headings may help without a tutorial per symbol.
 
 ### Progress snapshots
 
-Orient before evidence: what was checked, current versus pending, meaning and immediate decision/action. A table needs an implication line if facts alone are ambiguous. Optional fields include `Current`, `Done so far` (checked scope), `In progress`, `Remaining`, `Blockers / Notes`, `Next`; a shorter `Checked / Meaning / Next` is sufficient when appropriate. Distinguish capture, inference, missing detail and scoped local values under accurate wording.
+Make completed work, remaining/untested obligations, blocked work and unselected proposals visibly distinct when they coexist. For a material blocker show owner and enabling condition; proposals are not pending obligations. Group by meaning, not a mandatory report template; keep resolved history from hiding current work. State what was checked, its meaning and the needed action; explain a table's implication if facts alone are ambiguous. Preserve capture/inference/unknown and scoped-local distinctions.
 
-Snapshots are for useful non-trivial progress/troubleshooting, not one-step replies, dashboards or a reason to pause safe selected continuation. Read-only, no-op and plan-only replies state that no edit or execution occurred when the wording could otherwise imply a change; trivial replies remain direct without empty report sections.
+Use snapshots for meaningful progress/troubleshooting, not dashboards, one-step replies or pauses in safe continuation. For read-only/no-op/plan-only work, disclose no edit/execution if otherwise misleading; omit empty sections.
 
 ### Decision-ready recommendation
 
 Make the material needed action or decision, its dependency and consequence easy to locate beside the supporting evidence or limit, rather than buried at the end of a dense paragraph. Use content-fit grouping and selective emphasis, not fixed headings or emphasis on every term. Do not promise color, underline or other renderer effects that were not actually shown.
 
-If material, show recommended route/reason, constraints/dependencies, main trade-off/failure and verification. Omit fields that do not change the decision; do not pad underspecified design with speculative concerns. When several reasonable paths remain, show the relevant set before narrowing; recommend the best-supported first with a short decisive reason. No option ceremony for an already clear safe action.
+Show route/reason, constraints/dependencies, material trade-off/failure and proof only when decision-relevant. Do not pad thin designs with speculation. Compare genuinely viable paths before narrowing, recommend the best-supported first with its decisive reason; no options ritual for an obvious safe action.
 
 ## Synthesis, Phase Closeout and Goals
 
@@ -59,9 +61,7 @@ Close analysis/status/implementation with synthesis, not restatement. Mention re
 
 Phase progress/closeout starts with delivered/prepared capability/behavior and practical user/system impact, followed by matching proof/limits, semantic dispositions and actual next-phase state (`not started`, `draft/planned`, `selected`, `active`, `blocked`, `none opened`). File/task/audit counts alone do not explain delivery.
 
-[execution-and-goal-frame.md](execution-and-goal-frame.md) decides continuation/closure/successor posture. After true completion recommend an already-visible meaningful successor only when it helps the decision; give why/output/gate, keep it advisory and do not create execution state. Do not search for more work or emit generic “next wave” notes when a checked smaller slice exists. If no material successor is selected/opened, do not invent one.
-
-Future proposals are `Proposal`, `Idea` or `Future wave` with concrete outcome/gate, never automatic continuation. Optional deep dive is one short specific invitation, not a second answer.
+[Execution](execution-and-goal-frame.md) selects continuation/closure/successors. After true closure, offer already-visible meaningful work only if useful: advisory why/output/gate, no execution state, search-for-work or vague next wave. Invent no successor. Label proposals `Proposal`/`Idea`/`Future wave` with concrete outcome/gate, not continuation. Optional depth is one short specific invitation.
 
 ### Render, do not select `/goal`
 

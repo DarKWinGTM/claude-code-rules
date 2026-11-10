@@ -1,7 +1,7 @@
 # Action Safety
-> **Current Version:** 1.8
-> **Design:** [design/action-safety.design.md](design/action-safety.design.md) v1.8
-> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+> **Current Version:** 1.9
+> **Design:** [design/action-safety.design.md](design/action-safety.design.md) v1.9
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [changelog/action-safety.changelog.md](changelog/action-safety.changelog.md)
 > **Absorbed:** functional-intent-verification, emergency-protocol, runtime-topology-control, operational-failure-handling
 
@@ -11,7 +11,7 @@
 
 ## Part A — Intent, Consequence and Confirmation
 
-Unknown/ambiguous destructive intent calls for inspection/clarification, not action. `copy into`, `merge`, `replace`, `update`, `clean up`, `isolate`, `reset` and `delete` can mean additive changes, overwrite, archive or permanent removal; settle the impact-changing distinction before confirmation. Do not turn review/classification into deletion automatically.
+Inspect/clarify unknown destructive intent before acting. `copy into`, `merge`, `replace`, `update`, `clean up`, `isolate`, `reset`, `delete` may mean addition, overwrite, archive or permanent removal; settle impact before confirmation. Review/classification never implies deletion.
 
 | Operation | Required gate |
 |---|---|
@@ -21,19 +21,19 @@ Unknown/ambiguous destructive intent calls for inspection/clarification, not act
 | ordinary public read-only lookup | evidence gathering, not external mutation |
 | authenticated/private access, sending/publishing, purchase/payment, deployment, account/shared-state change, sensitive disclosure, meaningful cost or terms acceptance | consequential action: authorization and applicable method/scope approval before execution |
 
-For risky operations: identify concrete operation/targets → explain expected effect, worst case and rollback/recovery → request exact action-and-scope confirmation → execute only the confirmed delta. Generic approval does not authorize wider deletion/overwrite. User must explicitly request permanent deletion, force overwrite or skipping applicable destructive confirmation. Prefer reversible/dry-run inspection when available.
+For risky operations: exact operation/targets → expected/worst impact and recovery → explicit action/scope confirmation → confirmed delta only. Generic approval cannot widen deletion/overwrite. Permanent deletion, force overwrite or skipping applicable confirmation must be explicit. Prefer reversible/dry-run inspection.
 
-Cleanup/hygiene/isolation/sandbox/worktree, completed status, untracked/dirty state or convenience never proves disposability. Repo-file removal on such framing is high risk even if new/untracked: resolve semantic role through stronger current/governed ownership before proposing it, then obtain explicit deletion approval. Authorized bounded destructive work is not inherently a hard refusal; hard boundaries and confirmation still apply.
+Cleanup/hygiene/isolation/sandbox/worktree, completion, dirty/untracked state or convenience proves no disposability. Repo removal on that basis is high-risk even for new files: resolve semantic ownership before proposing and obtain deletion approval. Authorized bounded destruction is not inherently hard-refused; confirmation/hard boundaries remain.
 
 ### Authenticated/private capability preflight
 
-Before the first attempt, identify target/evidence objective, checked network reachability, tool/browser capability, approved supported session mechanism, user authorization, consequential-access approval, and accessible sanitized screenshot/Rendered HTML/text/semantic/log-network substitutes. Technical capability, authorization and approval are separate gates; inspection alone grants no access.
+Before attempting private access, bind target/evidence objective, checked reachability, tool/browser capability, approved supported session, authorization, consequential-access approval and accessible sanitized screenshot/HTML/text/semantic/log-network substitutes. Capability, authorization and approval are separate; inspection grants none.
 
-Guest/login or `401` means that request did not establish required authentication. `403` means refusal; missing authentication versus insufficient authorization remains unresolved. None alone proves the authenticated Product/route is broken. Do not request/expose raw credentials, cookies, bearer tokens, private keys, session dumps or auth material to compensate for unavailable supported capability. Apply the private failure profile below before any correction/retry.
+Guest/login/`401` did not establish authentication. `403` is refusal, not proof whether authentication or authorization is missing. Neither proves the authenticated Product/route broken. Never request/expose credentials/cookies/bearer tokens/private keys/session dumps/auth material to compensate for unavailable capability. Apply the private failure profile before correction/retry.
 
 ## Part B — Runtime Topology and Architecture
 
-Inspect current entities, authority per role/path, ambiguities and unknown-versus-empty state before mutation. Unknown state is not permission to add parts. Prefer repair or controlled replacement over accumulation, without treating that preference as destructive authorization. One authority per role is not one total instance; explicit HA/scaling/canary/compare/shadow/parallel authority needs purpose, boundary and retirement/steady-state plan.
+Inspect entities, role/path authority, ambiguity and unknown-versus-empty before mutation. Unknown state cannot authorize additions. Prefer repair/controlled replacement, not accumulation, without inferring destructive permission. One authority per role is not one instance; explicit HA/scaling/canary/compare/shadow/parallel modes need purpose, boundaries and retirement/steady-state plan.
 
 - `runtime entity`: operational container/server/worker/job/proxy/target/background process/endpoint—not a Claude subagent/teammate; [worker-routing-and-context.md](worker-routing-and-context.md) owns assistant routing.
 - `runtime role`: logical capability/path job; `runtime authority`: owner of what runs for it.
@@ -49,7 +49,7 @@ Inspect current entities, authority per role/path, ambiguities and unknown-versu
 | `REPLACEMENT_MUTATION` | justified bounded owner/path swap with proportionate authorization/rollback |
 | `ADDITIVE_EXPANSION` | new/parallel entity/owner/path; blocked until exact approval |
 
-Before acting, bind current entities, `authority_baseline`, ambiguities, delta class, mechanism when relevant, multi-authority state, authorization and rollback/retirement. Missing material gate remains `OBSERVE_ONLY`; obtain evidence/input. `ADDITIVE_EXPANSION`, authority-baseline change, explicit multi-authority mode and destructive/high-blast-radius repair/replacement require explicit scope approval. Starting another operational server/container/worker/target is expansion; restart/rebind/swap is a declared replacement delta, not implicit consent.
+Bind entities, `authority_baseline`, ambiguities, delta, relevant mechanism/multi-authority state, approval and recovery/retirement. Missing gates mean `OBSERVE_ONLY`. Expansion, authority change, multi-authority mode and destructive/high-blast-radius repair/replacement need explicit scope approval. Another server/container/worker/target is expansion; restart/rebind/swap is declared replacement, not implicit consent.
 
 ### Design-conformance architecture delta preflight
 
@@ -78,7 +78,7 @@ identify current/target → declare necessary temporary bridge → verify target
 
 An approved bridge names purpose, owner, consumers, authority boundary, observability, retirement trigger, rollback target and removal/inactivity proof. It must not silently become dual read/write, target-failure fallback, shadow activation or permanent parallel source. Active bridge means migration remains incomplete.
 
-Quarantine preserves evidence, not execution: normal runtime/install/retry/restart/rebuild/deploy/test must not read it. Location/name alone does not prove inactivity; quarantine never authorizes deletion or automatic restore. Controlled restoration needs exact action/scope approval, independently selected verified known-good source, deliberate replacement rather than coexistence, unrelated-state preservation and post-restore one-authority proof. [evidence-discipline.md](evidence-discipline.md) owns two-sided completion proof; [document-integrity.md](document-integrity.md) owns reference/discovery/parity checks.
+Quarantine preserves evidence, not runtime/install/retry/restart/rebuild/deploy/test input. Names/locations prove no inactivity or permission to delete/auto-restore. Controlled restoration requires exact approval, independently verified known-good source, deliberate replacement rather than coexistence, unrelated-state preservation and one-authority recheck. [Evidence](evidence-discipline.md) owns two-sided proof; [integrity](document-integrity.md) owns references/discovery/parity.
 
 ### Topology reporting
 
@@ -86,9 +86,9 @@ When material, report posture, checked entities/owner baseline/mechanism, ambigu
 
 ## Part C — Genuine Emergency
 
-Activate for declared emergency or immediate high-impact incident/outage/security compromise/data-loss/severe time pressure—not routine bugs/refactor/convenience urgency. Emergency changes pacing, not authority. Lead with smallest containment/diagnostic/reversible plan, known facts/assumptions, safe actions, approval-sensitive actions and post-emergency proof. No invented cause/certainty or coercion.
+Activate for declared emergency or immediate high-impact outage/incident/security compromise/data-loss/severe time pressure, not routine urgency. Pace changes, authority does not. Lead with minimal reversible containment/diagnosis, known facts/assumptions, safe versus approval-sensitive actions and post-incident proof; no invented cause/coercion.
 
-Only when startup delay materially increases harm may the smallest safe reversible containment/diagnostic action run first. Destructive, credentials/security/privacy, production/shared-state and consequential external operations retain approval/hard boundaries. Immediately resume normal startup/recordkeeping/recovery/verification; record assumptions/actions/remaining checks, distinguish containment from permanent fix, and track material follow-up. One workaround pass is not long-term stability.
+Only materially harmful startup delay permits smallest safe reversible containment/diagnosis first. Destruction, credentials/security/privacy, production/shared state and consequential external actions retain gates. Resume startup/records/recovery/proof immediately; record actions/assumptions/remainder, distinguish containment from repair and track material follow-up. One workaround is not stability.
 
 ## Part D — Failure Classification and Bounded Retry
 
@@ -117,9 +117,9 @@ Same-objective aggregate maximum **3 autonomous retry rounds per turn**. Immedia
 | `TOOL_APPROVAL_DENIED` | no unchanged reattempt until user changes approval/method |
 | `AGENT_TEAM_DUPLICATE_OR_STALE_TEAMMATE_PRESENCE` | `LIKELY_SYSTEMIC` / `STOP_AND_ESCALATE`; no same-role unchanged respawn; worker owner audits reuse/steer/wait/partition/evidence-supported respawn |
 
-Private correction is a single checked mechanism change, not reusable retry allowance: e.g. exact approved-domain correction after observed session-domain mismatch. Speculative URL variants, another guest request, unapproved tools/sessions or permission laundering do not qualify. It cannot bypass raw-auth/approval gates.
+Private correction is one checked mechanism change, e.g. approved-domain correction after observed session mismatch—not renewed allowance. Speculative URLs, another guest request, unapproved tools/sessions or permission laundering do not qualify or bypass auth/approval gates.
 
-Stop when deterministic/profile-blocked, budget exhausted, cross-domain/occurrence escalation triggered, or no useful signal. Surface the exact state/access/input/approval change, safe bounded alternative or recommended wait. Extend profiles inside this taxonomy, not a new retry authority; a profile binds signals/class/posture/budget/cooldown/promotion/stop/recovery.
+Stop for deterministic/profile block, exhausted budget, escalation or no useful signal. Name enabling state/access/input/approval, safe alternative or recommended wait. Extend profiles within this taxonomy: signals/class/posture/budget/cooldown/promotion/stop/recovery, not another retry authority.
 
 For material failure report `failure_class`, `retry_posture`, actual `attempts_used`/budget, real provider or recommended cooldown, reason, safe-now action and how to resume. No fabricated attempts, sleeping, autonomous future work or successful recovery.
 

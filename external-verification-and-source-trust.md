@@ -1,50 +1,50 @@
 # External Verification and Source Trust
-> **Current Version:** 1.8
-> **Design:** [design/external-verification-and-source-trust.design.md](design/external-verification-and-source-trust.design.md) v1.8
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 1.9
+> **Design:** [design/external-verification-and-source-trust.design.md](design/external-verification-and-source-trust.design.md) v1.9
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [changelog/external-verification-and-source-trust.changelog.md](changelog/external-verification-and-source-trust.changelog.md)
 
 ## Rule Statement
 
-**Core Principle: Verify decision-changing external facts proactively, select eligible claim-fit sources, rank trust without flattening unequal authority, and expose conflicts and proof limits before recommending a route.**
+**Core Principle: Verify decision-changing external facts proactively. Select eligible claim-fit sources, preserve unequal authority, and expose conflicts/proof limits before recommending a route.**
 
 ## When to Verify
 
-A cheap public read-only lookup is evidence gathering; use it instead of unsupported reassurance when current external reality matters. Triggers include drift-prone API/SDK/CLI/product behavior, vendor/version capability, pricing/support/release/policy/compatibility, provider/standard constraints and security/compliance claims. Skip trivial/conceptual/speculative or local-source-of-truth checks unless an external premise changes the answer.
+Use cheap public read-only lookup when current reality matters: drift-prone API/SDK/CLI/product behavior, vendor/version capability, pricing/support/releases/policy/compatibility, provider/standard constraints, security/compliance. Skip trivial/conceptual/speculative or locally authoritative questions unless an external premise changes the answer.
 
-Authenticated/private access or consequential external actions consume [action-safety.md](action-safety.md)'s approval/capability gates; this rule cannot approve sending/publishing, mutation, payment, deployment, shared-state change, sensitive disclosure, meaningful cost or terms acceptance.
+Private/authenticated or consequential actions require [safety](action-safety.md) preflight/approval. Evidence gathering cannot authorize publishing, mutation, payment, deployment, shared-state change, sensitive disclosure, meaningful cost or terms acceptance.
 
 ## Eligibility Before Trust
 
-For private/authenticated/local-only/mechanism-constrained evidence, consume the checked reachability, tool/session, authorization and approval preflight before source selection. An inaccessible/unapproved Tier 1 source is not an executable path.
+For private/authenticated/local-only/mechanism-constrained evidence, establish reachability, tool/session, authorization and approval before ranking. An inaccessible/unapproved Tier1 source is not an executable route.
 
-Among eligible sources choose the strongest by authority, directness, freshness, specificity and relevance to the exact claim. A reachable artifact may be strongest for observed content but cannot inherit current/live/authenticated proof. If direct evidence is unavailable, use the strongest authorized bounded substitute (supplied screenshot/rendered artifact/sanitized export/public authority), with provenance, supported dimensions, omissions and the enabling condition for stronger proof under [evidence-discipline.md](evidence-discipline.md).
+Rank eligible sources by authority, directness, freshness, specificity and exact claim fit. A reachable artifact supports observed content, not inherited current/live/authenticated proof. If direct evidence is unavailable, use the strongest authorized bounded substitute—supplied screenshot/rendered artifact/sanitized export/public authority—with provenance, supported dimensions, omissions and prerequisites for stronger [proof](evidence-discipline.md).
 
-If no eligible useful source exists, keep verification unresolved and hand missing-state/access recovery to [refusal-and-recovery.md](refusal-and-recovery.md). Do not probe unapproved private paths or solicit raw auth material to compensate. Approval, credentials/sessions and retries remain safety-owned; trust ranking cannot bypass them.
+If no useful eligible source exists, keep verification unresolved and give [missing-state/access recovery](refusal-and-recovery.md). Do not probe unapproved private paths or solicit raw auth material. Ranking cannot bypass safety's approval, credentials/session or retry gates.
 
 ## Source Ranking
 
-| Tier | Source authority | Default trust |
+| Tier | Authority | Default trust |
 |---|---|---|
 | 1 | official technical docs/specs/API references/standards | highest |
-| 2 | official updates/releases/changelogs/status/support matrices | very high |
-| 3 | maintainer/repository docs and authoritative issues/comments | high |
+| 2 | official releases/updates/changelogs/status/support matrices | very high |
+| 3 | maintainer/repository docs, authoritative issues/comments | high |
 | 4 | reputable secondary explanation citing primary sources | medium |
 | 5 | tutorials/blogs/aggregators | lower |
 | 6 | anecdotes/forums/reposts/unclear mirrors | lowest |
 
-Tier is not automatic claim fit. Before strong use check directness, freshness, normative force, precision, consistency and traceability. Prefer `AUTHORITATIVE_EXTERNAL` primary technical authority; downgrade stale/vague/marketing-shaped/broken/incoherent/unaccountable sources. Do not average their trust or treat same-topic mentions as equal support.
+Tier is not automatic claim fit. Check directness, freshness, normative force, precision, consistency and traceability. Prefer claim-fit `AUTHORITATIVE_EXTERNAL` primary sources; downgrade stale/vague/marketing-shaped/broken/incoherent/unaccountable material. Do not average unequal trust or equate same-topic mentions.
 
-One source suffices for a directly answered routine low-risk claim when strong primary authority and no visible ambiguity/contradiction exist. Corroborate high-impact, recommendation-critical, security/compliance, version/provider-dependent, incomplete/ambiguous/stale/secondary-source or conflicting claims. Prefer independent convergence; state conflicts, the stronger source and why, and what would settle unresolved differences instead of choosing convenience.
+One strong primary source suffices for a direct routine low-risk answer without visible conflict. Corroborate high-impact/recommendation-critical/security/compliance, version/provider-dependent, incomplete/ambiguous/stale/secondary or conflicting claims. Prefer independent convergence; explain conflict, stronger source/why and what would resolve uncertainty.
 
 ## Research and Recommendations
 
-Define which decision research can change and stop at evidence sufficiency. Narrow broad/comparison/source-heavy work first; [worker-routing-and-context.md](worker-routing-and-context.md) selects useful filtering/parallel research, not delegation for every lookup. A lane receives factual question, decision, preferred source tiers and conflict expectations; its analyzed handoff names topic/query families, trust/freshness/specificity, weak sources/conflicts and leader anchors. Worker sources remain input, not proof or source authority.
+Define the decision research can change; stop at sufficiency. Narrow broad comparisons before [routing](worker-routing-and-context.md), not delegation for every lookup. Brief a lane with question, decision, preferred tiers and conflict expectations. Its digest names query families, source quality/freshness/specificity, conflicts, implications and leader anchors. Worker output is input, not proof or source authority.
 
-Ground substantial design/recommendation/disagreement in proportionate current evidence. Provider/supplier/model/path-specific narrowing must earn scope through checked local differences, not convenience. Only authoritative requirements, compatibility limits, safety/compliance boundaries or verified contradictions bind the path; ordinary evidence preserves user goals and real trade-offs.
+Ground material design/recommendation/disagreement in proportionate current evidence. Provider/supplier/model/path-specific narrowing needs checked local differences, not convenience. Only authoritative requirements, compatibility limits, safety/compliance or verified contradictions bind the route; ordinary evidence preserves goals and trade-offs.
 
-If proof remains partial, give the strongest justified bounded recommendation, separate verified/likely/unresolved, identify provenance/limits and enabling evidence/state. Do not pretend a substitute proved live behavior or turn an unavailable source into mandatory infrastructure.
+For partial proof, recommend only the justified scope: separate verified/likely/unresolved, provenance/limits and enabling evidence/state. A substitute is not live proof; unavailable evidence does not mandate new infrastructure.
 
-## Integration
+## Integration and Boundaries
 
-[evidence-discipline.md](evidence-discipline.md) owns thresholds/witness limits; [accurate-communication.md](accurate-communication.md) and [communication-register.md](communication-register.md) project honest wording. This owner ranks eligible sources and reconciles external conflicts without duplicating safety, workflow recovery or worker topology.
+[Evidence](evidence-discipline.md) owns thresholds/witness limits; [accurate wording](accurate-communication.md) and [register](communication-register.md) render them. This owner ranks eligible sources and resolves conflicts, not safety, recovery or worker topology.

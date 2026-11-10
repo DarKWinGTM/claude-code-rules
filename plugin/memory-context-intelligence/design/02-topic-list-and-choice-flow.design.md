@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.90
-> **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-10)
+> **Current Version:** 0.1.91
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-11)
 > **Parent Design:** [design.md](design.md)
 
 ---
@@ -46,12 +46,12 @@ For example, `Minimium Rules 5 topic` retains the five-topic target and asks onl
 A signal or generated card is only an internal candidate. Before adaptive deepening or presentation, every candidate must pass each check:
 
 1. **Trace-to-claim entailment:** inspect the bounded source-backed trace text for the candidate. It must support the specific alleged problem. Generated titles, keywords, scores, confidence labels, signal IDs, generic before/after templates, and a general evidence count cannot substitute. Plans, precautions, compliant actions, hypotheticals, missing/truncated evidence, or evidence that does not establish the claim are suppressed; do not retrieve more evidence to rescue or strengthen that rejected candidate.
-2. **Active RULES novelty:** identify the analyzed project's active root and inspect the relevant active RULES owner, not only sampled `governance_context`. Suppress topics whose principle or behavior is already covered, including a trace that appears to violate that rule; analysis does not re-propose covered doctrine as a regression topic.
-3. **Completed-work novelty:** follow active phase/TODO navigation and compare the candidate's behavior, mechanism, and output with the actual delivered outcome at its checked proof layer. Suppress matching delivered outcomes, not merely similar titles or a completed topic-filtering system. Phase075 completion establishes its eligibility infrastructure, not resolution of every later candidate. A genuinely distinct residual delta still needs trace support, checked unfinished outcome, and active-RULES novelty; possible material matches that cannot be settled remain fail-closed.
+2. **Active RULES incremental contribution:** identify the active project root and inspect the relevant owner beyond sampled governance context. Suppress pure duplicates without incremental contribution. A violation alone does not establish a guidance gap: distinguish complete guidance not followed from trace-supported ambiguity, difficult application or missing operational procedure. Keep covered behavior, specific gap, proposed improvement and expected decision change together; absorb a supported residual delta into the existing owner instead of re-proposing the whole principle or a duplicate Rule. A supported new principle may qualify without a fitting owner. Coverage is neither automatic rejection nor evidence that enrichment is needed. Unsupported deltas stay suppressed/context-only, with no new acquisition to rescue rejected candidates.
+3. **Completed-work novelty:** follow active phase/TODO navigation and compare behavior, mechanism and output at the same checked proof layer. Suppress the same delivered outcome, not similar titles or completed eligibility infrastructure. Phase075 establishes the original gate, not resolution of every later candidate; distinct residual contributions need trace support and the active-owner check. Unresolved possible material matches remain fail-closed.
 4. **Candidate-set deduplication:** compare meaning across candidates and retain at most one per principle, behavior, or outcome.
 5. **Fail closed:** suppress if the active root/owner or relevant completion state cannot be checked, or if a material semantic match remains ambiguous.
 
-When every candidate is suppressed, distinguish unsupported evidence from active-rule coverage, completed work, duplicate candidates, or an unresolved check. Do not mislabel suppression as insufficient trace repetition. The first-response analysis remains read-only for corpus/governance/candidate artifacts and never mutates RULES; its only state-writing exception is MCI-owned pending/completed progress, not topic acceptance or promotion.
+When every candidate is suppressed, distinguish unsupported evidence from coverage without incremental contribution, completed work, duplicate candidates, or an unresolved check. Do not mislabel suppression as insufficient trace repetition. The first-response analysis remains read-only for corpus/governance/candidate artifacts and never mutates RULES; its only state-writing exception is MCI-owned pending/completed progress, not topic acceptance or promotion.
 
 #### 2.0.2) Parallel candidate discovery before eligibility
 

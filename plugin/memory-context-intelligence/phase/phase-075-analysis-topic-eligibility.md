@@ -10,6 +10,10 @@
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Session:** 7194487f-fe8b-4383-8756-3db4c5612392 (2026-10-02)
 
+## Current successor and historical boundary
+
+The strict covered-principle suppression below is the genuinely selected and completed package0.9.35 baseline, not the current enrichment policy. [Phase075-01](phase-075-01-incremental-rule-enrichment.md) supersedes only that blanket gate with trace-supported incremental contribution at the same owner; all original proof remains historical at its checked version.
+
 ## Goal and Lineage
 
 Change the existing `/memory-context-intelligence:analysis` first-response contract so it shows only topics supported by their actual trace and not already covered, completed, or semantically duplicated. This is a continuation of the same analysis surface and topic-list owner, but an independent source/document acceptance outcome after completed Phase 074; therefore use the next major phase rather than reopening Phase 074's summary-research/install gate.

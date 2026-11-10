@@ -45,6 +45,10 @@ Checked transcript-derived example:
 
 ## Virtual variant
 
+### Mixed state without a report template
+
+Synthetic status: parser repair is locally verified; a selected persistence-failure case remains untested; selected installation awaits user approval; dashboard redesign is an unselected idea. Group completed, remaining, blocked and proposal visibly. The installation blocker names the approval owner and exact enabling action; the redesign is not pending work. Source proof cannot close an explicitly selected install/release gate, while an independent source-only goal need not wait for an optional live check.
+
 - User says a feature is fully done because the source edit exists.
 - One smoke check exists, but no live-provider or runtime proof exists yet.
 - A phase closeout line sounds final, but a later phase still keeps the verification gate open.

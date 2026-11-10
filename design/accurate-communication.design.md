@@ -3,12 +3,17 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.46
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 2.47
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 
 ---
 
 ## 1) Goal
+
+### Operational clarification
+
+When an application step is actually necessary, report exact action, owner, why it is not done and consequence. Continue safe authorized work; ask directly for the enabling user action/approval. Do not infer restart or live acceptance from a source edit.
+
 
 Define one wording owner for evidence/status strength, truthful action reporting, meaning-first identifier glosses and exact-versus-inferred capture labels. The [runtime compaction](design/runtime-compaction.design.md) baseline preserves completion/migration ladders while handing layout/purpose to presentation, tone/agreement to register and external disclosure to its audience owner.
 

@@ -1,10 +1,10 @@
 # Proportionate Runtime Compaction - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.69
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01 (2026-09-30)
+> **Current Version:** 10.80
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-11)
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
-> **Status:** Selected target-state shard; unpublished
+> **Status:** Active target-state shard; source, installation and publication proof belong to the selected execution slice
 
 ## Target and Scope
 
@@ -35,6 +35,12 @@ Start from the selected outcome and checked requirements. Separate facts, assump
 
 Investigate decision-changing factual uncertainty using the smallest discriminating check. Consult the user for unresolved material preference, acceptance, scope, authority, cost, or approval trade-offs—not every safe microstep. Stop reasoning when the decision is supported and close at the selected proof gate; reopen only for new decision-changing evidence, correction, or failed checks.
 
+## Current Storage and Guidance Boundaries
+
+Coding Discipline chooses storage by required lifetime/owner, resume/reproduce dependency, recovery, loss impact, sensitivity and actual cleanup/rebuild semantics. Reusable source stays canonical; run-bound approval/resume evidence needs private retained owner-controlled storage; disposable recreatable output may be temporary. Temp/sandbox/cache/container/tool workspaces and project `.tmp/` names are not interchangeable guarantees. Missing approval evidence preserves a gap, never automatic replacement authority.
+
+Source clauses, semantic preservation, synthetic full-guidance interpretation, installed bytes/modes/identity, session adoption and public release are distinct proof layers. Estimated compression is advisory; actual net measurement includes additions and must not become a quota or token/latency/model-benefit claim. Unrelated historical compaction cleanup below grants no new cleanup permission.
+
 ## Additional Trial Disposition
 
 Loaded/injected instruction availability does not prove use, effect, or promotion value. Original JSONL witnesses distinguish observed concerns, independent behavior incidents, rule application, outcomes, and causal benefit. Duplicate source doctrine is not an ineffective concept; it is unnecessary parallel runtime text. Missing evaluation is not a failed test.
@@ -49,7 +55,7 @@ Analysis candidate entailment belongs to the source plugin's generation/binding 
 
 Map material old clauses to new owner, trigger, action, exception, and proof. Check focused decisions for safe continuation, exact approval, unavailable selected proof versus optional proof, same-goal status disagreements, source-first preservation, fresh correction, proportionate tests/helpers, and evidence limits. Verify body/metadata/version/reference integrity and unchanged ordered install arrays.
 
-Run existing shell/PowerShell fixture checks before root installation. Install only from the checked source set, verify exact bytes/modes/metadata/bodies, and preserve unrelated runtime state. Apply approved additional deletion only after Main parity; rollback material stays outside rule discovery and is never an automatic fallback. Retained trials remain at their selected path without repeating Main doctrine.
+Run the matching native installer fixtures before installation; check shared Bash/PowerShell ordered payload parity separately, without inferring Windows execution. Install only from the checked source set, verify exact bytes/modes/metadata/bodies, and preserve unrelated runtime state. Apply approved additional deletion only after Main parity; rollback material stays outside rule discovery and is never an automatic fallback. Retained trials remain at their selected path without repeating Main doctrine.
 
 Measure Main wording reduction separately from additional removal and integration growth. An estimated reduction is not installed savings; character reduction is not exact token reduction or proof the earlier 150k-character warning is resolved.
 

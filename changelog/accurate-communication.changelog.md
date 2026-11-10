@@ -1,14 +1,15 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.46
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 2.47
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.47 | 2026-11-11 | **[Clarified lifecycle and operational reporting](#version-247)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 2.46 | 2026-09-30 | **[Made actual action and final-state reporting explicit](#version-246)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 2.45 | 2026-09-30 | **[Compacted evidence and capture wording](#version-245)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 2.44 | 2026-08-09 | **[Compacted cross-owner integration wording](#version-244)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -89,6 +90,15 @@
 | | | Summary: Initial version - later deemed too rigid | |
 
 ---
+
+<a id="version-247"></a>
+## Version 2.47: Clarified lifecycle and operational reporting
+
+**Date:** 2026-11-11
+**Session:** 08244912-a195-4926-84e6-8c202c667ba5
+
+- When an application step is actually necessary, report exact action, owner, why it is not done and consequence. Continue safe authorized work; ask directly for the enabling user action/approval. Do not infer restart or live acceptance from a source edit.
+- Coordinated Main19 source change; [P073-24](../phase/phase-073-24-runtime-clarity-lifecycle-compaction.md) owns semantic/source/install/publication proof and limits. No model-effect or stability claim follows from wording or static checks.
 
 <a id="version-246"></a>
 ## Version 2.46: Made actual action and final-state reporting explicit

@@ -1,7 +1,7 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.39
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.39
-> **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
+> **Current Version:** 1.40
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.40
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.35, todo-standards v2.28
 
@@ -13,7 +13,7 @@
 
 ## Part A — Artifact Startup and Ownership
 
-Before meaningful governed work resolve relevant surfaces as `use existing`, `create now`, `ask now`, `not required`; live tasks as `initialize now` or `not required`. Lightweight exploration may precede this boundary; target planning, staged rollout/durable decomposition/Patch review may not. One checked outcome/owner classification discharges all non-triggered surfaces together—no ritual per absent artifact. Reuse fitting authority; ask only about material ownership/scope/workflow/approval ambiguity. Re-evaluate affected posture only if work shape changes. Retrospective artifacts are repair, not normal startup; `trivial`, cleanup or `not required` never authorizes removal.
+Before meaningful governed work classify relevant surfaces `use existing`, `create now`, `ask now`, `not required`; live tasks `initialize now`/`not required`. Light exploration may precede, target planning/staged rollout/durable decomposition/Patch review may not. One checked outcome/owner decision discharges non-triggered surfaces together, not one ritual per missing artifact. Reuse owners; clarify only material ownership/scope/workflow/approval. Revisit changed posture only. Retrospective artifacts are repair; `trivial`/cleanup/`not required` never permits removal.
 
 Default order: design → diagram when triggered → changelog → TODO → phase → Patch.
 
@@ -31,7 +31,7 @@ When Patch is `create now`, capture one UTC instant to seconds and derive filena
 
 ### Touched artifact pressure
 
-When density/God pressure materially affects selected work and cannot safely stay local, route to the real owner: design active sharding; changelog same-chain `changelog/<chain>/v*.changelog.md`; inactive applicable history `changelog/done/`; TODO/phase history/done; God Phase via lineage; God Patch via review family. No changelog fallback authority. Clear fitting owner permits reuse/create; ambiguity requires a bounded question. Unrelated pressure stays advisory. `create now` never implies a new major; task/phase slices need independent outputs/gates, not extracted helper count.
+When touched density/God pressure materially affects selected work beyond safe local repair, use its owner: active design shards; same-chain `changelog/<chain>/v*.changelog.md`; inactive history `changelog/done/`; TODO/phase history/done; God Phase lineage; God Patch review family. No changelog fallback. Clear ownership permits reuse/create, ambiguity needs a bounded question; unrelated pressure stays advisory. `create now` does not imply new major; outputs/gates, not helper counts, earn slices.
 
 State lightweight/governed posture and unresolved gate only when it changes continuation. [document-integrity.md](document-integrity.md) owns preservation, rollover and no-loss proof.
 
@@ -66,23 +66,23 @@ A God Phase mixes independent primary goals/unrelated outputs/gates/rollback or 
 
 ### Design-to-phase synthesis and coverage
 
-`/phase` consumes normalized design/Patch review one-way, never replaces target truth. Derive outcome stages by dependencies, risk, rollout/output/proof; update summary/active children/live tasks when selected. Keep setup/edit/focused check/correction together for one gate; responsibility-family repair is not one phase per helper/facade/file. Helpers remain subordinate and main source integration stays leader-owned.
+`/phase` consumes normalized design/Patch review, never owns target truth. Derive outcome stages from dependencies/risk/rollout/output/proof; update selected summary/children/live tasks. Keep setup/edit/check/correction under one gate, not phases per helper/facade/file. Helpers stay subordinate; Main integrates source.
 
-For each selected design slice identify behavior/invariants/failure modes/state-dependencies/acceptance clues/exclusions. Preserve concise coverage in phase/tasks, not the whole design. Track `not started` or `implemented` (intermediate until material proof); final disposition is `verified`, `deferred`, `blocked`, `not applicable`, `out of scope`, visibly preserving pending semantics. Headline output cannot hide uncovered durability/recovery/retry/idempotency/rollback.
+Capture selected behavior/invariants/failures/state-dependencies/acceptance/exclusions compactly in phase/tasks. `not started`/`implemented` are intermediate; final dispositions are `verified`, `deferred`, `blocked`, `not applicable`, `out of scope`. Preserve pending durability/recovery/retry/idempotency/rollback rather than close on headline output.
 
 ### Summary, child and reference roles
 
-Summary owns compact global context/target/risk/dependency/roadmap, active-or-latest-completed visibility, lineage/design/Patch links, handoffs/TODO/changelog, end-to-end proof and overall rollback. Each active child defines or maps to its summary, phase ID/status, design references and local TODO/changelog coordination. Children own objective/why/output/gate/entry/exclusions, selected semantics, affected artifacts/checklist, local verification/containment and decision-relevant already-governed next state. Coding exits show `Development Verification / TestKit Coverage` or equivalent. Move detailed history to referenced history/done rather than overload active bodies.
+Summary owns compact context/target/risk/dependencies/roadmap, active/latest-completed visibility, lineage/design/Patch links, handoffs/TODO/changelog, end-to-end proof and rollback. Active children identify summary/ID/status/design/local TODO-changelog and own objective/why/output/gate/entry/exclusions, semantics, affected artifacts/checklist, local proof/containment and relevant governed next state. Coding exits show `Development Verification / TestKit Coverage` or equivalent. Refer detailed history to history/done, not overloaded active bodies.
 
-When evidence supports forecasting, roadmap entries name goal/output/gate/dependencies/deliverables and `active`, `selected`, `implied-unblocked`, `proposal`, `blocked`, `needs-approval`, `none opened`. Visibility is not automatic execution. [execution-and-goal-frame.md](execution-and-goal-frame.md) owns continuation/successor posture; goal construction belongs to its goal-authoring owner.
+Evidence-supported roadmap entries name goal/output/gate/dependencies/deliverables and posture: `active`, `selected`, `implied-unblocked`, `proposal`, `blocked`, `needs-approval`, `none opened`. Visibility selects no execution; [execution](execution-and-goal-frame.md) owns continuation, goal-authoring construction.
 
-Summary and Patch-derived children name exact timestamped `Patch References`; no ID/index/basename/wildcard guess. `none` is valid only if Patch is genuinely unnecessary. Closeout states delivered behavior and impact, matching proof/limits, semantic dispositions and actual next-phase state—not merely files/tasks/audit counts.
+Summary/Patch-derived children use exact timestamped `Patch References`, not ID/index/basename/wildcard guesses; `none` only when unnecessary. Closeout reports behavior/impact, matching proof/limits, semantic dispositions and actual next-phase state, not counts.
 
 ## Part C — Durable TODO and Live Tasks
 
-`TODO.md` is a compact durable current index, not version authority, primary live board, roadmap, release timeline or log dump. Keep active/deferred items, release/wave context and brief completed highlights with reachable history/done. Version detail belongs changelog; stage detail belongs phase. Live tasks coordinate independently acceptable planned/in-progress/completed outcomes without replacing TODO persistence.
+`TODO.md` indexes durable active/deferred work, release/wave context and brief completed highlights with reachable history/done. It is not version authority/live board/roadmap/release timeline/log. Changelog owns version detail, phase stage detail; live tasks coordinate outcomes without replacing persistence.
 
-Admit tasks for two or more meaningful outcomes/gates, phase-backed work, material handoff/continuity, or explicit user request. Several commands/files or implementation plus its focused test are not sufficient alone. One outcome stays one task unless distinct owner/approval/rollback/proof/resume conditions justify split. Keep useful ordered substeps, selected decisions, changes, actual checks, evidence pointers and remaining obligations inside those tasks, in the working language; honor an explicit Thai checklist request. Checkpoint real continuation/handoff risk, not every command. Do not create tasks from every finding/helper/worker lane.
+Admit tasks for multiple meaningful outcomes/gates, phase work, material handoff/continuity or explicit request—not command/file counts or implementation plus focused test. One outcome stays one task unless owner/approval/rollback/proof/resume differs. Keep ordered substeps, selections, changes, actual checks/evidence and remainder inside, in the working language; honor Thai checklist requests. Checkpoint real continuation risk, not each command/finding/helper.
 
 ### Phase-linked task lifecycle
 
@@ -91,6 +91,7 @@ Admit tasks for two or more meaningful outcomes/gates, phase-backed work, materi
 - merge required same-owner corrective findings into current task; leave optional cleanup/successors unselected
 - mark `in_progress` before work and `completed` promptly only when its bounded gate is actually satisfied
 - preserve selected semantic/proof coverage and material verification tasks, including blocked state/resume when required capability is unavailable
+- review selected obligations at execution's start/resume/change/closeout boundaries; reconcile done/remaining/blocked state in the existing record, not new tasks/checklists per command
 - discover next work from tasks → active phase/SUMMARY → compact TODO → checked implementation; history/done through active references only
 
 Consume execution's proof-selection policy rather than reconstruct it: close satisfied source/non-live tasks before optional live/rendered observation, which stays excluded/advisory without a task until selected. If preflight repairs an infeasible assistant-inferred Goal/plan point, remove that accidental blocker immediately and retain completed proof; explicitly selected live proof remains blocked with its enabling condition under `NO_RETRY_UNTIL_CHANGE`. Do not silently demote required proof or leave optional proof blocking the current family.
@@ -99,7 +100,7 @@ Materialize tasks for selected execution only when admitted; authoring alone is 
 
 ### Evidence handoff and finalization
 
-When a selected family owes durable docs, reuse its fitting docs-finalization task or initialize one before all relevant tasks close; do not duplicate an existing finalization gate. Keep necessary evidence/handoff/affected-owner sync as ordered substeps in the related task, not new docs tasks per command or case unless an independent owner, acceptance or resume boundary earns one. Finalization dependencies gate its completion, not task-local handoff or supported interim sync under [execution-and-goal-frame.md](execution-and-goal-frame.md); required proof remains binding. Technical tasks may close at their verified gates after handing off their evidence. Finalization reads relevant completed and pending task details, checks them against source/design/proof, reconciles the fitting durable owners and verifies that handoff before completing last in that family; it is not the first opportunity to document work. Do not empty the board first and then recover details from transcripts. An outstanding task is not a persistence guarantee; no particular cleanup/deletion mechanism is assumed.
+If durable docs are owed, reuse/init one fitting finalization task before all family tasks close; no duplicate gate. Evidence/handoff/owner sync stays ordered substeps unless independent owner/acceptance/resume earns a task. Dependencies gate finalization completion, not local handoff or supported interim [sync](execution-and-goal-frame.md); required proof stays binding. Technical tasks may close after verified evidence handoff. Finalization reconciles completed/pending task detail against source/design/proof and durable owners, verifies handoff, then completes last—not the first documentation opportunity. Do not empty the board then reconstruct transcripts. An open task is no persistence guarantee; no cleanup mechanism is assumed.
 
 No docs obligation means no invented final task or dummy sentinel. Do not hold or close unrelated/other-session tasks. Missing evidence requires an honest coverage limit and resume condition, not board reset/recreation or fabricated prior results. [document-governance.md](document-governance.md) owns synthesis by document role, not raw task-log duplication.
 

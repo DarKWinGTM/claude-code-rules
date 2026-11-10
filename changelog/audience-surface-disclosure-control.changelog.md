@@ -1,8 +1,8 @@
 # Changelog - Audience Surface Disclosure Control
 
 > **Parent Document:** [../audience-surface-disclosure-control.md](../audience-surface-disclosure-control.md)
-> **Current Version:** 1.2
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 1.3
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 
 ---
 
@@ -10,12 +10,22 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-11-11 | **[Compacted wording within the existing owner](#version-13)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.2 | 2026-09-30 | **[Compacted audience classification and disclosure](#version-12)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.1 | 2026-08-09 | **[Compacted disclosure integration handoffs](#version-11)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.0 | 2026-05-07 | **[Created direct-user-transparent audience-surface disclosure owner](#version-10)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Created a first-class runtime/design/changelog chain for full direct-user transparency plus audience-appropriate generated public/operator/customer/log/demo/external artifact disclosure boundaries | |
 
 ---
+
+<a id="version-13"></a>
+## Version 1.3: Compacted wording within the existing owner
+
+**Date:** 2026-11-11
+**Session:** 08244912-a195-4926-84e6-8c202c667ba5
+
+- Shortened prose and owner handoffs while retaining triggers, actions, force, exceptions, approval, recovery and proof boundaries.
+- Coordinated Main19 source change; [P073-24](../phase/phase-073-24-runtime-clarity-lifecycle-compaction.md) owns semantic/source/install/publication proof and limits. No model-effect or stability claim follows from wording or static checks.
 
 <a id="version-12"></a>
 ## Version 1.2: Compacted audience classification and disclosure

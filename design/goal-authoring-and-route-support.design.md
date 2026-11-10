@@ -1,8 +1,8 @@
 # Design - Goal Authoring and Route Support
 
 > **Parent Rule:** [../goal-authoring-and-route-support.md](../goal-authoring-and-route-support.md)
-> **Current Version:** 1.4
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 1.5
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [../changelog/goal-authoring-and-route-support.changelog.md](../changelog/goal-authoring-and-route-support.changelog.md)
 
 ---

@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
 > **Current Version:** 2.35
-> **Target Design:** [../design/phase-todo-artifact.design.md](../design/phase-todo-artifact.design.md) v1.39
+> **Target Design:** [../design/phase-todo-artifact.design.md](../design/phase-todo-artifact.design.md) v1.40
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5
-> **Status:** P152/v10.79 source, unchanged Main19 installation and public release verified-in-scope; no successor opened. Earlier Runtime slices remain closed.
+> **Status:** P073-24/v10.80 source/semantic gates accepted with synthetic limits; selected Main/MCI installation and publication pending
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,7 +21,7 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active Slice
 
-None opened after P152/v10.79. Personal Skill deployment is unselected; previous Runtime slices remain closed.
+[P073-24 — Runtime clarity, storage lifetime and compaction](phase-073-24-runtime-clarity-lifecycle-compaction.md) is active in the existing P073 Runtime-owner/install/publication family. Main19 source Node56/56 and native Linux fixtures passed; full-guidance interpretation/semantic acceptance is recorded with feedback/baseline limits in the child. Selected installation/publication remains pending. Coordinated [MCI075-01](../plugin/memory-context-intelligence/phase/phase-075-01-incremental-rule-enrichment.md) changes the analysis Skill gate. Patch/diagram: not required; personal Skill deployment stays unselected. Previous slices remain closed.
 
 ### Latest Verified Slice
 

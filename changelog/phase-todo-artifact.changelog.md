@@ -1,8 +1,8 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.39
-> **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
+> **Current Version:** 1.40
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.40 | 2026-11-11 | **[Clarified lifecycle and operational reporting](#version-140)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.39 | 2026-10-16 | **[Separated task-local docs handoff from final reconciliation closure](#version-139)** | 4a8d9ac0-ecf9-40c4-961e-634583157b6c |
 | 1.38 | 2026-10-15 | **[Added real finalization task and evidence-before-last-closure handoff](#version-138)** | b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 |
 | 1.37 | 2026-09-30 | **[Compacted outcome admission lineage and task consequences](#version-137)** | adda8afb-6edf-466b-add9-b9649b718e01 |
@@ -54,6 +55,15 @@
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-140"></a>
+## Version 1.40: Clarified lifecycle and operational reporting
+
+**Date:** 2026-11-11
+**Session:** 08244912-a195-4926-84e6-8c202c667ba5
+
+- At Execution-owned continuity boundaries reconcile done/remaining/blocked obligations in the existing outcome-sized task/phase record; do not manufacture tasks, command checklists or proposal obligations.
+- Coordinated Main19 source change; [P073-24](../phase/phase-073-24-runtime-clarity-lifecycle-compaction.md) owns semantic/source/install/publication proof and limits. No model-effect or stability claim follows from wording or static checks.
 
 <a id="version-139"></a>
 ## Version 1.39: Task-local handoff and final reconciliation

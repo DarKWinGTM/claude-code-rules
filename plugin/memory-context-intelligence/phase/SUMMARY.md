@@ -1,9 +1,9 @@
 # Phase Summary - memory-context-intelligence
 
-> **Current Version:** 0.1.90
-> **Target Design:** [../design/design.md](../design/design.md) v0.1.90
-> **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-10)
-> **Status:** Phase078 package0.9.42 is released and installed with guided period/Topic-target choices and a whole-run1–14-calendar-day boundary. The211-test source suite, full-draft interpretation,22-file public byte/mode/ref verification and21-file installed-runtime parity passed. Earlier0.9.40/0.9.41 receipts remain preserved. Reload is left to the user; new real analysis still awaits a selected recent period
+> **Current Version:** 0.1.91
+> **Target Design:** [../design/design.md](../design/design.md) v0.1.91
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-11)
+> **Status:** Phase075-01 package0.9.43 is a source candidate; Skill35/35/package212/212 passed, bounded synthetic acceptance is recorded, selected install/publication remains pending
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Rollover history:** [2026-08-09 movement](history/2026-08-09.md); [exact pre-rollover snapshot](history/2026-08-09-pre-rollover-SUMMARY.md)
 
@@ -30,6 +30,14 @@ The v0.1.79 Phase 013-01-04 correction is complete: both public skill versions a
 - `TEMPLATE/PLUGIN/memory-context-intelligence/` remains historical projection-family evidence, not current runtime authority
 
 ## Current selected phase
+
+### Phase075-01 — incremental rule enrichment
+
+- **Phase file:** [phase-075-01-incremental-rule-enrichment.md](phase-075-01-incremental-rule-enrichment.md)
+- **Design:** [02 contribution gate](../design/02-topic-list-and-choice-flow.design.md)
+- **Status/output:** package0.9.43/governed0.1.91 source contracts pass; supported residual improvements absorb into existing owners, not duplicate Rules. Original075 blanket policy remains historical; entailment/completed matching/dedup/fail-closed/zero-topic/no-rescue controls remain.
+- **Gate:** Skill35/35 and isolated package212/212 passed; bounded full-guidance interpretation and final manifest/native validation also passed, without demonstrated baseline-to-candidate behavioral gain. Selected existing-identity install, public release and receipt readback remain pending.
+- **Lineage/exclusions:** child of075, not078 calendar/progress. No engine/config/paused progress/corpus/Memsearch/current-session reload changes. Main-only source integration; no successor selected.
 
 ### Phase 078 — incremental analysis progress
 
@@ -66,7 +74,7 @@ The v0.1.79 Phase 013-01-04 correction is complete: both public skill versions a
 - **Phase file:** [phase-075-analysis-topic-eligibility.md](phase-075-analysis-topic-eligibility.md)
 - **Design:** [Topic List and Choice Flow](../design/02-topic-list-and-choice-flow.design.md)
 - **Status:** package0.9.35 / governed0.1.83 source/document contract and selected local-scope update completed; current-session reload/model-effect check, commit, push, tag, and publication remain unselected
-- **Output:** first-response analysis displays only candidates with trace-to-claim support, novelty against checked active RULES and completed work, and no semantic duplicate; strict suppression applies even when trace seems to violate an existing rule; zero-to-many cards, no filler
+- **Historical output:** package0.9.35 selected strict covered-principle suppression, including covered violations, plus entailment/completed matching/dedup/zero topics. [075-01](phase-075-01-incremental-rule-enrichment.md) supersedes only that blanket gate with supported incremental contribution; the original proof remains historical.
 - **Gate:** focused skill/design/version contracts and paired A–H eligibility/suppression interpretation pass; package suite and plugin validation pass; selected source links/version/history/diff checks pass; native update confirms all333 install-time file paths/bytes/modes and fresh bare initialize-only discovery of all3 public skills. Post-install source status-file edits are excluded from current cache parity.
 - **Lineage:** next major after Phase074's independent summary/research output and local-install gate, with the Phase075 analysis eligibility contract established as the current baseline
 - **Exclusions:** no source engine/corpus changes, RULES mutation, additional-stage writes, current-session reload, generated-model evaluation, commit, push, tag, or publication

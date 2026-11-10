@@ -1,14 +1,15 @@
 # Changelog - Refusal and Recovery Chain
 
 > **Parent Document:** [../refusal-and-recovery.md](../refusal-and-recovery.md)
-> **Current Version:** 1.5
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 1.6
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.6 | 2026-11-11 | **[Compacted wording within the existing owner](#version-16)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.5 | 2026-09-30 | **[Consolidated refusal decisions and recovery](#version-15)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.4 | 2026-08-09 | **[Compacted refusal integration handoffs](#version-14)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.3 | 2026-08-08 | **[Corrected destructive confirmation ordering](#version-13)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -18,6 +19,15 @@
 | | | Summary: Created `refusal-and-recovery.md` as a body-sufficient merged runtime owner for wrapper normalization, refusal classification, refusal minimization, and actionable recovery paths in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-16"></a>
+## Version 1.6: Compacted wording within the existing owner
+
+**Date:** 2026-11-11
+**Session:** 08244912-a195-4926-84e6-8c202c667ba5
+
+- Shortened prose and owner handoffs while retaining triggers, actions, force, exceptions, approval, recovery and proof boundaries.
+- Coordinated Main19 source change; [P073-24](../phase/phase-073-24-runtime-clarity-lifecycle-compaction.md) owns semantic/source/install/publication proof and limits. No model-effect or stability claim follows from wording or static checks.
 
 <a id="version-15"></a>
 ## Version 1.5: Consolidated refusal decisions and recovery

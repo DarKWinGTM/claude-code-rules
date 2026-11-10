@@ -1,13 +1,18 @@
 # Design - Document Integrity
 
 > **Parent Rule:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.15
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 1.16
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [../changelog/document-integrity.changelog.md](../changelog/document-integrity.changelog.md)
 
 ---
 
 ## Target State
+
+### Operational clarification
+
+Creation of necessary run evidence follows Coding Discipline storage lifetime and retention, not a special exemption tied to `/tmp`. Preserve existing ownership, no-loss and destructive-approval boundaries.
+
 
 `document-integrity.md` is the active runtime owner for cross-reference consistency, rollover integrity, hygiene boundaries, and no-delete-by-cleanup discipline.
 

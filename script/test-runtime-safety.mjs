@@ -53,7 +53,7 @@ test('caller-first design and preventive controls stay at their checked owner', 
   requiresClause(coding, /caller usage[\s\S]*input\/output and failure[\s\S]*types\/signatures[\s\S]*module boundaries/i);
   requiresClause(coding, /code, type\/schema, validator, Tool, Skill or Rule/);
   requiresClause(coding, /Existing coverage identifies an absorption point, not proof that enrichment is unnecessary/);
-  requiresClause(coding, /does not itself authorize[\s\S]*architecture/);
+  requiresClause(coding, /Risk\/test obligations do not themselves authorize[\s\S]*architecture/);
   requiresClause(coding, /no mandatory[\s\S]*worksheet/);
 });
 
@@ -150,7 +150,47 @@ test('feasibility enrichment preserves selected proof and consequential-action b
   requiresClause(evidence, /Fake\/local checks prove their scope, not live\/provider\/runtime\/deploy behavior/);
 });
 
-for (const name of ['action-safety', 'safe-io', 'coding-discipline', 'evidence-discipline', 'execution-and-goal-frame', 'explanation-and-presentation']) {
+test('material handoff identifies the action owner and consequence without inventing activation', () => {
+  const communication = source('accurate-communication.md');
+  requiresClause(communication, /needed application step[\s\S]*action, owner[\s\S]*not done[\s\S]*consequence/i);
+  requiresClause(communication, /ask the user directly[\s\S]*exact enabling action/i);
+  requiresClause(communication, /not assume[\s\S]*restart[\s\S]*source[\s\S]*live/i);
+});
+
+test('complex explanations include plain synthesis without mandating its position', () => {
+  requiresClause(presentation, /plain-language synthesis[\s\S]*central problem[\s\S]*causal/i);
+  requiresClause(presentation, /details may come first/i);
+  requiresClause(presentation, /not[\s\S]*fixed opening[\s\S]*template/i);
+  requiresClause(presentation, /intermediate completion[\s\S]*user['’]s goal/i);
+});
+
+test('status groups distinguish obligations and unselected proposals without a fixed report', () => {
+  requiresClause(presentation, /completed[\s\S]*remaining[\s\S]*blocked[\s\S]*unselected proposals/i);
+  requiresClause(presentation, /owner[\s\S]*enabling condition/i);
+  requiresClause(presentation, /not[\s\S]*mandatory[\s\S]*template/i);
+});
+
+test('issue review reconciles selected obligations at meaningful continuity boundaries', () => {
+  requiresClause(execution, /start or resume[\s\S]*correction, failure or scope change[\s\S]*material status or closeout/i);
+  requiresClause(execution, /selected obligations[\s\S]*current evidence[\s\S]*remaining/i);
+  requiresClause(execution, /not[\s\S]*every command[\s\S]*rerun/i);
+});
+
+test('artifact placement follows required lifetime rather than temporary path names', () => {
+  requiresClause(coding, /required lifetime[\s\S]*resume[\s\S]*recreat[\s\S]*loss[\s\S]*sensitivity/i);
+  requiresClause(coding, /run-bound[\s\S]*manifest[\s\S]*retained[\s\S]*owner-controlled/i);
+  requiresClause(coding, /sandbox[\s\S]*cache[\s\S]*container[\s\S]*tool workspace/i);
+  requiresClause(coding, /project[\s\S]*`\.tmp\/`[\s\S]*not[\s\S]*durability/i);
+  requiresClause(coding, /missing[\s\S]*approved baseline[\s\S]*not[\s\S]*invent/i);
+  requiresClause(intake, /capture[\s\S]*required lifetime[\s\S]*coding-discipline/i);
+});
+
+const runtimeFiles = source('script/setup-claude-code-rules.sh')
+  .match(/active_rule_files=\(([\s\S]+?)\n\)/)?.[1].match(/[\w-]+\.md/g);
+assert.equal(runtimeFiles?.length, 19, 'retain the selected nineteen-owner payload');
+
+for (const file of runtimeFiles) {
+  const name = file.replace(/\.md$/, '');
   test(`${name} retains one aligned substantive runtime, design and changelog chain`, () => {
     const runtime = source(`${name}.md`);
     const design = source(`design/${name}.design.md`);
@@ -160,8 +200,13 @@ for (const name of ['action-safety', 'safe-io', 'coding-discipline', 'evidence-d
     assert.equal(version(design), version(runtime));
     assert.equal(version(changelog), version(runtime));
     assert.ok(runtime.includes(`[design/${name}.design.md](design/${name}.design.md) v${version(runtime)}`));
-    requiresClause(runtime, /## (?:Integration and )?Boundaries|## Trigger Dispatch and (?:Boundaries|Anti-Drift)/);
-    requiresClause(design, /## Verification/);
+    assert.ok(runtime.includes(`[changelog/${name}.changelog.md](changelog/${name}.changelog.md)`));
+    requiresClause(runtime, /## /);
+    requiresClause(design, /verif(?:y|ication)|validation/i);
+    if (['action-safety', 'safe-io', 'coding-discipline', 'evidence-discipline', 'execution-and-goal-frame', 'explanation-and-presentation'].includes(name)) {
+      requiresClause(runtime, /## (?:Integration and )?Boundaries|## Trigger Dispatch and (?:Boundaries|Anti-Drift)/);
+      requiresClause(design, /## Verification/);
+    }
     assert.ok(runtime.length > 2000, 'metadata alone is not an active Runtime body');
   });
 }

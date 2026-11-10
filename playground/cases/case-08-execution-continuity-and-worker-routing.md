@@ -47,6 +47,10 @@ Supporting repo-scope observed examples are also recorded in `playground/observe
 
 ## Virtual variant
 
+### Meaningful-boundary obligation review
+
+Synthetic continuation: at resume, source tests passed but selected installation remains pending; the user corrects one input form. Reconcile selected behavior, remaining installation and the affected test before continuation. Retain unrelated passed proof, add only the matching correction/regression and use the existing outcome record. Do not reset the board, rerun unaffected cases, create tasks per command or turn an unselected idea into work.
+
 - A broad repo audit would require several file reads and noisy outputs.
 - Implementation is done, but the next lane is verification and still implied.
 - A phase-backed task closes one lane and opens a broader next lane that should be worker-routed.

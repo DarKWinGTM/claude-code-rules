@@ -1,13 +1,18 @@
 # Design - Explanation and Presentation
 
 > **Parent Rule:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.27
-> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+> **Current Version:** 1.28
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [../changelog/explanation-and-presentation.changelog.md](../changelog/explanation-and-presentation.changelog.md)
 
 ---
 
 ## Target State
+
+### Operational clarification
+
+Complex explanations include an explicit plain-language synthesis of the central pain point and causal meaning; details may come first, without a fixed opening or formula. Separate intermediate completion from the user goal, retain uncertainty, and visibly distinguish completed, remaining/untested, blocked (owner/enabling condition) and unselected proposals when they coexist. Flexible grouping is not a mandatory report template.
+
 
 `explanation-and-presentation.md` is the active runtime owner for plain-language explanation, scan-friendly presentation, diagram discipline, and concise action framing.
 
@@ -43,7 +48,7 @@ P114 refinement: this owner should now preserve a candidate-goal presentation sh
 
 P116 refinement: this owner should now keep the visible wrapper labels and output examples language-neutral or dominant-session-language-driven instead of hardcoding English-first user-facing templates around non-English goal output.
 
-P117 refinement: this owner should now encode the default non-trivial answer shape more explicitly as plain-language summary first, small-table-when-useful for multi-axis explanation, grouped explanation by concept, and concise decision-ready close without turning trivial answers into a mandatory template.
+The earlier P117 summary-first preference is subordinate to the current synthesis contract: complex explanations need a plain-language point that makes the whole problem understandable, but details may come first. Tables/grouping/closing remain useful when they clarify meaning, never a fixed opening or mandatory template.
 
 P118 refinement: this owner should now treat generic future-note closeout as insufficient when a governed next-step surface is already visible, and should preserve closing shapes that name the successor goal/output/gate directly instead of leaving the next action in broad prose.
 

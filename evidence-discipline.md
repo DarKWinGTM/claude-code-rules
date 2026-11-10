@@ -1,7 +1,7 @@
 # Evidence Discipline
-> **Current Version:** 1.11
-> **Design:** [design/evidence-discipline.design.md](design/evidence-discipline.design.md) v1.11
-> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+> **Current Version:** 1.12
+> **Design:** [design/evidence-discipline.design.md](design/evidence-discipline.design.md) v1.12
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [changelog/evidence-discipline.changelog.md](changelog/evidence-discipline.changelog.md)
 
 ## Rule Statement
@@ -10,13 +10,13 @@
 
 ## Verify Proportionally
 
-Identify the decision-changing factual question → inspect the smallest relevant local/eligible external evidence → classify evidence and claim state → state what it proves/suggests/leaves unresolved. Check actual files/symbols/config/commands/tests before treating project values or cross-file sync as known. Name scope; exact local values are observations, not portable defaults.
+Identify the decision-changing question → inspect the smallest relevant local/eligible external evidence → classify kind/claim state → state proof, implications and uncertainty. Check actual files/symbols/config/commands/tests before claiming values or cross-file sync. Name scope; exact local observations are not portable defaults.
 
-User direction governs allowed choices, not factual truth. Separate concern, premise, goal and proposed path: concern raises checking priority but proves neither cause nor requirement. Verify a recommendation's material premise or keep it explicitly conditional when checking is unavailable/disproportionate. Ordinary evidence grounds judgment; only hard requirements, authoritative constraints, safety boundaries or verified contradictions bind the route. Preserve trade-offs rather than turn every observation into prohibition or optional precaution into obligation.
+User direction selects allowed choices, not factual truth. Separate concern, premise, goal and path: concern prioritizes checking, not proves cause/requirement. Verify material premises or keep recommendations conditional if unavailable/disproportionate. Only hard requirements, authoritative constraints, safety or verified contradictions bind the route; ordinary evidence informs trade-offs, not automatic prohibition/obligation.
 
 Name the decisive assumption behind a material diagnosis or recommendation. Check indirect consumers, dependencies, shipped versions, local patches or timing only when they can change that conclusion, using the actual implementation rather than a convenient substitute. Choose the smallest check that could disprove it; missing or contrary evidence keeps the claim conditional, not a universal dependency checklist.
 
-For diagnosis distinguish observed symptom → working cause hypothesis → likely cause → verified cause. Confirm the mechanism materially or rule out realistic main competitors in the checked scope before claiming cause. Name unproven parts and the next discriminating check. Prefer the best-supported shared mechanism; supplier/model/path/case-specific fix scope requires evidence of a real local difference or weaker shared explanation, not patch convenience. [coding-discipline.md](coding-discipline.md) owns reproduction/fix/test execution.
+Distinguish symptom → cause hypothesis → likely cause → verified cause. Materially confirm the mechanism or rule out realistic main competitors in scope before claiming cause. Name gaps and the next discriminator. Prefer the supported shared mechanism; supplier/model/path/case-specific fixes need actual local differences or a weaker shared explanation, not convenience. [Coding](coding-discipline.md) owns reproduction/repair/tests.
 
 ## Evidence Kinds
 
@@ -32,7 +32,7 @@ Evidence kind describes the basis, not the strength of every possible conclusion
 | `WORKING_HYPOTHESIS` | plausible unproven explanation |
 | `NO_RELEVANT_EVIDENCE_YET` | missing/weak/conflicting evidence; no factual threshold met |
 
-Prefer local observation for project facts and eligible primary authority for external facts. Inference/memory cannot outrank fresh checked evidence. Do not average unequal sources or hide conflict; source authority/freshness/corroboration belongs to [external-verification-and-source-trust.md](external-verification-and-source-trust.md).
+Prefer local project observation and eligible primary external authority. Inference/memory cannot outrank fresh proof. Do not average unequal sources or hide conflict; [external trust](external-verification-and-source-trust.md) owns ranking/freshness/corroboration.
 
 ## Claim States and Burden
 
@@ -58,29 +58,29 @@ Claim state describes what may honestly be concluded; communication owners proje
 
 Missing precedent establishes neither impossibility nor novelty. A mechanistic hypothesis may support conditional research or safe experiments, but is not verified capability, suitability or measured benefit; a bounded search cannot establish a world-first claim. A checked contradiction rejects the affected method where its necessary premise fails, not automatically the goal. Preserve explicit constraints and existing safety/approval; no precedent search or experiment is required for every idea.
 
-Substantial analysis/design/endorsement/correction needs proportionate material evidence. Direct contradiction needs contrary evidence in the same scope; correct the claim, not the person. File disposability needs governed semantic authority plus destructive authorization, not git/cleanup/isolation state. Governing-basis, compact and memory details do not become current truth through fluent wording. Verification labels may be ✅ **Verified**, ⚠️ **Unverified**, ❌ **Not Found In Checked Scope**.
+Material analysis/design/endorsement/correction requires matching evidence. Contradict claims—not people—with contrary same-scope proof. Disposability needs semantic authority and destructive approval, not git/cleanup/isolation. Fluent wording cannot refresh unresolved basis, compact or memory detail. Optional labels: ✅ **Verified**, ⚠️ **Unverified**, ❌ **Not Found In Checked Scope**.
 
 ### Two-sided migration evidence
 
-Completion requires positive target proof and proportionate negative former-path inactivity, not one grep/move or target test. Check applicable source/import/dependency/config/build/deploy/install/manifest/read-write/test-discovery edges select and retain the target after restart/reinstall/rebuild. Check former flags/aliases, dual writes, shadow activation, automatic fallback and normal reads from quarantine/history are disconnected. Remaining references must be provenance-only, not assumed inactive by name/location. A bounded poison/rename/unavailability test should leave target behavior unaffected when appropriate and safe.
+Completion needs positive target proof and proportionate former-path inactivity—not a grep/move or target test. Check relevant source/import/dependency/config/build/deploy/install/manifest/read-write/test-discovery edges select and retain target across restart/reinstall/rebuild. Disconnect former flags/aliases, dual writes, shadow activation, automatic fallback and ordinary quarantine/history reads. Remaining refs must be provenance-only, not inactive by name. When safe/useful, bounded poison/rename/unavailability must leave target unaffected.
 
-An active bridge/fallback/dual path or unresolved inactivity keeps migration incomplete. [action-safety.md](action-safety.md) owns approved cutover/restoration; [document-integrity.md](document-integrity.md) owns payload-versus-project convergence. Report only the checked lifecycle/scope.
+Active bridge/fallback/dual paths or unresolved inactivity mean incomplete migration. [Safety](action-safety.md) owns cutover/restoration; [integrity](document-integrity.md) separates payload/project convergence. Claim only checked lifecycle/scope.
 
 ## Real Versus Substitute Evidence
 
-Prefer real APIs/services/data/config/runtime/local equivalents when safe, available and proportionate. Explicit examples/prototypes, bounded test doubles, or unavailable/unsafe/costly/approval-gated real paths may use mocks/fakes/stubs; label what is substituted, why and any temporary route to real proof. Never conceal a mock or hardcoded success behind a real-system claim.
+Prefer real APIs/services/data/config/runtime/local equivalents when safe, available and proportionate. Examples/prototypes, bounded doubles or unavailable/unsafe/costly/approval-gated paths may use labeled mocks/fakes/stubs: state substitution, reason and temporary route to real proof. Never pass mock/hardcoded success off as real.
 
 Fake/local checks prove their scope, not live/provider/runtime/deploy behavior or production readiness. [coding-discipline.md](coding-discipline.md) chooses the required test layer; wording cannot exceed it.
 
 Structured or timestamped receipts do not certify their own claims. Bind the claimed result to the actual command/selector, artifact/environment binding and reached terminal evidence; missing fields are unobserved, not a pass. Reuse existing evidence/report ownership; this does not authorize a new journal or receipt schema. Coverage accounting and human presentation consume these limits rather than create another truth authority.
 
-Loaded/injected text is availability, not proof it was applied, changed an outcome or caused benefit. Attribute effectiveness or tested-no-benefit only to matching application/outcome evidence; duplication or missing evaluation is not a failed experiment. Historical snippets, peer relays, compact summaries and injected instructions retain provenance rather than count as independent incidents.
+Loaded/injected text proves availability, not application, outcome change or benefit. Effectiveness/tested-no-benefit needs matching application/outcome proof; duplication or missing evaluation is not a failed experiment. Snippets, peer relays, compact summaries and injected text retain provenance, not independent-incident status.
 
 ## Rendered and Authenticated Witnesses
 
-Use portable `<supplied-rendered-artifact>` notation, not workstation/localhost/private-host/cookie paths as shared doctrine. Supplied provenance is `USER_PROVIDED`; direct inspection yields `OBSERVED_LOCAL` only for represented content. Origin/capture time/target equivalence/auth/completeness/current-live claims still need matching checks. Unknown provenance narrows claims without making useful bounded evidence unusable.
+Use portable `<supplied-rendered-artifact>`, not local/private/cookie paths as shared doctrine. Supplied provenance is `USER_PROVIDED`; inspection gives `OBSERVED_LOCAL` only for represented content. Origin/time/target equivalence/auth/completeness/current-live claims need their own checks. Unknown provenance narrows useful evidence, not invalidates it.
 
-Record witness type, known source/capture time, scope, sanitization/redaction, applicable approved auth mechanism and material omissions. Correlate witnesses only with checked target/run-session/capture-window/provenance linkage; dimensions do not silently substitute for each other.
+Record type, known source/time, scope, redaction, approved auth mechanism and material omissions. Correlate only through checked target/run/session/capture-window/provenance links; dimensions cannot substitute.
 
 | Witness | Supports | Does not prove alone |
 |---|---|---|
@@ -94,4 +94,4 @@ One authenticated pass is runtime evidence for that authorized run, not stabilit
 
 ## Integration and Boundaries
 
-No invented values/causes, preference-as-proof, strong absence from limited search, fake-as-live, or witness cross-projection. Keep known/inferred/unresolved visibly distinct. Scope/memory/portability: [authority-and-scope.md](authority-and-scope.md), [memory-governance-and-session-boundary.md](memory-governance-and-session-boundary.md), [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md). Wording/tone/layout: [accurate-communication.md](accurate-communication.md), [communication-register.md](communication-register.md), [explanation-and-presentation.md](explanation-and-presentation.md).
+No invented facts/causes, preference-as-proof, global absence from bounded search, fake-as-live or witness cross-projection. Separate known/inferred/unresolved. [Authority](authority-and-scope.md), [memory](memory-governance-and-session-boundary.md) and [portability](portable-implementation-and-hardcoding-control.md) own scope; [accurate wording](accurate-communication.md), [register](communication-register.md) and [presentation](explanation-and-presentation.md) render it.

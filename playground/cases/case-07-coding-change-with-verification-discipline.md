@@ -42,6 +42,16 @@ The family is grounded because current coding and evidence owners explicitly def
 
 ## Virtual variant
 
+### Storage lifetime variants
+
+Declared synthetic inputs, not filesystem operations or observed losses:
+- A reusable diagnostic tool belongs in the fitting canonical source/tool owner, not a parallel temporary runner.
+- A run-bound approval manifest must survive a multi-day pause and cannot be recreated without approval. Erased-on-rebuild sandbox/container storage is unsuitable; project `.tmp/` with unknown cleanup is not assumed durable. Use private retained owner-controlled storage for the required lifetime and define recovery/retirement.
+- Re-creatable one-off probe output with no approval/resume role may use bounded temporary storage. No blanket temporary-path ban or automatic permanent framework.
+- Missing approved evidence is only a scoped nonfinding; existing config does not recreate approval, authorize a replacement baseline or justify reset/deletion.
+
+Choose by role/lifetime/dependencies/recovery/loss/sensitivity/cleanup semantics, not directory name.
+
 - A code change compiles but no tests have been run.
 - A refactor changes structure only and needs regression coverage.
 - A local fake passes, but live/provider behavior is still unverified.

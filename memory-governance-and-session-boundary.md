@@ -1,16 +1,16 @@
 # Memory Governance and Session Boundary
-> **Current Version:** 2.0
-> **Design:** [design/memory-governance-and-session-boundary.design.md](design/memory-governance-and-session-boundary.design.md) v2.0
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 2.1
+> **Design:** [design/memory-governance-and-session-boundary.design.md](design/memory-governance-and-session-boundary.design.md) v2.1
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [changelog/memory-governance-and-session-boundary.changelog.md](changelog/memory-governance-and-session-boundary.changelog.md)
 
 ## Rule Statement
 
-**Core Principle: Memory is relevant scoped context, not active authority. Keep `MEMORY.md` compact and meaning-visible; apply path specificity/relevance/freshness before session provenance, and preserve history without pruning useful memory for size alone.**
+**Core Principle: Memory is scoped context, not active authority. Keep `MEMORY.md` compact and meaning-visible; apply path specificity/relevance/freshness before session provenance, preserving useful history rather than pruning for size.**
 
 ## Applicability and Lifecycle
 
-Memory never outranks live direction, current checked project evidence or a user-selected RULES fix. Session IDs are provenance/audit only; same/recent session cannot bypass scope/staleness. `SCOPE.md` declares canonical path meaning; folder names locate files, not authority.
+Memory cannot outrank live direction, checked project evidence or a selected RULES fix. Session IDs are provenance/audit, not scope/freshness exceptions. `SCOPE.md` declares canonical path meaning; folder names locate, not authorize.
 
 | Path relation | Applicability, subject to relevance/freshness |
 |---|---|
@@ -20,13 +20,13 @@ Memory never outranks live direction, current checked project evidence or a user
 | sibling | does not apply |
 | broad and specific match | specific scope wins |
 
-Even path-matched memory is not verified current truth. Recheck material exact values/symbols/state, especially stale/archived context. Keep `active`, `stale`, `archived`, `superseded` distinct; stale/superseded cannot look active. `global/` is broadly reusable, `path/` canonical scoped, `archive/` inactive historical/non-default. Archive leaves the active root index and is used only for explicit restoration/audit/recovery, never silently current.
+Path match is not current truth. Recheck material values/symbols/state, especially stale/archive context. Distinguish `active`, `stale`, `archived`, `superseded`; the latter three cannot look active. `global/` is broadly reusable, `path/` canonical scoped, `archive/` inactive/non-default. Remove archived entries from the active index; use them only for explicit restoration/audit/recovery, not silent current context.
 
-Optional memsearch/recall may supplement continuity after stronger design/phase/tasks/TODO/checked implementation identifies the target. Check availability; fall back immediately to native memory plus checked surfaces when absent/insufficient. Recall is neither required infrastructure nor semantic truth.
+Optional recall/memsearch supplements stronger design/phase/tasks/TODO/implementation after they identify the target. If absent/insufficient, immediately use native memory plus checked surfaces. Recall is neither required infrastructure nor truth.
 
 ## Meaning-visible Root Index
 
-`MEMORY.md` is the active entrypoint: one concise meaning hook per active useful file, not long bodies or an opaque link-only second-layer router. Group `GLOBAL` and `PATH_SCOPE:<canonical-path>` or equivalent. For repeated long scoped paths declare `Scope` once (applicability) and `Memory base` once (relative file location); list real subfolders/entries beneath:
+`MEMORY.md` gives one concise meaning hook per useful active file, not long bodies or an opaque second index. Group `GLOBAL` and `PATH_SCOPE:<canonical-path>` or equivalent. Declare repeated `Scope` (applicability) and `Memory base` (relative location) once:
 
 ```text
 ## PATH_SCOPE: <short scope name>
@@ -42,12 +42,12 @@ Entries below are relative to Memory base.
 - `project_example.md` — <one-line active hook>
 ```
 
-Use inline relative paths under the declared base, or genuine fully resolvable links from `MEMORY.md`. No fake `path = path` aliases or repeated full manifests. Group `Root`, `feedback/`, `project/`, `reference/` or actual subfolders when helpful. Do not hide all active meaning in `SCOPE.md`, another index or a folder pointer.
+Use inline paths relative to that base or genuinely resolvable links from `MEMORY.md`; no fake `path = path` aliases or repeated manifests. Group real subfolders when useful. Do not hide all meaning in `SCOPE.md`, another index or a folder pointer.
 
-Loader size/truncation/entry warnings trigger maintenance: compact repeated paths first, shorten hooks without losing meaning, move long bodies to topic files; classify genuinely stale inactive material for reachable history. Never delete/archive/hide active useful memory merely to shrink the root. [document-integrity.md](document-integrity.md) owns preservation/no-delete and [safe-io.md](safe-io.md) bounded intake.
+Loader size/truncation/entry warnings trigger maintenance: compact repeated paths, shorten hooks without losing meaning, move bodies to topic files, and classify genuinely stale material into reachable history. Never delete/archive/hide useful active memory just to shrink. [Integrity](document-integrity.md) owns preservation; [I/O](safe-io.md) bounds intake.
 
 ## Write Gate and Target Shape
 
-Write only durable reusable user/feedback/project/reference context, not transient task/status residue or facts derivable from code/docs/git. Check relevant existing memory before adding duplicates. RULES-owned issues are fixed in RULES, not substituted with memory. Memory recall and wording stay under [authority-and-scope.md](authority-and-scope.md), [evidence-discipline.md](evidence-discipline.md) and [accurate-communication.md](accurate-communication.md).
+Save durable reusable user/feedback/project/reference context, not task residue or code/docs/git-derived facts. Check existing entries before duplication. Fix RULES-owned issues in RULES, not memory. [Authority](authority-and-scope.md), [evidence](evidence-discipline.md) and [wording](accurate-communication.md) govern recall/use.
 
-Target layout: `/memory/MEMORY.md`, `global/`, `path/<readable-scope-folder>/SCOPE.md` with `feedback/`, `project/`, `reference/`, and inactive `archive/`. This contract does not require migrating/pruning the live tree in the current wave; real mutations need their selected scope and preservation gate. [document-governance.md](document-governance.md) retains repository document roles, not memory as another project authority.
+Target: `/memory/MEMORY.md`, `global/`, `path/<readable-scope-folder>/SCOPE.md` with `feedback/`, `project/`, `reference/`, and inactive `archive/`. This does not select live-tree migration/pruning; mutation needs scope/preservation approval. [Document governance](document-governance.md) owns repository roles; memory is not another project authority.

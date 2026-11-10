@@ -1,14 +1,15 @@
 # Changelog - Communication Register
 
 > **Parent Document:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.29
-> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
+> **Current Version:** 1.30
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.30 | 2026-11-11 | **[Compacted wording within the existing owner](#version-130)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.29 | 2026-10-15 | **[Separated user replies from peer coordination and idle ACK echoes](#version-129)** | b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 |
 | 1.28 | 2026-09-30 | **[Prioritized ordinary-language action and outcome reporting](#version-128)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.27 | 2026-09-30 | **[Consolidated natural register and explicit retraction](#version-127)** | adda8afb-6edf-466b-add9-b9649b718e01 |
@@ -43,6 +44,15 @@
 | | | Summary: Created `communication-register.md` as a body-sufficient merged runtime owner for natural professional tone, signal discipline, and evidence-calibrated agreement or dissent in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-130"></a>
+## Version 1.30: Compacted wording within the existing owner
+
+**Date:** 2026-11-11
+**Session:** 08244912-a195-4926-84e6-8c202c667ba5
+
+- Shortened prose and owner handoffs while retaining triggers, actions, force, exceptions, approval, recovery and proof boundaries.
+- Coordinated Main19 source change; [P073-24](../phase/phase-073-24-runtime-clarity-lifecycle-compaction.md) owns semantic/source/install/publication proof and limits. No model-effect or stability claim follows from wording or static checks.
 
 <a id="version-129"></a>
 ## Version 1.29: Recipient clarity and useful peer results

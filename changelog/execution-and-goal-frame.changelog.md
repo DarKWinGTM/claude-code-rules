@@ -1,8 +1,8 @@
 # Changelog - Execution and Goal Frame
 
 > **Parent Document:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.39
-> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+> **Current Version:** 1.40
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.40 | 2026-11-11 | **[Clarified lifecycle and operational reporting](#version-140)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.39 | 2026-10-27 | **[Connected pivotal mechanism checks to intended outcomes without blocking exploration](#version-139)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
 | 1.38 | 2026-10-16 | **[Refined work-preserving settled synthesis instead of progress-driven sync](#version-138)** | 4a8d9ac0-ecf9-40c4-961e-634583157b6c |
 | 1.37 | 2026-10-16 | **[Clarified supported interim docs sync without implementation interruption](#version-137)** | 4a8d9ac0-ecf9-40c4-961e-634583157b6c |
@@ -55,6 +56,15 @@
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-140"></a>
+## Version 1.40: Clarified lifecycle and operational reporting
+
+**Date:** 2026-11-11
+**Session:** 08244912-a195-4926-84e6-8c202c667ba5
+
+- Reconcile selected obligations, current evidence and remaining work at start/resume, correction/failure/scope change and before material status/closeout. Keep unaffected passed proof; reuse existing continuation records. This is not a per-command checklist, new task/reviewer mandate or permission to rerun unchanged proof.
+- Coordinated Main19 source change; [P073-24](../phase/phase-073-24-runtime-clarity-lifecycle-compaction.md) owns semantic/source/install/publication proof and limits. No model-effect or stability claim follows from wording or static checks.
 
 <a id="version-139"></a>
 ## Version 1.39: Mechanism-backed design feasibility

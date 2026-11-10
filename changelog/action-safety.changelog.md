@@ -1,14 +1,15 @@
 # Changelog - Action Safety
 
 > **Parent Document:** [../action-safety.md](../action-safety.md)
-> **Current Version:** 1.8
-> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+> **Current Version:** 1.9
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.9 | 2026-11-11 | **[Compacted wording within the existing owner](#version-19)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.8 | 2026-10-21 | **[Reconciled unknown consequential outcomes before replay](#version-18)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
 | 1.7 | 2026-09-30 | **[Compacted canonical action and retry gates](#version-17)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.6 | 2026-08-11 | **[Added design-conformance architecture delta preflight](#version-16)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
@@ -21,6 +22,15 @@
 | | | Summary: Created `action-safety.md` as a body-sufficient merged runtime owner for destructive/high-impact action safety, runtime topology control, emergency posture, and operational failure handling in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-19"></a>
+## Version 1.9: Compacted wording within the existing owner
+
+**Date:** 2026-11-11
+**Session:** 08244912-a195-4926-84e6-8c202c667ba5
+
+- Shortened prose and owner handoffs while retaining triggers, actions, force, exceptions, approval, recovery and proof boundaries.
+- Coordinated Main19 source change; [P073-24](../phase/phase-073-24-runtime-clarity-lifecycle-compaction.md) owns semantic/source/install/publication proof and limits. No model-effect or stability claim follows from wording or static checks.
 
 <a id="version-18"></a>
 ## Version 1.8: Reconciled unknown consequential outcomes before replay

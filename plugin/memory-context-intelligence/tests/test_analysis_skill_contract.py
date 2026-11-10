@@ -329,6 +329,25 @@ class AnalysisSkillContractTests(unittest.TestCase):
             with self.subTest(clause=clause):
                 self.assertIn(clause, text)
 
+    def test_existing_rule_enrichment_requires_an_incremental_contribution(self) -> None:
+        text = RUNTIME_ANALYSIS.read_text(encoding="utf-8")
+        for clause in (
+            "Active RULES incremental contribution",
+            "pure duplicate",
+            "violation alone",
+            "ambiguous wording",
+            "missing operational procedure",
+            "trace-supported residual delta",
+            "absorb into the existing owner",
+            "covered behavior, specific gap, proposed improvement",
+        ):
+            with self.subTest(clause=clause):
+                self.assertIn(clause, text)
+        self.assertNotIn("If the active owner already covers the principle, suppress the candidate.", text)
+        self.assertNotIn("A trace that appears to violate an existing rule is still suppressed", text)
+        self.assertIn("output may contain zero topics", text)
+        self.assertIn("possible material match that cannot be settled remains fail-closed", text)
+
     def test_local_semantic_discovery_precedes_generated_seeds_even_without_workers(self) -> None:
         text = RUNTIME_ANALYSIS.read_text(encoding="utf-8")
         required = (
@@ -362,7 +381,7 @@ class AnalysisSkillContractTests(unittest.TestCase):
         self.assertIn("same checked proof layer", text)
         self.assertIn("Phase075 completion proves the eligibility infrastructure", text)
         self.assertIn("not that every later candidate was fixed", text)
-        self.assertIn("a genuinely distinct residual delta still needs trace support and active-RULES novelty", text)
+        self.assertIn("a genuinely distinct residual delta still needs trace support and an active-RULES incremental-contribution check", text)
         self.assertIn("possible material match that cannot be settled remains fail-closed", text)
 
     def test_analysis_skill_requires_parallel_viewpoint_discovery_before_eligibility_gate(self) -> None:
@@ -404,7 +423,7 @@ class AnalysisSkillContractTests(unittest.TestCase):
             "If sensitive details cannot be removed without losing the trace claim's meaning, omit that excerpt from the worker packet",
             "Each worker may return zero candidates",
             "before any deepening or presentation",
-            "Suppress unsupported, covered, completed, duplicate, or materially unresolved candidates",
+            "Suppress unsupported, covered-without-incremental-contribution, completed, duplicate, or materially unresolved candidates",
         )
         for clause in required_contract:
             with self.subTest(clause=clause):
@@ -431,13 +450,17 @@ class AnalysisSkillContractTests(unittest.TestCase):
         self.assertIn("bounded window", text)
         self.assertIn("does not show that no topic exists in the rest of history", text)
 
-    def test_analysis_skill_suppresses_covered_completed_and_unverifiable_topics(self) -> None:
+    def test_analysis_skill_suppresses_duplicates_completed_and_unverifiable_topics(self) -> None:
         text = RUNTIME_ANALYSIS.read_text(encoding="utf-8")
-        self.assertIn("If the active owner already covers the principle, suppress the candidate", text)
-        self.assertIn("If the same behavior or outcome is already recorded as delivered, suppress it", text)
-        self.assertIn("A trace that appears to violate an existing rule is still suppressed", text)
-        self.assertIn("relevant active RULES or completion state cannot be checked", text)
-        self.assertIn("Candidate-set deduplication", text)
+        for clause in (
+            "Suppress a pure duplicate with no incremental contribution",
+            "Suppress the same delivered behavior/outcome, not a title match",
+            "A violation alone does not establish a guidance gap",
+            "relevant active RULES or completion state cannot be checked",
+            "Candidate-set deduplication",
+        ):
+            with self.subTest(clause=clause):
+                self.assertTrue(clause in text, f"Missing suppression boundary: {clause}")
 
     def test_analysis_skill_checks_topic_eligibility_before_adaptive_deepening(self) -> None:
         text = RUNTIME_ANALYSIS.read_text(encoding="utf-8")

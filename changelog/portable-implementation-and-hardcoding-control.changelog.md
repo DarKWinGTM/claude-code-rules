@@ -1,8 +1,8 @@
 # Changelog - Portable Implementation and Hardcoding Control
 
 > **Parent Document:** [../portable-implementation-and-hardcoding-control.md](../portable-implementation-and-hardcoding-control.md)
-> **Current Version:** 1.6
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 1.7
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.7 | 2026-11-11 | **[Compacted wording within the existing owner](#version-17)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.6 | 2026-09-30 | **[Aligned current owner references after compaction](#version-16)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.5 | 2026-09-30 | **[Consolidated portable representation and local exceptions](#version-15)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.4 | 2026-08-09 | **[Compacted portability integration handoffs](#version-14)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -21,6 +22,15 @@
 | | | Summary: Created a new design/runtime/changelog triad that governs portable implementation defaults, late-bound environment resolution, scoped local observations, and anti-hardcoding discipline for shared artifacts | |
 
 ---
+
+<a id="version-17"></a>
+## Version 1.7: Compacted wording within the existing owner
+
+**Date:** 2026-11-11
+**Session:** 08244912-a195-4926-84e6-8c202c667ba5
+
+- Shortened prose and owner handoffs while retaining triggers, actions, force, exceptions, approval, recovery and proof boundaries.
+- Coordinated Main19 source change; [P073-24](../phase/phase-073-24-runtime-clarity-lifecycle-compaction.md) owns semantic/source/install/publication proof and limits. No model-effect or stability claim follows from wording or static checks.
 
 <a id="version-16"></a>
 ## Version 1.6: Aligned current owner references after compaction

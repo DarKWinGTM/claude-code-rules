@@ -1,14 +1,15 @@
 # Changelog - Evidence Discipline
 
 > **Parent Document:** [../evidence-discipline.md](../evidence-discipline.md)
-> **Current Version:** 1.11
-> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+> **Current Version:** 1.12
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.12 | 2026-11-11 | **[Compacted wording within the existing owner](#version-112)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.11 | 2026-10-27 | **[Distinguished missing precedent from impossibility and novelty](#version-111)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
 | 1.10 | 2026-10-25 | **[Added decisive assumptions and bound structured witnesses](#version-110)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
 | 1.9 | 2026-09-30 | **[Compacted evidence thresholds and utility boundaries](#version-19)** | adda8afb-6edf-466b-add9-b9649b718e01 |
@@ -25,6 +26,15 @@
 | | | Summary: Created `evidence-discipline.md` as a body-sufficient merged runtime owner for verify-first factual discipline, burden-of-proof boundaries, scoped non-findings, and real-vs-mock behavior in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-112"></a>
+## Version 1.12: Compacted wording within the existing owner
+
+**Date:** 2026-11-11
+**Session:** 08244912-a195-4926-84e6-8c202c667ba5
+
+- Shortened prose and owner handoffs while retaining triggers, actions, force, exceptions, approval, recovery and proof boundaries.
+- Coordinated Main19 source change; [P073-24](../phase/phase-073-24-runtime-clarity-lifecycle-compaction.md) owns semantic/source/install/publication proof and limits. No model-effect or stability claim follows from wording or static checks.
 
 <a id="version-111"></a>
 ## Version 1.11: Missing precedent and conditional feasibility

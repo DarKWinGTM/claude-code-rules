@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-11-10
+> **Last Updated:** 2026-11-11
 > **Current Release:** v10.79 published; six-Skill source, unchanged Main19 installation and fresh-public identity/payload verified-in-scope
-> **Active Wave:** none opened after P152/v10.79; personal Skill deployment remains unselected
+> **Active Wave:** P073-24 Mainv10.80 + MCI075-01 package0.9.43/governed0.1.91; source checks passed, selected install/publication pending
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,9 +10,11 @@
 
 ## Active / In Progress
 
-No active RULES release wave remains; P152/v10.79 passed its selected source/install/publication gate. Personal Skill deployment is not selected.
+- [ ] **[P073-24](phase/phase-073-24-runtime-clarity-lifecycle-compaction.md):** Main19 operational clarity/lifecycle/compaction and selected Mainv10.80 install/publication; Node56/56, native Linux fixtures, semantic review and selected preservation passed; synthetic feedback/baseline limits are recorded in the child. Installation/publication remains pending.
+- [ ] **[MCI075-01](plugin/memory-context-intelligence/phase/phase-075-01-incremental-rule-enrichment.md):** supported incremental enrichment at the existing owner; Skill35/35, package212/212, final manifest/validator and bounded synthetic acceptance passed; no causal improvement claim. Installation/publication remains pending.
+- [ ] Reconcile actual Main/MCI receipts and push docs-only follow-up without retagging after both required gates pass. Personal Skill deployment remains unselected.
 
-No active MCI corrective work remains at the selected source/document gate. P073-18 Main remains verified and closed. Earlier settings evidence and the prior internal-agent restriction violation remain separately unresolved; this source correction does not authorize restoration or model validation.
+Earlier MCI corrective source gates remain closed; the selected enrichment work above is a distinct child. P073-18 Main remains verified and closed. Earlier settings evidence and the prior internal-agent restriction violation remain separately unresolved; this source correction does not authorize restoration or model validation.
 
 ## Recently Completed
 
