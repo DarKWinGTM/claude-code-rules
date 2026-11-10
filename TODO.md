@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-11-10
-> **Current Release:** v10.77 published baseline; v10.78 source/install verified, publication pending
-> **Active Wave:** P073-23/v10.78 complexity and test-evidence admission in Coding1.11; explicit Main19 installation and scoped release selected. P073-22/v10.77 and earlier slices stay closed; no plugin/config change
+> **Current Release:** v10.78 published; source, actual Main19 and fresh-public payload/isolated installation verified-in-scope
+> **Active Wave:** P073-23/v10.78 source/install/publication gates complete; receipt reconciled below. Earlier slices stay closed; no plugin/config change or successor selected
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,11 +10,13 @@
 
 ## Active / In Progress
 
-- [ ] **P073-23 / v10.78:** [Complexity and test-evidence admission](phase/phase-073-23-complexity-and-test-evidence-admission.md). Coding1.11 source clauses, Node54/54, native Linux installer fixtures, bounded semantic review, preservation/references and actual Main19 parity passed; finish final source docs, scoped non-force push/tag/Release and fresh-public proof. Reuse existing owners; no new Rule, runner, hook, resource policy or unrelated plugin work. [History](changelog/changelog/v10.78-complexity-and-test-evidence-admission.changelog.md).
+No new Main Runtime wave or successor is selected.
 
 No active MCI corrective work remains at the selected source/document gate. P073-18 Main remains verified and closed. Earlier settings evidence and the prior internal-agent restriction violation remain separately unresolved; this source correction does not authorize restoration or model validation.
 
 ## Recently Completed
+
+- [x] **P073-23 / v10.78 complexity and test-evidence admission:** Coding1.11 adds simpler-complete-alternative/carrying-cost and material-test-evidence criteria in existing owners. Two written-clause REDs then Node54/54, native Linux fixtures, bounded semantic review, source preservation/references and actual Main19 parity passed; other18 Rules/protected6 files are unchanged, with no new quarantine. Exact13-file source commit `59ae04bfb6627cbf4d796ff0140b83c017bfc1c7`, immutable annotated `v10.78`, atomic non-force `origin/master` publication and [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.78) are verified. Fresh-public bytes/Git modes match33 selected paths and one isolated Main19 installation passed through the trusted installer. Tasks1/2 handed evidence to finalizer3; later receipts do not retag or change Runtime semantics. Unrelated dirty/plugin/support/diagram state stays preserved and unpublished. No causal AI benefit, active-session reload or successor claimed. [Phase](phase/phase-073-23-complexity-and-test-evidence-admission.md), [history](changelog/changelog/v10.78-complexity-and-test-evidence-admission.changelog.md).
 
 - [x] **P073-22 / v10.77 mechanism-backed design feasibility:** Execution1.39/Evidence1.11 source/guidance, actual root Main19, scoped push/immutable tag/[Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.77) and fresh-public selected payload/isolated installation are verified at source commit `32dc030ddc09fad4f20df6506a68b256764450be`. Separate managed user-Skill native admission/landing now also passed; final parent/research match the selected draft,125 unrelated files and129 original modes are preserved. An update plus one corrective transcription patch is recorded, not a single-intent claim. Main withdrew its overstrict absolute queue-exclusivity blocker after the user's correction; current preflight found no conflicting intent or sweep candidate, not a global concurrency guarantee. Tasks1–3 handed evidence to finalizer4; this receipt reconciles the completed technical gates without moving the tag or rerunning passed work. [Phase](phase/phase-073-22-mechanism-backed-design-feasibility.md), [history](changelog/changelog/v10.77-mechanism-backed-design-feasibility.changelog.md), [Patch](patch/2026-10-26T20-02-55Z--mechanism-backed-design-feasibility.patch.md). Unrelated dirty/plugin/support/diagram state remains protected; no causal AI benefit or successor claimed.
 

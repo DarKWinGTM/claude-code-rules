@@ -25,7 +25,7 @@
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Rules installed</b><br><sub>Publication pending</sub>
+  <b>Rules released</b><br><sub>Installed · public tag verified</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current source:** `v10.78 / P073-23` adds practical criteria for unnecessary implementation and test complexity in Coding1.11. Compare an addition with a simpler complete alternative and its carrying cost; expand tests for a material evidence gap or distinct fault. Required safeguards and useful test layers stay intact. Node54/54 and native Linux installer fixtures passed; actual Main19 installation matches source bytes/modes and its ownership manifest. Publication remains pending. The [phase](phase/phase-073-23-complexity-and-test-evidence-admission.md) records proof and limits. Main Runtime membership stays nineteen; no model-behavior improvement or active-session reload is claimed.
+> **Current source:** [`v10.78 / P073-23`](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.78) adds practical criteria for unnecessary implementation and test complexity in Coding1.11. Compare an addition with a simpler complete alternative and its carrying cost; expand tests for a material evidence gap or distinct fault. Required safeguards and useful test layers stay intact. Node54/54, native Linux installer fixtures, actual Main19 parity and fresh-public payload/isolated installation passed in scope. The [phase](phase/phase-073-23-complexity-and-test-evidence-admission.md) records proof and limits. Main Runtime membership stays nineteen; no model-behavior improvement or active-session reload is claimed.
 
 <!-- CTA Buttons -->
 <p>
@@ -307,14 +307,15 @@ These capabilities summarize the current operating model at the front-page level
 
 </div>
 
-**Current source state: `v10.78 / P073-23`, source/install verified; publication pending**
+**Current source state: `v10.78 / P073-23`, source/install/publication verified**
 
 Coding1.11 adds two criteria in existing sections: compare supported benefit against a simpler complete alternative and its carrying cost; identify material evidence gaps before adding tests, fixtures or runners. Passing tests does not establish architectural necessity. Required safeguards, hard-to-reverse contract analysis and distinct-fault test layers remain intact.
 
 - Two focused written-contract checks failed before the new clauses; the completed Node run passed54/54. Bash and PowerShell installer fixtures passed on Linux.
 - Six virtual Case07 variants clarify the boundaries; they were not executed against an AI model and do not measure maintenance savings.
 - Actual Main19 installation matches canonical source bytes, modes, substantive bodies and the ordered ownership manifest. The other18 Rules and all6 protected other-owner/global files are unchanged; no new quarantine was created.
-- Scoped publication and fresh-public checks are pending. No new Runtime Rule, scorecard, worksheet, runner, hook, plugin or CPU/RAM policy is introduced.
+- Scoped source commit `59ae04bfb6627cbf4d796ff0140b83c017bfc1c7`, immutable annotated `v10.78` and the non-draft/non-prerelease [GitHub Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.78) are verified. Fresh-public proof matches all13 changed paths plus the remaining Runtime payload and installer pair (33 paths total), including Git modes, then verifies one empty-target Main19 installation through the trusted canonical installer.
+- Later receipt-only documentation leaves the tag and Runtime/install semantics unchanged. No new Runtime Rule, scorecard, worksheet, runner, hook, plugin or CPU/RAM policy is introduced.
 
 [P073-23](phase/phase-073-23-complexity-and-test-evidence-admission.md) and [history](changelog/changelog/v10.78-complexity-and-test-evidence-admission.changelog.md) own the scoped evidence and publication state.
 
@@ -1169,12 +1170,12 @@ Result: ✅ Verified from actual files
   - The Quick Start block installs the compact, source-owned set of 19 active Runtime Rules.
   - Cleanup is owner-aware, not based on filenames alone.
 
-- **Released Main Runtime — v10.77:**
-  - Execution1.39 and Evidence1.11 enrich existing owners; membership remains nineteen and the other seventeen Runtime bodies/modes are unchanged.
-  - Written-contract **20/20** is included in Node **52/52**; Bash and PowerShell installer fixtures pass on Linux, not a Windows OS run.
-  - Full source-bound interpretation supports the selected textual cases; actual root Main19 bytes/modes/body/ordered-manifest parity and protected-file preservation pass with no new quarantine.
-  - Immutable tag/source identity, the [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.77), fresh-public selected payload/Git modes and one isolated Main19 installation are verified in the [phase](phase/phase-073-22-mechanism-backed-design-feasibility.md).
-  - Separate managed user-Skill native admission/landing is verified, with exact selected bytes and preserved unrelated subfiles/modes; it is not bundled release payload. [v10.76](changelog/changelog/v10.76-owner-aligned-workflow-enrichment.changelog.md) remains preserved historical evidence. Synthetic/source checks and managed landing establish neither historical-project fixes, causal model benefit nor session reload.
+- **Released Main Runtime, v10.78:**
+  - Coding1.11 adds simpler-complete-alternative and material-test-evidence criteria; membership remains nineteen and the other eighteen Runtime bodies/modes are unchanged.
+  - Written-contract **22/22** is included in Node **54/54**; Bash and PowerShell installer fixtures passed on Linux, not a Windows OS run.
+  - Actual Main19 bytes/modes/bodies/ordered manifest and protected-file preservation passed with no new quarantine. Six authored virtual Case07 variants and one bounded semantic review do not establish model compliance or benefit.
+  - Immutable tag/source identity, the [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.78), fresh-public33-path payload/Git modes and one isolated Main19 installation are verified in the [phase](phase/phase-073-23-complexity-and-test-evidence-admission.md).
+  - No managed user-Skill change is part of this wave. [v10.77](changelog/changelog/v10.77-mechanism-backed-design-feasibility.changelog.md) retains its separate prior Skill evidence. Later receipt-only docs leave the tag unchanged; no active-session reload or whole-project convergence is claimed.
 
 - **Ownership guard:**
   - Unchanged obsolete manifest-owned files and exact repository-matching retired candidates move to external quarantine.
@@ -1306,8 +1307,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.77 |
-  <b>Last Updated</b>: 2026-10-27 |
+  <b>Version</b>: 10.78 |
+  <b>Last Updated</b>: 2026-11-10 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

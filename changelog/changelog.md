@@ -1,9 +1,9 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.78 (source/install verified; publication pending)
+> **Current Version:** 10.78 (source/install/publication and fresh-public proof verified)
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5
-> **Latest Published Version:** 10.77
+> **Latest Published Version:** 10.78
 > **Version Shards:** [changelog/](changelog/)
 > **Legacy Archive:** [done/master-legacy-v6.3-v9.59.changelog.md](done/master-legacy-v6.3-v9.59.changelog.md)
 
@@ -13,7 +13,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 10.78 | 2026-11-10 | **[Complexity and test-evidence admission - source/install verified, publication pending](changelog/v10.78-complexity-and-test-evidence-admission.changelog.md#version-1078)** | 08244912-a195-4926-84e6-8c202c667ba5 |
+| 10.78 | 2026-11-10 | **[Released complexity and test-evidence admission - source/install/public-tag proof verified](changelog/v10.78-complexity-and-test-evidence-admission.changelog.md#version-1078)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 10.77 | 2026-10-27 | **[Released mechanism-backed design feasibility — Main source/root/public proof and separate managed Skill landing verified](changelog/v10.77-mechanism-backed-design-feasibility.changelog.md#version-1077)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
 | 10.76 | 2026-10-25 | **[Released owner-aligned workflow enrichment - source/install and public-tag proof verified](changelog/v10.76-owner-aligned-workflow-enrichment.changelog.md#version-1076)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
 | 10.75 | 2026-10-21 | **[Released operation outcome and bounded input — source/install and public-tag proof verified](changelog/v10.75-operation-outcome-and-bounded-input.changelog.md#version-1075)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |

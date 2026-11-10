@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 073-23
-> **Status:** source and actual Main19 installation verified; scoped publication and fresh-public proof pending
+> **Status:** complete in selected source/install/publication scope; fresh-public payload and isolated Main19 installation verified
 > **Target Version:** 10.78
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -34,9 +34,9 @@ Startup uses the existing Coding semantic single-file design/changelog chains, m
 - [x] Run written-contract/repository regressions and native installer fixtures.
 - [x] Resolve the one bounded independent semantic review and final source-preservation checks.
 - [x] Install the same Main19 from canonical source into the checked intended user Runtime target; verify payload, modes, bodies, manifest and other-owner preservation.
-- [ ] Reconcile affected README/master design/changelog/TODO/summary with actual evidence; commit only this wave.
-- [ ] Non-force push the scoped branch plus an immutable annotated tag; publish and read back the corresponding non-draft GitHub Release.
-- [ ] Verify fresh remote tag/commit, selected public payload and one isolated Main19 installation; record actual receipt without moving the release tag.
+- [x] Reconcile affected README/master design/changelog/TODO/summary with actual evidence; commit only this wave.
+- [x] Non-force push the scoped source commit to the checked existing default branch plus an immutable annotated tag; publish and read back the corresponding non-draft GitHub Release.
+- [x] Verify fresh remote tag/commit, selected public payload and one isolated Main19 installation; record actual receipt without moving the release tag.
 
 ## Development Verification / TestKit Coverage
 
@@ -50,7 +50,10 @@ Selected routes: `new_focused_test` in existing `script/test-runtime-safety.mjs`
 - Source preservation checked88 non-selected captured file fingerprints,140 unrelated Git-status rows and2 global files unchanged; all426 selected Markdown links resolve, including the aligned current Runtime inventory consumer and `git diff --check` exited0. Untracked directories remain status-only evidence, not recursively byte-certified.
 - Actual-target preflight found the same ordered Main19, only Coding changed, existing ownership manifest matches and no quarantine candidates. Two preflight-checker assumptions failed before mutation: a universal0644 mode and a universal `## Integration` heading. Both were corrected against valid incumbent modes/bodies; no Runtime repair was needed. Original19 bodies plus manifest were captured with exact bytes/modes outside discovery before installation.
 - `bash script/launcher.sh --project-root /home/node` exited0. Main19 installed bytes/modes/substantive bodies and ordered SHA256/Git-blob manifest match canonical source; the other18 Runtime owners,4 other-owner files and2 global files retain captured fingerprints. Runtime file names and external quarantine children are unchanged, with no new quarantine. This is installed-disk proof, not session reload.
-- Read-only publication preflight found public `DarKWinGTM/claude-code-rules`, default `master` at baseline `b05fcae38381d9fa84bd3717c7577c91487c412e`, and no existing `v10.78` tag/Release in checked scope. The current local branch has no upstream; Main selects the documented existing `HEAD:master` publication route, not a new remote branch. Final publication still requires fresh exact ancestry/tag checks, only the selected staged paths and atomic non-force push.
+- Read-only publication preflight found public `DarKWinGTM/claude-code-rules`, default `master` at baseline `b05fcae38381d9fa84bd3717c7577c91487c412e`, and no existing `v10.78` tag/Release in checked scope. The current local branch has no upstream; Main selects the documented existing `HEAD:master` publication route, not a new remote branch. Fresh exact ancestry/tag checks and the selected13-file staged set passed before the atomic non-force push.
+- Source commit `59ae04bfb6627cbf4d796ff0140b83c017bfc1c7` has baseline parent `b05fcae38381d9fa84bd3717c7577c91487c412e`. Immutable annotated `v10.78` tag object `592e05f9dac9c5c3028aa34d04a086f1f5f240f7` peels to that source commit; `origin/master` and the tag were atomically fast-forward/non-force published. The non-draft/non-prerelease [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.78), ID439822569, published at `2026-11-10T00:58:50Z`, was read back with exact notes. Source/install/tag proof remains distinct from the Release's `target_commitish: master` label.
+- A fresh empty bare fetch recovered that exact public tag/commit. Public bytes and Git modes matched all13 changed paths plus the remaining Runtime payload and trusted installer pair (33 paths,506861 bytes). One empty-target install from that payload through canonical `script/setup-claude-code-rules.sh` exited0; exact Main19 bodies/bytes/modes/ordered SHA256+Git-blob manifest passed with no quarantine. No downloaded script/interpreter code was executed and the public copy was verification only, not a development authority.
+- Tasks1/2 handed source/test/install/protection evidence to the same final task3 before closing. This later receipt reconciles the reached publication/public-proof gates; it does not move the immutable tag, reinstall Rules, rerun unchanged behavior or claim whole-project convergence. The tagged documents retain their truthful pre-publication snapshot.
 
 ## Preservation, Recovery and Limits
 
