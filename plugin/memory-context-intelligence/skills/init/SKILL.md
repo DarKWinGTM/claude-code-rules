@@ -1,7 +1,7 @@
 ---
 name: init
 description: Use when the operator wants to configure memory-context-intelligence through Claude Code question/choice dialogs and write the default user-scope config file.
-version: 0.9.40
+version: 0.9.41
 ---
 
 # Memory Context Intelligence Init

@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.88
+> **Current Version:** 0.1.89
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-10)
 > **Parent Design:** [design.md](design.md)
 
@@ -87,7 +87,7 @@ Preparation captures a finite endpoint (shard names, byte lengths, content diges
 
 Plain invocation stops after one acknowledged batch. Explicit `mode=catch-up` uses the same caller cycle and fixed run endpoint, never a Python preparation-only loop, new background entity or recursive Skill call. Continuation requires the preceding acknowledgement. Stop on failure/interruption/context limit; a later invocation resumes committed progress with a fresh endpoint. New/backdated appends beyond the original endpoint wait for that new invocation. `caught-up` is endpoint coverage, not corpus-wide absence of improvement topics. Freshness remains metadata; age alone does not reject intentional complete backlog evidence or reduce its historical signal confidence.
 
-Skill startup uses one `--startup` injection that reads no corpus/progress. The caller receives slash arguments through documented Skill text substitution and passes one safely quoted literal `--arguments` value before acquisition. This avoids assuming a shell-exported argument variable or interpolating user text into eager shell execution.
+Skill startup uses one `--startup` injection that reads no corpus/progress. Claude receives slash text through documented Skill substitution and first interprets it under [02](02-topic-list-and-choice-flow.design.md). Before acquisition, serialize only requested retrieval controls using the existing day/session/lookback/text/config/mode interfaces. Pass explicit `--arguments ""` when none are requested, retaining output instructions in caller context. Free text reaches the existing scope parser only for a genuine literal-filter request; direct internal CLI parsing remains unchanged. Shell-quote values as data, never evaluate substitutions or interpolate user text into eager execution. Unsupported/ambiguous constraints or a literal colliding with control syntax must be clarified rather than silently discarded or reinterpreted. This neither assumes a shell-exported argument variable nor adds a natural-language parser or second state owner.
 
 ### L1 — preferred scoped recall search
 Inside the selected slice, prefer memsearch `search → expand` retrieval when the runtime can resolve that path in checked scope.

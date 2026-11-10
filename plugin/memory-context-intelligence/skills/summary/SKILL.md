@@ -1,7 +1,7 @@
 ---
 name: summary
 description: Use after memory-context-intelligence analysis when the user wants transferable principles, strategies or a practical work pattern informed by external research, rather than Project-specific Rules or implementation.
-version: 0.9.40
+version: 0.9.41
 disable-model-invocation: true
 argument-hint: "[purpose, selected Topics, supplied analysis report, or no-web constraint]"
 ---

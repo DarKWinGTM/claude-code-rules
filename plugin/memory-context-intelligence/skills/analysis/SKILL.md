@@ -1,7 +1,7 @@
 ---
 name: analysis
 description: Use when the user wants analysis of real work evidence, anchored by memsearch-backed traces and optionally strengthened by durable memory or governance context, so Claude can propose RULES or workflow improvement topics in a proposal-first format.
-version: 0.9.40
+version: 0.9.41
 ---
 
 # Memory Context Intelligence Analysis
@@ -48,7 +48,21 @@ Deferred / non-public command ideas in this wave:
 
 User arguments: $ARGUMENTS
 
-Startup only locates the available project input and returns `awaiting-caller-scope`; it does not acquire evidence or create pending progress. When that status is present, use the returned `preparation_command` with explicit `--arguments` containing the user arguments above, shell-quoted as one literal argument by the caller (an empty string for a plain invocation). Treat that text as data: never evaluate substitutions, commands, or paths embedded in it. Do not rely on an exported `ARGUMENTS` environment variable or place user text into an executable injection fence. This caller-driven preparation is the only initial intake; `mode=catch-up` and explicit narrowing must be bound before reading. If this call fails or is unavailable, report the actual blocker without topics or completion.
+Startup only locates the available project input and returns `awaiting-caller-scope`; it does not acquire evidence or create pending progress. Interpret the request below before using its `preparation_command`. This caller-driven preparation is the only initial intake. If startup or preparation fails or is unavailable, report the actual blocker without topics or completion.
+
+## Interpret the user request before preparation
+
+`User arguments` are natural-language instructions to Claude, not a retrieval filter. Understand the whole sentence and conversation context, including Thai/English wording and ordinary typos; users need no special argument syntax. Claude owns this interpretation; Python receives existing retrieval controls, not a phrase whitelist or a new natural-language parser.
+
+1. Keep the desired topic count, language, detail and analysis depth in the caller's working context for discovery and presentation. A requested subject can guide semantic analysis without requiring that exact wording to appear in a trace. These instructions are not text-search terms.
+2. Identify only the requested evidence restrictions and execution mode. Translate supported natural-language restrictions into existing runtime forms; preserve explicit day/session/lookback, literal text filters, config and mode. Resolve relative dates from checked date/time context. If an unsupported or materially ambiguous retrieval constraint would change the selected evidence, ask one bounded clarification before preparation; do not drop it or guess a broader scope.
+3. Call the returned `preparation_command` with `--arguments` containing only the interpreted retrieval controls. Use existing `day=`, `session=` and `lookback=` forms and existing config/mode options internally. Include free text only when the user actually requests a literal text filter, preserving its requested value. Shell-quote every value; quoted text must remain data, never executable substitutions. If literal text collides with control syntax and cannot be represented faithfully, stop for clarification rather than reinterpret it as a control.
+4. When no retrieval controls are requested, pass `--arguments ""`. This leaves existing config/source policy and incremental defaults in charge; retain the user's output instructions for the subsequent analysis. Do not forward the raw sentence, require the user to rewrite it as options, assume an exported `ARGUMENTS` variable, or interpolate user text into an executable injection fence.
+5. A requested minimum is a target, not permission to invent, duplicate, revive rejected topics, weaken eligibility, widen scope or switch to catch-up. Analyze the complete authorized batch and report the actual eligible count and any shortfall. Explicit natural-language catch-up intent selects that existing mode; count or depth requests alone do not. Completion still follows semantic analysis and eligibility, never interpretation/preparation alone.
+
+Example: `Minimium Rules 5 topic` asks for at least five RULES improvement topics. With no evidence restriction, prepare using `--arguments ""`, keep the five-topic target for analysis, and do not search for that sentence or for the word `Rules`. If the request also limits evidence to a specific day, send only that day restriction and retain the same output target. If the user explicitly asks to filter traces containing `timeout`, that literal is a real retrieval filter.
+
+Internal serialization examples after interpretation: an explicit session plus literal filter uses `--arguments 'session=run-42 timeout'` (one argument value); explicit catch-up uses `--arguments "" --mode catch-up`. Add a selected config separately as `--config <shell-quoted-path>`. These are caller-generated controls, not syntax the user must learn. The `session=` control inside `--arguments` is the requested evidence session; the separate `--session-id` option is caller provenance, not an evidence filter. Preserve every selected restriction together and keep unsupported combinations blocked rather than dropping a restriction.
 
 The prepared analysis context emitted by this runtime wrapper includes field-level evidence surfaces such as `source_classes_present`, `source_scope_label`, `source_mix_label`, `historical_strength`, `latest_seen`, `current_session_confirmation`, repeated `topic_cards`, and config-related surfaces such as `source_policy`, `config_questions`, and `suggested_config_path` for the operator-facing result.
 

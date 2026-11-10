@@ -1,6 +1,6 @@
 {
   "name": "memory-context-intelligence",
-  "version": "0.9.40",
+  "version": "0.9.41",
   "description": "Claude Code plugin for guided configuration, eligibility-gated evidence-first historical analysis, and manual research-informed principle synthesis. Incremental analysis starts at the oldest unprocessed trace and advances MCI-owned progress only after caller-attested completion of each bounded batch, including successful zero-topic analysis. Explicit catch-up processes batches through one invocation endpoint; explicit narrow inspection remains non-advancing. Canonical minimized evidence, strict novelty/deduplication, privacy and one-topic-per-artifact approval boundaries remain. Corpus, Memsearch state and Main RULES are not mutated by analysis. Source/local fixture proof is separate from installation, native model behavior and measured benefit.",
   "author": {
     "name": "darkwingtm",

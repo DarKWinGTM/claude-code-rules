@@ -1,9 +1,9 @@
 # Phase Summary - memory-context-intelligence
 
-> **Current Version:** 0.1.88
-> **Target Design:** [../design/design.md](../design/design.md) v0.1.88
+> **Current Version:** 0.1.89
+> **Target Design:** [../design/design.md](../design/design.md) v0.1.89
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-10)
-> **Status:** Phase078 completed package0.9.40 incremental/catch-up source/local and plugin publication/readback gates. The204-test local suite, affected final checks and public67-path bytes/modes verification passed. Main Rules `v10.79` remains repository latest; installed0.9.38 and older Phase074–077 proofs remain separate. No installation/reload/model/corpus gate or successor selected
+> **Status:** Phase078 preserves completed0.9.40 release proof and completes bounded0.9.41 natural-language handoff correction at the source/local/synthetic gate. Matching contract RED→GREEN,39 focused cases and205-test isolated suite passed; five fresh-context interpretation cases, actual parser-only controls and34 final affected checks passed. No new publication/install/reload or real-corpus run is selected
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Rollover history:** [2026-08-09 movement](history/2026-08-09.md); [exact pre-rollover snapshot](history/2026-08-09-pre-rollover-SUMMARY.md)
 
@@ -25,7 +25,7 @@ The v0.1.79 Phase 013-01-04 correction is complete: both public skill versions a
 - `trace_evidence` remains the live pattern anchor
 - `recall_evidence`, `durable_memory_context`, and `governance_context` remain supporting inputs
 - the user-scope config target remains `~/.claude/memory-context-intelligence.config.json`
-- source0.9.40 replaces normal sampling with contiguous oldest-unprocessed batches and caller-acknowledged MCI progress; canonical content/refs, local discovery and Phase075 strict eligibility remain. Direct intake/narrow/supplemental inspection stays stateless. Model/native-slash behavior and installation for0.9.40 are untested
+- source0.9.41 adds natural-language request interpretation before preparation to the0.9.40 oldest-unprocessed/caller-acknowledged baseline. Output intent stays with Claude; only actual retrieval controls reach unchanged runtime. The0.9.40 install matched21 active release files; the user supplied a successful reload, then actual natural-language invocation exposed raw-text filtering. That failed run does not prove this correction's live behavior or current-session adoption
 - candidate/additional output remains one selected topic per artifact
 - `TEMPLATE/PLUGIN/memory-context-intelligence/` remains historical projection-family evidence, not current runtime authority
 
@@ -35,8 +35,8 @@ The v0.1.79 Phase 013-01-04 correction is complete: both public skill versions a
 
 - **Phase file:** [phase-078-incremental-analysis-progress.md](phase-078-incremental-analysis-progress.md)
 - **Design:** [07 scope/progress](../design/07-recall-scoping-and-time-window.design.md); [08 evidence](../design/08-memory-evidence-source-model.design.md); [02 flow](../design/02-topic-list-and-choice-flow.design.md); [09 config](../design/09-init-configuration-surface.design.md)
-- **Status:** completed at selected source/local, docs/package and plugin release/public-readback gates
-- **Output:** oldest-unprocessed complete batches, MCI-only caller-acknowledged progress, within-day/backdated-append resume, explicit fixed-endpoint catch-up, fileless startup before caller scope binding, unchanged eligibility and stateless narrow inspection
+- **Status:** original0.9.40 release complete;0.9.41 bounded interpretation correction completed at local/synthetic source gate, with no corrected native invocation claim
+- **Output:** oldest-unprocessed complete batches, MCI-only caller-acknowledged progress, within-day/backdated-append resume, explicit fixed-endpoint catch-up and unchanged eligibility/stateless narrow inspection. The0.9.41 correction interprets natural-language output intent before binding genuine retrieval controls; default count-only requests no longer become literal filters
 - **Gate:** matching RED→GREEN and204-test isolated suite/AST passed, followed by affected5-checkpoint/4-wrapper cases after final schema correction. Version/Skill/validator,265 relative links, scoped whitespace/Bash syntax and protected-state checks passed. Published source `6d7c5074b1f50a62ab4ad9c16802a16befb3003f`, immutable `memory-context-intelligence--v0.9.40` and [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/memory-context-intelligence--v0.9.40) passed fresh public refs/bytes/modes readback for all67 selected paths; receipt is a later docs-only commit without retagging. Fixture acknowledgements do not prove actual model reasoning
 - **Lineage:** completed077 discovery/sampling and076 supplemental scopes cannot absorb the new durability/completion boundary; major078 was checked unused
 - **Exclusions:** no Memsearch/config/index mutation, live corpus/provider/model, install/reload, unrelated visual/preview/source publication, force/tag movement or Main Rules latest replacement. No successor opened

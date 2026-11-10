@@ -2,9 +2,9 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 078
-> **Current Version:** 0.1.88
-> **Status:** completed at selected source/local, documentation/package and plugin release/public-readback gates; installation/reload/native model proof excluded
-> **Target Design:** [../design/design.md](../design/design.md) v0.1.88
+> **Current Version:** 0.1.89
+> **Status:** original0.9.40 release gate preserved; bounded0.9.41 natural-language correction completed at its local/synthetic source gate, without new publication/install/reload or corrected native-slash proof
+> **Target Design:** [../design/design.md](../design/design.md) v0.1.89
 > **Design References:** [07 scope/progress](../design/07-recall-scoping-and-time-window.design.md); [08 evidence](../design/08-memory-evidence-source-model.design.md); [02 flow](../design/02-topic-list-and-choice-flow.design.md); [09 config](../design/09-init-configuration-surface.design.md)
 > **Patch References:** none — approved implementation plan and bounded source diff supply the review boundary; no separate Patch required
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -22,7 +22,7 @@ Phase077 is completed discovery/sampling, with no durable completion writer. Pha
 - `lib/analysis_checkpoint.py`: separate user-scope MCI pending/completed state; schema validation, native nonblocking lock, expected version/position, atomic owner-only replace, zero-topic success, failed/no-ack preservation and duplicate idempotence. No raw trace/transcript/topic ledger or Memsearch write.
 - `lib/analysis_surface.py`/wrapper: one batch preparation, payload-bound `complete`, fixed catch-up endpoint, continuation only after acknowledgement, explicit/configured scope isolation and structured blockers. Old input is intentionally eligible; freshness remains metadata.
 - `skills/analysis/SKILL.md`: caller semantic discovery and eligibility precede completion, no completion inference from preprocessing, no unread/truncated/error acknowledgement, one-batch incremental default or explicit catch-up. Topic/additional/Main approval stays separate.
-- Startup is fileless until the caller binds actual slash arguments. Official Skills docs document text argument substitution rather than a guaranteed exported shell variable. User text is passed as one caller-quoted literal, never inserted into an eager executable fence.
+- Startup stays fileless until Claude interprets the slash request. Output intent remains invocation-local; only genuine retrieval controls/mode are serialized and shell-quoted before preparation. Official Skills docs document text substitution rather than a guaranteed exported shell variable. The original raw-text handoff was defective for natural-language output requests and is corrected below; no user text enters an eager executable fence.
 - No cross-run signal accumulation; recurrence is judged within supplied batches. A record exceeding a bounded budget blocks at that record until an adequate deliberate budget/source completion is available. Prefix rewrites/corrupt state block, never auto-reset or skip.
 
 ## Execution and disposition
@@ -46,6 +46,14 @@ Final source regression: `python3 -B -m unittest discover -s <MCI>/tests -q` und
 A final schema check added rejection of a missing canonical position field; its existing corruption case failed before the correction, then all five checkpoint cases and four progressive-wrapper cases passed. This affected rerun follows the204-test package run; no second broad regression was needed. After version sync, package/Skill contract checks and plugin validation passed.
 
 The inherited balanced-wrapper expectation was updated for the intentionally changed oldest-first default while preserving canonical late-text, references, candidate no-selection and explicit supplemental-inspection proof. Tests simulate caller acknowledgement; they do not prove a model actually finished reasoning or found better topics. No source-parity claim for installed0.9.38, current-session reload, native slash execution, performance or stability.
+
+## Bounded natural-language correction — source0.9.41
+
+The user installed0.9.40 and supplied a successful reload receipt, then invoked `Minimium Rules 5 topic`. The actual payload used that entire sentence as `scope_filter`, entered `explicitly-narrowed`, returned zero canonical excerpts and no progress binding. Main traced Skill raw passthrough → `parse_scope_and_narrowing` → `--scope`; this is not evidence that the corpus has no useful topics. Prior local/static checks did not protect this natural-language handoff.
+
+This corrective slice belongs to the same startup→scope→preparation boundary and current Phase078 output, so no new phase/Patch/plan is opened. Main changed only the existing analysis Skill's interpretation recipe and one focused regression; package/public Skill version alignment follows. Keep output intent in caller context and serialize only genuine restrictions/mode through existing CLI controls. Preserve configured defaults, explicit filters, eligibility, bounded completion and all Python runtime owners. The original0.9.40 publication gate above remains completed evidence, not an open release task for this correction.
+
+Development Verification / TestKit Coverage: `new_focused_test` for the missing Skill contract, `existing_test` for adjacent scope/progress controls, and one bounded fresh-context full-Skill interpretation check. The contract failed before the change;39 focused cases passed, then the final isolated205-test suite passed in14.018s after version alignment. A fresh-context reader of the full Skill interpreted five count/day/filter/catch-up/ambiguous-boundary cases correctly. Main checked actual parser-only serialization for empty/default arguments, day restriction, combined session/literal filter and explicit catch-up, then clarified those internal forms in the Skill;34 final affected Skill/manifest checks passed. Version/validator,166 selected relative file links, syntax/scoped whitespace and838 protected non-MCI plus three excluded visual byte/mode checks passed. External links/fragments were excluded; validator's missing-icon warning is optional. This is synthetic interpretation/local parsing proof, not a corrected native invocation. No new runner, real history read, native slash success, publication/install/reload or model-quality/stability claim is selected. Prior runtime evidence is the failed0.9.40 invocation; no incomplete analysis is acknowledged.
 
 ## Publication scope and recovery
 

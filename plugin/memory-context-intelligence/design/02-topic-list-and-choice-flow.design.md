@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.88
+> **Current Version:** 0.1.89
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-10)
 > **Parent Design:** [design.md](design.md)
 
@@ -17,7 +17,7 @@ Define the user-facing analysis flow for this capsule so that it analyzes bounde
 
 The flow must be:
 
-1. caller binds the actual slash arguments after fileless startup, then prepares the next oldest-unprocessed complete historical batch; report contiguous prefix/remaining coverage without claiming selected days are complete
+1. after fileless startup, Claude interprets the slash text as a natural-language request, retains its output intent and passes only requested retrieval controls/mode to preparation; absent retrieval controls, preserve configured incremental defaults and report complete-prefix/remaining coverage without claiming selected days are complete
 2. the main session discovers observed mechanisms from canonical intake `topic_discovery_evidence` before consulting generated titles/ranks; when independent perspectives and permitted caller tools justify it, workers add candidates, otherwise local semantic discovery still runs
 3. fan in local semantic candidates, advisory deterministic seeds, and worker suggestions; verify cited producer-owned trace references against the same content projection
 4. apply the full eligibility gate to the combined set, including semantic deduplication, before deepening or presentation
@@ -28,6 +28,12 @@ The flow must be:
 9. do not mutate RULES directly from this flow
 
 พูดง่าย ๆ: ต้องโชว์รายการหัวข้อก่อน แล้วค่อยให้ user เลือกทีหลัง แต่รอบนี้รายการหัวข้อควรมาจาก broader historical work patterns เป็นค่า default ไม่ใช่ล็อกที่ current session ก่อนเสมอ
+
+### Natural-language request interpretation
+
+`ARGUMENTS` is the Skill's input-text carrier, not a requirement for CLI syntax or permission to treat every word as a literal search. Claude understands the whole sentence and context before acquisition. Keep topic-count targets, subject, language, detail and depth as invocation-local analysis/output instructions; send only the user's actual day/session/lookback/text restrictions, config and execution mode to the existing runtime. A subject such as RULES does not itself require matching that word in a trace. With no retrieval controls, prepare with an explicit empty `--arguments` value so config/source policy and incremental defaults remain authoritative.
+
+For example, `Minimium Rules 5 topic` requests at least five RULES topics, not a search for that sentence. The same count request with an explicit date retains the count and transmits only the date restriction. An explicit request for traces containing `timeout` retains that genuine literal filter. Natural-language catch-up intent selects the existing catch-up mode; a count/depth target alone does not widen acquisition, change batch budgets or authorize filler topics. Ask only when an unsupported or materially ambiguous constraint prevents faithful scope selection. Existing eligibility and caller-acknowledged completion remain binding; runtime serialization/safety belongs to [07](07-recall-scoping-and-time-window.design.md). No phrase-whitelist parser, new config or durable intent state is introduced.
 
 ### 2.0.1) Topic eligibility and novelty gate
 
@@ -49,7 +55,7 @@ The main session first discovers observed mechanisms from canonical intake conte
 
 ### 2.0.3) One explicit supplemental search for new topics
 
-Skill preprocessing executes only fileless `analysis-surface --startup`; the caller binds slash arguments and performs initial preparation explicitly. Normal incremental/catch-up payloads intentionally expose no `next_older_than_day`; their continuation is the acknowledgement-bound progress path in [07](07-recall-scoping-and-time-window.design.md). The older-than path remains an explicit stateless inspection, never implicit default progress. The supplemental command is an ordinary shell template, not an executable context-injection block: the caller runs it only after checking the explicit request and scope, replacing the date placeholder with the actual `YYYY-MM-DD` value from the initial payload. A prose condition cannot defer an executable injection block because the harness runs injection before Claude receives the instructions.
+Skill preprocessing executes only fileless `analysis-surface --startup`; the caller interprets the natural-language request, binds only requested retrieval controls and performs initial preparation explicitly. Normal incremental/catch-up payloads intentionally expose no `next_older_than_day`; their continuation is the acknowledgement-bound progress path in [07](07-recall-scoping-and-time-window.design.md). The older-than path remains an explicit stateless inspection, never implicit default progress. The supplemental command is an ordinary shell template, not an executable context-injection block: the caller runs it only after checking the explicit request and scope, replacing the date placeholder with the actual `YYYY-MM-DD` value from the initial payload. A prose condition cannot defer an executable injection block because the harness runs injection before Claude receives the instructions.
 
 A user request for additional/different topics authorizes one bounded supplemental scan only when the original candidate set does not meet that request. The analysis surface reports the exact daily shards in its first bounded window and, only for a historical-default run with trace evidence enabled and no explicit narrowing, the next available boundary as `analysis_window.next_older_than_day`. The internal supplemental path selects shards strictly older than that boundary, carries forward the same explicit config path when present, applies the same per-run shard/record/character/byte and source-class limits, and returns a new candidate set from those records.
 

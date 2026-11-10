@@ -1,8 +1,8 @@
 # memory-context-intelligence
 
-> **Status:** Package `0.9.40` is [published](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/memory-context-intelligence--v0.9.40) with oldest-unprocessed incremental analysis, explicit catch-up and caller-acknowledged MCI progress. Source/local fixture verification passed204 tests, followed by affected checks after the final schema correction; fresh public readback matched all67 selected bytes/modes and commit/tag/Release identities. Source commit: `6d7c5074b1f50a62ab4ad9c16802a16befb3003f`. Main Rules `v10.79` remains repository latest. Installation/reload and real model/corpus behavior are not part of this wave; the checked installed baseline remains `0.9.38`.
-> **Current Version:** 0.1.88
-> **Plugin Package Version:** 0.9.40
+> **Status:** Source `0.9.41` corrects natural-language request interpretation before evidence preparation. The matching Skill-contract regression failed before the change;39 focused checks and the final205-test isolated package suite passed. A fresh-context full-Skill reader interpreted five count/scope/filter/catch-up/ambiguity cases as intended; Main verified the actual control serialization without reading the corpus, followed by34 affected final Skill/manifest checks. These are synthetic/local checks, not a successful corrected native invocation. This correction is not published or reloaded. [Release0.9.40](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/memory-context-intelligence--v0.9.40), source `6d7c5074b1f50a62ab4ad9c16802a16befb3003f`, remains the immutable published baseline: its installation and user-reported reload preceded the observed raw-argument filtering failure. Prior installation/release proof does not establish this correction's live behavior.
+> **Current Version:** 0.1.89
+> **Plugin Package Version:** 0.9.41
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-10)
 
 ---
@@ -29,7 +29,7 @@ Public surfaces defined in the current source:
 
 Current checked behavior that matters:
 - the default mode is **historical-first analysis**, not current-session-only summary
-- startup does fileless discovery only, then the caller safely binds the actual slash arguments before preparing evidence; user text is not interpolated into eager shell execution
+- startup does fileless discovery only, then Claude interprets the natural-language request before preparation. Topic count, subject, language and depth stay as analysis/output instructions; only requested evidence restrictions/config/mode reach runtime. With no retrieval controls, existing configured incremental defaults apply; user text is not interpolated into eager shell execution
 - history age no longer cuts off default eligibility. Each batch is bounded by up to10 configured days, default8 records/6000 characters/65536 bytes per shard; it may stop inside a day and never marks an unread tail complete
 - `analysis_window.coverage` distinguishes a complete contiguous batch from remaining days/tails. The caller must finish semantic analysis/eligibility and acknowledge that exact batch; preprocessing success does not advance progress
 - successful zero-topic analysis advances; failure, interruption, stale/corrupt state or changed consumed source keeps progress unchanged. Same-day/backdated appends are picked up later
@@ -38,7 +38,7 @@ Current checked behavior that matters:
 - `topic_discovery_evidence` carries canonical minimized intake `content` and producer-owned refs, not 220-character display previews. Main-session local discovery is required even without workers; deterministic titles are advisory seeds, not a closed catalog
 - optional independent viewpoints add suggestions only; main verifies references and applies Phase075 eligibility. Completed-work suppression needs the same delivered outcome, not just a similar name or completed filtering infrastructure
 - one explicit supplemental window requires discovery on the new evidence, not re-auditing rejected candidates. Days outside the first record-budget window remain eligible; rejected candidates cannot be rescued and narrowed scope cannot be widened
-- analysis can return zero or more eligible topics; it does not fill a minimum card count
+- ordinary sentences such as `Minimium Rules 5 topic` ask for a five-topic target, not a literal history search. Natural-language date/session/filter/catch-up requests still select their intended scope/mode; material ambiguity is clarified before reading. Analysis reports actual eligible topics and any shortfall without filler, weakened eligibility or unrequested extra batches
 - `trace_evidence` remains the live promotion anchor
 - `recall_evidence`, `durable_memory_context`, and `governance_context` can strengthen wording and context, but they do not replace trace proof
 - when adaptive deep-analysis marks a top topic as requiring deeper review, the checked current skill contract now requires one **bounded read-only deepening pass** before the first response instead of silently skipping it

@@ -132,6 +132,26 @@ class AnalysisSkillContractTests(unittest.TestCase):
         self.assertIn("User arguments: $ARGUMENTS", text)
         self.assertIn('"${CLAUDE_PLUGIN_ROOT}/bin/memory-context-intelligence" analysis-surface', text)
 
+    def test_analysis_skill_interprets_natural_language_before_preparing_evidence(self) -> None:
+        text = RUNTIME_ANALYSIS.read_text(encoding="utf-8")
+        self.assertIn("## Interpret the user request before preparation", text)
+        interpretation = text.split("## Interpret the user request before preparation", 1)[1].split("## Default first response contract", 1)[0]
+        for contract in [
+            "natural-language instructions to Claude, not a retrieval filter",
+            "desired topic count, language, detail and analysis depth",
+            "only the interpreted retrieval controls",
+            'pass `--arguments ""`',
+            "Minimium Rules 5 topic",
+            "preserve explicit day/session/lookback, literal text filters, config and mode",
+            "unsupported or materially ambiguous retrieval constraint",
+            "A requested minimum is a target, not permission",
+            "--arguments 'session=run-42 timeout'",
+            '--arguments "" --mode catch-up',
+        ]:
+            with self.subTest(contract=contract):
+                self.assertIn(contract, interpretation)
+        self.assertNotIn("--arguments` containing the user arguments above", text)
+
     def test_analysis_skill_preprocessing_runs_only_initial_analysis(self) -> None:
         text = RUNTIME_ANALYSIS.read_text(encoding="utf-8")
         commands = re.findall(r"^```!\s*\n(.*?)^```\s*$", text, re.MULTILINE | re.DOTALL)
