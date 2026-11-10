@@ -3,7 +3,7 @@
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 078
 > **Current Version:** 0.1.88
-> **Status:** source/local and documentation/package checks complete; selected publication/readback in progress
+> **Status:** completed at selected source/local, documentation/package and plugin release/public-readback gates; installation/reload/native model proof excluded
 > **Target Design:** [../design/design.md](../design/design.md) v0.1.88
 > **Design References:** [07 scope/progress](../design/07-recall-scoping-and-time-window.design.md); [08 evidence](../design/08-memory-evidence-source-model.design.md); [02 flow](../design/02-topic-list-and-choice-flow.design.md); [09 config](../design/09-init-configuration-surface.design.md)
 > **Patch References:** none — approved implementation plan and bounded source diff supply the review boundary; no separate Patch required
@@ -34,8 +34,8 @@ Phase077 is completed discovery/sampling, with no durable completion writer. Pha
 - [x] Main reproduced a post-read hash race and bound the cursor digest to the exact consumed bytes; matching RED→GREEN.
 - [x] Focused local workflow and final package regression passed; design/docs sync began only afterward.
 - [x] Package0.9.40 and all three public Skill versions aligned; manifest/init/analysis Skill checks passed1/1/32 cases. Plugin validator passed with optional `ICON_MISSING` warning, not catalog policy/safety approval. All265 selected relative file links resolved, with preserved snapshot body links interpreted at their documented original base; external URLs/heading fragments excluded. Scoped whitespace and Bash syntax passed. All838 non-MCI tracked and three excluded visual paths retained their baseline bytes/modes.
-- [ ] Exact scoped source commit, non-force master/tag publication and GitHub Release, preserving Main Rules latest.
-- [ ] Fresh public bytes/modes/commit/tag/Release identity; later receipt without retagging.
+- [x] Exact67-path source commit `6d7c5074b1f50a62ab4ad9c16802a16befb3003f`, atomic non-force master/tag push and non-draft/non-prerelease GitHub Release; Main Rules `v10.79` remains latest.
+- [x] Fresh GitHub tree/archive matched all67 selected bytes/modes and commit/tag/Release identities. Receipt records observed results in this documentation-only follow-up without moving the source tag.
 
 ## Development Verification / TestKit Coverage
 
@@ -49,6 +49,6 @@ The inherited balanced-wrapper expectation was updated for the intentionally cha
 
 ## Publication scope and recovery
 
-Publish package0.9.40/governed0.1.88 through the canonical RULES source root. Include inherited source0.9.32–0.9.39 runtime/tests/linked governed history required by current source; preserve and exclude `img/MCI.png`, `index.html`, `preview/**` and all non-MCI changes. Do not promote a clean clone/worktree into implementation or publication authority. Source commit/tag/Release identity and post-publication receipt remain distinct.
+Publish package0.9.40/governed0.1.88 through the canonical RULES source root. Include inherited source0.9.32–0.9.39 runtime/tests/linked governed history required by current source; preserve and exclude `img/MCI.png`, `index.html`, `preview/**` and all non-MCI changes. Do not promote a clean clone/worktree into implementation or publication authority. Source commit/tag/Release identity and post-publication receipt remain distinct. Immutable tag `memory-context-intelligence--v0.9.40` (annotated object `80c59cbbb479fc9e04b9a944ef6fd16ce485ff2f`) points to source `6d7c5074b1f50a62ab4ad9c16802a16befb3003f`. [Release440250600](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/memory-context-intelligence--v0.9.40) was published2026-11-10T11:01:36Z; fresh public bytes/modes and refs matched. The tag retains truthful pre-publication status text; this later receipt changes documentation only, not runtime payload or tag identity.
 
 No reset/clean/delete, force push, tag move, default-latest replacement, settings/marketplace change, Memsearch mutation, installation/reload or additional/Main promotion is selected. A source defect is repaired in place; no automatic restore or checkpoint reset. Any publication outcome unknown must be reconciled before replay. Old versions/tags and unrelated local work remain preserved. No unselected successor opened.

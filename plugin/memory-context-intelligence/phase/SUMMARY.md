@@ -3,7 +3,7 @@
 > **Current Version:** 0.1.88
 > **Target Design:** [../design/design.md](../design/design.md) v0.1.88
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-10)
-> **Status:** Phase078 package0.9.40 incremental/catch-up source/local gate passed204 tests; documentation/package checks passed and selected push/release/readback is in progress. Installed0.9.38 and older Phase074–077 proofs remain separate; no installation/reload/model/corpus gate selected
+> **Status:** Phase078 completed package0.9.40 incremental/catch-up source/local and plugin publication/readback gates. The204-test local suite, affected final checks and public67-path bytes/modes verification passed. Main Rules `v10.79` remains repository latest; installed0.9.38 and older Phase074–077 proofs remain separate. No installation/reload/model/corpus gate or successor selected
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Rollover history:** [2026-08-09 movement](history/2026-08-09.md); [exact pre-rollover snapshot](history/2026-08-09-pre-rollover-SUMMARY.md)
 
@@ -35,9 +35,9 @@ The v0.1.79 Phase 013-01-04 correction is complete: both public skill versions a
 
 - **Phase file:** [phase-078-incremental-analysis-progress.md](phase-078-incremental-analysis-progress.md)
 - **Design:** [07 scope/progress](../design/07-recall-scoping-and-time-window.design.md); [08 evidence](../design/08-memory-evidence-source-model.design.md); [02 flow](../design/02-topic-list-and-choice-flow.design.md); [09 config](../design/09-init-configuration-surface.design.md)
-- **Status:** source/local and docs/package checks passed; selected publication/readback in progress
+- **Status:** completed at selected source/local, docs/package and plugin release/public-readback gates
 - **Output:** oldest-unprocessed complete batches, MCI-only caller-acknowledged progress, within-day/backdated-append resume, explicit fixed-endpoint catch-up, fileless startup before caller scope binding, unchanged eligibility and stateless narrow inspection
-- **Gate:** matching RED→GREEN and204-test isolated suite/AST passed, followed by affected5-checkpoint/4-wrapper cases after final schema correction. Version/Skill/validator,265 relative links, scoped whitespace/Bash syntax and protected-state checks passed. Exact commit/tag/Release/public readback remain. Fixture acknowledgements do not prove actual model reasoning
+- **Gate:** matching RED→GREEN and204-test isolated suite/AST passed, followed by affected5-checkpoint/4-wrapper cases after final schema correction. Version/Skill/validator,265 relative links, scoped whitespace/Bash syntax and protected-state checks passed. Published source `6d7c5074b1f50a62ab4ad9c16802a16befb3003f`, immutable `memory-context-intelligence--v0.9.40` and [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/memory-context-intelligence--v0.9.40) passed fresh public refs/bytes/modes readback for all67 selected paths; receipt is a later docs-only commit without retagging. Fixture acknowledgements do not prove actual model reasoning
 - **Lineage:** completed077 discovery/sampling and076 supplemental scopes cannot absorb the new durability/completion boundary; major078 was checked unused
 - **Exclusions:** no Memsearch/config/index mutation, live corpus/provider/model, install/reload, unrelated visual/preview/source publication, force/tag movement or Main Rules latest replacement. No successor opened
 

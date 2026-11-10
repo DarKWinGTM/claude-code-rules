@@ -1,6 +1,6 @@
 # memory-context-intelligence
 
-> **Status:** Package `0.9.40` implements oldest-unprocessed incremental analysis and explicit catch-up, with caller-acknowledged MCI progress. Source/local fixture verification passed204 tests; publication/readback is pending. Installation/reload and real model/corpus behavior are not part of this wave; the checked installed baseline remains `0.9.38`.
+> **Status:** Package `0.9.40` is [published](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/memory-context-intelligence--v0.9.40) with oldest-unprocessed incremental analysis, explicit catch-up and caller-acknowledged MCI progress. Source/local fixture verification passed204 tests, followed by affected checks after the final schema correction; fresh public readback matched all67 selected bytes/modes and commit/tag/Release identities. Source commit: `6d7c5074b1f50a62ab4ad9c16802a16befb3003f`. Main Rules `v10.79` remains repository latest. Installation/reload and real model/corpus behavior are not part of this wave; the checked installed baseline remains `0.9.38`.
 > **Current Version:** 0.1.88
 > **Plugin Package Version:** 0.9.40
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-10)
