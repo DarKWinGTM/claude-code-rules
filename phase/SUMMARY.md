@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.33
+> **Current Version:** 2.34
 > **Target Design:** [../design/phase-todo-artifact.design.md](../design/phase-todo-artifact.design.md) v1.39
-> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
-> **Status:** P073-22/v10.77 source/guidance, separate managed Skill landing, root Main19 and publication/fresh-public proof are verified-in-scope; no successor opened. Earlier slices remain closed.
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
+> **Status:** P073-23/v10.78 source and actual Main19 installation verified; scoped publication and fresh-public proof pending. P073-22/v10.77 and earlier slices remain closed.
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,7 +21,7 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active Slice
 
-None opened; final receipt reconciles the completed selected gates below.
+- **P073-23 / v10.78:** [Complexity and test-evidence admission](phase-073-23-complexity-and-test-evidence-admission.md) enriches Coding1.11 only: compare a simpler complete alternative against carrying cost and require distinct material test evidence. Source clauses, bounded semantic review, native Linux installer fixtures and actual root Main19 parity passed with other18/protected6 unchanged and no new quarantine; explicit push/tag/Release/public-payload gates remain pending. No new Rule, framework, CPU/RAM policy, hook, plugin or managed Skill change. [History](../changelog/changelog/v10.78-complexity-and-test-evidence-admission.changelog.md); Patch not required. Task3 receives source/install proof before final closure.
 
 ### Latest Verified Slice
 

@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.77</b><br><sub>Mechanism-backed Design Feasibility</sub>
+  <b>v10.78</b><br><sub>Complexity & Test-evidence Admission</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Rules released</b><br><sub>Installed · user Skill updated</sub>
+  <b>Rules installed</b><br><sub>Publication pending</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current source:** [`v10.77 / P073-22`](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.77) enriches Execution1.39 and Evidence1.11 for mechanism-backed design feasibility. Distinguish tentative methods from explicit constraints, check pivotal platform-to-consumer effects before costly endorsement, and investigate novel ideas without treating missing precedent as impossibility or novelty. Written-contract20/20 is included in Node52/52; native Linux fixtures, source-bound textual interpretation, actual root Main19 parity and fresh-public tagged payload/isolated installation are verified at their stated layers. The separate managed user-Skill update has also landed and been verified; it is not bundled in this release. The [phase](phase/phase-073-22-mechanism-backed-design-feasibility.md) records the scoped proof, preservation and corrected earlier blocker; no causal model benefit or active-session reload is claimed.
+> **Current source:** `v10.78 / P073-23` adds practical criteria for unnecessary implementation and test complexity in Coding1.11. Compare an addition with a simpler complete alternative and its carrying cost; expand tests for a material evidence gap or distinct fault. Required safeguards and useful test layers stay intact. Node54/54 and native Linux installer fixtures passed; actual Main19 installation matches source bytes/modes and its ownership manifest. Publication remains pending. The [phase](phase/phase-073-23-complexity-and-test-evidence-admission.md) records proof and limits. Main Runtime membership stays nineteen; no model-behavior improvement or active-session reload is claimed.
 
 <!-- CTA Buttons -->
 <p>
@@ -282,7 +282,7 @@ These capabilities summarize the current operating model at the front-page level
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
-| [`coding-discipline.md`](coding-discipline.md) | Contract-first coding discipline | Semantic predicates/state/ownership, maintainability, regression-gap diagnosis and proportionate functional/architecture proof |
+| [`coding-discipline.md`](coding-discipline.md) | Contract-first coding discipline | Semantic ownership, simpler-complete-alternative complexity criteria, distinct test evidence and proportionate functional/architecture proof |
 | [`execution-and-goal-frame.md`](execution-and-goal-frame.md) | Evidence-led development and goal framing | Understands behavior before mechanisms, orders necessary work/proof, and preserves architecture, scope and reachable closure |
 | [`goal-authoring-and-route-support.md`](goal-authoring-and-route-support.md) | Governed `/goal` authoring and route support | Constructs proof-layer-aware goals, orders prerequisites, and preserves verified `Plan reference` and `/plan` overflow guards |
 | [`worker-routing-and-context.md`](worker-routing-and-context.md) | Worker routing and context control | Uses the smallest effective lane and owns checked Agent Team reuse/steer/wait/partition/respawn decisions |
@@ -307,7 +307,18 @@ These capabilities summarize the current operating model at the front-page level
 
 </div>
 
-**Current source state: `v10.77 / P073-22` — Main Runtime released; separate user Skill updated**
+**Current source state: `v10.78 / P073-23`, source/install verified; publication pending**
+
+Coding1.11 adds two criteria in existing sections: compare supported benefit against a simpler complete alternative and its carrying cost; identify material evidence gaps before adding tests, fixtures or runners. Passing tests does not establish architectural necessity. Required safeguards, hard-to-reverse contract analysis and distinct-fault test layers remain intact.
+
+- Two focused written-contract checks failed before the new clauses; the completed Node run passed54/54. Bash and PowerShell installer fixtures passed on Linux.
+- Six virtual Case07 variants clarify the boundaries; they were not executed against an AI model and do not measure maintenance savings.
+- Actual Main19 installation matches canonical source bytes, modes, substantive bodies and the ordered ownership manifest. The other18 Rules and all6 protected other-owner/global files are unchanged; no new quarantine was created.
+- Scoped publication and fresh-public checks are pending. No new Runtime Rule, scorecard, worksheet, runner, hook, plugin or CPU/RAM policy is introduced.
+
+[P073-23](phase/phase-073-23-complexity-and-test-evidence-admission.md) and [history](changelog/changelog/v10.78-complexity-and-test-evidence-admission.changelog.md) own the scoped evidence and publication state.
+
+**Preserved released baseline: `v10.77 / P073-22`**
 
 Execution1.39 checks the pivotal actual platform/control/consumer link before endorsing dependent design; Evidence1.11 keeps missing precedent separate from impossibility and novelty. Tentative user methods, explicit constraints, provisional exploration and selected proof/approval remain distinct.
 

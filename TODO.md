@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-10-27
-> **Current Release:** v10.77 Main Runtime published; source/guidance, root Main19 and fresh-public payload/isolated installation verified
-> **Active Wave:** P073-22/v10.77 selected source/guidance, managed Skill landing, root install and publication/public-proof gates are verified; final receipt reconciled below. P073-21/v10.76 and P073-20/v10.75 stay closed; no plugin/config change or successor selected
+> **Last Updated:** 2026-11-10
+> **Current Release:** v10.77 published baseline; v10.78 source/install verified, publication pending
+> **Active Wave:** P073-23/v10.78 complexity and test-evidence admission in Coding1.11; explicit Main19 installation and scoped release selected. P073-22/v10.77 and earlier slices stay closed; no plugin/config change
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,7 +10,7 @@
 
 ## Active / In Progress
 
-No new Main Runtime wave or successor is selected.
+- [ ] **P073-23 / v10.78:** [Complexity and test-evidence admission](phase/phase-073-23-complexity-and-test-evidence-admission.md). Coding1.11 source clauses, Node54/54, native Linux installer fixtures, bounded semantic review, preservation/references and actual Main19 parity passed; finish final source docs, scoped non-force push/tag/Release and fresh-public proof. Reuse existing owners; no new Rule, runner, hook, resource policy or unrelated plugin work. [History](changelog/changelog/v10.78-complexity-and-test-evidence-admission.changelog.md).
 
 No active MCI corrective work remains at the selected source/document gate. P073-18 Main remains verified and closed. Earlier settings evidence and the prior internal-agent restriction violation remain separately unresolved; this source correction does not authorize restoration or model validation.
 

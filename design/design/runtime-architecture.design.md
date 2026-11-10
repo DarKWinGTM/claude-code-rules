@@ -1,8 +1,8 @@
 # Runtime Architecture - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.77
-> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+> **Current Version:** 10.78
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Section:** Rule architecture
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
 > **Status:** Active target-state shard; source/install baseline, publication proof tracked separately
@@ -17,7 +17,7 @@ Exactly nineteen source-owned root Rules retain one body-sufficient owner per re
 | 2 | `action-safety.md` | `action-safety.design.md v1.8` | destructive/private/topology/emergency/retry gates, same-operation outcome reconciliation |
 | 3 | `audience-surface-disclosure-control.md` | `audience-surface-disclosure-control.design.md v1.2` | direct-user transparency and generated audience disclosure |
 | 4 | `authority-and-scope.md` | `authority-and-scope.design.md v2.9` | user precedence, advisory selection and Active Project Root |
-| 5 | `coding-discipline.md` | `coding-discipline.design.md v1.10` | caller-first/prevention-owner coding, bound workflow proof, source-tool/probe lifecycle, debug and architecture fitness |
+| 5 | `coding-discipline.md` | `coding-discipline.design.md v1.11` | simpler-complete-alternative complexity and distinct-test-evidence admission, caller-first coding, source-tool lifecycle and architecture fitness |
 | 6 | `communication-register.md` | `communication-register.design.md v1.29` | plain action/outcome language, user/peer recipient clarity, signal, agreement and explicit retraction |
 | 7 | `document-governance.md` | `document-governance.design.md v1.23` | artifact roles, affected-owner synthesis, chain selection, diagram/Patch and UDVC-1 eligibility |
 | 8 | `document-integrity.md` | `document-integrity.design.md v1.15` | references, lossless rollover, payload/project proof and preservation |

@@ -1,14 +1,15 @@
 # Changelog - Coding Discipline
 
 > **Parent Document:** [../coding-discipline.md](../coding-discipline.md)
-> **Current Version:** 1.10
-> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+> **Current Version:** 1.11
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.11 | 2026-11-10 | **[Added complexity and test-evidence admission criteria](#version-111)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.10 | 2026-10-25 | **[Added caller-first prevention and bound workflow proof](#version-110)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
 | 1.9 | 2026-10-15 | **[Added project-owned reusable tooling and bounded probe absorption](#version-19)** | b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 |
 | 1.8 | 2026-09-30 | **[General contract-first coding and semantic conditions](#version-18)** | 7194487f-fe8b-4383-8756-3db4c5612392 |
@@ -25,6 +26,17 @@
 | | | Summary: Created `coding-discipline.md` as a body-sufficient merged runtime owner for maintainable code structure, proportionate verification, and tactical-to-strategic convergence in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-111"></a>
+## Version 1.11: Complexity and test-evidence admission
+
+**Date:** 2026-11-10
+**Session:** 08244912-a195-4926-84e6-8c202c667ba5
+
+- Defined overengineering relative to a simpler complete alternative and supported benefit versus state/path/dependency/indirection/change-propagation/setup/runtime/maintenance burden, including support work created by the addition itself.
+- Kept reversible hypothetical generalization separate from hard-to-reverse contract analysis and required safeguards; passing tests proves checked correctness, not architectural necessity. No numeric score, element quota or mandatory worksheet.
+- Required a material evidence gap and a fault existing proof cannot distinguish before test/fixture/runner expansion, preferring reuse or extension. Distinct-fault layers remain valid; new helper/file/function, coverage percentage and LOC ratios alone justify neither growth nor removal.
+- Added focused written-contract assertions and virtual [Case 07](../playground/cases/case-07-coding-change-with-verification-discipline.md) boundaries in existing owners; no new Runtime Rule, test framework or claim of causal AI improvement. [P073-23](../phase/phase-073-23-complexity-and-test-evidence-admission.md) records actual source/install/publication evidence.
 
 <a id="version-110"></a>
 ## Version 1.10: Caller-first prevention and bound workflow proof

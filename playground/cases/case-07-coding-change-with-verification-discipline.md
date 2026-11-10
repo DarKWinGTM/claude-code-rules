@@ -108,6 +108,19 @@ These declared virtual cases extend Coding1.10 without adding an observed incide
 | A core workflow case exists in the registry but the selected suite excludes it, or fail-fast stops before its assertion. | Distinguish registered, admitted, executed, reached and terminal states; report the remaining selected proof and use the existing runner/report rather than claim coverage from the test name. |
 | A focused small edit already has sufficient passing proof. | Close at that selected gate without a new inventory, runner, receipt schema, design arena or dependency worksheet. |
 
+### Complexity and test-evidence admission variants
+
+These virtual inputs clarify Coding1.11 decisions; they are not observed project incidents, measured maintenance savings or an executed AI-behavior evaluation. Existing source-clause and installer checks prove only their named layers.
+
+| Input | Expected decision and nearest boundary |
+|---|---|
+| Two fixed output forms are clear in local functions; a registry/factory adds hypothetical extension points and its own fixtures. | Compare the simpler complete alternative and the supported benefit against state, indirection and carrying cost; do not use support work created by the proposal as evidence of necessity. |
+| A shared helper requires unrelated caller flags and changes propagate to callers with different business meanings. | Inspect semantic coupling and the simpler owner-local alternative; similar syntax alone does not justify shared behavior. Necessary shared invariants still retain one owner. |
+| A public contract is costly to reverse or a security/integrity obligation is required before first use. | Analyze and preserve those requirements now; postponing reversible generalization is not permission to skip contract design or safeguards. |
+| A behavior-preserving helper is extracted and existing tests already cover its selected behavior and failure boundaries. | Reuse the existing proof; no private-helper suite merely because a function appeared. If inspection finds a material evidence gap, extend the fitting case. |
+| A unit test proves a calculation; an integration case checks persistence/readback or exactly-once side effects. | Keep both when they catch distinct faults even though the headline behavior overlaps; do not enforce a one-test-per-behavior quota. |
+| A proposed framework and its new tests all pass; the product/test LOC ratio is high. | Passing tests establishes checked correctness, not framework necessity. Neither the ratio nor incidental coverage percentage authorizes growth, test deletion or removal of selected safety/acceptance proof. |
+
 ## User objective
 
 Make a code change or bug fix without overstating completion before the relevant verification actually runs.

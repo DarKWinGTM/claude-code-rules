@@ -57,6 +57,28 @@ test('caller-first design and preventive controls stay at their checked owner', 
   requiresClause(coding, /no mandatory[\s\S]*worksheet/);
 });
 
+test('complexity admission compares a simpler complete alternative and its carrying cost', () => {
+  const structure = coding.split('### Responsibility and smallest useful decomposition')[1]?.split('### Semantic source naming')[0];
+  assert.ok(structure, 'the existing structure owner must remain active');
+  requiresClause(structure, /overengineering[\s\S]*simpler complete alternative/i);
+  requiresClause(structure, /boundary alone does not earn added machinery/i);
+  requiresClause(structure, /state\/transitions[\s\S]*change propagation[\s\S]*maintenance cost/i);
+  requiresClause(structure, /work created only to support the addition/i);
+  requiresClause(structure, /hard-to-reverse contracts[\s\S]*required safeguards/i);
+  requiresClause(structure, /Passing tests[\s\S]*not necessity/i);
+});
+
+test('test admission requires a distinct evidence gap without count-based quotas', () => {
+  const proof = coding.split('### Select the smallest meaningful proof')[1]?.split('### Debug and root-cause discrimination')[0];
+  assert.ok(proof, 'the existing verification owner must remain active');
+  requiresClause(proof, /evidence gap[\s\S]*failure[\s\S]*existing proof cannot/i);
+  requiresClause(proof, /Reuse or extend the fitting case first/i);
+  requiresClause(proof, /multiple layers[\s\S]*distinct faults/i);
+  requiresClause(proof, /LOC ratios alone justify neither growth nor removal/i);
+  requiresClause(proof, /helper does not itself require a new test/i);
+  requiresClause(proof, /brittleness[\s\S]*selected acceptance and safety proof/i);
+});
+
 test('selected workflow proof distinguishes admission, reached assertions and terminal outcome', () => {
   requiresClause(coding, /selected core contract[\s\S]*owner case and selector admission[\s\S]*execution and assertions reached[\s\S]*terminal outcome[\s\S]*remaining proof/);
   requiresClause(coding, /A registered or selected case is not executed coverage/);

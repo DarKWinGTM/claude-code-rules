@@ -1,8 +1,8 @@
 # Design - Coding Discipline
 
 > **Parent Rule:** [../coding-discipline.md](../coding-discipline.md)
-> **Current Version:** 1.10
-> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+> **Current Version:** 1.11
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [../changelog/coding-discipline.changelog.md](../changelog/coding-discipline.changelog.md)
 
 ---
@@ -31,6 +31,12 @@ Study decision-changing facts and the selected behavior before choosing predicat
 - Match access/persistence and protections to actual consumers, writers, sensitivity and failure models. Preserve raw/policy/domain stages, audit/fidelity/round-trip/history recovery, atomicity, authorization, privacy and real concurrency needs. Correctness and performance require different evidence.
 
 These are one general development method, not project-specific exceptions, fourteen independent rules or new additional trials.
+
+### Complexity and test-evidence admission
+
+Judge added complexity against a simpler complete alternative, including required correctness, security, clarity and change boundaries. Identify what that alternative would lose, then weigh the benefit against added state/transitions, execution paths, dependencies, indirection, change propagation and setup/runtime/maintenance cost, including support work created by the addition itself. A possible benefit or new boundary is not automatic justification. Defer reversible generalization for hypothetical needs without postponing hard-to-reverse contract analysis or required safeguards. Passing tests for an addition establishes only their checked correctness, not the addition's necessity; do not replace this judgment with LOC ratios, element quotas or a mandatory worksheet.
+
+Before expanding tests, fixtures or runners, identify the material evidence gap and the fault existing proof cannot distinguish; reuse or extend the fitting case first. Multiple layers for one behavior are justified when they catch distinct faults. A new helper, coverage percentage or test-to-product LOC ratio alone justifies neither test growth nor removal. Weigh confidence against setup/runtime cost, brittleness and maintenance while preserving selected acceptance and safety proof. Scope/closure remains with Execution; no new Rule, runner, numerical score or universal test-per-function mandate is introduced.
 
 ### Caller-first design, prevention and proof binding
 
@@ -81,6 +87,8 @@ Historical detail remains in changelog or execution-disconnected quarantine/prov
 ---
 
 ## Verification
+
+Review the complexity/test-evidence variants in [Case 07](../playground/cases/case-07-coding-change-with-verification-discipline.md): hypothetical machinery versus a simpler complete path, unrelated caller coupling, required hard-to-reverse/safety work, existing-proof reuse, distinct-fault layers and passing-test/LOC-ratio limits. Existing `script/test-runtime-safety.mjs` checks the written admission clauses; it does not evaluate generated model behavior or prove reduced engineering cost.
 
 Release validation should confirm the parent runtime file exists at source root, has substantive body content, links to this design, links to its changelog, and matches the installed runtime copy when runtime install is in scope.
 

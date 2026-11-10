@@ -1,7 +1,7 @@
 # Coding Discipline
-> **Current Version:** 1.10
-> **Design:** [design/coding-discipline.design.md](design/coding-discipline.design.md) v1.10
-> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+> **Current Version:** 1.11
+> **Design:** [design/coding-discipline.design.md](design/coding-discipline.design.md) v1.11
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [changelog/coding-discipline.changelog.md](changelog/coding-discipline.changelog.md)
 > **Absorbed:** maintainable-code-structure-and-decomposition v1.2, development-verification-and-debug-strategy v1.1, tactical-strategic-programming v1.3
 
@@ -18,6 +18,8 @@
 Maintainability is low future change cost: readers can understand, test, modify and repair code with little surprise. Optimize readable intent, clear ownership, testability and visible side effects—not file/helper counts. Group by reason to change; keep cohesive logic together and separate business rules, orchestration, UI, persistence, integrations, validation, formatting, config or operational handling only when their ownership/change/test axes differ. Reuse fitting project structure.
 
 Before selecting a material condition, representation or structure, understand the requested behavior, valid inputs, failure consequences, semantic owner, lifecycle, callers and useful proof. Trace the existing path; derive predicates and controls from checked contracts rather than a familiar pattern or one sample. Compare only realistic alternatives, including a simpler sufficient route. Scale this work to the decision: no mandatory worksheet, document or checklist for every `if` or small edit. Assess accumulated concerns and aliases together; individually small additions can create a hidden owner. Length and smells are investigation signals, not verdicts; preserve uncertainty when ownership or decomposition is unclear.
+
+Treat an addition as overengineering when a simpler complete alternative preserves required behavior, safety and clarity, but the addition's supported benefit does not justify its burden. Ask what that alternative would lose; a possible benefit or new boundary alone does not earn added machinery. Weigh state/transitions, execution paths, dependencies, indirection, change propagation and setup/runtime/maintenance cost, including work created only to support the addition. Defer reversible generalization for hypothetical needs, not analysis of hard-to-reverse contracts or required safeguards. Passing tests establishes checked correctness, not necessity. Use this comparison, not element quotas or a numeric score.
 
 | Checked condition | Required proportionate decision |
 |---|---|
@@ -82,6 +84,8 @@ Before or alongside non-trivial work, identify changed behavior/type of change, 
 | production/shared-state/destructive operation | approval-sensitive verification with rollback/containment owner |
 
 Strategy, not ceremony: a stronger existing test may replace a new scenario; a harness may replace fragile ad hoc checks. Each test/review should reproduce/protect changed behavior, check a material contract or close the selected gate. Include representative valid forms and the nearest meaningful failure/unchanged boundary; do not teach production logic one fixture shape. Correctness, architecture conformance and performance are distinct claims requiring matching evidence. Expand only for a decision-changing failure/risk, not broad noisy reruns or reassurance reviews. Live checks remain conditional on selected scope, approval, safety and readiness.
+
+Before adding tests, fixtures or runners, identify the material evidence gap and the failure existing proof cannot distinguish. Reuse or extend the fitting case first; multiple layers may protect one behavior when they catch distinct faults. A new file/function, coverage percentage or test-to-product LOC ratios alone justify neither growth nor removal. A behavior-preserving helper does not itself require a new test when existing proof remains sufficient. Weigh added confidence against setup/runtime cost, brittleness and maintenance; preserve selected acceptance and safety proof. Prefer observable contracts over private wiring unless that wiring's order, isolation or resource behavior is itself required.
 
 For a selected workflow-coverage claim, connect the selected core contract → exact owner case and selector admission → execution and assertions reached → terminal outcome → remaining proof. A registered or selected case is not executed coverage. Reuse the existing runner/report owner and retain gaps; this is not a new inventory, runner or receipt mandate for small work or already sufficient proof. Detailed receipt reconciliation remains a selected procedure, not another test-admission authority.
 
