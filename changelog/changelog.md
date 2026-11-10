@@ -1,9 +1,9 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.80 (source candidate; install/publication pending)
+> **Current Version:** 10.80 (released; source/install/public proof verified-in-scope)
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5
-> **Latest Published Version:** 10.79
+> **Latest Published Version:** 10.80
 > **Version Shards:** [changelog/](changelog/)
 > **Legacy Archive:** [done/master-legacy-v6.3-v9.59.changelog.md](done/master-legacy-v6.3-v9.59.changelog.md)
 
@@ -13,7 +13,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 10.80 | 2026-11-11 | **[Runtime clarity, lifecycle and same-owner compaction — source candidate](changelog/v10.80-runtime-clarity-lifecycle-compaction.changelog.md#version-1080)** | 08244912-a195-4926-84e6-8c202c667ba5 |
+| 10.80 | 2026-11-11 | **[Released runtime clarity, lifecycle and same-owner compaction — installed/public payload verified](changelog/v10.80-runtime-clarity-lifecycle-compaction.changelog.md#version-1080)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 10.79 | 2026-11-10 | **[Released portable Skill library — source, unchanged Rules installation and fresh-public tag/payload verified](changelog/v10.79-portable-skill-library.changelog.md#version-1079)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 10.78 | 2026-11-10 | **[Released complexity and test-evidence admission - source/install/public-tag proof verified](changelog/v10.78-complexity-and-test-evidence-admission.changelog.md#version-1078)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 10.77 | 2026-10-27 | **[Released mechanism-backed design feasibility — Main source/root/public proof and separate managed Skill landing verified](changelog/v10.77-mechanism-backed-design-feasibility.changelog.md#version-1077)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |

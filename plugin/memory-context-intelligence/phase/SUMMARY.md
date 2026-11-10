@@ -3,7 +3,7 @@
 > **Current Version:** 0.1.91
 > **Target Design:** [../design/design.md](../design/design.md) v0.1.91
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-11)
-> **Status:** Phase075-01 package0.9.43 is a source candidate; Skill35/35/package212/212 passed, bounded synthetic acceptance is recorded, selected install/publication remains pending
+> **Status:** Phase075-01 package0.9.43 is released and locally installed; source/contract, bounded synthetic,21-file runtime and coordinated103-file public proof verified-in-scope
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Rollover history:** [2026-08-09 movement](history/2026-08-09.md); [exact pre-rollover snapshot](history/2026-08-09-pre-rollover-SUMMARY.md)
 
@@ -25,7 +25,8 @@ The v0.1.79 Phase 013-01-04 correction is complete: both public skill versions a
 - `trace_evidence` remains the live pattern anchor
 - `recall_evidence`, `durable_memory_context`, and `governance_context` remain supporting inputs
 - the user-scope config target remains `~/.claude/memory-context-intelligence.config.json`
-- released/installed0.9.42 extends the0.9.41 natural-language handoff with runtime calendar filtering, date-bound scope identity and frozen continuation. Native local update passed21-file runtime parity; the five later receipt documents are excluded from current cache/source parity. Legacy unrestricted pending is preserved, not resumed. Current and prior installation/reload/failure receipts remain in [Phase078](phase-078-incremental-analysis-progress.md); reload is user-owned
+- prior released/installed0.9.42 extends the0.9.41 natural-language handoff with runtime calendar filtering, date-bound scope identity and frozen continuation. Native local update passed21-file runtime parity; the five later receipt documents are excluded from current cache/source parity. Legacy unrestricted pending is preserved, not resumed. Current and prior installation/reload/failure receipts remain in [Phase078](phase-078-incremental-analysis-progress.md); reload is user-owned
+- current released/installed0.9.43 changes only Skill eligibility, preserving the guided calendar/progress runtime. Source `9c76f5600ce5b5d607b4c0169809ef418e4c7650`, native21-file runtime parity and non-latest Release are verified; Mainv10.80 is latest. Reload remains user-owned; exact five cached-document exclusions are in [0.1.91](../changelog/v0.1.91-incremental-rule-enrichment.changelog.md)
 - candidate/additional output remains one selected topic per artifact
 - `TEMPLATE/PLUGIN/memory-context-intelligence/` remains historical projection-family evidence, not current runtime authority
 
@@ -35,8 +36,8 @@ The v0.1.79 Phase 013-01-04 correction is complete: both public skill versions a
 
 - **Phase file:** [phase-075-01-incremental-rule-enrichment.md](phase-075-01-incremental-rule-enrichment.md)
 - **Design:** [02 contribution gate](../design/02-topic-list-and-choice-flow.design.md)
-- **Status/output:** package0.9.43/governed0.1.91 source contracts pass; supported residual improvements absorb into existing owners, not duplicate Rules. Original075 blanket policy remains historical; entailment/completed matching/dedup/fail-closed/zero-topic/no-rescue controls remain.
-- **Gate:** Skill35/35 and isolated package212/212 passed; bounded full-guidance interpretation and final manifest/native validation also passed, without demonstrated baseline-to-candidate behavioral gain. Selected existing-identity install, public release and receipt readback remain pending.
+- **Status/output:** package0.9.43/governed0.1.91 released/installed; supported residual improvements absorb into existing owners, not duplicate Rules. Original075 blanket policy remains historical; entailment/completed matching/dedup/fail-closed/zero-topic/no-rescue controls remain.
+- **Gate:** Skill35/35 and isolated package212/212 passed; bounded full-guidance interpretation and final manifest/native validation also passed, without demonstrated baseline-to-candidate behavioral gain. Existing-identity update and21-file runtime parity, immutable source tag/non-latest Release and coordinated103-file fresh public bytes/Git modes passed. The five later receipt documents are excluded from current cached-document parity; [0.1.91](../changelog/v0.1.91-incremental-rule-enrichment.changelog.md) names them exactly.
 - **Lineage/exclusions:** child of075, not078 calendar/progress. No engine/config/paused progress/corpus/Memsearch/current-session reload changes. Main-only source integration; no successor selected.
 
 ### Phase 078 — incremental analysis progress

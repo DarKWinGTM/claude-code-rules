@@ -3,7 +3,7 @@
 > **Current Version:** 2.35
 > **Target Design:** [../design/phase-todo-artifact.design.md](../design/phase-todo-artifact.design.md) v1.40
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5
-> **Status:** P073-24/v10.80 source/semantic gates accepted with synthetic limits; selected Main/MCI installation and publication pending
+> **Status:** P073-24/v10.80 and coordinated MCI075-01/0.9.43 source/install/publication gates verified-in-scope; receipt-only documentation preserves immutable source tags
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,9 +21,11 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active Slice
 
-[P073-24 — Runtime clarity, storage lifetime and compaction](phase-073-24-runtime-clarity-lifecycle-compaction.md) is active in the existing P073 Runtime-owner/install/publication family. Main19 source Node56/56 and native Linux fixtures passed; full-guidance interpretation/semantic acceptance is recorded with feedback/baseline limits in the child. Selected installation/publication remains pending. Coordinated [MCI075-01](../plugin/memory-context-intelligence/phase/phase-075-01-incremental-rule-enrichment.md) changes the analysis Skill gate. Patch/diagram: not required; personal Skill deployment stays unselected. Previous slices remain closed.
+[P073-24 — Runtime clarity, storage lifetime and compaction](phase-073-24-runtime-clarity-lifecycle-compaction.md) is verified-in-scope: Main19 semantic/source checks, actual19-file installation, coordinated MCI21-file installation, atomic immutable source publication and103 selected public byte/Git-mode checks passed. The child records source/tag/Release identities, the feedback-corrected synthetic handoff omission and baseline-enrichment limit. This receipt changes documentation only; no successor, reload or causal-benefit claim is selected. Coordinated [MCI075-01](../plugin/memory-context-intelligence/phase/phase-075-01-incremental-rule-enrichment.md) retains separate eligibility ownership; previous slices remain closed.
 
 ### Latest Verified Slice
+
+- **P073-24 / v10.80:** [Runtime clarity/lifecycle/compaction](phase-073-24-runtime-clarity-lifecycle-compaction.md), source `9c76f5600ce5b5d607b4c0169809ef418e4c7650`, Main latest [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.80), coordinated plugin0.9.43 non-latest Release and103 selected public byte/mode checks are verified. Runtime19 net reduction9.86%; source/install/synthetic/adoption layers remain distinct.
 
 - **P152 / v10.79:** [Portable Skill library](phase-152-portable-skill-library.md) ships six general on-demand procedures and four references under `skill/`, separate from Main19/plugins. Node70/70, both installer fixture suites on Linux, twelve bounded candidate distinctions, actual unchanged Rules installation and preservation passed. Exact21-path source commit `d335a14fdef2225e3999b5a1ea4496063698f8d0`, immutable annotated `v10.79` object `67949d99ce7952f86f3f7010f0f1b003bc85ee99`, atomic non-force master publication and [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.79) are verified. Fresh-public44-path bytes/Git modes and exact source/tag/tree identity passed without executing downloaded code. Tasks11/12 handed proof to finalizer13; later receipts leave the tag immutable. Personal Skills/unrelated work are preserved; no Skill deployment, causal AI benefit or successor claimed. [Target design](../design/design/skill-library.design.md), [history](../changelog/changelog/v10.79-portable-skill-library.changelog.md); Patch not required.
 

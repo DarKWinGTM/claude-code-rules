@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.80 candidate</b><br><sub>Runtime Clarity and Lifecycle</sub>
+  <b>v10.80</b><br><sub>Runtime Clarity and Lifecycle</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current candidate:** v10.80 candidate clarifies actionable handoff, plain synthesis, distinct work states, issue continuity and storage lifetime while compacting Main19. Source Node56/56, native Linux fixtures, scoped preservation and semantic review passed. Full-guidance synthetic interpretation was accepted with a feedback-corrected handoff omission and no demonstrated baseline-to-candidate behavioral gain; selected installation/publication and receipts remain pending. MCI0.9.43 separately adds trace-supported enrichment at existing owners; no session reload/model-benefit claim. [P073-24](phase/phase-073-24-runtime-clarity-lifecycle-compaction.md) tracks proof; [v10.79](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.79) remains the released baseline until publication.
+> **Current release:** [v10.80](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.80) ships actionable handoffs, plain synthesis, distinct work states, obligation review and lifetime-based artifact placement. Main19 is **191,506 → 172,625 Unicode characters (9.86% net reduction)** including additions, with substantive owners and safety/proof controls retained. Source Node56/56, native Linux fixtures and semantic checks passed; Main19 installation and103 selected public file bytes/Git modes are verified. Coordinated [MCI0.9.43](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/memory-context-intelligence--v0.9.43) admits trace-supported enrichment at existing owners and passed212 package tests plus21-file installed-runtime parity. [P073-24](phase/phase-073-24-runtime-clarity-lifecycle-compaction.md) records synthetic feedback/baseline limits; no measured model benefit is claimed. Open sessions still need the appropriate new context/plugin reload; installation does not prove adoption.
 
 <!-- CTA Buttons -->
 <p>

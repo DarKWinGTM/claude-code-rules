@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-11-11
-> **Current Release:** v10.79 published; six-Skill source, unchanged Main19 installation and fresh-public identity/payload verified-in-scope
-> **Active Wave:** P073-24 Mainv10.80 + MCI075-01 package0.9.43/governed0.1.91; source checks passed, selected install/publication pending
+> **Current Release:** v10.80 published/latest; Main19 and coordinated MCI0.9.43 local installation plus103 selected public file bytes/modes verified-in-scope
+> **Active Wave:** P073-24/MCI075-01 technical gates verified; this receipt-only finalization retains immutable source tags. No successor selected
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,13 +10,13 @@
 
 ## Active / In Progress
 
-- [ ] **[P073-24](phase/phase-073-24-runtime-clarity-lifecycle-compaction.md):** Main19 operational clarity/lifecycle/compaction and selected Mainv10.80 install/publication; Node56/56, native Linux fixtures, semantic review and selected preservation passed; synthetic feedback/baseline limits are recorded in the child. Installation/publication remains pending.
-- [ ] **[MCI075-01](plugin/memory-context-intelligence/phase/phase-075-01-incremental-rule-enrichment.md):** supported incremental enrichment at the existing owner; Skill35/35, package212/212, final manifest/validator and bounded synthetic acceptance passed; no causal improvement claim. Installation/publication remains pending.
-- [ ] Reconcile actual Main/MCI receipts and push docs-only follow-up without retagging after both required gates pass. Personal Skill deployment remains unselected.
+The selected P073-24/MCI075-01 source/install/publication work is verified-in-scope; no additional implementation or successor is opened. Current-session reload/adoption is user-owned and excluded, not pending technical work. Personal Skill deployment remains unselected.
 
 Earlier MCI corrective source gates remain closed; the selected enrichment work above is a distinct child. P073-18 Main remains verified and closed. Earlier settings evidence and the prior internal-agent restriction violation remain separately unresolved; this source correction does not authorize restoration or model validation.
 
 ## Recently Completed
+
+- [x] **P073-24 / v10.80 + MCI075-01 / package0.9.43:** actionable handoffs, plain synthesis, distinct states, obligation review and lifetime storage in the same19 owners; net9.86% character reduction. MCI permits trace-supported existing-owner enrichment while retaining suppression controls. Source Node56/56, MCI212/212, native fixtures/validator, scoped semantic/synthetic acceptance with disclosed limits, actual19+21-runtime parity and103-file fresh public bytes/Git modes passed. Exact86-path source `9c76f5600ce5b5d607b4c0169809ef418e4c7650`, immutable Main/plugin tags and both Releases are verified; Main alone is latest. [Main receipt](phase/phase-073-24-runtime-clarity-lifecycle-compaction.md#installation-and-publication-receipt) and [plugin receipt/exclusions](plugin/memory-context-intelligence/changelog/v0.1.91-incremental-rule-enrichment.changelog.md) preserve the checks and limits. This later docs-only record does not retag or change runtime; no causal model benefit, current-session adoption or whole-project convergence claimed.
 
 - [x] **P152 / v10.79 portable Skill library:** six general procedures and four references published under `skill/`, separate from unchanged Main19. Node70/70, Bash/PowerShell Linux fixtures, twelve bounded candidate distinctions and actual Rules installation/preservation passed. Exact21-path source commit `d335a14fdef2225e3999b5a1ea4496063698f8d0`, immutable annotated `v10.79`, atomic non-force default-branch publication and [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.79) are verified. Fresh-public44-path bytes/Git modes and source/tag/tree identity passed; technical/publication evidence reached finalizer13 before tasks11/12 closed. Personal Skills and unrelated local work remain preserved; no runtime Skill deployment, causal benefit or successor claimed. [Phase](phase/phase-152-portable-skill-library.md), [design](design/design/skill-library.design.md), [history](changelog/changelog/v10.79-portable-skill-library.changelog.md).
 
