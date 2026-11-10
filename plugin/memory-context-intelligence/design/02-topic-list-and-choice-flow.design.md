@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.75
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-01)
+> **Current Version:** 0.1.88
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-10)
 > **Parent Design:** [design.md](design.md)
 
 ---
@@ -17,14 +17,43 @@ Define the user-facing analysis flow for this capsule so that it analyzes bounde
 
 The flow must be:
 
-1. analyze bounded historical memory evidence
-2. present proposed improvement topics as a numbered or sectioned list
-3. after the list is visible, keep the slash invocation itself as the active request even when no extra text was supplied
-4. after the topic cards, render one compact advisory next-action bridge that keeps topic selection and direct follow-up choices visible
-5. expand only the chosen topic into deeper concept/matrix/design output
-6. do not mutate RULES directly from this flow
+1. caller binds the actual slash arguments after fileless startup, then prepares the next oldest-unprocessed complete historical batch; report contiguous prefix/remaining coverage without claiming selected days are complete
+2. the main session discovers observed mechanisms from canonical intake `topic_discovery_evidence` before consulting generated titles/ranks; when independent perspectives and permitted caller tools justify it, workers add candidates, otherwise local semantic discovery still runs
+3. fan in local semantic candidates, advisory deterministic seeds, and worker suggestions; verify cited producer-owned trace references against the same content projection
+4. apply the full eligibility gate to the combined set, including semantic deduplication, before deepening or presentation
+5. after fully analyzing a progressive batch, explicitly acknowledge `analyzed` or successful `no-topics`; only then may catch-up prepare its next batch. Present only eligible improvement topics, deduplicated across the invocation; zero eligible topics is valid
+6. after the list is visible, keep the slash invocation itself as the active request even when no extra text was supplied
+7. after the topic cards, render one compact advisory next-action bridge that keeps topic selection and direct follow-up choices visible
+8. expand only the chosen eligible topic into deeper concept/matrix/design output
+9. do not mutate RULES directly from this flow
 
 พูดง่าย ๆ: ต้องโชว์รายการหัวข้อก่อน แล้วค่อยให้ user เลือกทีหลัง แต่รอบนี้รายการหัวข้อควรมาจาก broader historical work patterns เป็นค่า default ไม่ใช่ล็อกที่ current session ก่อนเสมอ
+
+### 2.0.1) Topic eligibility and novelty gate
+
+A signal or generated card is only an internal candidate. Before adaptive deepening or presentation, every candidate must pass each check:
+
+1. **Trace-to-claim entailment:** inspect the bounded source-backed trace text for the candidate. It must support the specific alleged problem. Generated titles, keywords, scores, confidence labels, signal IDs, generic before/after templates, and a general evidence count cannot substitute. Plans, precautions, compliant actions, hypotheticals, missing/truncated evidence, or evidence that does not establish the claim are suppressed; do not retrieve more evidence to rescue or strengthen that rejected candidate.
+2. **Active RULES novelty:** identify the analyzed project's active root and inspect the relevant active RULES owner, not only sampled `governance_context`. Suppress topics whose principle or behavior is already covered, including a trace that appears to violate that rule; analysis does not re-propose covered doctrine as a regression topic.
+3. **Completed-work novelty:** follow active phase/TODO navigation and compare the candidate's behavior, mechanism, and output with the actual delivered outcome at its checked proof layer. Suppress matching delivered outcomes, not merely similar titles or a completed topic-filtering system. Phase075 completion establishes its eligibility infrastructure, not resolution of every later candidate. A genuinely distinct residual delta still needs trace support, checked unfinished outcome, and active-RULES novelty; possible material matches that cannot be settled remain fail-closed.
+4. **Candidate-set deduplication:** compare meaning across candidates and retain at most one per principle, behavior, or outcome.
+5. **Fail closed:** suppress if the active root/owner or relevant completion state cannot be checked, or if a material semantic match remains ambiguous.
+
+When every candidate is suppressed, distinguish unsupported evidence from active-rule coverage, completed work, duplicate candidates, or an unresolved check. Do not mislabel suppression as insufficient trace repetition. The first-response analysis remains read-only for corpus/governance/candidate artifacts and never mutates RULES; its only state-writing exception is MCI-owned pending/completed progress, not topic acceptance or promotion.
+
+#### 2.0.2) Parallel candidate discovery before eligibility
+
+When multiple distinct trace-backed evidence axes exist and independent caller-session subagents are available, provide every worker the same bounded, privacy-minimized `topic_discovery_evidence` projection from the existing intake. The projection is not automatically redacted: remove personal data, credentials, private paths/hosts/endpoints, and unrelated payload details before dispatch, and omit an excerpt if sanitization would destroy its evidentiary meaning. Each excerpt carries a run-local reference for leader verification. The three optional lenses are Developer/process, Security, and Architect; each may return zero candidates. Do not launch discovery when one meaningful axis remains, excerpts are insufficient, or the caller cannot keep worker tasks bounded to the supplied evidence.
+
+The main session first discovers observed mechanisms from canonical intake content, then verifies every cited excerpt, combines local semantic candidates and worker suggestions with advisory deterministic seeds, and applies the unchanged eligibility checks in §2.0.1—including semantic deduplication—to the combined set. No-worker discovery remains active; seed scores/confidence/breadth cannot be copied to a different semantic evidence basis. Workers are instructed not to acquire trace data, decide novelty, deepen candidates, or write. Candidate discovery is distinct from Phase 012's in-process simulated lane findings, Phase 069 adaptive deepening, and Phase 076's explicit older-window scan. Agent Teams are conditional caller-session tooling and do not become a package dependency or setting change.
+
+### 2.0.3) One explicit supplemental search for new topics
+
+Skill preprocessing executes only fileless `analysis-surface --startup`; the caller binds slash arguments and performs initial preparation explicitly. Normal incremental/catch-up payloads intentionally expose no `next_older_than_day`; their continuation is the acknowledgement-bound progress path in [07](07-recall-scoping-and-time-window.design.md). The older-than path remains an explicit stateless inspection, never implicit default progress. The supplemental command is an ordinary shell template, not an executable context-injection block: the caller runs it only after checking the explicit request and scope, replacing the date placeholder with the actual `YYYY-MM-DD` value from the initial payload. A prose condition cannot defer an executable injection block because the harness runs injection before Claude receives the instructions.
+
+A user request for additional/different topics authorizes one bounded supplemental scan only when the original candidate set does not meet that request. The analysis surface reports the exact daily shards in its first bounded window and, only for a historical-default run with trace evidence enabled and no explicit narrowing, the next available boundary as `analysis_window.next_older_than_day`. The internal supplemental path selects shards strictly older than that boundary, carries forward the same explicit config path when present, applies the same per-run shard/record/character/byte and source-class limits, and returns a new candidate set from those records.
+
+The supplemental scan is a new candidate-discovery operation, not a repeat of the prior run and not additional evidence to rescue a rejected candidate. The skill must process no more than one supplemental window for an explicit request, perform local semantic discovery on the new content before concluding, compare candidates against all previously examined meanings, and apply the full eligibility gate before deepening or display. Re-reading rule coverage or Phase075 history cannot stand for this fresh evidence pass. Report selected/read/sampled scope and actual attempted/used status, not candidate suppression as proof of completed discovery. It does not run by default for a slash invocation or an ordinary no-topic result. It cannot widen an explicitly narrowed or policy-limited scope, and it is unavailable if configured source policy disables `trace_evidence`. Output identifies the exclusive boundary, exact checked days, attempted/used state, and intake status; if unavailable, preserve the intake reason and do not report the supplemental window as used. Report whether candidates were produced or suppressed; an empty or ineligible bounded window is not evidence that the remaining corpus has no topics.
 
 ## 2.1) Selected memory-input contract
 
@@ -32,14 +61,14 @@ The selected design **is** broader historical analysis by default, but still bou
 
 Before topic-list presentation, `/memory-context-intelligence:analysis` should use this scope model:
 1. current project collection only
-2. bounded recent historical shards across the user's work corpus by default
+2. oldest unprocessed historical records of any age in bounded chronological batches by default
 3. repeated historical trace may surface topic candidates without requiring current-session trace as the primary gate
 4. current-session evidence becomes supporting provenance/freshness context when present
 5. explicit narrowing such as `day=YYYY-MM-DD`, `session=<id>`, or `lookback=<minutes|hours>` remains available when the operator wants it
 
 Design defaults:
 - default project scope = current project collection only
-- default historical scope = bounded recent history, not unbounded all-history
+- default historical scope = pending history without an age cutoff; batch acquisition stays bounded and plain incremental stops after one completed batch
 - default current-session narrowing = off unless explicitly requested
 - default lookback = none in historical-default mode
 - explicit narrow-slice runs should stay narrow rather than silently widening beyond the chosen request
@@ -118,11 +147,13 @@ The first output layer must:
 - rewrite titles into semantic human-readable titles rather than exposing raw slug/token-bag wording
 - keep top-level topic names at RULES/workflow principle or mechanism level rather than incident-level issue wording
 - keep incident details such as `404`, `python error`, or similar case examples inside proposal evidence/examples or provenance instead of the title
-- allow sparse historical runs to keep at least 3 advisory topics by splitting distinct doctrine lenses rather than emitting an incident list
+- render zero or more eligible topics; never add filler cards to reach a target count
+- only retain one candidate for a shared principle, behavior, or outcome, even when titles differ
+- do not present candidates already covered by applicable active RULES or already delivered in checked completed work
 - the slash invocation itself must count as the request even when the user provides no extra text after `/memory-context-intelligence:analysis`
 - when rendered analysis context exists, the first response must not fall back to a generic `no request` answer and must instead render the corresponding `available`, `blocked`, `dormant`, or `no-topics` state
-- the first response must render surfaced topics as repeated topic cards, for example `Topic 1`, `Topic 2`, `Topic 3`
-- each surfaced topic must keep the same repeated presentation pattern so the user can compare topics directly without reading a wrapper report first
+- render only eligibility-approved topics as repeated topic cards, with zero topics allowed when none pass
+- each surfaced topic must keep the same repeated presentation pattern so the user can compare the full displayed set without reading a wrapper report first
 - one topic must not be split across separate top-level report-wrapper sections
 - if one topic is stronger, mark it inside that same topic card as the recommended first topic instead of opening a separate recommendation section
 - same-family weaker topics may still appear, but they should stay in the same repeated topic-card rhythm rather than being moved into a separate global variants block
@@ -134,7 +165,7 @@ The first output layer must:
 - make the breadth summary explicit enough to show when broader multi-session/multi-shard history outranked narrow historical-only signals
 - surface compact source-mix wording when durable memory or governance context materially shaped a candidate
 - when no config file is loaded for the run, the operator-facing payload may expose an advisory guided config helper with `config_questions` and `suggested_config_path` instead of treating raw args as the normal config UX
-- when `adaptive_deep_analysis.deepening_required` is true, the first response must run one bounded deepening pass for the top 1-2 topic ids named in `adaptive_deep_analysis.required_topic_ids` before the topic cards are rendered
+- when `adaptive_deep_analysis.deepening_required` is true, complete the eligibility gate first, then run one bounded deepening pass only for eligible topic ids named in `adaptive_deep_analysis.required_topic_ids` before rendering; rejected candidates are never deepened
 - that deepening pass may use read-only subagent help plus supporting web/external research when those tools are available, but it must stay advisory-only and must not replace local trace proof
 - if a required deepening tool is unavailable, the response must say so explicitly instead of silently skipping the deepening step
 - include provenance notes when they materially help the user judge the evidence boundary
@@ -177,6 +208,33 @@ After user choice or explicit request for internals:
 - keep unchosen topics collapsed
 - keep explanatory text in the user's active working language where practical
 - preserve canonical technical identifiers, file paths, commands, env vars, and exact evidence anchors in exact form
+
+### Collective post-analysis synthesis
+
+After analysis and any user-selected refinements, `/memory-context-intelligence:summary` compares the complete accessible Topic set and user purpose, forms provisional mechanism families/criteria, researches public alternatives and counterevidence, and revises transferable principles/strategies/practice into an integrated method. [Post-Analysis Principle Synthesis](10-post-analysis-principle-synthesis.design.md) owns this manual advisory contract, permitted caller-session public tools, source/history separation, comparison/revision, privacy/failure limits and complete Topic disposition.
+
+This is a separate advisory response, not a replacement for initial repeated Topic cards or a combined packet/additional artifact. It consumes available evidence without starting another memsearch/corpus run; analysis acquisition requirements remain unchanged. Missing or ambiguous input gets a bounded clarification, not invented mechanisms. Invocation does not authorize file creation, additional emission or Main promotion.
+
+### Post-presentation selected-topic follow-up
+
+The initial `/memory-context-intelligence:analysis` surface remains proposal-first and advisory, with corpus/governance/candidate artifacts read-only and only MCI pending/completed progress writable. It must not parse topic-selection wording as an analysis-scope mutation or perform an additional-stage write during the first-response flow.
+
+After the topic cards are visible, a later explicit user instruction may select one or several topics for additional-stage trial creation. When that follow-up is clear, the assistant should apply one deterministic workflow instead of asking the user to choose internal routing, template, collision, or source-sync options that already have governed defaults.
+
+Selected defaults:
+- preserve every existing additional-stage artifact unchanged
+- create one new semantic file per selected topic
+- use the rich standalone trial-rule schema owned by `05-additional-staging-and-promotion.design.md`
+- normalize evidence into self-contained doctrine under the contract owned by `08-memory-evidence-source-model.design.md`
+- use the user-runtime additional-stage namespace for `memory-context-intelligence`
+- preflight all selected filenames and destinations before writing
+- refuse collisions and do not offer an overwrite path in the normal selected-topic workflow
+- keep initial analysis, additional-stage selection, and later Main RULES promotion as three distinct states
+- record explicit state equivalent to `selected_for_additional_trial=True` and `main_rules_promotion_approved=False` after the user selects trial creation
+- set additional-stage selection without implying Main RULES promotion approval
+- if several topics are selected, process them as independent one-topic packets/artifacts rather than a combined file
+
+A follow-up question is justified only when the user-selected topics, intended owner, destination, or collision state remains materially ambiguous. The assistant should not ask preference questions merely to expose internal implementation choices when one governed safe continuation already dominates.
 
 ## 5) Interactive presentation configuration
 

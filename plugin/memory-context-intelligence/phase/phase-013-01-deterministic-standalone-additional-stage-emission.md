@@ -1,0 +1,170 @@
+# Phase 013-01 — Deterministic Standalone Additional-Stage Emission
+
+> **Summary File:** [SUMMARY.md](SUMMARY.md)
+> **Phase ID:** 013-01
+> **Current Version:** 0.1.79
+> **Status:** Completed / package 0.9.31 corrective release fresh-tag verified
+> **Target Design:** [../design/design.md](../design/design.md) v0.1.79
+> **Design References:** [../design/02-topic-list-and-choice-flow.design.md](../design/02-topic-list-and-choice-flow.design.md), [../design/05-additional-staging-and-promotion.design.md](../design/05-additional-staging-and-promotion.design.md), [../design/08-memory-evidence-source-model.design.md](../design/08-memory-evidence-source-model.design.md)
+> **Patch References:** [../patch/deterministic-standalone-additional-stage-emission.patch.md](../patch/deterministic-standalone-additional-stage-emission.patch.md), [../patch/post-release-public-skill-version-alignment.patch.md](../patch/post-release-public-skill-version-alignment.patch.md)
+> **Changelog References:** [../changelog/v0.1.78-deterministic-standalone-additional-stage-emission.changelog.md](../changelog/v0.1.78-deterministic-standalone-additional-stage-emission.changelog.md), [../changelog/v0.1.79-corrective-public-skill-version-alignment.changelog.md](../changelog/v0.1.79-corrective-public-skill-version-alignment.changelog.md)
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e (2026-08-09)
+
+---
+
+## Goal
+
+Implement the approved post-presentation selected-topic workflow so explicit user selection produces one collision-safe, rich, standalone additional-stage rule per topic without changing the initial read-only analysis behavior or approving Main RULES promotion.
+
+## Architecture
+
+Extend the existing signal → orchestration → packet → emitter chain in place.
+
+- raw evidence anchors remain internal audit context
+- emitted doctrine uses a semantic entailment and normalized-evidence layer
+- multiple selected topics remain independent but pass one full-set preflight
+- exclusive writes occur only under `additional/memory-context-intelligence/`
+- replay, trial, readiness, skill, CLI, and package-facing surfaces converge on the same contract
+- release staging uses a clean temporary clone based on `memory-context-intelligence--v0.9.29`, preventing unrelated working-tree changes from entering v0.9.30
+
+## Strategic target and convergence
+
+**Strategic target:** explicit user-selected analysis topics converge into independently reviewable additional-stage doctrine, with one safe source path and no automatic Main RULES promotion.
+
+**Tactical execution:** extended the completed Phase 013 implementation in place rather than creating a parallel emitter.
+
+**Convergence path:** replaced thin/overwrite-capable selected-topic behavior, updated all active consumers, verified the single active path, released package 0.9.30, then published corrective package 0.9.31 for the audited public-skill metadata defect.
+
+**Closure evidence:** source, focused/full tests, isolated smoke, clean-candidate tests, exact release scopes, remote branches, annotated tags, GitHub Releases, and fresh-tag verification passed at their declared evidence level.
+
+## Global constraints
+
+- Initial `/memory-context-intelligence:analysis` stays read-only, advisory, historical-first, and no-write.
+- Initial presentation and ordinary `choose` keep `selected_for_additional_trial=False` and `main_rules_promotion_approved=False`.
+- Only a later explicit user instruction may set `selected_for_additional_trial=True`; Main RULES promotion remains false.
+- `trace_evidence` remains the live pattern anchor.
+- One topic maps to one packet/artifact; combined multi-topic output remains forbidden.
+- The complete selected set is preflighted before the first write.
+- Any duplicate/existing destination rejects the entire set and preserves existing bytes.
+- No active overwrite parameter, flag, compatibility branch, merge, reuse, or replacement path remains.
+- Emitted doctrine has no semantic dependency on memory shards, transcript/JSONL files, temporary paths, absolute analysis-only paths, raw `path:line`, or `content_preview` reconstruction.
+- Writes remain under `<additional-root>/memory-context-intelligence/`; traversal and symlink escape fail closed.
+- Existing fifteen runtime trial artifacts remain untouched.
+- Main RULES bodies and Phases 017-018 remain unchanged.
+- `lib/analysis_surface.py`, selected-topic config persistence, public `review`/`packet`, bare `/analysis`, auto flow, external agent spawning, and live-web defaults remain outside scope.
+- Package `0.9.30` remains immutable release evidence; governed version `0.1.79` prepares corrective package `0.9.31` with both public skills aligned.
+- Canonical repository is `/home/node/workplace/AWCLOUD/TEMPLATE/RULES`; the active working tree contains extensive unrelated changes and is not the release staging tree.
+- Original behavior-release base: `memory-context-intelligence--v0.9.29` at `a70970c`; release branch/tag/title: `mci-release-v0.9.30`, `memory-context-intelligence--v0.9.30`, `memory-context-intelligence v0.9.30`.
+- Corrective release base: immutable `memory-context-intelligence--v0.9.30` at `02b15e29fe5eaf7c05e0a81d0b92ef4773cfd677`; branch/tag/title: `mci-release-v0.9.31`, `memory-context-intelligence--v0.9.31`, `memory-context-intelligence v0.9.31`.
+- Both release actions used exact action-and-scope confirmation after tests and staged-scope verification; the published tags/releases are immutable.
+
+## Child phase map
+
+| Child | Output | Gate | Status |
+|---|---|---|---|
+| [013-01-01](phase-013-01-01-evidence-normalization-and-standalone-rendering.md) | Fresh baseline, signal/topic entailment linkage, selection-state separation, normalized evidence, rich standalone renderer | focused signals/orchestration/packet/renderer tests pass | Completed / verified in focused source scope |
+| [013-01-02](phase-013-01-02-atomic-emission-runtime-verification-and-version-sync.md) | Atomic batch preflight, exclusive writes, path/symlink containment, public follow-up state, replay/trial/readiness alignment, isolated smoke, version sync | focused/full tests and temporary-HOME smoke pass; Main RULES unchanged | Completed / verified in local source/test/smoke scope |
+| [013-01-03](phase-013-01-03-plugin-release-and-fresh-tag-verification.md) | Clean plugin-only release candidate, push, annotated tag, GitHub Release, fresh-tag verification | explicit external-action confirmation plus remote/tag/release parity | Completed / package 0.9.30 released and fresh-tag verified; init-skill metadata defect recorded by successor |
+| [013-01-04](phase-013-01-04-corrective-public-skill-version-alignment.md) | Align both public skills, repair active wording, and publish immutable corrective package 0.9.31 | focused/full tests, exact clean candidate, new confirmation, corrective release/fresh-tag proof | Completed / package 0.9.31 released and fresh-tag verified |
+
+## Dependency order
+
+```text
+013-01-01 evidence and standalone body
+→ 013-01-02 safe emission and runtime proof
+→ 013-01-03 package 0.9.30 release and public verification
+→ 013-01-04 immutable corrective package alignment
+```
+
+Do not begin release staging from the dirty main working tree. Do not bump package version before the implementation and full source suite pass.
+
+## Selected design coverage
+
+The v0.1.78 behavior items remain verified. The phase is reopened only for the v0.1.79 corrective dispositions:
+
+- [x] initial analysis remains read-only/no-write — verified in presentation/skill and full-suite scope
+- [x] explicit later selection uses additional-only authorization — verified in packet, skill, presentation, and trial scopes
+- [x] Main RULES promotion remains false — verified in packet, presentation, replay, trial, and readiness scopes
+- [x] trace-to-candidate entailment is checked before emission — focused tests passed
+- [x] partial support narrows the mechanism; context-only/reject cannot emit — focused tests passed
+- [x] normalized evidence is standalone and excludes transient dependencies — validator tests passed
+- [x] rich artifact schema is complete — renderer/readiness validation passed
+- [x] one topic per packet/artifact remains enforced — focused and batch smoke checks passed
+- [x] multi-topic selection performs independent packetization and one full-set preflight — focused and CLI tests passed
+- [x] collision/duplicate handling creates zero files and preserves bytes — focused tests and smoke passed
+- [x] overwrite path is absent from Python, CLI, help, reports, replay, trial, and readiness — checked implementation/test scope passed
+- [x] root/namespace/traversal/symlink containment passes — focused tests and smoke passed
+- [x] isolated smoke does not touch the real runtime additional directory — controlled temporary root verified
+- [x] Main RULES before/after digest is equal — controlled smoke verified the checked 24-file scope
+- [x] source and clean release-clone full suites pass — both reported `132 passed`
+- [x] package `0.9.30` behavior release is verified — branch/tag/release/fresh clone resolve to `02b15e29fe5eaf7c05e0a81d0b92ef4773cfd677`
+- [x] v0.9.30 metadata defect is verified — init skill remained `0.9.29`; completion wording is corrected rather than hidden
+- [x] local package `0.9.31` manifest, analysis skill, and init skill align — focused regression passes
+- [x] user-scope config wording, design evidence boundary, changelog tense, and design-04 metadata are repaired locally
+- [x] full source suite and plugin validation pass for v0.9.31 — `132 passed`, validation PASS
+- [x] exact v0.9.30-based corrective staged scope is verified — 17 allowlisted paths, zero deletions, `132 passed`, validation PASS
+- [x] explicit external-action confirmation covered final v0.9.31 commit `5e58f018a2b057ffdd009aeca3d88146e0cfab20` and exact 17-path scope
+- [x] remote branch, annotated tag, non-draft/non-prerelease GitHub Release, and fresh tagged clone are verified for v0.9.31
+- [x] fresh tag reports manifest, analysis skill, and init skill at `0.9.31`; full suite `132 passed`; plugin validation PASS
+- [x] immutable v0.9.30 branch/tag/release remains unchanged at `02b15e29fe5eaf7c05e0a81d0b92ef4773cfd677`
+
+## Verification route
+
+- `new_focused_test` for implementation contracts
+- `smoke_check` under temporary HOME/additional root
+- full plugin suite in source and clean release clone
+- fresh tagged-clone verification after release
+- no installed marketplace/runtime claim unless separately checked
+
+## Release boundary
+
+The two immutable release slices are:
+
+```text
+repository: DarKWinGTM/claude-code-rules
+behavior release base: memory-context-intelligence--v0.9.29
+behavior branch/tag: mci-release-v0.9.30 / memory-context-intelligence--v0.9.30
+behavior commit: 02b15e29fe5eaf7c05e0a81d0b92ef4773cfd677
+corrective release base: memory-context-intelligence--v0.9.30
+corrective branch/tag: mci-release-v0.9.31 / memory-context-intelligence--v0.9.31
+corrective commit: 5e58f018a2b057ffdd009aeca3d88146e0cfab20
+```
+
+Each release commit contains only its exact plugin allowlist. Main RULES, other plugins, runtime additional-stage artifacts, and unrelated working-tree files remain excluded.
+
+## Completion gate
+
+Phase 013-01 is closed because:
+- all four child gates passed
+- selected design coverage has no unclassified material obligation
+- packages 0.9.30 and corrective 0.9.31 were each verified in fresh tagged clones
+- both GitHub Release identities were checked directly
+- Main RULES and all pre-existing additional-stage artifacts remained unchanged in checked scope
+- verification wording remains bounded to source/test/package/tag proof and does not claim marketplace installation or stability
+
+## Verification record fields
+
+At execution closeout, record observed values for:
+- baseline command/result
+- RED missing-mechanism failures
+- focused GREEN commands/results
+- temporary single/batch/collision/symlink/Main RULES digest smoke results
+- full source-suite and clean release-clone results
+- release commit SHA and exact staged scope
+- verified remote branch SHA
+- annotated tag and peeled commit
+- GitHub Release URL/status
+- fresh-tag clone result
+- checked coverage, explicit exclusions, and evidence-calibrated confidence
+
+Do not prefill these fields from planned or worker-reported results.
+
+## Rollback / containment
+
+Before release, revert only Phase 013-01 plugin-local changes in the clean release candidate. Do not reset or clean the main RULES working tree.
+
+After branch push but before tag/release, use a corrective commit or remove only the dedicated unreleased branch after explicit confirmation.
+
+After published tag/release, do not force-move the tag or silently replace the release. A runtime defect requires a corrective plugin version; release/tag deletion remains a separate destructive action.
+
+Existing additional-stage artifacts, Main RULES, other plugins, unrelated repository state, and Phases 017-018 remain protected.

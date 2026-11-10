@@ -400,7 +400,8 @@ def confidence_for_cluster(cluster: dict[str, Any], intake_report: dict[str, Any
     breadth = trace_session_ids(cluster)
     current_confirmation = current_session_confirmation_label(cluster, os.environ.get("CLAUDE_CODE_SESSION_ID"))
 
-    if status != "available" or freshness_class == "stale":
+    intentional_backlog = (intake_report.get("progressive_batch") or {}).get("coverage", {}).get("complete") is True
+    if status != "available" or (freshness_class == "stale" and not intentional_backlog):
         return "low"
     if trace_count >= 3 and len(unique_shards) >= 2:
         return "high"
@@ -487,6 +488,7 @@ def record_refs(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 "session_id": record.get("session_id"),
                 "source_classes": record_source_classes(record),
                 "content_preview": content[:220] + ("..." if len(content) > 220 else ""),
+                **({"ref": record["ref"]} if record.get("ref") else {}),
             }
         )
     return refs
@@ -820,19 +822,24 @@ def advisory_focus_suffix(signal: dict[str, Any]) -> str:
 
 def topic_from_signal(signal: dict[str, Any], topic_rank: int, *, promotion_tier: str = "promoted-candidate") -> dict[str, Any]:
     kind = signal["kind"]
+    title = topic_title(signal)
+    mechanism = MECHANISM_BY_KIND[kind]
+    why_surfaced = (
+        f"{signal['record_count']} bounded intake record(s) clustered as a "
+        f"{GROUP_LABELS[signal['group']]} signal with evidence label {signal['evidence_label']}."
+    )
+    source_signal_ids = [signal["id"]]
     return {
         "rank": topic_rank,
         "id": f"topic-{topic_rank:03d}",
-        "title": topic_title(signal),
+        "title": title,
         "purpose": PURPOSE_BY_KIND[kind],
-        "why_surfaced": (
-            f"{signal['record_count']} bounded intake record(s) clustered as a "
-            f"{GROUP_LABELS[signal['group']]} signal with evidence label {signal['evidence_label']}."
-        ),
+        "why_surfaced": why_surfaced,
         "expected_behavior_impact": IMPACT_BY_KIND[kind],
-        "high_level_mechanism": MECHANISM_BY_KIND[kind],
+        "high_level_mechanism": mechanism,
         "expected_output": OUTPUT_BY_KIND[kind],
         "evidence_examples": proposal_evidence_examples_for_signal(signal),
+        "evidence_refs": [record["ref"] for record in signal.get("records", []) if record.get("ref") and "trace_evidence" in record_source_classes(record)],
         "before_behavior": proposal_before_behavior_for_signal(signal),
         "after_behavior": proposal_after_behavior_for_signal(signal),
         "example_bad": proposal_bad_example_for_signal(signal),
@@ -850,7 +857,15 @@ def topic_from_signal(signal: dict[str, Any], topic_rank: int, *, promotion_tier
         "confidence": signal["confidence"],
         "evidence_label": signal["evidence_label"],
         "promotion_tier": promotion_tier,
-        "source_signal_ids": [signal["id"]],
+        "source_signal_ids": source_signal_ids,
+        "candidate_entailment_basis": {
+            "candidate_title": title,
+            "source_signal_ids": source_signal_ids,
+            "trace_record_count": signal.get("trace_record_count", signal["record_count"]),
+            "source_keywords": list(signal.get("keywords", [])),
+            "transferable_observed_pattern": why_surfaced,
+            "supported_mechanism": mechanism,
+        },
     }
 
 

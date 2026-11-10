@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.77
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-02)
+> **Current Version:** 0.1.88
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-10)
 > **Parent Design:** [design.md](design.md)
 
 ---
@@ -17,9 +17,17 @@ Define the source-of-analysis architecture for `/memory-context-intelligence:ana
 
 The current checked implementation uses four explicit source classes.
 
+## 2.0) Same-intake topic-discovery evidence projection
+
+The selected correction makes intake the semantic evidence owner. Assign a run-local `ref` to each policy-enabled trace record before signals; signals and candidate evidence references retain that same reference. The analysis wrapper projects `topic_discovery_evidence` from the already-loaded intake records, not signal/display previews, and does not run intake again. Each item contains `ref`, the bounded privacy-minimized `content`, and truthful `content_truncated` metadata; include at most 50 trace excerpts and no more than intake's character budget. A 220-character `content_preview` remains presentation/index text, never canonical discovery evidence or a fallback for missing content.
+
+Exclude transcript paths, session IDs, shard/section locators, generated interpretations, and context-only records from the caller/worker evidence projection. Reuse intake minimization and retain caller sanitization before worker dispatch: remove remaining sensitive/unrelated details or omit an excerpt when sanitization would destroy its evidentiary meaning. The same references identify evidence for local semantic discovery, optional independent workers, and main-session verification. Workers acquire no new evidence and return zero candidates when supplied content cannot support a claim.
+
+This projection is not a new evidence class, persistent identifier, across-run provenance claim, eligibility decision, or promotion state. Report sampling/source-read limits separately from record-content truncation; neither a bounded excerpt nor a selected day means every historical record was analyzed. Missing or genuinely truncated decision evidence remains subject to the unchanged Phase075 fail-closed gate.
+
 | Source class | Current implemented input | Main purpose | Current role in promotion |
 |---|---|---|---|
-| `trace_evidence` | bounded recent `.memsearch/memory/YYYY-MM-DD.md` records across the active project’s recent historical shard set by default | detect repeated historical work patterns, friction, or workflow drift | required live pattern anchor |
+| `trace_evidence` | oldest-unprocessed complete `.memsearch/memory/YYYY-MM-DD.md` records in bounded chronological batches by default; explicit narrow/supplemental inspection remains stateless | detect repeated historical work patterns, friction, or workflow drift | required live pattern anchor |
 | `recall_evidence` | memsearch-backed `search → expand` records when available inside the selected bounded scope | recover exact wording, sequence, and causal detail for a candidate pattern | supporting exactness only |
 | `durable_memory_context` | `MEMORY.md` plus relevant path-scoped memory entries when available in checked scope | supply durable preference, recurring project context, and previously validated operating constraints | supporting context only |
 | `governance_context` | checked RULES/design/changelog/TODO/phase/patch surfaces in scope | map owner chains, existing doctrine, boundaries, rollout posture, and promotion destination | supporting owner/boundary fit only |
@@ -42,6 +50,12 @@ Current checked behavior:
 - it is **not** promotion proof by itself
 - it must not persist selected-topic state that phase-010 still treats as structured fileless state
 - the selected default path is intentionally user-scope under `~/.claude`; it is no longer a project-local portable default
+
+### 2.2) Coverage and progress are separate from candidate truth
+
+`progressive_batch` describes the contiguous complete source prefix offered to the caller and the unprocessed remainder. Run-local `ref` remains only a same-intake evidence reference; persistent progress uses exact consumed-byte digests and opaque source keys. MCI progress is not another evidence class, topic ledger, selected-topic state, Memsearch index or proof that a proposal is novel. Store only MCI pending/completed bindings and source positions in the separate user-scope progress file defined by [07](07-recall-scoping-and-time-window.design.md); keep raw trace/transcript and candidate data out.
+
+Successful zero-topic analysis may acknowledge that exact batch. Preparation, signals, sampling, unread/truncated evidence and errors cannot certify semantic completion. The caller's explicit acknowledgement is the completion witness; source fixtures cannot prove actual model adherence. Historical age remains visible, but intentional complete backlog is not downgraded solely because it is old. Cross-batch recurrence accumulation is not implemented or claimed; each signal report still judges its supplied batch.
 
 ## 3) What each source class is meant to prove
 
@@ -83,6 +97,12 @@ Use `governance_context` to answer questions like:
 
 This is authority-fit context, not pattern discovery input by itself.
 
+### 3.5) Supplemental historical trace windows
+
+An explicitly requested supplemental analysis may consume one bounded daily-shard window strictly older than the actual budget-aligned first historical-default window. Intake applies existing shard/record/character/byte and source-policy caps, rotates representative records across days/sessions/entries, and owns selected/read/sampled coverage, empty/unreadable/byte-limited days, sampling limits and content-truncated references. The analysis surface exposes that coverage alongside its selected window, exclusive boundary and pass status; a single selected historical day is not an explicit day override. Days excluded by the record budget remain eligible in the next window. This remains bounded sampling, not all-record coverage, and adds no evidence class or persistent search state.
+
+Supplemental trace discovery is unavailable when the run was explicitly/configurationally narrowed, the first-pass boundary is missing, or source policy disables `trace_evidence`. If the first analysis used an explicit config path, the same path must be passed into the supplemental invocation so configured source restrictions remain in force. An unavailable or empty window retains its reason and checked-boundary metadata where available; it must not be rendered as corpus-wide absence. Supplemental evidence creates a new candidate set and cannot strengthen or relabel rejected candidates from the earlier pass.
+
 ## 4) Provenance contract
 
 Every surfaced topic should preserve provenance by source class.
@@ -96,6 +116,40 @@ Current implementation expectations:
 - adaptive deepening: if read-only subagent or web/external research support materially strengthened the explanation, keep that support visible as supporting evidence rather than letting it read like a new promotion anchor
 
 The first operator-facing response does not need raw dumps, but it should make the evidence mix visible enough that the user can tell where the proposal came from.
+
+### 4.1) Normalized standalone evidence contract
+
+Raw evidence anchors and emitted additional-stage doctrine serve different purposes and must remain separate.
+
+Internal analysis, orchestration, or packet reports may retain bounded raw anchors when they are needed for leader audit or candidate entailment review. Those internal anchors may include shard identity, section identity, record previews, source paths, session provenance, or other trace-local detail.
+
+An emitted additional-stage rule must instead carry a self-contained normalized evidence basis. It should preserve:
+- the evidence classes that materially shaped the candidate
+- whether the pattern is historical-only or also current-session-confirmed
+- recurrence and breadth at the level needed to judge strength
+- confidence and evidence label
+- the transferable observed pattern
+- relevant conflicts, uncertainty, and excluded scope
+- why the evidence supports the proposed doctrine mechanism
+- what still needs leader verification before promotion consideration
+
+The emitted rule must not depend on:
+- `.memsearch` or memory-shard filenames
+- transcript or JSONL paths
+- temporary directories or packet-report paths
+- absolute workstation paths used only during evidence gathering
+- raw `path:line` or shard/section anchors
+- raw record previews that are necessary to reconstruct the candidate's meaning
+
+Evidence normalization is a semantic distillation step, not simple redaction. The normalized text must explain the repeated mechanism well enough that the trial artifact remains understandable if the original transient evidence files disappear.
+
+Before ranking or emission, the selected candidate must pass an entailment check:
+- retain when bounded trace evidence directly supports the stated mechanism
+- narrow when it supports only part of the proposed doctrine
+- mark context-only and non-promotable when the source does not prove a live pattern
+- reject when the evidence is semantically unrelated to the candidate title or mechanism
+
+Durable memory and governance context may sharpen the normalized explanation, but they must not replace missing `trace_evidence` as the live trial anchor.
 
 ## 5) Weighting model
 
@@ -134,7 +188,7 @@ Report no strong candidate when:
 - only `durable_memory_context` or `governance_context` exists without live trace support
 - `recall_evidence` exists but only sharpens a non-repeated pattern
 - a config-file source limit leaves no remaining live trace support inside the selected bounded run
-- the strongest historical signal is still below the promotion gate even after bounded recent history was checked
+- the strongest historical signal is still below the promotion gate in the selected bounded batch; this says nothing about unprocessed history
 
 ### 6.2 Proposal-first topic is allowed
 
@@ -170,11 +224,10 @@ Current implementation expectations:
 This implemented source model still does **not** claim:
 - interactive config-file writing, auto-save, or automatic config mutation from the guided helper
 - selected-topic persistence inside config
-- `/additional/` behavior changes
-- plugin-managed auto-flow proof
-- publication
-- external marketplace release
-- stable-broad readiness
+- proof beyond the checked standalone `/additional/` source/test/smoke and tagged-release scope; design approval alone is not implementation proof
+- plugin-managed first-response auto-flow proof
+- marketplace installation or marketplace publication
+- stability over time or stable-broad readiness
 - main RULES promotion
 - main RULES mutation
 - main RULES merge

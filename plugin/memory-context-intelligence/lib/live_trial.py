@@ -92,11 +92,6 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         help="Actually write the trial file. Omit for preview/report only.",
     )
     parser.add_argument(
-        "--allow-overwrite",
-        action="store_true",
-        help="Allow replacing an existing emitted trial file. Omit to refuse overwrites.",
-    )
-    parser.add_argument(
         "--disposition",
         choices=("continue", "revise", "retire"),
         help="Optional explicit trial disposition. Defaults to continue on successful emission, revise otherwise.",
@@ -174,7 +169,7 @@ def rollback_notes(destination_path: str | None) -> list[str]:
     notes = [
         "Rollback means retiring, replacing, or removing only the emitted additional-stage trial file, not changing main RULES.",
         "Deletion or replacement of the emitted trial file requires explicit action-and-scope confirmation.",
-        "If revision is selected, prefer a new distinct trial file unless overwrite is explicitly approved for the same destination.",
+        "If revision is selected, use a new distinct trial destination; existing trial artifact bytes remain preserved.",
         "Main RULES rollback is not needed because this command does not mutate main RULES.",
     ]
     if destination_path:
@@ -189,6 +184,9 @@ def material_checks(emit_report: dict[str, Any] | None) -> dict[str, Any]:
             "emitted_file_exists": False,
             "material_contains_success_criteria": False,
             "material_contains_rollback_notes": False,
+            "standalone_artifact_valid": False,
+            "missing_headings": list(candidate_packet.REQUIRED_STANDALONE_HEADINGS),
+            "forbidden_dependencies": [],
         }
 
     destination_path = emit_report.get("destination_path")
@@ -200,12 +198,16 @@ def material_checks(emit_report: dict[str, Any] | None) -> dict[str, Any]:
         if exists:
             material = destination.read_text(encoding="utf-8")
 
+    validation = candidate_packet.validate_standalone_artifact(material)
     return {
         "destination_path": destination_path,
         "destination_relative_path": emit_report.get("destination_relative_path"),
         "emitted_file_exists": exists,
         "material_contains_success_criteria": "## Success criteria" in material,
         "material_contains_rollback_notes": "## Rollback notes" in material,
+        "standalone_artifact_valid": validation["valid"],
+        "missing_headings": validation["missing_headings"],
+        "forbidden_dependencies": validation["forbidden_dependencies"],
         "bytes_planned_or_written": emit_report.get("bytes_planned"),
     }
 
@@ -260,6 +262,8 @@ def build_blocked_report(
         ],
         "live_web_access_performed": False,
         "external_agent_process_spawned": False,
+        "selected_for_additional_trial": True,
+        "main_rules_promotion_approved": False,
         "additional_emission_performed": emitted,
         "main_rules_mutation_performed": False,
         "install_or_publication_performed": False,
@@ -383,6 +387,7 @@ def build_live_trial_report(args: argparse.Namespace) -> dict[str, Any]:
             main_rule_target=args.main_rule_target,
             additional_name=args.additional_name,
             additional_relative_path=args.additional_relative_path,
+            selected_for_additional_trial=True,
         )
         packet = packet_report["candidate_packet"]
         stop_gates = packet.get("stop_gates", []) or []
@@ -414,7 +419,6 @@ def build_live_trial_report(args: argparse.Namespace) -> dict[str, Any]:
             packet_report,
             additional_root=args.additional_root,
             approved_write=args.approved_write,
-            allow_overwrite=args.allow_overwrite,
         )
         emitted = bool(emit_report.get("additional_emission_performed"))
         stage_statuses.append(
@@ -446,9 +450,7 @@ def build_live_trial_report(args: argparse.Namespace) -> dict[str, Any]:
 
     checks = material_checks(emit_report)
     emitted_and_checked = emitted and bool(checks.get("emitted_file_exists"))
-    material_ready = bool(checks.get("material_contains_success_criteria")) and bool(
-        checks.get("material_contains_rollback_notes")
-    )
+    material_ready = bool(checks.get("standalone_artifact_valid"))
     disposition = args.disposition or ("continue" if emitted_and_checked and material_ready else "revise")
 
     evidence_basis = packet.get("signal_evidence_basis", {}) if isinstance(packet, dict) else {}
@@ -497,7 +499,6 @@ def build_live_trial_report(args: argparse.Namespace) -> dict[str, Any]:
         "emission": {
             "status": emit_report.get("status"),
             "approved_write": emit_report.get("approved_write"),
-            "allow_overwrite": emit_report.get("allow_overwrite"),
             "additional_root": emit_report.get("additional_root"),
             "destination_path": emit_report.get("destination_path"),
             "destination_relative_path": emit_report.get("destination_relative_path"),
@@ -530,6 +531,8 @@ def build_live_trial_report(args: argparse.Namespace) -> dict[str, Any]:
         ],
         "live_web_access_performed": False,
         "external_agent_process_spawned": False,
+        "selected_for_additional_trial": True,
+        "main_rules_promotion_approved": False,
         "additional_emission_performed": emitted,
         "main_rules_mutation_performed": False,
         "install_or_publication_performed": False,

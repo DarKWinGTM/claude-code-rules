@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.57
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-27)
+> **Current Version:** 0.1.88
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-10)
 > **Parent Design:** [design.md](design.md)
 
 ---
@@ -40,14 +40,14 @@ Because current checked recall is query-first rather than session/day/window-fir
 
 The selected default is historical-first:
 1. current project collection only
-2. a bounded recent historical shard set across the user's work corpus
+2. the oldest unprocessed contiguous historical batch, with no age cutoff on eligibility
 3. repeated historical trace may surface topic candidates without requiring current-session trace as the primary gate
 4. current-session evidence becomes supporting provenance/freshness context when present
 5. explicit narrowing such as `day=YYYY-MM-DD`, `session=<id>`, or `lookback=<minutes|hours>` remains available when the operator wants it
 
 Default scope policy:
 - **project scope:** current project collection only
-- **historical scope:** bounded recent historical shards, not broad unbounded all-history
+- **historical scope:** unprocessed history of any age, consumed in bounded batches rather than loaded all at once
 - **day/session narrowing:** off by default unless explicitly requested
 - **lookback default:** none when historical-default scope is active
 - **lookback configurable:** available only when the operator selects a narrower slice
@@ -68,10 +68,26 @@ If the operator explicitly requests a narrow slice and it is weak:
 
 ### L0 — deterministic scope selection
 Use the source-of-truth markdown and anchor structure to define the bounded candidate memory slice:
-- default historical mode selects a bounded recent shard set
+- normal analysis selects oldest-unprocessed shards in chronological order, up to the configured day cap (at most10) and record/character/byte budgets; default8 records need not cover10 days
+- read complete newline-terminated records without sampling or truncating a record and moving beyond it; stop before a record that will not fit, retaining its position for a later batch
+- reconstruct bounded parser context when resuming inside a shard; source-position keys and the digest of the exact consumed bytes bind completion, not run-local excerpt IDs
+- intake distinguishes contiguous batch coverage from remaining days/tails; byte-limited or incomplete lines remain unprocessed. A byte window can commit its complete earlier prefix, never the omitted tail. An oversized single record needs a larger bounded budget; an unfinished append needs completion
+- explicit older-than supplemental inspection retains balanced bounded sampling and its existing no-rescue eligibility contract; it never advances normal progress
 - explicit `day=` selects one date shard
 - explicit `session=` narrows to one session when present
 - explicit `lookback=` shortens the effective time window inside the selected narrow slice
+
+Explicit/configured day/session/lookback/text filters and scoped session retrieval retain their existing ordering/narrowing semantics and are non-advancing inspection. Direct `intake`, replay and trial stay stateless unless the analysis surface explicitly supplies its MCI batch request.
+
+### Incremental completion and catch-up
+
+Normal analysis reads `~/.claude/memory-context-intelligence/progress.json`, separated by canonical memory-root and enabled-source-class fingerprint. No checkpoint starts at the oldest input. State contains pending and last-completed bindings plus per-shard byte-prefix cursors, hashes and opaque record keys; it excludes raw traces, transcripts and topic artifacts. Keeping per-shard completed prefixes permits a later append to an older date to be found without treating every earlier day as sealed. A rewrite, missing source, invalid state, stale batch or changed scope blocks instead of resetting or skipping.
+
+Preparation captures a finite endpoint (shard names, byte lengths, content digests), emits canonical evidence and installs only a pending binding under the MCI lock. A nonblocking native file lock, expected-version/position checks and atomic owner-only temporary-file replacement protect state updates. No completion is inferred from exit0, intake success, candidate generation or a deterministic no-topic result. After semantic discovery/eligibility finishes for the complete batch, the caller invokes internal `complete --batch-id <id> --outcome analyzed|no-topics|failed`. Successful analyzed/zero-topic acknowledgements validate consumed source prefixes and advance exactly that batch; failure/no acknowledgement does not advance. Duplicate completion is idempotent. This is caller attestation, not an independent proof of model reasoning.
+
+Plain invocation stops after one acknowledged batch. Explicit `mode=catch-up` uses the same caller cycle and fixed run endpoint, never a Python preparation-only loop, new background entity or recursive Skill call. Continuation requires the preceding acknowledgement. Stop on failure/interruption/context limit; a later invocation resumes committed progress with a fresh endpoint. New/backdated appends beyond the original endpoint wait for that new invocation. `caught-up` is endpoint coverage, not corpus-wide absence of improvement topics. Freshness remains metadata; age alone does not reject intentional complete backlog evidence or reduce its historical signal confidence.
+
+Skill startup uses one `--startup` injection that reads no corpus/progress. The caller receives slash arguments through documented Skill text substitution and passes one safely quoted literal `--arguments` value before acquisition. This avoids assuming a shell-exported argument variable or interpolating user text into eager shell execution.
 
 ### L1 — preferred scoped recall search
 Inside the selected slice, prefer memsearch `search → expand` retrieval when the runtime can resolve that path in checked scope.
@@ -108,7 +124,7 @@ This contract still does **not** select:
 This shard no longer describes target-state only.
 
 The current runtime package now applies this historical-default design in checked scope:
-- `lib/intake.py` defaults to a bounded recent historical shard set instead of forcing current-session-first narrowing
+- normal `analysis-surface` uses the Phase078 oldest-unprocessed progressive request; direct `lib/intake.py` retains stateless bounded inspection for existing consumers
 - explicit `day`, `session`, and `lookback` narrowing still work when requested
 - `lib/signals.py` can promote repeated historical trace without requiring current-session confirmation as the primary gate
 - current-session confirmation remains visible as provenance and score boost only

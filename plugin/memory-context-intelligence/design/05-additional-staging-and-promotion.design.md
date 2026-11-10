@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.75
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-02)
+> **Current Version:** 0.1.78
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e (2026-08-09)
 > **Parent Design:** [design.md](design.md)
 
 ---
@@ -40,6 +40,68 @@ This `additional/` layer means:
 - if several selected topics are ever carried forward together, they must split into separate per-topic artifacts before render/write rather than being combined into one file
 - phase 015 emitted one checked local trial artifact at `<user-runtime-rules>/additional/memory-context-intelligence/phase-015-live-bounded-additional-stage-trial.md` with disposition `continue`; this path is local evidence, not a portable default
 - phase 016 added checked-scope readiness reporting and may report `usable in checked scope` only when replay, trial, artifact, boundary, and main RULES unchanged gates pass
+
+### 4.1) Deterministic post-selection workflow
+
+The plugin keeps analysis presentation and additional-stage execution separate:
+
+```text
+analysis presents advisory Topic cards
+→ user reviews the candidates
+→ user explicitly selects one or several topics and requests execution
+→ assistant applies the governed additional-stage defaults without exposing internal routing choices
+→ normalize and validate every selected candidate
+→ derive one semantic destination per topic
+→ preflight the full selected set
+→ emit one standalone trial artifact per topic
+→ verify artifact scope and Main RULES non-mutation
+```
+
+The follow-up workflow must:
+- treat the user's explicit selection as authorization for additional-stage creation only
+- keep `main_rules_promotion_approved=False` or equivalent explicit state
+- preserve existing additional-stage files and fail before write when any selected destination collides
+- split multi-topic selection into independent one-topic packets and artifacts
+- avoid asking the user to choose between rich/thin templates, overwrite/reuse behavior, runtime/source sync, or internal execution modes when the governed default applies
+- stop for user input only when selected topics, owner mapping, destination, collision resolution, or another material boundary remains ambiguous
+
+The initial `/memory-context-intelligence:analysis` invocation remains read-only and must not auto-select or auto-emit from first-response arguments.
+
+### 4.2) Rich standalone trial artifact schema
+
+Every emitted additional-stage rule should be independently understandable and reviewable. The required semantic body is:
+- title and trial-only metadata
+- one selected topic source
+- intended Main RULES owner plus integration anchors when applicable
+- `Main RULES mutation: Not performed`
+- candidate summary
+- trial rule draft
+  - core principle
+  - operating clauses
+  - before behavior
+  - after behavior
+- normalized signal/evidence basis
+- owner-domain mapping and owner reasoning
+- trial-first rationale
+- risks
+- success criteria
+- rollback notes scoped to the individual trial artifact
+- stop gates
+- leader verification needs
+- explicit promotion boundary
+
+The artifact must not require a memory shard, transcript, packet file, session-local temp path, or external trace anchor to understand the proposed doctrine. Exact session metadata may remain as provenance when the governed artifact contract requires it, but it must not become a semantic dependency.
+
+### 4.3) Collision and write policy
+
+The normal selected-topic emitter has one active collision policy:
+- preflight every derived destination before the first write
+- if any destination exists, refuse the selected emission set and preserve all existing bytes
+- do not merge into, replace, rename, or delete an existing artifact automatically
+- do not expose an active overwrite option in this workflow
+- treat replacement as a separate explicitly selected action with its own review and destructive-action boundary
+
+The selected root must resolve to an additional-stage root, and every destination must remain within the `memory-context-intelligence/` namespace under that root. Path traversal, symlink escape, Main RULES roots, and cross-namespace writes must fail closed.
 
 ## 5) What the plugin should propose first
 
@@ -92,7 +154,7 @@ It should treat `additional/` as:
 - selected trial stage
 - staging boundary before main-rule merge
 - evidence-gathering layer for rule experimentation
-- a write destination that requires explicit approval, selected-root containment, overwrite control, and path-safety checks
+- a write destination that requires explicit user-selected additional-stage execution, selected-root containment, full-set collision preflight, fail-closed preservation of existing files, and path-safety checks
 
 ## 8) Implementation phase touchpoints
 
@@ -106,17 +168,21 @@ The phase program keeps `/additional/` staging in the runtime path before main R
 
 ## 9) Expected output
 
-A promotion-ready candidate packet should include:
+A promotion-ready candidate packet and emitted standalone trial artifact should include:
 - candidate summary
 - explicit topic-scope metadata such as one selected topic per artifact, selected-topic count, and combined-output-forbidden state
-- signal/evidence basis
-- intended main RULES owner domain and target
+- core principle plus concrete operating clauses
+- before/after behavior that makes the intended change understandable
+- normalized self-contained signal/evidence basis with source classes, breadth, confidence, conflicts, and limits
+- intended Main RULES owner domain, target, integration anchors, and mapping rationale
 - proposed `additional/` rule path/name
 - why this should remain trial-stage first
-- success criteria for promotion
-- rollback notes for retiring, replacing, or removing trial-stage material
+- risks and reasons not to merge yet
+- success criteria for trial usefulness and later promotion consideration
+- rollback notes for retiring, replacing, or removing only the individual trial-stage material after the applicable action gate
 - stop gates and leader verification needs
-- risks or reasons not to merge yet
+- explicit state that additional-stage selection does not approve Main RULES promotion
+- validation evidence that the rendered artifact contains no temporary memory/transcript/path-line dependencies
 
 ---
 

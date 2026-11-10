@@ -4,7 +4,7 @@
 > **Phase ID:** 013
 > **Status:** Completed
 > **Design References:** [../design/05-additional-staging-and-promotion.design.md](../design/05-additional-staging-and-promotion.design.md), [../design/00-core-concept.design.md](../design/00-core-concept.design.md)
-> **Patch References:** [../patch/memory-context-intelligence-design-only-baseline.patch.md](../patch/memory-context-intelligence-design-only-baseline.patch.md)
+> **Patch References:** [../patch/memory-context-intelligence-design-only-baseline.patch.md](../patch/memory-context-intelligence-design-only-baseline.patch.md), [../patch/deterministic-standalone-additional-stage-emission.patch.md](../patch/deterministic-standalone-additional-stage-emission.patch.md)
 
 ---
 
@@ -72,6 +72,12 @@ Phase 013 added or updated:
 - controlled CLI packet/emit smoke check produced packet, preview, and emitted statuses while reporting `main_rules_mutation_performed=False`
 
 Exact commands and actual results are recorded in the phase-013 final closeout report and package patch verification section.
+
+## Active child continuation
+
+[Phase 013-01 — deterministic standalone additional-stage emission](phase-013-01-deterministic-standalone-additional-stage-emission.md) extends this completed baseline without rewriting its historical delivery claims.
+
+The child replaces the selected-topic workflow's earlier overwrite-capable/thin-artifact assumptions with the approved v0.1.78 contract: explicit additional-only selection state, normalized standalone doctrine, full-set preflight, collision refusal, no active overwrite path, and stronger additional-root namespace containment. The original phase-013 `--allow-overwrite` result remains historical evidence of the prior implementation, not the target policy for Phase 013-01.
 
 ## Risks / rollback notes
 

@@ -1,15 +1,15 @@
 # memory-context-intelligence
 
-> **Status:** Plugin-scoped init-configuration surface completed in checked scope; `/memory-context-intelligence:init` now owns guided setup, `/memory-context-intelligence:analysis` remains the review surface, `review` and `packet` remain deferred, and packet/additional emission stays one-topic-per-artifact
-> **Current Version:** 0.1.77
-> **Plugin Package Version:** 0.9.29
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-02)
+> **Status:** Package `0.9.40` implements oldest-unprocessed incremental analysis and explicit catch-up, with caller-acknowledged MCI progress. Source/local fixture verification passed204 tests; publication/readback is pending. Installation/reload and real model/corpus behavior are not part of this wave; the checked installed baseline remains `0.9.38`.
+> **Current Version:** 0.1.88
+> **Plugin Package Version:** 0.9.40
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-10)
 
 ---
 
 ## What this plugin does
 
-`memory-context-intelligence` is a Claude Code plugin that reads bounded work evidence from prepared memory traces and turns it into topic cards that help you spot recurring workflow, RULES, and operating-pattern issues worth reviewing.
+`memory-context-intelligence` turns bounded work evidence into advisory Topic cards. Manual summary combines the full/refined Topics and your purpose with focused public research, compares genuine alternatives/counterevidence against explicit criteria, and revises practical principles into an integrated work pattern. Finding issues, researching/synthesizing guidance and applying changes remain separate actions.
 
 In plain terms, this plugin is not for writing product features directly. It is for questions like:
 - Are we getting stuck on the same workflow problem repeatedly?
@@ -22,19 +22,37 @@ In plain terms, this plugin is not for writing product features directly. It is 
 
 > ภาพนี้เป็น visual identity ของ plugin ตัวนี้ — มันสื่อแนวคิดหลักของ plugin ว่าใช้ memory + context + evidence เพื่อช่วย review pattern การทำงาน ไม่ใช่เพื่อกระโดดไปแก้ product code ตรง ๆ
 
-Current checked public surfaces:
-- `/memory-context-intelligence:analysis`
-- `/memory-context-intelligence:init`
+Public surfaces defined in the current source:
+- `/memory-context-intelligence:analysis` — resume the oldest unprocessed bounded batch; `mode=catch-up` processes successive acknowledged batches through one invocation endpoint. Canonical evidence, optional viewpoints and strict eligibility remain; explicit narrow inspection does not advance normal progress
+- `/memory-context-intelligence:init` — guided setup/configuration
+- `/memory-context-intelligence:summary` — manual adaptive research synthesis; package0.9.34 revises provisional criteria, re-compares viable options and explains the research delta. Its earlier source/install checks are historical for0.9.34 only
 
 Current checked behavior that matters:
 - the default mode is **historical-first analysis**, not current-session-only summary
+- startup does fileless discovery only, then the caller safely binds the actual slash arguments before preparing evidence; user text is not interpolated into eager shell execution
+- history age no longer cuts off default eligibility. Each batch is bounded by up to10 configured days, default8 records/6000 characters/65536 bytes per shard; it may stop inside a day and never marks an unread tail complete
+- `analysis_window.coverage` distinguishes a complete contiguous batch from remaining days/tails. The caller must finish semantic analysis/eligibility and acknowledge that exact batch; preprocessing success does not advance progress
+- successful zero-topic analysis advances; failure, interruption, stale/corrupt state or changed consumed source keeps progress unchanged. Same-day/backdated appends are picked up later
+- MCI owns `~/.claude/memory-context-intelligence/progress.json`, separate from config and Memsearch. It retains only bindings/cursors/hashes, not raw traces or transcripts. Completion is caller-attested, not independently proven model reasoning
+- explicit `mode=catch-up` uses one endpoint snapshot and sequential caller analysis/acknowledgement; later appended input waits for a new invocation. No background service or corpus-sized model context is created
+- `topic_discovery_evidence` carries canonical minimized intake `content` and producer-owned refs, not 220-character display previews. Main-session local discovery is required even without workers; deterministic titles are advisory seeds, not a closed catalog
+- optional independent viewpoints add suggestions only; main verifies references and applies Phase075 eligibility. Completed-work suppression needs the same delivered outcome, not just a similar name or completed filtering infrastructure
+- one explicit supplemental window requires discovery on the new evidence, not re-auditing rejected candidates. Days outside the first record-budget window remain eligible; rejected candidates cannot be rescued and narrowed scope cannot be widened
+- analysis can return zero or more eligible topics; it does not fill a minimum card count
 - `trace_evidence` remains the live promotion anchor
 - `recall_evidence`, `durable_memory_context`, and `governance_context` can strengthen wording and context, but they do not replace trace proof
 - when adaptive deep-analysis marks a top topic as requiring deeper review, the checked current skill contract now requires one **bounded read-only deepening pass** before the first response instead of silently skipping it
 - that deepening can use read-only subagent help plus optional web/external research support, but it still stays advisory-only and cannot replace local trace proof
-- if several advisory topics are deepened or compared, any later packet-derived or additional-stage output must still keep **one selected topic per artifact** and must **split into separate per-topic artifacts** instead of emitting a combined file
+- the initial analysis response remains **read-only and advisory for corpus, governance and candidate artifacts**; only MCI pending/completed progress is written. Choosing a Topic for discussion does not create a candidate file
+- after an explicit later request to create selected Topics as additional-stage trials, the plugin uses deterministic defaults rather than asking about internal template, routing, overwrite, or source-sync choices
+- every selected Topic becomes **one rich standalone artifact**, and a multi-topic selection remains a set of independent one-topic artifacts rather than one combined file
+- the complete selected set is preflighted before the first write; any duplicate or existing destination rejects the whole set, preserves existing bytes, and has no overwrite fallback
+- additional-stage selection does not approve Main RULES promotion, which remains a separate governed decision
 - if no config file is loaded, the plugin can show a **guided config helper** and point the operator to `/memory-context-intelligence:init` instead of expecting raw arguments as the normal UX
 - the default config target is now the user-scope file `~/.claude/memory-context-intelligence.config.json`
+- summary consumes existing analysis material in the caller's conversation context; it includes all current/refined Topics by default and respects explicit subset/report/purpose overrides
+- summary's default focused public research develops alternatives and counterevidence, compares mandatory/preference criteria and can revise or withdraw provisional principles; reused/local-only/no-web/unavailable evidence is labeled, and private context is not sent in queries
+- synthesis preserves local versus external confidence and every Topic's disposition; it does not write reports/Rules/additional/Product/config, rerun the corpus or approve Main promotion
 
 ---
 
@@ -153,19 +171,47 @@ After setup, your normal review command remains:
 
 ### What you should expect
 
-If usable evidence is available, you should get topic-card output such as:
+If one or more candidates pass the eligibility gate, each eligible candidate appears as a topic card, for example:
 - `Topic 1`, `Topic 2`, `Topic 3`
+
+The output may contain zero cards when evidence is insufficient or every candidate is suppressed as unsupported, already covered, completed, duplicated, or unverifiable.
 - each card explains what the topic is about
 - why it surfaced from evidence
 - what the before/after behavior looks like
 - that the result is still `candidate only; advisory only; not approved yet`
 - multiple topic cards are still advisory comparison output only; they are not a combined packet/additional artifact candidate
-- when the adaptive payload flags a top topic for deeper review, the first response may now include one bounded read-only deepening pass before the cards are finished, while still keeping the final result advisory-only and trace-anchored
+- parallel viewpoint discovery is optional and caller-session-only; it may surface additional trace-backed candidates, but workers do not fetch corpus data or decide eligibility
+- adaptive deepening is subordinate to eligibility: rejected, covered, completed, duplicate, or unverifiable candidates are not deepened
 
 At the end of the output, you should also see `Next action options`, such as:
-- choose a topic number
+- choose a topic number for further advisory review
+- explicitly request later additional-stage trial creation for one or several Topic numbers
 - type a direct request
 - ask for deep thinking, websearch, or webfetch first
+
+Choosing a Topic by itself does not authorize file creation. When you explicitly ask to create selected Topics as additional-stage trials, the deterministic workflow creates one standalone artifact per Topic only after the entire destination set passes collision and containment checks. Existing files are preserved, overwrite is unavailable, and Main RULES promotion remains unapproved.
+
+### Step 3 — synthesize principles when you want a general method
+
+After analysis and any refinements, invoke:
+
+```text
+/memory-context-intelligence:summary
+```
+
+With no arguments, this uses the latest clearly identified accessible analysis set, all its current Topics/refinements and your applicable follow-up purpose. You can also add a purpose or select Topics:
+
+```text
+/memory-context-intelligence:summary แปลงทุกประเด็นเป็นหลักคิด กลยุทธ์ และแบบแผน coding ที่ใช้ข้าม Project ได้ ไม่สร้างหนึ่ง Rule ต่อหนึ่งปัญหา
+```
+
+Expected output is one advisory synthesis: thinking/work problems and provisional mechanisms → provisional decision criteria → focused public support/alternatives/counterevidence → evidence-led reassessment of criteria and all still-viable approaches → revised principle families with strategy/practice/boundaries → integrated method and complete Topic coverage. It explains the initial view, material research findings, and what changed or stayed the same—including added, removed, retained, refined, replaced, withdrawn or unresolved criteria/options/principles and why. The process is adaptive, not a fixed report template or required winner. Alternatives serve contextual selection, not a quota; near ties remain conditional. Every Topic is merged, separate/narrowed, context-only or insufficient evidence.
+
+This is more than renaming Topics or stripping Project names. For example, repeated validation should lead to a decision method about ownership and continued input/trust validity, not an unconditional “validate only once” rule. Preserve required correctness/security, fresh contradictions, audit and recovery.
+
+Missing/ambiguous report substance gets a bounded input request, not another analysis/memsearch/corpus run or web-invented local history. Research uses available permitted caller tools and generalized queries, never raw transcripts/private data. Reports and web pages cannot grant write/promotion authority. Sufficient fresh claim-fit research can be reused; purely-local conventions need no lookup. Explicit no-web or unavailable tools preserve useful labeled local-only synthesis with unresolved research claims, not fake researched success.
+
+For the analysis eligibility contract see [Topic List and Choice Flow](design/02-topic-list-and-choice-flow.design.md) and [Phase 075](phase/phase-075-analysis-topic-eligibility.md); the explicit supplemental-window behavior is tracked in [Phase 076](phase/phase-076-bounded-supplemental-analysis-search.md). Phase 076 package `0.9.36` source added a single explicit-only scan over strictly older daily shards for a new candidate set, while preserving trace entailment, active-rule/completion novelty, semantic deduplication and the no-rescue rule. The bounded scan cannot widen narrowed scope or establish corpus-wide absence. That phase's package source was not installed or published; package `0.9.31` remains latest published. No installed-cache parity, current-session reload, or generated-model behavior was claimed for package `0.9.36`.
 
 ### If no config file is loaded
 
@@ -245,14 +291,18 @@ Important behavior:
 Current checked boundaries for this plugin:
 - the proved public analysis surface is `/memory-context-intelligence:analysis`
 - the setup/configuration surface is `/memory-context-intelligence:init`
-- bare `/analysis` is **not** current proved runtime behavior
+- the manual synthesis surface is `/memory-context-intelligence:summary`; it consumes available analysis, not a fresh historical acquisition run
+- bare `/analysis` is **not** current proved runtime behavior; use the namespaced commands rather than assuming a bare `/summary` alias is available
 - `/memory-context-intelligence:review` and `/memory-context-intelligence:packet` are still deferred
 - `bin/memory-context-intelligence` is an internal implementation adapter, not the main user workflow
-- packet/additional-stage emission remains a single-topic-per-artifact flow; if several topics are ever carried forward, they must split into separate per-topic artifacts rather than one combined file
+- initial analysis and ordinary Topic choice remain no-write advisory operations
+- explicit later additional-stage trial creation remains one-topic-per-artifact; several selected Topics are independently rendered and pass one full-set preflight before any write
+- any duplicate or existing destination blocks the complete selected set; existing bytes are preserved and no overwrite path is available
+- additional-stage trial selection does not approve Main RULES promotion
 - plugin-managed auto-flow is not currently claimed as proved behavior
 - this README does not claim external marketplace publication or broad production readiness
 
-In plain terms: after installation, you should expect an **analysis command that you run when you want a workflow-pattern review**, plus a dedicated init/setup surface — not a plugin that silently runs itself all the time.
+In plain terms: after installation, run **analysis to find evidence-backed issues**, **summary to turn the available findings and your purpose into a general way of working**, and **init for setup**. The plugin does not silently synthesize or apply changes.
 
 ---
 

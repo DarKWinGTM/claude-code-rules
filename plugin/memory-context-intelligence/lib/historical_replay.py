@@ -453,6 +453,7 @@ def build_replay_report(args: argparse.Namespace) -> dict[str, Any]:
             main_rule_target=args.main_rule_target,
             additional_name=args.additional_name,
             additional_relative_path=args.additional_relative_path,
+            selected_for_additional_trial=False,
         )
         stage_statuses.append(
             stage_entry(
@@ -469,12 +470,39 @@ def build_replay_report(args: argparse.Namespace) -> dict[str, Any]:
         if args.skip_emit_preview:
             stage_statuses.append(stage_entry("emit-preview", "skipped", ok=True, summary={"dry_run": True}))
         else:
-            emit_preview = candidate_packet.emit_additional(
-                packet_report,
-                additional_root=args.additional_root,
-                approved_write=False,
-                allow_overwrite=False,
+            packet = packet_report["candidate_packet"]
+            proposed = packet["proposed_additional_rule"]
+            relative_path = candidate_packet.normalize_relative_path(
+                str(proposed.get("relative_path") or "")
             )
+            root, destination = candidate_packet.resolve_destination(
+                candidate_packet.default_additional_root(args.additional_root),
+                relative_path,
+            )
+            material = candidate_packet.render_additional_rule(packet_report)
+            validation = candidate_packet.validate_standalone_artifact(material)
+            if not validation["valid"]:
+                raise HistoricalReplayError(
+                    "Replay preview refused because the standalone artifact schema is invalid."
+                )
+            emit_preview = {
+                "tool": "memory-context-intelligence",
+                "mode": "emit-preview",
+                "status": "preview",
+                "approved_write": False,
+                "dry_run": True,
+                "selected_for_additional_trial": False,
+                "main_rules_promotion_approved": False,
+                "additional_root": str(root),
+                "destination_path": str(destination),
+                "destination_relative_path": relative_path,
+                "preview_material": material,
+                "bytes_planned": len(material.encode("utf-8")),
+                "standalone_validation": validation,
+                "additional_emission_performed": False,
+                "main_rules_mutation_performed": False,
+                "install_or_publication_performed": False,
+            }
             stage_statuses.append(
                 stage_entry(
                     "emit-preview",
@@ -560,6 +588,8 @@ def build_replay_report(args: argparse.Namespace) -> dict[str, Any]:
         ],
         "live_web_access_performed": False,
         "external_agent_process_spawned": False,
+        "selected_for_additional_trial": False,
+        "main_rules_promotion_approved": False,
         "additional_emission_performed": False,
         "main_rules_mutation_performed": False,
         "install_or_publication_performed": False,

@@ -7,6 +7,7 @@ import re
 import shlex
 import subprocess
 import tempfile
+import uuid
 from datetime import date, datetime
 from pathlib import Path
 from typing import Any
@@ -15,8 +16,10 @@ LIB_DIR = Path(__file__).resolve().parent
 if str(LIB_DIR) not in os.sys.path:
     os.sys.path.insert(0, str(LIB_DIR))
 
-from config_policy import build_guided_config_questions
+from config_policy import build_guided_config_questions, load_analysis_source_policy
 from orchestration import build_adaptive_deepening_plan
+from analysis_checkpoint import CheckpointConflict, default_state_path, load_progress, prepare_batch, scope_identity
+from intake import discover_daily_shards, progressive_endpoint
 
 REGISTERED_OPERATOR_SURFACE = "/memory-context-intelligence:analysis"
 RUNTIME_PROOF_NOTE = "not proved in checked current print-mode runtime"
@@ -24,16 +27,67 @@ PACKAGE_ROOT = Path(__file__).resolve().parents[1]
 RUNTIME_BIN = (PACKAGE_ROOT / "bin" / "memory-context-intelligence").resolve()
 
 
+def parse_day(value: str) -> str:
+    try:
+        parsed = date.fromisoformat(value)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError("day must use YYYY-MM-DD format") from exc
+    if parsed.isoformat() != value:
+        raise argparse.ArgumentTypeError("day must use YYYY-MM-DD format")
+    return value
+
+
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(prog="memory-context-intelligence analysis-surface")
     parser.add_argument("--arguments", default=os.environ.get("ARGUMENTS", ""))
+    parser.add_argument("--startup", action="store_true", help="Fileless discovery only; caller binds slash arguments before intake.")
     parser.add_argument("--session-id", default=os.environ.get("CLAUDE_CODE_SESSION_ID"))
     parser.add_argument("--current-day", default=date.today().isoformat())
+    parser.add_argument("--config", help="Use the same explicit source-policy config as the analysis window.")
+    parser.add_argument("--mode", choices=["incremental", "catch-up"], default="incremental")
+    parser.add_argument("--continue-run", help="Continue only after acknowledging the preceding batch of this catch-up run.")
+    parser.add_argument("--state", type=Path, default=default_state_path())
+    parser.add_argument("--max-records", type=int, default=8)
+    parser.add_argument("--max-chars", type=int, default=6000)
+    parser.add_argument("--max-shard-bytes", type=int, default=65536)
+    parser.add_argument(
+        "--older-than-day",
+        type=parse_day,
+        help="Run one bounded historical window strictly older than this day.",
+    )
     return parser.parse_args(argv)
 
 
 def emit(payload: dict[str, Any]) -> None:
     print(json.dumps(payload, ensure_ascii=False, indent=2))
+
+
+def topic_discovery_evidence(intake: dict[str, Any]) -> list[dict[str, Any]]:
+    excerpts: list[dict[str, Any]] = []
+    records = intake.get("records")
+    if not isinstance(records, list):
+        return excerpts
+    remaining = min(20000, max(0, int((intake.get("limits") or {}).get("max_chars", 6000))))
+    for record in records:
+        if not isinstance(record, dict):
+            continue
+        source_classes = record.get("source_classes")
+        if not isinstance(source_classes, list) or "trace_evidence" not in source_classes:
+            continue
+        content = str(record.get("content") or "").strip()
+        ref = record.get("ref")
+        if not content or not ref:
+            continue
+        if remaining <= 0 or len(excerpts) >= 50:
+            break
+        content_truncated = bool(record.get("content_truncated"))
+        if len(content) > remaining:
+            marker = "..."[:remaining]
+            content = content[:remaining - len(marker)].rstrip() + marker
+            content_truncated = True
+        excerpts.append({"ref": ref, "content": content, "content_truncated": content_truncated})
+        remaining -= len(content)
+    return excerpts
 
 
 def find_memory_root(cwd: Path) -> Path | None:
@@ -80,7 +134,59 @@ def parse_scope_and_narrowing(text: str) -> tuple[str | None, int | None, str | 
     return scope_text or None, lookback_minutes, explicit_day, explicit_session_id, explicit_config_path
 
 
-def blocked_payload(reason: str, memory_root: Path | None, scope_text: str | None, **extra: Any) -> dict[str, Any]:
+def analysis_window_report(
+    intake: dict[str, Any],
+    *,
+    supplemental: bool,
+    exclusive_boundary_day: str | None = None,
+    pass_attempted: bool = False,
+    pass_used: bool = False,
+) -> dict[str, Any]:
+    scope_report = intake.get("scope", {})
+    source_report = intake.get("source", {})
+    source_policy = intake.get("source_policy") or {}
+    shard_names = source_report.get("daily_shards_considered") or []
+    checked_days = [Path(str(name)).stem for name in shard_names if str(name)]
+    basis = str(scope_report.get("basis") or "unknown")
+    narrowed = bool(
+        scope_report.get("filters")
+        or (scope_report.get("day_shard") and basis != "historical-default")
+        or scope_report.get("session_id")
+        or scope_report.get("lookback_minutes") is not None
+    )
+    trace_enabled = "trace_evidence" in (source_policy.get("effective_source_classes") or [])
+    can_continue = (
+        basis == "historical-default"
+        and bool(checked_days)
+        and not narrowed
+        and trace_enabled
+        and not supplemental
+    )
+    report = {
+        "mode": "supplemental-historical-window" if supplemental else (basis if not narrowed else "explicitly-narrowed"),
+        "checked_days": checked_days,
+        "next_older_than_day": min(checked_days) if can_continue else None,
+        "supplemental_pass_used": pass_used,
+    }
+    if isinstance(intake.get("coverage"), dict):
+        report["coverage"] = intake["coverage"]
+    if supplemental:
+        report["exclusive_boundary_day"] = exclusive_boundary_day
+        report["supplemental_intake_status"] = intake.get("status")
+        report["supplemental_pass_attempted"] = pass_attempted
+    return report
+
+
+def blocked_payload(
+    reason: str,
+    memory_root: Path | None,
+    scope_text: str | None,
+    *,
+    supplemental_boundary: str | None = None,
+    supplemental_intake: dict[str, Any] | None = None,
+    supplemental_pass_attempted: bool = False,
+    **extra: Any,
+) -> dict[str, Any]:
     payload: dict[str, Any] = {
         "registered_operator_surface": REGISTERED_OPERATOR_SURFACE,
         "bare_alias_runtime_proof": RUNTIME_PROOF_NOTE,
@@ -95,6 +201,14 @@ def blocked_payload(reason: str, memory_root: Path | None, scope_text: str | Non
         "topic_list": [],
     }
     payload.update(extra)
+    if supplemental_boundary:
+        payload["analysis_window"] = analysis_window_report(
+            supplemental_intake or {},
+            supplemental=True,
+            exclusive_boundary_day=supplemental_boundary,
+            pass_attempted=supplemental_pass_attempted,
+            pass_used=bool(supplemental_intake and supplemental_intake.get("status") != "unavailable"),
+        )
     return payload
 
 
@@ -286,7 +400,40 @@ def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     cwd = Path.cwd()
     memory_root = find_memory_root(cwd)
-    scope_text, lookback_minutes, explicit_day, explicit_session_id, explicit_config_path = parse_scope_and_narrowing(str(args.arguments or "").strip())
+    if args.startup:
+        if memory_root is None:
+            emit(blocked_payload("No project-scoped .memsearch/memory root was found from the current working directory upward.", None, None))
+        else:
+            emit({
+                "status": "awaiting-caller-scope", "analysis_request_present": True,
+                "registered_operator_surface": REGISTERED_OPERATOR_SURFACE,
+                "preparation_command": shlex.join([str(RUNTIME_BIN), "analysis-surface"]),
+                "checkpoint_advanced": False,
+                "reason": "Caller must bind the supplied slash arguments before preparing evidence; startup reads no corpus or progress.",
+            })
+        return 0
+    argument_text = str(args.arguments or "").strip()
+    mode_tokens = re.findall(r"(?:^|\s)mode=([^\s]+)", argument_text)
+    if mode_tokens and (len(mode_tokens) != 1 or mode_tokens[0] not in {"incremental", "catch-up"}):
+        emit(blocked_payload("mode must be incremental or catch-up.", memory_root, None))
+        return 0
+    if mode_tokens:
+        args.mode = mode_tokens[0]
+        argument_text = re.sub(r"(?:^|\s)mode=[^\s]+", "", argument_text).strip()
+    scope_text, lookback_minutes, explicit_day, explicit_session_id, argument_config_path = parse_scope_and_narrowing(argument_text)
+    explicit_config_path = args.config or argument_config_path
+    if args.older_than_day and (explicit_day or explicit_session_id or lookback_minutes is not None or scope_text):
+        emit(
+            blocked_payload(
+                "Supplemental historical search cannot widen an explicitly narrowed analysis scope.",
+                None,
+                scope_text,
+                supplemental_boundary=args.older_than_day,
+                supplemental_intake=None,
+                supplemental_pass_attempted=False,
+            )
+        )
+        return 0
 
     if memory_root is None:
         emit(
@@ -298,6 +445,36 @@ def main(argv: list[str] | None = None) -> int:
         )
         return 0
 
+    policy = load_analysis_source_policy(explicit_config_path=explicit_config_path, cwd=cwd)
+    narrow = bool(scope_text or explicit_day or explicit_session_id or lookback_minutes is not None or args.older_than_day)
+    narrow = narrow or policy["scope_policy"]["default_scope_mode"] in {"day", "session", "lookback"}
+    progressive = not narrow and "trace_evidence" in policy["enabled_source_classes"]
+    if (args.continue_run or args.mode == "catch-up") and not progressive:
+        emit(blocked_payload("Catch-up cannot widen narrow or trace-disabled inspection.", memory_root, scope_text))
+        return 0
+    progress_context = None
+    if progressive and memory_root.is_dir():
+        try:
+            if policy["errors"]:
+                raise CheckpointConflict("Source policy could not be read; progress was preserved.")
+            scope_key = scope_identity(memory_root, policy["enabled_source_classes"])
+            entry = load_progress(args.state, scope_key)
+            if args.continue_run:
+                last = entry.get("last_completed") or {}
+                if entry["pending"] or last.get("run_id") != args.continue_run or last.get("mode") != "catch-up":
+                    raise CheckpointConflict("Catch-up requires acknowledged progress from the same run.")
+                endpoint = last["endpoint"]
+                run_id, mode = args.continue_run, "catch-up"
+            else:
+                endpoint = progressive_endpoint(discover_daily_shards(memory_root))
+                run_id, mode = uuid.uuid4().hex, args.mode
+            progress_context = {
+                "scope_key": scope_key, "entry": entry, "endpoint": endpoint,
+                "run_id": run_id, "mode": mode,
+            }
+        except (CheckpointConflict, OSError, ValueError) as exc:
+            emit(blocked_payload(str(exc), memory_root, scope_text))
+            return 0
     base = Path(tempfile.mkdtemp(prefix="mci-analysis-"))
 
     cmd_intake = [
@@ -307,6 +484,8 @@ def main(argv: list[str] | None = None) -> int:
         "--memory-root",
         str(memory_root),
     ]
+    if args.older_than_day:
+        cmd_intake += ["--older-than-day", args.older_than_day]
     if explicit_config_path:
         cmd_intake += ["--config", explicit_config_path]
     if explicit_day:
@@ -318,6 +497,16 @@ def main(argv: list[str] | None = None) -> int:
     if scope_text:
         cmd_intake += ["--scope", scope_text]
 
+    if progress_context:
+        request_path = base / "progress-request.json"
+        request_path.write_text(json.dumps({
+            "checkpoint": progress_context["entry"]["position"],
+            "endpoint": progress_context["endpoint"],
+        }), encoding="utf-8")
+        cmd_intake += [
+            "--progress-request", str(request_path), "--max-records", str(args.max_records),
+            "--max-chars", str(args.max_chars), "--max-shard-bytes", str(args.max_shard_bytes),
+        ]
     intake_result, intake = run_json_command(cmd_intake)
     if intake is None:
         emit(
@@ -332,45 +521,72 @@ def main(argv: list[str] | None = None) -> int:
 
     intake_path = base / "intake.json"
     intake_path.write_text(intake_result.stdout, encoding="utf-8")
+    batch = intake.get("progressive_batch")
+    if batch and batch["next_position"] == progress_context["entry"]["position"] and not batch["remaining"]:
+        emit({
+            "status": "caught-up", "reason": "No unprocessed input remains through this invocation endpoint.",
+            "analysis_request_present": True, "topic_cards": [],
+            "analysis_window": {"mode": progress_context["mode"], "checked_days": [], "next_older_than_day": None},
+            "progress": {"run_id": progress_context["run_id"], "checkpoint_advanced": False, "remaining": False},
+        })
+        return 0
+    if batch and not batch["coverage"]["complete"]:
+        emit(blocked_payload(batch.get("reason") or "No complete record batch fits the current budget.", memory_root, scope_text))
+        return 0
 
     if intake.get("status") == "stale":
-        emit(
-            {
-                "registered_operator_surface": REGISTERED_OPERATOR_SURFACE,
-                "bare_alias_runtime_proof": RUNTIME_PROOF_NOTE,
-                "analysis_request_present": True,
-                "invocation_mode": "standalone-analysis-slash",
-                "render_required_now": True,
-                "generic_no_request_response_allowed": False,
-                "status": "dormant",
-                "reason": "The discovered memsearch input is stale, so analysis should not promote fresh proposals from it.",
-                "memory_root": str(memory_root),
-                "scope_filter": scope_text or None,
-                "intake_status": intake.get("status"),
-                "notes": intake.get("notes", []),
-                "topic_list": [],
-            }
-        )
+        payload = {
+            "registered_operator_surface": REGISTERED_OPERATOR_SURFACE,
+            "bare_alias_runtime_proof": RUNTIME_PROOF_NOTE,
+            "analysis_request_present": True,
+            "invocation_mode": "standalone-analysis-slash",
+            "render_required_now": True,
+            "generic_no_request_response_allowed": False,
+            "status": "dormant",
+            "reason": "The discovered memsearch input is stale, so analysis should not promote fresh proposals from it.",
+            "memory_root": str(memory_root),
+            "scope_filter": scope_text or None,
+            "intake_status": intake.get("status"),
+            "notes": intake.get("notes", []),
+            "topic_list": [],
+        }
+        if args.older_than_day:
+            payload["reason"] = intake.get("reason") or payload["reason"]
+            payload["analysis_window"] = analysis_window_report(
+                intake,
+                supplemental=True,
+                exclusive_boundary_day=args.older_than_day,
+                pass_attempted=True,
+                pass_used=True,
+            )
+        emit(payload)
         return 0
 
     if intake.get("status") == "unavailable":
-        emit(
-            {
-                "registered_operator_surface": REGISTERED_OPERATOR_SURFACE,
-                "bare_alias_runtime_proof": RUNTIME_PROOF_NOTE,
-                "analysis_request_present": True,
-                "invocation_mode": "standalone-analysis-slash",
-                "render_required_now": True,
-                "generic_no_request_response_allowed": False,
-                "status": "blocked",
-                "reason": "The memsearch root is unavailable, so analysis cannot continue.",
-                "memory_root": str(memory_root),
-                "scope_filter": scope_text or None,
-                "intake_status": intake.get("status"),
-                "notes": intake.get("notes", []),
-                "topic_list": [],
-            }
-        )
+        payload = {
+            "registered_operator_surface": REGISTERED_OPERATOR_SURFACE,
+            "bare_alias_runtime_proof": RUNTIME_PROOF_NOTE,
+            "analysis_request_present": True,
+            "invocation_mode": "standalone-analysis-slash",
+            "render_required_now": True,
+            "generic_no_request_response_allowed": False,
+            "status": "blocked",
+            "reason": intake.get("reason") or "The memsearch root is unavailable, so analysis cannot continue.",
+            "memory_root": str(memory_root),
+            "scope_filter": scope_text or None,
+            "intake_status": intake.get("status"),
+            "notes": intake.get("notes", []),
+            "topic_list": [],
+        }
+        if args.older_than_day:
+            payload["analysis_window"] = analysis_window_report(
+                intake,
+                supplemental=True,
+                exclusive_boundary_day=args.older_than_day,
+                pass_attempted=True,
+                pass_used=False,
+            )
+        emit(payload)
         return 0
 
     cmd_signals = ["bash", str(RUNTIME_BIN), "signals", "--intake-report", str(intake_path)]
@@ -383,6 +599,9 @@ def main(argv: list[str] | None = None) -> int:
                 scope_text,
                 intake_status=intake.get("status"),
                 stderr=signals_result.stderr[-1200:],
+                supplemental_boundary=args.older_than_day,
+                supplemental_intake=intake if args.older_than_day else None,
+                supplemental_pass_attempted=bool(args.older_than_day),
             )
         )
         return 0
@@ -413,6 +632,9 @@ def main(argv: list[str] | None = None) -> int:
                 intake_status=intake.get("status"),
                 signals_status=signals.get("status"),
                 stderr=present_result.stderr[-1200:],
+                supplemental_boundary=args.older_than_day,
+                supplemental_intake=intake if args.older_than_day else None,
+                supplemental_pass_attempted=bool(args.older_than_day),
             )
         )
         return 0
@@ -473,6 +695,13 @@ def main(argv: list[str] | None = None) -> int:
         "memory_root": str(memory_root),
         "scope_filter": scope_text or None,
         "scope_basis": scope_basis,
+        "analysis_window": analysis_window_report(
+            intake,
+            supplemental=bool(args.older_than_day),
+            exclusive_boundary_day=args.older_than_day,
+            pass_attempted=bool(args.older_than_day),
+            pass_used=bool(args.older_than_day),
+        ),
         "scope_day_shard": scope_report.get("day_shard") or args.current_day,
         "scope_session_id": args.session_id,
         "scope_lookback_minutes": lookback_minutes,
@@ -488,9 +717,43 @@ def main(argv: list[str] | None = None) -> int:
         "recommended_next_step": present.get("recommended_next_step"),
         "source_classes_present": source_classes_present,
         "adaptive_deep_analysis": adaptive_deep_analysis,
+        "topic_discovery_evidence": topic_discovery_evidence(intake),
         "topic_cards": present.get("topic_cards"),
         "next_action_options": present.get("next_action_options"),
     }
+    if batch and progress_context:
+        batch_id = uuid.uuid4().hex
+        binding = {
+            "batch_id": batch_id,
+            "expected_version": progress_context["entry"]["version"],
+            "expected_position": progress_context["entry"]["position"],
+            "next_position": batch["next_position"],
+            "coverage_complete": batch["coverage"]["complete"],
+            "source_binding": {"memory_root": str(memory_root.resolve()), "prefixes": batch["next_position"]["completed"]},
+            "run_id": progress_context["run_id"], "mode": progress_context["mode"],
+            "endpoint": progress_context["endpoint"],
+        }
+        try:
+            prepare_batch(args.state, progress_context["scope_key"], binding)
+        except (CheckpointConflict, OSError) as exc:
+            emit(blocked_payload(str(exc), memory_root, scope_text))
+            return 0
+        common = ["--state", str(args.state)] if args.state != default_state_path() else []
+        payload["progress"] = {
+            "batch_id": batch_id, "expected_version": binding["expected_version"],
+            "run_id": binding["run_id"], "mode": binding["mode"], "remaining": batch["remaining"],
+            "coverage_complete": True, "checkpoint_advanced": False,
+            "completion_command": shlex.join([str(RUNTIME_BIN), "complete", "--batch-id", batch_id, "--outcome", "analyzed", *common]),
+            "continuation_command": shlex.join([
+                str(RUNTIME_BIN), "analysis-surface", "--arguments", "", "--continue-run", binding["run_id"],
+                "--max-records", str(args.max_records), "--max-chars", str(args.max_chars),
+                "--max-shard-bytes", str(args.max_shard_bytes), *common,
+                *(["--config", explicit_config_path] if explicit_config_path else []),
+            ]) if binding["mode"] == "catch-up" else None,
+            "completion_boundary": "Caller semantic analysis and eligibility finished; preparation is not completion.",
+        }
+        payload["analysis_window"].update({"mode": binding["mode"], "next_older_than_day": None})
+        payload["scope_basis"] = "oldest-unprocessed historical trace"
     source_policy = payload.get("source_policy") if isinstance(payload.get("source_policy"), dict) else {}
     if source_policy.get("loaded") is False:
         payload["config_questions"] = build_guided_config_questions(cwd=cwd)

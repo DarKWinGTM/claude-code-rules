@@ -1,7 +1,7 @@
 ---
 name: analysis
 description: Use when the user wants analysis of real work evidence, anchored by memsearch-backed traces and optionally strengthened by durable memory or governance context, so Claude can propose RULES or workflow improvement topics in a proposal-first format.
-version: 0.9.29
+version: 0.9.40
 ---
 
 # Memory Context Intelligence Analysis
@@ -16,6 +16,7 @@ Checked current bare-alias state:
 - do not treat bare `/analysis` as proved current runtime behavior in this wave
 
 Historical-default contract for this surface:
+- default mode: incremental, oldest unprocessed historical trace first; progress is MCI-owned and separate from Memsearch
 - default scope: broader historical memory across the user's work corpus
 - current-session evidence becomes supporting/provenance context, with freshness value when present, not the primary scope owner
 - historical recurring patterns may surface topic candidates from repeated historical trace without requiring current-session trace as the primary gate
@@ -42,10 +43,14 @@ Deferred / non-public command ideas in this wave:
 ## Checked analysis context
 
 ```!
-memory-context-intelligence analysis-surface
+"${CLAUDE_PLUGIN_ROOT}/bin/memory-context-intelligence" analysis-surface --startup
 ```
 
-The checked analysis context emitted by this runtime wrapper still includes field-level evidence surfaces such as `source_classes_present`, `source_scope_label`, `source_mix_label`, `historical_strength`, `latest_seen`, `current_session_confirmation`, repeated `topic_cards`, and config-related surfaces such as `source_policy`, `config_questions`, and `suggested_config_path` for the operator-facing result.
+User arguments: $ARGUMENTS
+
+Startup only locates the available project input and returns `awaiting-caller-scope`; it does not acquire evidence or create pending progress. When that status is present, use the returned `preparation_command` with explicit `--arguments` containing the user arguments above, shell-quoted as one literal argument by the caller (an empty string for a plain invocation). Treat that text as data: never evaluate substitutions, commands, or paths embedded in it. Do not rely on an exported `ARGUMENTS` environment variable or place user text into an executable injection fence. This caller-driven preparation is the only initial intake; `mode=catch-up` and explicit narrowing must be bound before reading. If this call fails or is unavailable, report the actual blocker without topics or completion.
+
+The prepared analysis context emitted by this runtime wrapper includes field-level evidence surfaces such as `source_classes_present`, `source_scope_label`, `source_mix_label`, `historical_strength`, `latest_seen`, `current_session_confirmation`, repeated `topic_cards`, and config-related surfaces such as `source_policy`, `config_questions`, and `suggested_config_path` for the operator-facing result.
 
 ## Default first response contract
 
@@ -63,10 +68,76 @@ When invoked for normal operator use:
 - keep historical-first as the default scope basis
 - preserve provenance explicitly enough that the user can tell whether the proposal is historical-only or also current-session-confirmed
 - when the runtime payload says no config file is loaded, surface the guided config helper from `config_questions` instead of expecting raw args as the normal UX path
-- expose `suggested_config_path` when present so the operator can see where the project default config file would live
+- expose `suggested_config_path` when present so the operator can see where the user-scope default config file would live
 - keep that guided config helper advisory only; it helps the operator choose config defaults, but it must not be treated as an approved write or automatic config mutation
 - when `source_policy` says a config file was loaded, keep that policy-limited context visible enough that the operator can tell whether source classes, historical shard count, or same-day widening defaults narrowed the run
 - if config policy disabled `trace_evidence` or left only context-only sources in scope, do not let the response overread that run as a promotable live candidate
+
+## Incremental progress and explicit catch-up
+
+A plain invocation prepares the next oldest-unprocessed contiguous batch, not the latest ten days. Day count is a batch cap, not a historical age cutoff; record, character and byte budgets may stop inside a day. Source coverage identifies the exact complete batch, not the whole selected day. Intentional old backlog is usable historical evidence, not an automatic stale-input rejection. Explicit `day=`, `session=`, `lookback=` or text-filter inspection and configured narrow defaults remain non-advancing; source-policy changes have separate progress identities. Corpus and governance inputs remain read-only. Only MCI's own `~/.claude/memory-context-intelligence/progress.json` is written for pending/completed progress; no Memsearch index/config or Main RULES write is authorized.
+
+When the payload has `progress.batch_id`:
+
+1. Read every canonical excerpt in the prepared batch, perform local semantic discovery and any justified optional viewpoints, and finish the eligibility checks below. Do not treat deterministic `no-topics`, wrapper exit zero, file reading, preparation or generated seeds as semantic completion.
+2. After the batch is fully analyzed, invoke the returned `progress.completion_command` through the caller's shell tool. Its `--outcome analyzed` means the analysis completed; replace only that outcome with `no-topics` when the completed analysis yielded zero eligible topics. It is not topic acceptance, approval to emit an artifact or Main promotion. The caller attests completion; Python does not independently verify the model's reasoning.
+3. Check the command's structured result and exit status. Only `completed` or matching `already-complete` is acknowledgement. Never acknowledge an unread, incomplete, failed or interrupted batch. For a known analysis failure, `--outcome failed` clears only that pending preparation and does not advance completed progress. If a command outcome is unknown, inspect existing MCI state rather than claiming advancement or replaying blindly.
+4. In default incremental mode, stop after this one batch. Show eligible Topic cards (or the honest zero-topic result) and a compact progress/remaining note. No eligible topic is still successful completed analysis, not a trigger to manufacture topics or read extra history.
+5. For an explicit `mode=catch-up` invocation, after successful acknowledgement follow `progress.continuation_command` through the same ordinary shell tool while `progress.remaining` is true. Analyze and acknowledge each new batch before requesting another; keep the original run endpoint and do not invoke the public Skill recursively. Stop on blocked/error/interruption; a later new invocation resumes only completed progress. Input appended after that endpoint waits for a new invocation. Deduplicate eligible topics across this invocation without keeping raw batches in a durable ledger; if caller context cannot safely retain the selected output, report the completed boundary and stop rather than claim the rest analyzed.
+
+Completion and continuation commands are payload-bound runtime commands, not additional executable startup fences. Do not synthesize batch IDs, cursor positions, run IDs or a successful acknowledgement. `caught-up` means no unprocessed input remains through that invocation endpoint, not that all possible improvement topics were found. A changed prefix or corrupt/stale state stays blocked with its reason; do not reset, overwrite, skip it or widen scope automatically. Budgets too small for one complete record require a deliberate larger bounded budget or a completed source append, not truncation-as-completion.
+
+## Local semantic discovery before generated seeds
+
+Use `topic_discovery_evidence` canonical `content`, not the 220-character display preview. The main session reads these already-collected excerpts before consulting generated titles or ranks and discovers supported decision mechanisms, including when parallel workers are unavailable or skipped. A deterministic `no-topics` result is not a semantic discovery conclusion when usable trace excerpts remain; `blocked` or `dormant` intake does not authorize acquisition or promotion.
+
+- For each supported candidate keep the observed behavior → mechanism → consequence → specific proposed residual gap together, with cited producer-owned run-local excerpt references and material uncertainty/counterevidence. Authored before/after proposals are interventions, not proof of historical occurrence. Plans, precautions, compliant actions and hypotheticals do not prove an alleged defect.
+- Compare the meaning of excerpts: distinct Thai or English mechanisms remain distinct, while the same mechanism with different wording is one candidate. Do not force evidence into a generic workflow/evidence/approval title. Name the supported mechanism after understanding it.
+- Only then compare with deterministic cards as advisory seeds, not a closed topic catalog. Verify their `evidence_refs` against the canonical excerpts; do not inherit unrelated seed scores, confidence, or recurrence. The worker projection omits private source metadata: claim cross-session/day breadth only when the candidate's actual evidence basis has matching checked provenance, not from an unrelated seed or sample-wide coverage.
+- Read `analysis_window.coverage` to distinguish selected, read, and sampled days, empty/unreadable/byte-limited days, unsampled material, and content truncation. Explicit non-advancing inspection is bounded sampling, not all-record coverage. Incremental coverage describes only the complete contiguous batch before its cursor; a day may remain unfinished. Missing or truncated decision evidence cannot be invented or recovered from generated previews.
+
+## Parallel viewpoint discovery before the eligibility gate
+
+The `signals` command creates deterministic local candidates; its in-process lane findings are not spawned workers. The analysis payload includes `topic_discovery_evidence`, a bounded projection of canonical trace content from the same intake with run-local excerpt references. Local semantic discovery remains the baseline; optional workers add independent perspectives. When that evidence supports multiple independent viewpoints and caller-session subagents are available, use caller-session subagent tools to launch one independent read-only subagent per useful perspective, concurrently, capped at three, before the eligibility gate. Skip any perspective that lacks a distinct trace-supported question. This is candidate discovery, not deepening of already-ranked topics, another intake, or proof that more or better topics will result.
+
+- Brief workers to use only the supplied excerpts. Give each worker the same privacy-minimized set of actual bounded trace excerpts from `topic_discovery_evidence`; preserve each run-local excerpt reference so the main session can verify the claim against the same excerpt. The projection is bounded but is not automatically redacted: remove personal data, credentials, private paths/hosts/endpoints, and unrelated payload details before dispatch. If sensitive details cannot be removed without losing the trace claim's meaning, omit that excerpt from the worker packet. Do not include generated titles/ranks or prior generated interpretations in the worker packet. Workers must not invoke file, shell, memsearch, web-research, or write tools during discovery. If a worker needs more evidence or the supplied excerpt cannot support a claim, return zero candidates; do not retrieve or infer supporting history. Do not give workers ambient corpus access, ask them to widen or repeat the selected window, or provide full transcripts.
+- Use three non-overlapping lenses: **Developer/process** looks for trace-supported recurring implementation or workflow friction; **Security** looks only for explicit trace-supported security, privacy, or safety gaps, not hypothetical violations; **Architect** looks for trace-supported ownership, state, integration, or dependency problems. Each worker may return zero candidates. Require every result to name its run-local excerpt reference, the specific alleged gap it supports, and material counterevidence or uncertainty. Worker output is evidence input, not authority.
+- The main session owns fan-in. Combine worker suggestions with local candidates and verify each cited excerpt and claim against the referenced entry in `topic_discovery_evidence`; apply the complete eligibility gate to the combined candidate set, including semantic deduplication, before any deepening or presentation. Suppress unsupported, covered, completed, duplicate, or materially unresolved candidates; do not rescue a rejected candidate by changing its wording. Parallel discovery does not create `required_topic_ids` or make a candidate an automatic deepening target.
+- Run this only when multiple independent evidence axes can be investigated and the likely breadth benefit earns coordination cost; skip parallel discovery when only one meaningful evidence axis remains or the excerpts are insufficient. If the caller cannot keep discovery workers within the excerpt-only boundary, skip parallel discovery. If parallel subagents are unavailable, continue with the bounded local candidates discovered semantically above and state that parallel discovery was unavailable when it was material to the requested analysis. Respect explicit no-agent/model-call restrictions and keep this local discovery active; availability is not permission. Do not describe sequential/in-process lane summaries as parallel agent execution.
+- Agent Teams are experimental. Use a Team only when Team capability is available and enabled in the caller's interactive session and shared coordination or peer challenge is materially useful; otherwise prefer independent subagents. Do not enable Agent Teams or change settings, and do not ask the operator to enable them for this analysis.
+- This step does not change the one-pass supplemental-search contract below. It never performs another corpus scan to feed workers; any already-authorized supplemental window remains a separate new candidate set subject to the same evidence, deduplication, and eligibility requirements.
+
+## Eligibility gate before presentation
+
+A generated card is only an internal candidate. Before rendering or deepening any topic, pass each one through every check below. The output may contain zero topics.
+
+1. **Trace-to-claim entailment:** inspect the actual bounded trace text in the candidate's cited canonical `topic_discovery_evidence` entries. `Evidence examples` are display previews; use their matching producer references to check canonical content, not the preview alone. It must support the specific problem the topic claims occurred. Titles, signal IDs, keywords, scores, confidence labels, generated before/after text, and a general statement that evidence exists do not prove the claim. If the trace is a plan, precaution, compliant action, or hypothetical rather than evidence of the alleged problem, suppress the candidate. If usable source text is missing, truncated at the decision point, or too weak to establish the claim, suppress the candidate; do not retrieve more evidence to rescue or strengthen that rejected candidate.
+2. **Active RULES novelty:** identify the current analyzed project's active root and applicable RULES owner from checked project context. Search and inspect relevant active rule files for the same principle or semantically equivalent behavior; do not rely only on the limited `governance_context` samples embedded in the payload. If the active owner already covers the principle, suppress the candidate. A trace that appears to violate an existing rule is still suppressed; do not re-propose the covered principle as a regression topic.
+3. **Completed-work novelty:** inspect the active phase/TODO navigation and relevant referenced completed work; compare candidate behavior, mechanism, and output with the delivered outcome at the same checked proof layer. If the same behavior or outcome is already recorded as delivered, suppress it. A similar title alone is not enough to classify work as completed. Phase075 completion proves the eligibility infrastructure, not that every later candidate was fixed; a genuinely distinct residual delta still needs trace support and active-RULES novelty. A possible material match that cannot be settled remains fail-closed.
+4. **Candidate-set deduplication:** compare the remaining candidates by meaning, not only by title. Keep at most one when multiple cards express the same principle, behavior, or outcome.
+5. **Fail closed:** if the active root/owner cannot be identified, relevant active RULES or completion state cannot be checked, or a possible match remains materially ambiguous, suppress the candidate rather than assuming novelty. Keep the explanation brief and do not disclose or restate suppressed topic titles.
+
+Do not treat `available`, a high score, historical repetition, or adaptive-deepening selection as an override for this gate. The gate is a final display-eligibility check over bounded candidates; it does not authorize writes or an automatic corpus acquisition.
+
+### One explicit fresh search for different topics
+
+A rejected candidate and a new candidate search are separate decisions. When the user **explicitly asks for additional or different topics** and the current candidates do not satisfy that request, inspect `analysis_window.next_older_than_day`. If it contains a day, run one bounded supplemental historical scan—exactly one supplemental analysis pass—using the same analysis surface and pass `--arguments ""` so the request text cannot accidentally become an intake filter:
+
+```bash
+"${CLAUDE_PLUGIN_ROOT}/bin/memory-context-intelligence" analysis-surface --arguments "" --older-than-day "<analysis_window.next_older_than_day>"
+```
+
+This is a command template, not startup context injection. After the explicit-request and scope checks pass, replace `<analysis_window.next_older_than_day>` with the actual `YYYY-MM-DD` value from the first payload and invoke the command through the caller's shell tool. Never execute the literal placeholder or this supplemental command during skill preprocessing.
+
+If the first analysis used an explicit config path, add `--config "<that same path>"` so the supplemental run preserves its source-policy limits. This reads only daily shards strictly older than every day in the first checked window, through the existing bounded intake → signals → present path; it creates a new candidate set from that distinct evidence window.
+
+- Run this pass only for an explicit request for more/different topics; a plain `/memory-context-intelligence:analysis` invocation or a routine no-topic result does not trigger it.
+- Do not repeat or widen the pass. `supplemental_pass_used: true` means intake completed for the bounded supplemental window; an unavailable or blocked intake is an attempted but unused pass and must not be retried without a material scope/access/policy change.
+- First perform local semantic discovery on the new canonical evidence before concluding that the requested fresh pass found no eligible topic. Re-reading Recovery Contract, Scope, or Phase075 history is not fresh discovery. Then apply the complete eligibility gate above before any deepening or presentation. Compare against every candidate already examined and suppress any semantically equivalent topic; do not surface a previously rejected candidate under changed wording.
+- The supplemental scan is for candidate discovery, **not to rescue or strengthen any previously rejected candidate**. Never relax trace, active-RULES, completed-work, deduplication, or fail-closed requirements.
+- Honor the source policy and scope. If the first run was narrowed, `trace_evidence` was disabled, no older-than boundary is available, or the supplemental pass is blocked/unavailable, do not widen it; report the checked reason and the exact bounded-window limit.
+- Read `analysis_window.exclusive_boundary_day`, `checked_days` (selected window, not all-record analysis), `coverage`, `supplemental_intake_status`, `supplemental_pass_attempted`, and `supplemental_pass_used` to report the exact bounded window, actual sampled scope and whether it ran or was unavailable; preserve the returned `reason` when blocked. Report whether fresh candidates were produced or suppressed. A bounded window with no eligible topic does not show that no topic exists in the rest of history; do not imply a corpus-wide search or absence.
+
 - use semantic human-readable titles in the first response; do not leave the user with raw slug/token-bag titles
 - the top-level unit of the default first response must be `Topic <n> — <human-readable title>`
 - each surfaced topic must use the same repeated pattern format so the user can scan and compare topics directly
@@ -82,9 +153,10 @@ When invoked for normal operator use:
 - the first response must not require a second manual rewrite pass; it should already read as native-first operator-facing output
 - treat the analysis surface as adaptive deep-analysis when the rendered payload includes `adaptive_deep_analysis`
 - all four internal evidence sources should be treated as the default internal evidence basis when the payload says they are enabled by default
-- when `adaptive_deep_analysis.deepening_required` is true, you must deepen the top 1-2 topic candidates named in `adaptive_deep_analysis.required_topic_ids` before the first response instead of silently skipping deepening
-- when a required candidate recommends `subagent-assisted`, use a read-only subagent lane if the current runtime exposes subagent capability
-- when a required candidate recommends `subagent+external-research`, use the read-only subagent lane plus web/external research if those tools are available in the current runtime
+- treat adaptive deep-analysis as subordinate to the eligibility gate: complete the eligibility gate before any adaptive deepening
+- deepen eligible topics only; ignore `required_topic_ids` for candidates rejected by the eligibility gate
+- when an eligible candidate recommends `subagent-assisted`, use a read-only subagent lane if the current runtime exposes subagent capability
+- when an eligible candidate recommends `subagent+external-research`, use the read-only subagent lane plus web/external research if those tools are available in the current runtime
 - if the required subagent or web/external research tool is unavailable, you must say so explicitly and keep the skipped deepening visible rather than silently skipping it
 - do not silently skip required adaptive deepening
 - subagent-assisted deepening should stay read-only and focus on clarifying mechanism, impact, source conflicts, and decision-ready intervention wording for the already-ranked topic
@@ -96,6 +168,30 @@ When invoked for normal operator use:
 - multiple `required_topic_ids` may be deepened in one analysis pass, but any packet/additional-stage follow-up must still keep one selected topic per artifact and split into separate per-topic artifacts
 - keep the topic-card output shape even after deeper analysis; deepen the evidence and mechanism inside the cards rather than replacing them with a new wrapper format
 
+## Optional post-analysis principle synthesis
+
+After the Topic cards and user-selected refinements, the user may invoke `/memory-context-intelligence:summary` for collective read-only synthesis of the full available set and their follow-up purpose. Its targeted public research develops alternatives/counterevidence, can revise the decision criteria, re-compares viable approaches when the frame changes, and explains what the research changed or left intact before integrating practical principles and complete Topic disposition. This is adaptive reasoning, not a fixed result template. It uses actually available caller-session tools, preserving local/history versus external support, privacy and unavailable/no-web limits.
+
+The initial repeated Topic cards remain unchanged. Summary consumes existing material without a new memsearch run; public mechanism research is not a corpus rerun and does not authorize file creation, additional emission or Main promotion. Offer only a compact advisory option when relevant, not automatic invocation or a replacement for per-topic expansion/emission.
+
+## Deterministic post-presentation follow-up contract
+
+The initial analysis remains read-only and advisory for corpus, governance and candidate artifacts; its sole automatic local-state exception is MCI pending preparation and caller-acknowledged progress. Topic presentation, ordinary `choose`, and adaptive deepening do not authorize candidate file creation or Main RULES promotion.
+
+Only when the user makes an explicit later selection of one or several `Topic N` values and asks to create or proceed with additional-stage trial material:
+- create one independent packet and one standalone artifact per selected topic
+- set `selected_for_additional_trial=True` on each independent packet
+- keep `main_rules_promotion_approved=False`
+- preserve `trace_evidence` as the live entailment anchor and normalize evidence into standalone doctrine without temporary memory, transcript, packet-report, raw path-line, or `content_preview` dependencies
+- run one full-set preflight before any write across every selected packet and destination
+- refuse the complete set on any collision, duplicate destination, unsafe path, symlink boundary, packet stop gate, or invalid standalone artifact
+- preserve every existing destination byte-for-byte; there is no overwrite option, reuse, merge, rename, or replacement path
+- use one rich standalone trial schema per topic and keep Main RULES mutation outside this workflow
+- do not ask about template, routing, or source/runtime sync when these governed defaults apply
+- ask only when topic identity, owner mapping, destination, collision resolution, approval, or another real safety boundary remains ambiguous
+
+This explicit later follow-up writes only additional-stage trial material after the complete preflight passes. It does not mutate Main RULES, approve promotion, combine topics, or turn the initial analysis response into automatic execution.
+
 If the rendered status is `blocked`:
 - say directly that analysis is blocked
 - state the memsearch/input reason briefly
@@ -105,26 +201,27 @@ If the rendered status is `dormant`:
 - say directly that analysis is dormant because the memsearch input is stale
 - do not invent fresh topics from stale input
 
-If the rendered status is `insufficient` or `no-topics`:
-- say directly that broader historical analysis did not find a sufficiently repeated pattern to propose yet
-- keep the insufficiency wording historical-first by default instead of treating current-session scarcity as the default explanation
-- add one short actionable insufficiency line using the rendered `no_topics_message`
-- add one short promotion-gate or next-step line from `no_topics_details` or `recommended_next_step`
+If the rendered status is `insufficient` or `no-topics`, or every generated candidate is rejected by the eligibility gate:
+- distinguish insufficient historical evidence from candidates suppressed as unsupported, already covered, completed, duplicated, or unverifiable
+- do not claim that the historical pattern was insufficient when the actual reason is that no candidate passed the eligibility gate
+- give one concise explanation of the checked suppression reason without repeating suppressed topic titles
+- when the actual result is insufficient historical evidence, say that broader historical analysis did not find a sufficiently repeated pattern; keep that wording historical-first instead of treating current-session scarcity as the default explanation
+- add one short actionable next step from the rendered `no_topics_message`, `no_topics_details`, or `recommended_next_step` only when relevant to the actual result
 - if the strongest remaining signal is only a narrow historical pattern such as `2 trace / 1 session / 1 shard`, say that it is too narrow to count as broader historical review
 - do not treat durable memory or governance context alone as enough to propose a live candidate
 - do not fill the response with workflow explanation just to avoid a short answer
 
 If the rendered status is `available` and `topic_cards` is non-empty:
-- present topic candidates directly as doctrine-level historical work-pattern review topics
-- render surfaced topics as repeated topic cards using one stable pattern, for example `Topic <n>` such as `Topic 1`, `Topic 2`, `Topic 3`
+- first apply the eligibility gate above to the full candidate set, then present only candidates that pass as doctrine-level historical work-pattern review topics
+- Render zero or more eligible topics as repeated topic cards using one stable pattern, for example `Topic <n>` such as `Topic 1`, `Topic 2`, `Topic 3`
+- Never add filler topics to reach a target count
 - each topic card should carry its own short explanation, evidence/provenance line, status, and optional recommendation tag when it is the strongest topic
-- broader multi-session/multi-shard patterns should still outrank narrow historical single-session/single-shard traces when the system chooses which topic cards surface first
-- if a narrow historical pattern is the strongest remaining evidence, say so directly instead of letting it read like broad historical proof
+- broader multi-session/multi-shard patterns may inform evidence strength, but breadth never overrides the eligibility gate
+- if a narrow historical pattern is the strongest remaining eligible evidence, say so directly instead of letting it read like broad historical proof
 - keep any historical breadth summary to one short line only when it changes interpretation; do not let it become the main wrapper structure ahead of the topics
 - keep provenance visible enough to distinguish `historical-only` from `current-session-confirmed` patterns
 - top-level topics must stay at RULES/workflow principle or mechanism level rather than incident-level issue wording
 - incident details such as `404`, `python error`, or similar case-level examples should stay inside proposal evidence/examples or provenance, not in the title
-- sparse historical runs may still surface at least 3 advisory topics when the list can split into distinct doctrine lenses rather than an incident list
 - include short why/impact wording
 - surface compact source mix wording when durable memory or governance context materially shaped a candidate
 - include provenance notes for each topic when they materially help the user judge the evidence boundary
@@ -173,6 +270,7 @@ Keep these boundaries:
 - do not imply that several selected topics can be emitted into one combined additional artifact; downstream packet/additional output must split into separate per-topic artifacts
 - do not present candidate topics as already-approved RULES changes
 - if memsearch-backed analysis cannot continue, stop at blocked/dormant/no-strong-candidate output rather than improvising equivalent context
+- initial and supplemental analysis read only the selected bounded local trace input; supplemental passes use a strict older-than boundary and never imply corpus-wide absence
 
 ## Optional internal/operator help
 

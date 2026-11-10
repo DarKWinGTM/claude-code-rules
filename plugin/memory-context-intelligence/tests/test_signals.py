@@ -38,6 +38,28 @@ def intake_report(*, status: str = "available", freshness: str = "fresh", record
 
 
 class SignalGenerationTests(unittest.TestCase):
+    def test_intentional_backlog_is_not_rejected_solely_for_age(self) -> None:
+        source = intake_report(freshness="stale", records=[
+            {"content": "Approval was required but recovery was missing.", "source_classes": ["trace_evidence"], "shard": "2025-01-01.md", "session_id": "session-a"},
+            {"content": "Approval was required but recovery was missing.", "source_classes": ["trace_evidence"], "shard": "2025-01-02.md", "session_id": "session-b"},
+        ])
+        source["progressive_batch"] = {"coverage": {"complete": True}}
+        report = signals.build_report(source)
+        self.assertEqual(report["ranked_signals"][0]["confidence"], "medium")
+        self.assertTrue(report["topic_candidates"])
+        self.assertEqual(report["source"]["freshness"]["classification"], "stale")
+
+    def test_signal_and_candidate_references_match_the_intake_evidence_owner(self) -> None:
+        report = signals.build_report(intake_report(records=[
+            {"ref": "excerpt-001", "content": "- Approval was required but the recovery path remained missing.", "source_classes": ["trace_evidence"], "shard": "2026-05-19.md", "session_id": "session-a"},
+            {"ref": "excerpt-002", "content": "- Approval was required but the recovery path remained missing.", "source_classes": ["trace_evidence"], "shard": "2026-05-20.md", "session_id": "session-b"},
+        ]))
+        signal = report["ranked_signals"][0]
+        self.assertEqual([record["ref"] for record in signal["records"]], ["excerpt-001", "excerpt-002"])
+        candidates = report["topic_candidates"] + report["advisory_fallback_topics"]
+        self.assertTrue(candidates)
+        self.assertEqual(candidates[0]["evidence_refs"], ["excerpt-001", "excerpt-002"])
+
     def test_controlled_sample_produces_internal_signals_and_topics(self) -> None:
         report = signals.build_report(
             intake_report(
@@ -927,6 +949,46 @@ class SignalGenerationTests(unittest.TestCase):
         self.assertEqual(report["topic_candidates"], [])
         self.assertTrue(report["ranked_signals"])
         self.assertEqual(report["ranked_signals"][0]["confidence"], "low")
+
+    def test_promoted_topic_carries_entailment_basis_linked_to_source_signal(self) -> None:
+        report = signals.build_report(
+            intake_report(
+                records=[
+                    {
+                        "shard": "2026-05-20.md",
+                        "section": "feedback",
+                        "session_id": "session-a",
+                        "content": "Do not claim fixed before verification; report evidence limits clearly.",
+                        "source_classes": ["trace_evidence"],
+                    },
+                    {
+                        "shard": "2026-05-19.md",
+                        "section": "feedback",
+                        "session_id": "session-b",
+                        "content": "Avoid claiming fixed before verification; keep evidence limits visible.",
+                        "source_classes": ["trace_evidence"],
+                    },
+                    {
+                        "shard": "2026-05-18.md",
+                        "section": "feedback",
+                        "session_id": "session-c",
+                        "content": "Completion wording must not outrun checked verification evidence.",
+                        "source_classes": ["trace_evidence"],
+                    },
+                ]
+            )
+        )
+
+        topic = report["topic_candidates"][0]
+        signal = report["ranked_signals"][0]
+        basis = topic["candidate_entailment_basis"]
+
+        self.assertEqual(basis["candidate_title"], topic["title"])
+        self.assertEqual(basis["source_signal_ids"], topic["source_signal_ids"])
+        self.assertEqual(basis["trace_record_count"], signal["trace_record_count"])
+        self.assertTrue(basis["source_keywords"])
+        self.assertTrue(basis["transferable_observed_pattern"])
+        self.assertEqual(basis["supported_mechanism"], topic["high_level_mechanism"])
 
 
 if __name__ == "__main__":

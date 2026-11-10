@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.12
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-18)
+> **Current Version:** 0.1.82
+> **Session:** 7194487f-fe8b-4383-8756-3db4c5612392 (2026-10-02)
 > **Parent Design:** [design.md](design.md)
 
 ---
@@ -51,6 +51,12 @@ That full-power method should combine:
 A dedicated Research Scout lane should own the deep web research portion when the topic is broad enough or important enough to justify more serious evidence gathering.
 
 พูดง่าย ๆ: เอาข้อดีของ local-only, hybrid, research-first, และ verification-heavy มารวมเป็น flow เดียวที่เน้นความลึกและความน่าเชื่อถือ
+## Collective synthesis and checked capability
+
+[Post-Analysis Principle Synthesis](10-post-analysis-principle-synthesis.design.md) owns the manual summary workflow: complete existing Topics → provisional mechanisms/criteria/options → iterative public alternatives and counterevidence → evidence-led criteria reassessment and viable-option re-comparison when the decision frame changes → explicit research delta → revised principles and integrated method. The sequence supports traceability, not a fixed pipeline or output form. Research can add, remove, retain, refine, replace or withdraw a provisional answer; diversity supports contextual selection, not a source/option quota. It does not prove missing historical incidents or approve writes/promotion.
+
+This manual skill uses public search/fetch tools actually available and permitted in its caller session. Existing `lib/research_enrichment.py` evaluates supplied controlled source records, while `lib/orchestration.py` and named plugin lane reports are deterministic in-process evidence. They do not perform live web access or acquire that capability from a prompt change. The candidate-specific flow below remains distinct; summary does not call it to rerun acquisition or create packets.
+
 ## 5) Research flow
 
 ```text

@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.77
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-02)
+> **Current Version:** 0.1.88
+> **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-10)
 > **Parent Design:** [design.md](design.md)
 
 ---
@@ -36,6 +36,8 @@ The default preset is:
 - all four source classes enabled unless the operator narrows them
 - `allow_same_day_widening = true`
 - `max_historical_shards = 10`
+
+Under comprehensive scope, normal analysis uses oldest-unprocessed incremental batches. `max_historical_shards` limits days per batch, not history age; record/character/byte budgets may stop sooner. `allow_same_day_widening` retains its narrow-session meaning and must not force the progressive reader to the newest day. Explicit `mode=catch-up` is invocation intent, not a new persisted config field. Configured day/session/lookback and text-filter inspection do not consume normal progress. Init never resets, migrates or writes the separate MCI progress file.
 
 ## 4) Config location and contract
 

@@ -491,6 +491,49 @@ class TopicPresentationTests(unittest.TestCase):
                 self.assertFalse(rendered["additional_emission_performed"])
                 self.assertFalse(rendered["main_rules_mutation_performed"])
 
+    def test_initial_presentation_keeps_trial_and_promotion_unselected(self) -> None:
+        rendered = presentation.build_presentation(
+            signals_report(),
+            output_mode="native-first",
+            language="en",
+        )
+
+        self.assertFalse(rendered["selected_for_additional_trial"])
+        self.assertFalse(rendered["main_rules_promotion_approved"])
+        self.assertFalse(rendered["additional_emission_performed"])
+        self.assertTrue(
+            all(not card["selected_for_additional_trial"] for card in rendered["topic_cards"])
+        )
+        self.assertTrue(
+            all(not card["main_rules_promotion_approved"] for card in rendered["topic_cards"])
+        )
+
+        selected = presentation.build_selection(
+            signals_report(),
+            topic_id="topic-001",
+            output_mode="native-first",
+            language="en",
+        )
+        self.assertFalse(selected["selected_for_additional_trial"])
+        self.assertFalse(selected["main_rules_promotion_approved"])
+        self.assertFalse(selected["selected_topic"]["selected_for_additional_trial"])
+        self.assertFalse(selected["selected_topic"]["main_rules_promotion_approved"])
+
+    def test_next_action_bridge_describes_explicit_additional_trial_follow_up(self) -> None:
+        rendered = presentation.build_presentation(
+            signals_report(),
+            output_mode="native-first",
+            language="en",
+        )
+        option = rendered["next_action_options"]["options"][0]
+
+        self.assertIn("explicit later request", option["action"])
+        self.assertIn("additional-stage trial", option["action"])
+        self.assertTrue(option["advisory_only"])
+        self.assertFalse(option["carry_forward_allowed"])
+        self.assertFalse(option["selected_for_additional_trial"])
+        self.assertFalse(option["main_rules_promotion_approved"])
+
     def test_preserves_canonical_identifiers_exactly(self) -> None:
         rendered = presentation.build_presentation(signals_report(), output_mode="bilingual", language="th")
         rendered_text = json.dumps(rendered, ensure_ascii=False)
@@ -619,6 +662,15 @@ class TopicPresentationTests(unittest.TestCase):
         self.assertIn("ข้อเสนอที่ผู้ใช้ตัดสินใจต่อได้ทันที", second_card_sections["มันคืออะไร"])
         self.assertIn("next step หรือ proposal", second_card_sections["อาการ/ปัญหา"])
         self.assertIn("ตัดสินใจต่อได้ทันที", second_card_sections["หลังปรับ (After behavior)"])
+
+    def test_topic_cards_carry_intake_evidence_references_without_preview_reconstruction(self) -> None:
+        report = signals_report()
+        report["topic_candidates"][0]["evidence_refs"] = ["excerpt-001", "excerpt-002"]
+        rendered = presentation.build_presentation(report, output_mode="native-first", language="th")
+        self.assertEqual(rendered["topic_cards"][0]["evidence_refs"], ["excerpt-001", "excerpt-002"])
+        self.assertEqual(rendered["topic_cards"][1]["evidence_refs"], [])
+        self.assertNotIn("content", rendered["topic_cards"][0])
+        self.assertFalse(rendered["topic_cards"][0]["selected_for_additional_trial"])
 
     def test_topic_cards_render_evidence_examples_and_before_after_when_present(self) -> None:
         report = signals_report()

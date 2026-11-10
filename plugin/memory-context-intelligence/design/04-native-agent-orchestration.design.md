@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.75
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-01)
+> **Current Version:** 0.1.87
+> **Session:** 7194487f-fe8b-4383-8756-3db4c5612392 (2026-10-03)
 > **Parent Design:** [design.md](design.md)
 
 ---
@@ -31,9 +31,26 @@ The runtime package under `<repo-root>/plugin/memory-context-intelligence/` now 
 
 The lead session remains responsible for final framing, authority boundaries, direct verification of material anchors, and what is shown to the user.
 
-## 3.1) Phase-069 user-facing adaptive deepening contract
+## 3.1) Phase-077 caller-session parallel topic discovery
 
-Phase 069 does not replace runtime-local orchestration with a new always-on external workflow. It uses the existing lane concepts as a bounded first-response deepening aid for `/memory-context-intelligence:analysis`.
+Phase077 owns caller-session discovery before Phase075 eligibility. Its selected correction requires the main session to discover supported mechanisms from canonical `topic_discovery_evidence` before consulting deterministic titles/ranks, including when no workers are available. The projection contains bounded, privacy-minimized intake content with producer-owned run-local references, not 220-character display previews. No new intake or corpus search is performed for workers.
+
+Local semantic discovery is the baseline; optional caller-session subagents may add up to three independent read-only perspectives concurrently only when bounded trace evidence supports multiple useful axes. Generated topic titles and before/after templates are advisory seeds, not a closed topic catalog or proof of an incident. A semantic candidate cites its actual excerpts and cannot inherit unrelated seed scores, confidence, recurrence, or completed-work status.
+
+The discovery perspectives are:
+- **Developer/process** — trace-supported recurring implementation or workflow friction
+- **Security** — explicit trace-supported security, privacy, or safety gaps; no hypothetical violations
+- **Architect** — trace-supported ownership, state, integration, or dependency problems
+
+Each worker receives the same privacy-minimized excerpt set, no generated candidate titles/ranks, and an excerpt-only task. Workers return zero or more candidate gaps, each tied to a supplied reference with uncertainty or counterevidence. They must not invoke file, shell, memsearch, web-research, or write tools during discovery; if a worker needs more evidence or an excerpt cannot support a claim, it returns zero candidates rather than retrieving history or inferring support. The caller retains responsibility for constraining the worker task to the supplied evidence.
+
+The lead verifies citations against the same projection, combines worker and local candidates, and applies the unchanged Phase 075 gate—including semantic deduplication—to the combined set before deepening or presentation. Worker suggestions do not create `required_topic_ids`. Discovery remains read-only and advisory; no result count, novelty, accuracy, speed, or cost benefit is guaranteed by dispatch alone.
+
+Agent Teams remain an optional caller-session mechanism only when already available and enabled and shared coordination materially helps. The package neither enables Teams nor changes caller settings. If subagents are unavailable, prohibited, or evidence has only one useful axis, continue local semantic discovery on the supplied canonical evidence; do not represent in-process simulation as parallel execution. Tool availability does not override explicit no-agent/model-call scope.
+
+## 3.2) Phase-069 user-facing adaptive deepening contract
+
+Phase 069 does not replace runtime-local orchestration or Phase 077 caller-session discovery with a new always-on external workflow. It uses the existing lane concepts as a bounded first-response deepening aid for `/memory-context-intelligence:analysis` after candidate eligibility.
 
 Current checked behavior:
 - the adaptive payload can now mark deepening as required before the first response

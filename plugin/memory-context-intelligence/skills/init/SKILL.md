@@ -1,7 +1,7 @@
 ---
 name: init
 description: Use when the operator wants to configure memory-context-intelligence through Claude Code question/choice dialogs and write the default user-scope config file.
-version: 0.9.29
+version: 0.9.40
 ---
 
 # Memory Context Intelligence Init
@@ -18,6 +18,7 @@ Core contract:
 - narrowing to `day / session / lookback` happens only when the operator explicitly chooses it
 - final output writes `~/.claude/memory-context-intelligence.config.json`
 - the written file must use the shared `analysis.scope_policy` + `analysis.source_policy` contract
+- comprehensive analysis now resumes oldest-unprocessed history in bounded batches; shard count is a per-batch cap, not a history-age cutoff. Explicit narrow inspection does not advance normal progress. Init must not reset or write MCI's separate progress file
 - `trace_evidence` must remain the live promotion anchor
 - do not expose `review` or `packet` as public surfaces
 
