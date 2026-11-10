@@ -23,8 +23,10 @@ def default_state_path() -> Path:
     return Path.home() / ".claude" / "memory-context-intelligence" / "progress.json"
 
 
-def scope_identity(memory_root: Path, source_classes: list[str]) -> str:
+def scope_identity(memory_root: Path, source_classes: list[str], *, window: dict[str, Any] | None = None) -> str:
     value = [str(memory_root.resolve()), sorted(source_classes), "ordered-trace-v1"]
+    if window is not None:
+        value.append(window)
     return hashlib.sha256(json.dumps(value, sort_keys=True).encode()).hexdigest()
 
 

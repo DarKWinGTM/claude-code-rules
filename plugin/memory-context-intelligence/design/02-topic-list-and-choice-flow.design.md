@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.89
+> **Current Version:** 0.1.90
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-10)
 > **Parent Design:** [design.md](design.md)
 
@@ -17,7 +17,7 @@ Define the user-facing analysis flow for this capsule so that it analyzes bounde
 
 The flow must be:
 
-1. after fileless startup, Claude interprets the slash text as a natural-language request, retains its output intent and passes only requested retrieval controls/mode to preparation; absent retrieval controls, preserve configured incremental defaults and report complete-prefix/remaining coverage without claiming selected days are complete
+1. after fileless startup, Claude interprets the slash text, retains output intent and asks only for missing period/topic-target choices; prepare only after resolving a 1–14-calendar-day interval including today, with configured narrowing inside it, and report complete-prefix/remaining coverage without claiming selected days are complete
 2. the main session discovers observed mechanisms from canonical intake `topic_discovery_evidence` before consulting generated titles/ranks; when independent perspectives and permitted caller tools justify it, workers add candidates, otherwise local semantic discovery still runs
 3. fan in local semantic candidates, advisory deterministic seeds, and worker suggestions; verify cited producer-owned trace references against the same content projection
 4. apply the full eligibility gate to the combined set, including semantic deduplication, before deepening or presentation
@@ -29,11 +29,17 @@ The flow must be:
 
 พูดง่าย ๆ: ต้องโชว์รายการหัวข้อก่อน แล้วค่อยให้ user เลือกทีหลัง แต่รอบนี้รายการหัวข้อควรมาจาก broader historical work patterns เป็นค่า default ไม่ใช่ล็อกที่ current session ก่อนเสมอ
 
+### Guided invocation
+
+The command already has one purpose, so do not ask users to select a purpose or learn mode jargon. Before corpus/progress acquisition, ask only for missing choices in one question/choice dialog: period **1, 3, 7 or 14 calendar days** and Topic target **No minimum, 3, 5 or 10** (custom values allowed). Other explicitly selected integer durations within 1–14 days are valid. Preserve period/count/language/filters across turns; if only one value is missing, ask only that value. An unavailable dialog falls back to a concise text question, not guessed defaults.
+
+Count today as day1, show inclusive start/end dates, and freeze the invocation date for continuation. Missing calendar days do not authorize older input. Requests exceeding14 days or conflicting with an explicit/configured day require correction before reading, not silent clamping or dropping restrictions. A period/count choice alone selects one batch; only an explicit request to read the entire selected period selects bounded catch-up. Minimum count never guarantees output, weakens eligibility or authorizes extra dates/batches. Runtime enforcement belongs to [07](07-recall-scoping-and-time-window.design.md).
+
 ### Natural-language request interpretation
 
-`ARGUMENTS` is the Skill's input-text carrier, not a requirement for CLI syntax or permission to treat every word as a literal search. Claude understands the whole sentence and context before acquisition. Keep topic-count targets, subject, language, detail and depth as invocation-local analysis/output instructions; send only the user's actual day/session/lookback/text restrictions, config and execution mode to the existing runtime. A subject such as RULES does not itself require matching that word in a trace. With no retrieval controls, prepare with an explicit empty `--arguments` value so config/source policy and incremental defaults remain authoritative.
+`ARGUMENTS` is the Skill's input-text carrier, not a requirement for CLI syntax or permission to treat every word as a literal search. Claude understands the whole sentence and context before acquisition. Keep topic-count targets, subject, language, detail and depth as invocation-local analysis/output instructions; send only the user's actual day/session/lookback/text restrictions, config and execution mode to the existing runtime. A subject such as RULES does not itself require matching that word in a trace. After the run choices resolve, prepare with the selected `--window-days` and frozen `--current-day`; with no additional retrieval controls, use an explicit empty `--arguments` value. Config/source policy may narrow, never extend, that interval.
 
-For example, `Minimium Rules 5 topic` requests at least five RULES topics, not a search for that sentence. The same count request with an explicit date retains the count and transmits only the date restriction. An explicit request for traces containing `timeout` retains that genuine literal filter. Natural-language catch-up intent selects the existing catch-up mode; a count/depth target alone does not widen acquisition, change batch budgets or authorize filler topics. Ask only when an unsupported or materially ambiguous constraint prevents faithful scope selection. Existing eligibility and caller-acknowledged completion remain binding; runtime serialization/safety belongs to [07](07-recall-scoping-and-time-window.design.md). No phrase-whitelist parser, new config or durable intent state is introduced.
+For example, `Minimium Rules 5 topic` retains the five-topic target and asks only for the missing period, not a search for that sentence. The same count request with a chosen period and explicit date retains the count and transmits the calendar controls plus that in-range date restriction. An explicit request for traces containing `timeout` retains that genuine literal filter. Natural-language catch-up intent selects the existing catch-up mode; a count/depth target alone does not widen acquisition, change batch budgets or authorize filler topics. Beyond the missing run choices, ask only when an unsupported or materially ambiguous constraint prevents faithful scope selection. Existing eligibility and caller-acknowledged completion remain binding; runtime serialization/safety belongs to [07](07-recall-scoping-and-time-window.design.md). No phrase-whitelist parser, new config or durable intent state is introduced.
 
 ### 2.0.1) Topic eligibility and novelty gate
 
@@ -57,7 +63,7 @@ The main session first discovers observed mechanisms from canonical intake conte
 
 Skill preprocessing executes only fileless `analysis-surface --startup`; the caller interprets the natural-language request, binds only requested retrieval controls and performs initial preparation explicitly. Normal incremental/catch-up payloads intentionally expose no `next_older_than_day`; their continuation is the acknowledgement-bound progress path in [07](07-recall-scoping-and-time-window.design.md). The older-than path remains an explicit stateless inspection, never implicit default progress. The supplemental command is an ordinary shell template, not an executable context-injection block: the caller runs it only after checking the explicit request and scope, replacing the date placeholder with the actual `YYYY-MM-DD` value from the initial payload. A prose condition cannot defer an executable injection block because the harness runs injection before Claude receives the instructions.
 
-A user request for additional/different topics authorizes one bounded supplemental scan only when the original candidate set does not meet that request. The analysis surface reports the exact daily shards in its first bounded window and, only for a historical-default run with trace evidence enabled and no explicit narrowing, the next available boundary as `analysis_window.next_older_than_day`. The internal supplemental path selects shards strictly older than that boundary, carries forward the same explicit config path when present, applies the same per-run shard/record/character/byte and source-class limits, and returns a new candidate set from those records.
+A user request for additional/different topics authorizes one bounded supplemental scan only when the original candidate set does not meet that request. The analysis surface reports the exact daily shards in its first bounded window and, only for a historical-default run with trace evidence enabled and no explicit narrowing, the next available boundary as `analysis_window.next_older_than_day`. The internal supplemental path selects shards strictly older than that batch boundary but still inside the original calendar interval. It carries forward the frozen day/window and same explicit config path, applies the same shard/record/character/byte and source-class limits, and returns a new candidate set from those records. At the interval's start no older boundary is offered.
 
 The supplemental scan is a new candidate-discovery operation, not a repeat of the prior run and not additional evidence to rescue a rejected candidate. The skill must process no more than one supplemental window for an explicit request, perform local semantic discovery on the new content before concluding, compare candidates against all previously examined meanings, and apply the full eligibility gate before deepening or display. Re-reading rule coverage or Phase075 history cannot stand for this fresh evidence pass. Report selected/read/sampled scope and actual attempted/used status, not candidate suppression as proof of completed discovery. It does not run by default for a slash invocation or an ordinary no-topic result. It cannot widen an explicitly narrowed or policy-limited scope, and it is unavailable if configured source policy disables `trace_evidence`. Output identifies the exclusive boundary, exact checked days, attempted/used state, and intake status; if unavailable, preserve the intake reason and do not report the supplemental window as used. Report whether candidates were produced or suppressed; an empty or ineligible bounded window is not evidence that the remaining corpus has no topics.
 
@@ -67,14 +73,14 @@ The selected design **is** broader historical analysis by default, but still bou
 
 Before topic-list presentation, `/memory-context-intelligence:analysis` should use this scope model:
 1. current project collection only
-2. oldest unprocessed historical records of any age in bounded chronological batches by default
+2. oldest unprocessed historical records inside the chosen 1–14-calendar-day interval in bounded chronological batches
 3. repeated historical trace may surface topic candidates without requiring current-session trace as the primary gate
 4. current-session evidence becomes supporting provenance/freshness context when present
 5. explicit narrowing such as `day=YYYY-MM-DD`, `session=<id>`, or `lookback=<minutes|hours>` remains available when the operator wants it
 
 Design defaults:
 - default project scope = current project collection only
-- default historical scope = pending history without an age cutoff; batch acquisition stays bounded and plain incremental stops after one completed batch
+- historical scope = the explicitly chosen recent calendar interval including today; batch acquisition stays bounded and plain incremental stops after one completed batch
 - default current-session narrowing = off unless explicitly requested
 - default lookback = none in historical-default mode
 - explicit narrow-slice runs should stay narrow rather than silently widening beyond the chosen request
@@ -145,7 +151,7 @@ This means the first list is a proposal surface. It is presenting candidate impr
 
 ### First output layer
 
-Show only the topic list with short descriptions, short why/impact wording, and a recommended first topic when one is materially stronger.
+Before preparation, show only the missing-choice dialog. Once preparation and eligibility finish, show the topic list with short descriptions, short why/impact wording, and a recommended first topic when one is materially stronger. Briefly distinguish the selected date interval from the batch actually analyzed and remaining input.
 
 The first output layer must:
 - frame the result as a design-grounded RULES/workflow review surface, not as a generic recurring-pattern summary

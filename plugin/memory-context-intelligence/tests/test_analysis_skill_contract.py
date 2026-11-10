@@ -31,6 +31,21 @@ SOURCE_OLD = SOURCE_ROOT / "skills" / "memory-context-intelligence" / "SKILL.md"
 
 
 class AnalysisSkillContractTests(unittest.TestCase):
+    def test_analysis_guides_missing_window_and_topic_target_before_preparation(self) -> None:
+        text = RUNTIME_ANALYSIS.read_text(encoding="utf-8")
+        for contract in [
+            "## Choose the run window before preparation",
+            "1, 3, 7 or 14 calendar days",
+            "AskUserQuestion",
+            "ask only for missing choices",
+            "No minimum",
+            "--window-days",
+            "including today",
+            "never resume an unrestricted historical run",
+        ]:
+            with self.subTest(contract=contract):
+                self.assertTrue(contract in text, f"Missing guided invocation contract: {contract}")
+
     def test_checkpoint_completion_is_caller_attested_not_startup_injection(self) -> None:
         text = RUNTIME_ANALYSIS.read_text(encoding="utf-8")
         self.assertIn("progress.completion_command", text)
@@ -405,7 +420,8 @@ class AnalysisSkillContractTests(unittest.TestCase):
         self.assertIn("exclusive_boundary_day", text)
         self.assertIn("supplemental_intake_status", text)
         self.assertIn("supplemental_pass_attempted", text)
-        self.assertIn("strictly older than every day in the first checked window", text)
+        self.assertIn("strictly older than every day in the first checked batch", text)
+        self.assertIn("still inside the original selected calendar window", text)
         self.assertIn("new candidate set", text)
         self.assertIn("Compare against every candidate already examined", text)
         self.assertIn("not to rescue or strengthen any previously rejected candidate", text)

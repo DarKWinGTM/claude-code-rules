@@ -1,7 +1,7 @@
 # Changelog - memory-context-intelligence
 
 > **Parent Document:** [../design/design.md](../design/design.md)
-> **Current Version:** 0.1.89
+> **Current Version:** 0.1.90
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-10)
 > **Selected Parent Model:** generic parent
 > **Selected Chain Shape:** flat-sibling-shards
@@ -20,7 +20,9 @@ Prior installed corrective checkpoint: `v0.1.86` / package `0.9.38` fixes the co
 
 Prior source checkpoint: `v0.1.87` / package `0.9.39` completes the selected source/fixture/static skill-contract/document gate for balanced historical sampling, selected/read/sampled coverage, canonical intake evidence references and caller-local semantic discovery before deterministic seeds. Matching completed outcomes and actual one-pass fresh discovery retain strict eligibility. The current shard records 187 passing package tests and bounded package/document/protected-state checks; installed0.9.38 and immutable published0.9.31 remain separate. No installation/model/native-slash/publication proof is selected for0.9.39.
 
-Current source correction: `v0.1.89` / package `0.9.41` restores natural-language request interpretation in the existing analysis Skill before runtime preparation. Output intent is no longer forwarded as a literal history filter; explicit scope/mode, configured defaults, eligibility and caller-acknowledged progress remain. The matching contract RED→GREEN,39 focused cases and205-test isolated suite passed; a fresh-context full-Skill reader resolved five paired cases as intended, followed by Main's actual parser-only control checks and34 final Skill/manifest checks. Synthetic interpretation is not corrected native-slash proof. The user subsequently selected publication and installation: source `fe89b4e9be59da8a97c515539f8fd27cd7c7f110`, immutable tag `memory-context-intelligence--v0.9.41` and non-draft/non-prerelease Release are public; all14 selected public bytes/modes matched. Native local-scope update0.9.40→0.9.41 passed21-file runtime parity. Main Rules `v10.79` remains latest; reload is left to the user. Details: [0.1.89](v0.1.89-natural-language-analysis-intent.changelog.md).
+Current source correction: `v0.1.90` / package `0.9.42` adds guided missing period/Topic-target choices, a whole-invocation1–14-calendar-day limit including today, pre-read filtering and frozen date-bound continuation. Legacy unrestricted pending stays unchanged in the same checkpoint store; target count never widens evidence. The211-test isolated suite passed. Source candidate only: no installation/publication/reload selected. Details: [0.1.90](v0.1.90-guided-calendar-window.changelog.md).
+
+Prior published correction: `v0.1.89` / package `0.9.41` restores natural-language request interpretation in the existing analysis Skill before runtime preparation. Output intent is no longer forwarded as a literal history filter; explicit scope/mode, configured defaults, eligibility and caller-acknowledged progress remain. The matching contract RED→GREEN,39 focused cases and205-test isolated suite passed; a fresh-context full-Skill reader resolved five paired cases as intended, followed by Main's actual parser-only control checks and34 final Skill/manifest checks. Synthetic interpretation is not corrected native-slash proof. The user subsequently selected publication and installation: source `fe89b4e9be59da8a97c515539f8fd27cd7c7f110`, immutable tag `memory-context-intelligence--v0.9.41` and non-draft/non-prerelease Release are public; all14 selected public bytes/modes matched. Native local-scope update0.9.40→0.9.41 passed21-file runtime parity. Main Rules `v10.79` remains latest; reload is left to the user. Details: [0.1.89](v0.1.89-natural-language-analysis-intent.changelog.md).
 
 Published baseline: `v0.1.88` / package `0.9.40` adds oldest-unprocessed incremental analysis, caller-acknowledged MCI progress and explicit endpoint-bounded catch-up. Source commit `6d7c5074b1f50a62ab4ad9c16802a16befb3003f` and immutable tag `memory-context-intelligence--v0.9.40` are published; fresh public readback matched all67 selected bytes/modes and Release identity. Main Rules `v10.79` remains repository latest. The204-test local suite and final affected checks are distinct from installation/model proof; installed0.9.38 and earlier pre-publication states above remain historical checkpoints, not current source parity. Details and receipt: [0.1.88](v0.1.88-incremental-analysis-progress.changelog.md).
 
@@ -40,6 +42,7 @@ The changelog no longer stays `single-file-bootstrap` because the active version
 
 | Version | Date | Detail |
 |---|---|---|
+| 0.1.90 | 2026-11-10 | [Guided calendar-window analysis — source0.9.42](v0.1.90-guided-calendar-window.changelog.md) |
 | 0.1.89 | 2026-11-10 | [Natural-language analysis intent — source0.9.41](v0.1.89-natural-language-analysis-intent.changelog.md) |
 | 0.1.88 | 2026-11-10 | [Incremental analysis progress — package0.9.40](v0.1.88-incremental-analysis-progress.changelog.md) |
 | 0.1.87 | 2026-10-03 | [Fresh-topic discovery correction — package0.9.39 source candidate](v0.1.87-fresh-topic-discovery.changelog.md) |

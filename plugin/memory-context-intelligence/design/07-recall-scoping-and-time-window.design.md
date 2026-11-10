@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.89
+> **Current Version:** 0.1.90
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-10)
 > **Parent Design:** [design.md](design.md)
 
@@ -40,14 +40,14 @@ Because current checked recall is query-first rather than session/day/window-fir
 
 The selected default is historical-first:
 1. current project collection only
-2. the oldest unprocessed contiguous historical batch, with no age cutoff on eligibility
+2. one oldest-unprocessed contiguous batch within the chosen 1–14-calendar-day interval including today
 3. repeated historical trace may surface topic candidates without requiring current-session trace as the primary gate
 4. current-session evidence becomes supporting provenance/freshness context when present
 5. explicit narrowing such as `day=YYYY-MM-DD`, `session=<id>`, or `lookback=<minutes|hours>` remains available when the operator wants it
 
 Default scope policy:
 - **project scope:** current project collection only
-- **historical scope:** unprocessed history of any age, consumed in bounded batches rather than loaded all at once
+- **historical scope:** the selected inclusive recent calendar interval, consumed in bounded batches rather than loaded all at once
 - **day/session narrowing:** off by default unless explicitly requested
 - **lookback default:** none when historical-default scope is active
 - **lookback configurable:** available only when the operator selects a narrower slice
@@ -67,12 +67,15 @@ If the operator explicitly requests a narrow slice and it is weak:
 ## 5) How memsearch recall should be used inside that scope
 
 ### L0 — deterministic scope selection
+
+Before preparation the Skill resolves the missing run choices under [02](02-topic-list-and-choice-flow.design.md). Internal `analysis-surface --window-days <1..14> --current-day YYYY-MM-DD` validates the interval; absent period returns `awaiting-caller-scope` before corpus/progress access. Compute `start_day = invocation_day - (days - 1)` and `end_day = invocation_day` once. Filter date-named shard discovery before hashing or reading: no future dates, older dates or compensation for missing dates. Explicit/configured day restrictions and supplemental boundaries must fit; conflicting constraints block without clamping or dropping them. `lookback` still filters same-day clock time, never substitutes for a multi-day calendar interval.
+
 Use the source-of-truth markdown and anchor structure to define the bounded candidate memory slice:
-- normal analysis selects oldest-unprocessed shards in chronological order, up to the configured day cap (at most10) and record/character/byte budgets; default8 records need not cover10 days
+- normal analysis selects oldest-unprocessed shards inside that interval in chronological order, up to the configured shard cap (at most10 per batch) and record/character/byte budgets; default8 records need not cover the full interval
 - read complete newline-terminated records without sampling or truncating a record and moving beyond it; stop before a record that will not fit, retaining its position for a later batch
 - reconstruct bounded parser context when resuming inside a shard; source-position keys and the digest of the exact consumed bytes bind completion, not run-local excerpt IDs
 - intake distinguishes contiguous batch coverage from remaining days/tails; byte-limited or incomplete lines remain unprocessed. A byte window can commit its complete earlier prefix, never the omitted tail. An oversized single record needs a larger bounded budget; an unfinished append needs completion
-- explicit older-than supplemental inspection retains balanced bounded sampling and its existing no-rescue eligibility contract; it never advances normal progress
+- explicit older-than supplemental inspection retains balanced bounded sampling, stays inside the original calendar interval and keeps its existing no-rescue eligibility contract; it never advances normal progress
 - explicit `day=` selects one date shard
 - explicit `session=` narrows to one session when present
 - explicit `lookback=` shortens the effective time window inside the selected narrow slice
@@ -81,13 +84,13 @@ Explicit/configured day/session/lookback/text filters and scoped session retriev
 
 ### Incremental completion and catch-up
 
-Normal analysis reads `~/.claude/memory-context-intelligence/progress.json`, separated by canonical memory-root and enabled-source-class fingerprint. No checkpoint starts at the oldest input. State contains pending and last-completed bindings plus per-shard byte-prefix cursors, hashes and opaque record keys; it excludes raw traces, transcripts and topic artifacts. Keeping per-shard completed prefixes permits a later append to an older date to be found without treating every earlier day as sealed. A rewrite, missing source, invalid state, stale batch or changed scope blocks instead of resetting or skipping.
+Normal analysis reads `~/.claude/memory-context-intelligence/progress.json`, separated by canonical memory-root, enabled-source-class fingerprint and exact calendar-window identity. No checkpoint starts at the oldest input in that interval. Legacy unrestricted entries and pending batches remain unchanged in the same store; selecting a recent interval never resets, migrates or acknowledges them. Different date intervals have independent progress identities, not separate stores. State contains pending and last-completed bindings plus per-shard byte-prefix cursors, hashes and opaque record keys; it excludes raw traces, transcripts and topic artifacts. Keeping per-shard completed prefixes permits a later append to an older date to be found without treating every earlier day as sealed. A rewrite, missing source, invalid state, stale batch or changed scope blocks instead of resetting or skipping.
 
 Preparation captures a finite endpoint (shard names, byte lengths, content digests), emits canonical evidence and installs only a pending binding under the MCI lock. A nonblocking native file lock, expected-version/position checks and atomic owner-only temporary-file replacement protect state updates. No completion is inferred from exit0, intake success, candidate generation or a deterministic no-topic result. After semantic discovery/eligibility finishes for the complete batch, the caller invokes internal `complete --batch-id <id> --outcome analyzed|no-topics|failed`. Successful analyzed/zero-topic acknowledgements validate consumed source prefixes and advance exactly that batch; failure/no acknowledgement does not advance. Duplicate completion is idempotent. This is caller attestation, not an independent proof of model reasoning.
 
-Plain invocation stops after one acknowledged batch. Explicit `mode=catch-up` uses the same caller cycle and fixed run endpoint, never a Python preparation-only loop, new background entity or recursive Skill call. Continuation requires the preceding acknowledgement. Stop on failure/interruption/context limit; a later invocation resumes committed progress with a fresh endpoint. New/backdated appends beyond the original endpoint wait for that new invocation. `caught-up` is endpoint coverage, not corpus-wide absence of improvement topics. Freshness remains metadata; age alone does not reject intentional complete backlog evidence or reduce its historical signal confidence.
+Plain invocation stops after one acknowledged batch. Only explicit whole-period intent selects `mode=catch-up`, using the same caller cycle, fixed run endpoint and calendar interval, never a Python preparation-only loop, new background entity or recursive Skill call. Continuation requires the preceding acknowledgement and carries the original `--window-days`/`--current-day` even across midnight; changed intervals or legacy run IDs cannot resume it. Stop on failure/interruption/context limit; a later invocation with the same interval resumes its committed progress with a fresh endpoint. New/backdated appends beyond the original endpoint wait for that new invocation and still must fit its interval. `caught-up` is endpoint coverage within the selected dates, not corpus-wide absence of improvement topics. Freshness remains metadata, never authority to read outside the selected interval.
 
-Skill startup uses one `--startup` injection that reads no corpus/progress. Claude receives slash text through documented Skill substitution and first interprets it under [02](02-topic-list-and-choice-flow.design.md). Before acquisition, serialize only requested retrieval controls using the existing day/session/lookback/text/config/mode interfaces. Pass explicit `--arguments ""` when none are requested, retaining output instructions in caller context. Free text reaches the existing scope parser only for a genuine literal-filter request; direct internal CLI parsing remains unchanged. Shell-quote values as data, never evaluate substitutions or interpolate user text into eager execution. Unsupported/ambiguous constraints or a literal colliding with control syntax must be clarified rather than silently discarded or reinterpreted. This neither assumes a shell-exported argument variable nor adds a natural-language parser or second state owner.
+Skill startup uses one `--startup` injection that reads no corpus/progress. Claude receives slash text through documented Skill substitution and first interprets it under [02](02-topic-list-and-choice-flow.design.md). Before acquisition, serialize only requested retrieval controls using the existing day/session/lookback/text/config/mode interfaces. Always pass the resolved calendar controls; pass explicit `--arguments ""` when no additional restrictions are requested, retaining output instructions in caller context. Free text reaches the existing scope parser only for a genuine literal-filter request; direct internal CLI parsing remains unchanged. Shell-quote values as data, never evaluate substitutions or interpolate user text into eager execution. Unsupported/ambiguous constraints or a literal colliding with control syntax must be clarified rather than silently discarded or reinterpreted. This neither assumes a shell-exported argument variable nor adds a natural-language parser or second state owner.
 
 ### L1 — preferred scoped recall search
 Inside the selected slice, prefer memsearch `search → expand` retrieval when the runtime can resolve that path in checked scope.
@@ -124,7 +127,7 @@ This contract still does **not** select:
 This shard no longer describes target-state only.
 
 The current runtime package now applies this historical-default design in checked scope:
-- normal `analysis-surface` uses the Phase078 oldest-unprocessed progressive request; direct `lib/intake.py` retains stateless bounded inspection for existing consumers
+- normal `analysis-surface` uses the Phase078 date-bound oldest-unprocessed progressive request; direct `lib/intake.py` retains existing stateless behavior unless the analysis surface supplies its optional calendar controls
 - explicit `day`, `session`, and `lookback` narrowing still work when requested
 - `lib/signals.py` can promote repeated historical trace without requiring current-session confirmation as the primary gate
 - current-session confirmation remains visible as provenance and score boost only

@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.88
+> **Current Version:** 0.1.90
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-10)
 > **Parent Design:** [design.md](design.md)
 
@@ -27,7 +27,7 @@ This projection is not a new evidence class, persistent identifier, across-run p
 
 | Source class | Current implemented input | Main purpose | Current role in promotion |
 |---|---|---|---|
-| `trace_evidence` | oldest-unprocessed complete `.memsearch/memory/YYYY-MM-DD.md` records in bounded chronological batches by default; explicit narrow/supplemental inspection remains stateless | detect repeated historical work patterns, friction, or workflow drift | required live pattern anchor |
+| `trace_evidence` | oldest-unprocessed complete `.memsearch/memory/YYYY-MM-DD.md` records inside the selected 1–14-calendar-day interval, including today, in bounded chronological batches; explicit narrow/supplemental inspection remains stateless | detect repeated historical work patterns, friction, or workflow drift | required live pattern anchor |
 | `recall_evidence` | memsearch-backed `search → expand` records when available inside the selected bounded scope | recover exact wording, sequence, and causal detail for a candidate pattern | supporting exactness only |
 | `durable_memory_context` | `MEMORY.md` plus relevant path-scoped memory entries when available in checked scope | supply durable preference, recurring project context, and previously validated operating constraints | supporting context only |
 | `governance_context` | checked RULES/design/changelog/TODO/phase/patch surfaces in scope | map owner chains, existing doctrine, boundaries, rollout posture, and promotion destination | supporting owner/boundary fit only |
@@ -55,7 +55,7 @@ Current checked behavior:
 
 `progressive_batch` describes the contiguous complete source prefix offered to the caller and the unprocessed remainder. Run-local `ref` remains only a same-intake evidence reference; persistent progress uses exact consumed-byte digests and opaque source keys. MCI progress is not another evidence class, topic ledger, selected-topic state, Memsearch index or proof that a proposal is novel. Store only MCI pending/completed bindings and source positions in the separate user-scope progress file defined by [07](07-recall-scoping-and-time-window.design.md); keep raw trace/transcript and candidate data out.
 
-Successful zero-topic analysis may acknowledge that exact batch. Preparation, signals, sampling, unread/truncated evidence and errors cannot certify semantic completion. The caller's explicit acknowledgement is the completion witness; source fixtures cannot prove actual model adherence. Historical age remains visible, but intentional complete backlog is not downgraded solely because it is old. Cross-batch recurrence accumulation is not implemented or claimed; each signal report still judges its supplied batch.
+Successful zero-topic analysis may acknowledge that exact batch. Preparation, signals, sampling, unread/truncated evidence and errors cannot certify semantic completion. The caller's explicit acknowledgement is the completion witness; source fixtures cannot prove actual model adherence. `analysis_window.calendar_window` identifies the selected dates; coverage describes only actual read/analyzed batches inside them. Historical age remains visible but cannot authorize older input, while legacy unrestricted pending progress stays preserved outside the new date-bound identity. Cross-batch recurrence accumulation is not implemented or claimed; each signal report still judges its supplied batch.
 
 ## 3) What each source class is meant to prove
 
@@ -99,7 +99,7 @@ This is authority-fit context, not pattern discovery input by itself.
 
 ### 3.5) Supplemental historical trace windows
 
-An explicitly requested supplemental analysis may consume one bounded daily-shard window strictly older than the actual budget-aligned first historical-default window. Intake applies existing shard/record/character/byte and source-policy caps, rotates representative records across days/sessions/entries, and owns selected/read/sampled coverage, empty/unreadable/byte-limited days, sampling limits and content-truncated references. The analysis surface exposes that coverage alongside its selected window, exclusive boundary and pass status; a single selected historical day is not an explicit day override. Days excluded by the record budget remain eligible in the next window. This remains bounded sampling, not all-record coverage, and adds no evidence class or persistent search state.
+An explicitly requested supplemental analysis may consume one bounded daily-shard window strictly older than the actual budget-aligned first historical-default window. Intake applies existing shard/record/character/byte and source-policy caps, rotates representative records across days/sessions/entries, and owns selected/read/sampled coverage, empty/unreadable/byte-limited days, sampling limits and content-truncated references. The analysis surface exposes that coverage alongside its selected window, exclusive boundary and pass status; a single selected historical day is not an explicit day override. Days excluded by the record budget remain eligible only if they are inside the original frozen calendar interval; missing dates never justify older replacements. This remains bounded sampling, not all-record coverage, and adds no evidence class or persistent search state.
 
 Supplemental trace discovery is unavailable when the run was explicitly/configurationally narrowed, the first-pass boundary is missing, or source policy disables `trace_evidence`. If the first analysis used an explicit config path, the same path must be passed into the supplemental invocation so configured source restrictions remain in force. An unavailable or empty window retains its reason and checked-boundary metadata where available; it must not be rendered as corpus-wide absence. Supplemental evidence creates a new candidate set and cannot strengthen or relabel rejected candidates from the earlier pass.
 

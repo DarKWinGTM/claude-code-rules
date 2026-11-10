@@ -19,7 +19,7 @@ if str(LIB_DIR) not in os.sys.path:
 from config_policy import build_guided_config_questions, load_analysis_source_policy
 from orchestration import build_adaptive_deepening_plan
 from analysis_checkpoint import CheckpointConflict, default_state_path, load_progress, prepare_batch, scope_identity
-from intake import discover_daily_shards, progressive_endpoint
+from intake import apply_config_default_scope, calendar_window, discover_daily_shards, progressive_endpoint, validate_calendar_scope
 
 REGISTERED_OPERATOR_SURFACE = "/memory-context-intelligence:analysis"
 RUNTIME_PROOF_NOTE = "not proved in checked current print-mode runtime"
@@ -42,7 +42,8 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--arguments", default=os.environ.get("ARGUMENTS", ""))
     parser.add_argument("--startup", action="store_true", help="Fileless discovery only; caller binds slash arguments before intake.")
     parser.add_argument("--session-id", default=os.environ.get("CLAUDE_CODE_SESSION_ID"))
-    parser.add_argument("--current-day", default=date.today().isoformat())
+    parser.add_argument("--window-days", type=int, help="Selected calendar-day window, from 1 through 14 including current-day.")
+    parser.add_argument("--current-day", type=parse_day, default=date.today().isoformat())
     parser.add_argument("--config", help="Use the same explicit source-policy config as the analysis window.")
     parser.add_argument("--mode", choices=["incremental", "catch-up"], default="incremental")
     parser.add_argument("--continue-run", help="Continue only after acknowledging the preceding batch of this catch-up run.")
@@ -399,6 +400,30 @@ def build_operator_warnings(*, cwd: Path, session_id: str | None) -> list[dict[s
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     cwd = Path.cwd()
+    if not args.startup and args.window_days is None:
+        emit({
+            "status": "awaiting-caller-scope", "analysis_request_present": True,
+            "registered_operator_surface": REGISTERED_OPERATOR_SURFACE,
+            "preparation_command": shlex.join([str(RUNTIME_BIN), "analysis-surface"]),
+            "window_choices": [1, 3, 7, 14], "checkpoint_advanced": False,
+            "reason": "Caller must resolve the calendar window and any missing topic target before preparation.",
+        })
+        return 0
+    window = None
+    if not args.startup:
+        try:
+            window = calendar_window(args.window_days, args.current_day)
+        except ValueError as exc:
+            emit(blocked_payload(str(exc), None, None))
+            return 0
+
+    def emit_result(payload: dict[str, Any]) -> None:
+        report = payload.setdefault("analysis_window", {})
+        report["calendar_window"] = window
+        if report.get("next_older_than_day") and report["next_older_than_day"] <= window["start_day"]:
+            report["next_older_than_day"] = None
+        emit(payload)
+
     memory_root = find_memory_root(cwd)
     if args.startup:
         if memory_root is None:
@@ -415,15 +440,20 @@ def main(argv: list[str] | None = None) -> int:
     argument_text = str(args.arguments or "").strip()
     mode_tokens = re.findall(r"(?:^|\s)mode=([^\s]+)", argument_text)
     if mode_tokens and (len(mode_tokens) != 1 or mode_tokens[0] not in {"incremental", "catch-up"}):
-        emit(blocked_payload("mode must be incremental or catch-up.", memory_root, None))
+        emit_result(blocked_payload("mode must be incremental or catch-up.", memory_root, None))
         return 0
     if mode_tokens:
         args.mode = mode_tokens[0]
         argument_text = re.sub(r"(?:^|\s)mode=[^\s]+", "", argument_text).strip()
     scope_text, lookback_minutes, explicit_day, explicit_session_id, argument_config_path = parse_scope_and_narrowing(argument_text)
     explicit_config_path = args.config or argument_config_path
+    try:
+        validate_calendar_scope(window, day=explicit_day, older_than_day=args.older_than_day)
+    except ValueError as exc:
+        emit_result(blocked_payload(str(exc), memory_root, scope_text))
+        return 0
     if args.older_than_day and (explicit_day or explicit_session_id or lookback_minutes is not None or scope_text):
-        emit(
+        emit_result(
             blocked_payload(
                 "Supplemental historical search cannot widen an explicitly narrowed analysis scope.",
                 None,
@@ -436,7 +466,7 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     if memory_root is None:
-        emit(
+        emit_result(
             blocked_payload(
                 "No project-scoped .memsearch/memory root was found from the current working directory upward.",
                 None,
@@ -446,18 +476,28 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     policy = load_analysis_source_policy(explicit_config_path=explicit_config_path, cwd=cwd)
+    _, configured_day, _, _ = apply_config_default_scope(
+        active_scope_basis="historical-default", scope_filters=[scope_text] if scope_text else [],
+        day_shard=explicit_day, session_id=explicit_session_id, lookback_minutes=lookback_minutes,
+        scope_policy=policy["scope_policy"],
+    )
+    try:
+        validate_calendar_scope(window, day=configured_day)
+    except ValueError as exc:
+        emit_result(blocked_payload(str(exc), memory_root, scope_text))
+        return 0
     narrow = bool(scope_text or explicit_day or explicit_session_id or lookback_minutes is not None or args.older_than_day)
     narrow = narrow or policy["scope_policy"]["default_scope_mode"] in {"day", "session", "lookback"}
     progressive = not narrow and "trace_evidence" in policy["enabled_source_classes"]
     if (args.continue_run or args.mode == "catch-up") and not progressive:
-        emit(blocked_payload("Catch-up cannot widen narrow or trace-disabled inspection.", memory_root, scope_text))
+        emit_result(blocked_payload("Catch-up cannot widen narrow or trace-disabled inspection.", memory_root, scope_text))
         return 0
     progress_context = None
     if progressive and memory_root.is_dir():
         try:
             if policy["errors"]:
                 raise CheckpointConflict("Source policy could not be read; progress was preserved.")
-            scope_key = scope_identity(memory_root, policy["enabled_source_classes"])
+            scope_key = scope_identity(memory_root, policy["enabled_source_classes"], window=window)
             entry = load_progress(args.state, scope_key)
             if args.continue_run:
                 last = entry.get("last_completed") or {}
@@ -466,14 +506,14 @@ def main(argv: list[str] | None = None) -> int:
                 endpoint = last["endpoint"]
                 run_id, mode = args.continue_run, "catch-up"
             else:
-                endpoint = progressive_endpoint(discover_daily_shards(memory_root))
+                endpoint = progressive_endpoint(discover_daily_shards(memory_root, window=window))
                 run_id, mode = uuid.uuid4().hex, args.mode
             progress_context = {
                 "scope_key": scope_key, "entry": entry, "endpoint": endpoint,
                 "run_id": run_id, "mode": mode,
             }
         except (CheckpointConflict, OSError, ValueError) as exc:
-            emit(blocked_payload(str(exc), memory_root, scope_text))
+            emit_result(blocked_payload(str(exc), memory_root, scope_text))
             return 0
     base = Path(tempfile.mkdtemp(prefix="mci-analysis-"))
 
@@ -483,6 +523,7 @@ def main(argv: list[str] | None = None) -> int:
         "intake",
         "--memory-root",
         str(memory_root),
+        "--window-days", str(args.window_days), "--current-day", args.current_day,
     ]
     if args.older_than_day:
         cmd_intake += ["--older-than-day", args.older_than_day]
@@ -509,7 +550,7 @@ def main(argv: list[str] | None = None) -> int:
         ]
     intake_result, intake = run_json_command(cmd_intake)
     if intake is None:
-        emit(
+        emit_result(
             blocked_payload(
                 "The intake command failed before memsearch-backed analysis could continue.",
                 memory_root,
@@ -523,7 +564,7 @@ def main(argv: list[str] | None = None) -> int:
     intake_path.write_text(intake_result.stdout, encoding="utf-8")
     batch = intake.get("progressive_batch")
     if batch and batch["next_position"] == progress_context["entry"]["position"] and not batch["remaining"]:
-        emit({
+        emit_result({
             "status": "caught-up", "reason": "No unprocessed input remains through this invocation endpoint.",
             "analysis_request_present": True, "topic_cards": [],
             "analysis_window": {"mode": progress_context["mode"], "checked_days": [], "next_older_than_day": None},
@@ -531,7 +572,7 @@ def main(argv: list[str] | None = None) -> int:
         })
         return 0
     if batch and not batch["coverage"]["complete"]:
-        emit(blocked_payload(batch.get("reason") or "No complete record batch fits the current budget.", memory_root, scope_text))
+        emit_result(blocked_payload(batch.get("reason") or "No complete record batch fits the current budget.", memory_root, scope_text))
         return 0
 
     if intake.get("status") == "stale":
@@ -559,7 +600,7 @@ def main(argv: list[str] | None = None) -> int:
                 pass_attempted=True,
                 pass_used=True,
             )
-        emit(payload)
+        emit_result(payload)
         return 0
 
     if intake.get("status") == "unavailable":
@@ -586,13 +627,13 @@ def main(argv: list[str] | None = None) -> int:
                 pass_attempted=True,
                 pass_used=False,
             )
-        emit(payload)
+        emit_result(payload)
         return 0
 
     cmd_signals = ["bash", str(RUNTIME_BIN), "signals", "--intake-report", str(intake_path)]
     signals_result, signals = run_json_command(cmd_signals)
     if signals is None:
-        emit(
+        emit_result(
             blocked_payload(
                 "The signals command failed before user-facing presentation could be built.",
                 memory_root,
@@ -624,7 +665,7 @@ def main(argv: list[str] | None = None) -> int:
     ]
     present_result, present = run_json_command(cmd_present)
     if present is None:
-        emit(
+        emit_result(
             blocked_payload(
                 "The present command failed before proposal-first output could be rendered.",
                 memory_root,
@@ -736,7 +777,7 @@ def main(argv: list[str] | None = None) -> int:
         try:
             prepare_batch(args.state, progress_context["scope_key"], binding)
         except (CheckpointConflict, OSError) as exc:
-            emit(blocked_payload(str(exc), memory_root, scope_text))
+            emit_result(blocked_payload(str(exc), memory_root, scope_text))
             return 0
         common = ["--state", str(args.state)] if args.state != default_state_path() else []
         payload["progress"] = {
@@ -746,6 +787,7 @@ def main(argv: list[str] | None = None) -> int:
             "completion_command": shlex.join([str(RUNTIME_BIN), "complete", "--batch-id", batch_id, "--outcome", "analyzed", *common]),
             "continuation_command": shlex.join([
                 str(RUNTIME_BIN), "analysis-surface", "--arguments", "", "--continue-run", binding["run_id"],
+                "--window-days", str(args.window_days), "--current-day", args.current_day,
                 "--max-records", str(args.max_records), "--max-chars", str(args.max_chars),
                 "--max-shard-bytes", str(args.max_shard_bytes), *common,
                 *(["--config", explicit_config_path] if explicit_config_path else []),
@@ -753,13 +795,13 @@ def main(argv: list[str] | None = None) -> int:
             "completion_boundary": "Caller semantic analysis and eligibility finished; preparation is not completion.",
         }
         payload["analysis_window"].update({"mode": binding["mode"], "next_older_than_day": None})
-        payload["scope_basis"] = "oldest-unprocessed historical trace"
+        payload["scope_basis"] = "oldest-unprocessed trace within selected calendar window"
     source_policy = payload.get("source_policy") if isinstance(payload.get("source_policy"), dict) else {}
     if source_policy.get("loaded") is False:
         payload["config_questions"] = build_guided_config_questions(cwd=cwd)
     if operator_warnings:
         payload["operator_warnings"] = operator_warnings
-    emit(payload)
+    emit_result(payload)
     return 0
 
 

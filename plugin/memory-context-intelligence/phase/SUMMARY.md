@@ -1,9 +1,9 @@
 # Phase Summary - memory-context-intelligence
 
-> **Current Version:** 0.1.89
-> **Target Design:** [../design/design.md](../design/design.md) v0.1.89
+> **Current Version:** 0.1.90
+> **Target Design:** [../design/design.md](../design/design.md) v0.1.90
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5 (2026-11-10)
-> **Status:** Phase078 preserves completed0.9.40 release proof and completes bounded0.9.41 natural-language handoff correction at the source/local/synthetic gate. Matching contract RED→GREEN,39 focused cases and205-test isolated suite passed; five fresh-context interpretation cases, actual parser-only controls and34 final affected checks passed. User-selected0.9.41 publication/install passed: immutable source/tag/Release and14 public file bytes/modes verified, native local-scope update and21 runtime-file parity verified. Main Rules `v10.79` remains latest; reload is left to the user and corrected native-slash/corpus results remain unverified
+> **Status:** Phase078 source0.9.42 completes guided period/Topic-target choices and a whole-run1–14-calendar-day boundary at the source/local/synthetic gate. The211-test isolated suite, full-draft interpretation and final affected source/docs checks passed. Earlier0.9.40/0.9.41 publication/install receipts remain preserved, not parity for0.9.42. No new publication/install/reload selected
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Rollover history:** [2026-08-09 movement](history/2026-08-09.md); [exact pre-rollover snapshot](history/2026-08-09-pre-rollover-SUMMARY.md)
 
@@ -21,11 +21,11 @@ The v0.1.79 Phase 013-01-04 correction is complete: both public skill versions a
 - active install identity: `memory-context-intelligence@darkwingtm`
 - active marketplace binding: root `TEMPLATE` marketplace to `./RULES/plugin/memory-context-intelligence`
 - installed0.9.38 historical checkpoint (not current0.9.39 source parity): native update replaced the selected local project row for `memory-context-intelligence@darkwingtm`; registry/list version/path and project-local enablement passed. Install-time340-path byte/mode parity, installed validator and28/1 skill/manifest checks passed, including isolated real-wrapper startup without corpus input. Three selected settings files, marketplace/catalog and22 other registry entries were unchanged. The updater window added `.orphaned_at` to the previous0.9.37 cache; all339 original payload files and owner-only recovery remained unchanged. Six post-install source status/metadata files are excluded from current cache parity; the remaining334 paths match, fresh source suite171/validator and162 selected links passed. Full native slash behavior, fresh native skill discovery, generated-model behavior and this session's reload are not proved; the CLI requires restart.
-- normal analysis is oldest-unprocessed, evidence-first and advisory; corpus/governance/candidate artifacts remain read-only, with MCI pending/completed progress as the sole local-state exception
+- normal analysis asks only for missing period/Topic-target choices, then consumes one oldest-unprocessed batch inside the selected1–14-calendar-day interval including today; corpus/governance/candidate artifacts stay read-only, with MCI pending/completed progress as the sole local-state exception
 - `trace_evidence` remains the live pattern anchor
 - `recall_evidence`, `durable_memory_context`, and `governance_context` remain supporting inputs
 - the user-scope config target remains `~/.claude/memory-context-intelligence.config.json`
-- source0.9.41 adds natural-language request interpretation before preparation to the0.9.40 oldest-unprocessed/caller-acknowledged baseline. Output intent stays with Claude; only actual retrieval controls reach unchanged runtime. The0.9.40 install matched21 active release files; the user supplied a successful reload, then actual natural-language invocation exposed raw-text filtering. That failed run does not prove this correction's live behavior or current-session adoption
+- source0.9.42 extends the published0.9.41 natural-language handoff with runtime calendar filtering, date-bound scope identity and frozen continuation. Legacy unrestricted pending is preserved, not resumed. Prior installation/reload/failure receipts remain in [Phase078](phase-078-incremental-analysis-progress.md), separate from new source proof
 - candidate/additional output remains one selected topic per artifact
 - `TEMPLATE/PLUGIN/memory-context-intelligence/` remains historical projection-family evidence, not current runtime authority
 
@@ -35,11 +35,11 @@ The v0.1.79 Phase 013-01-04 correction is complete: both public skill versions a
 
 - **Phase file:** [phase-078-incremental-analysis-progress.md](phase-078-incremental-analysis-progress.md)
 - **Design:** [07 scope/progress](../design/07-recall-scoping-and-time-window.design.md); [08 evidence](../design/08-memory-evidence-source-model.design.md); [02 flow](../design/02-topic-list-and-choice-flow.design.md); [09 config](../design/09-init-configuration-surface.design.md)
-- **Status:** original0.9.40 release preserved;0.9.41 source/local/synthetic plus user-selected publication/install verified. Native local update and21-file runtime parity passed; fresh14-file public bytes/modes and Release verified. Reload is left to the user; no corrected native invocation claim
-- **Output:** oldest-unprocessed complete batches, MCI-only caller-acknowledged progress, within-day/backdated-append resume, explicit fixed-endpoint catch-up and unchanged eligibility/stateless narrow inspection. The0.9.41 correction interprets natural-language output intent before binding genuine retrieval controls; default count-only requests no longer become literal filters
-- **Gate:** matching RED→GREEN and204-test isolated suite/AST passed, followed by affected5-checkpoint/4-wrapper cases after final schema correction. Version/Skill/validator,265 relative links, scoped whitespace/Bash syntax and protected-state checks passed. Published source `6d7c5074b1f50a62ab4ad9c16802a16befb3003f`, immutable `memory-context-intelligence--v0.9.40` and [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/memory-context-intelligence--v0.9.40) passed fresh public refs/bytes/modes readback for all67 selected paths; receipt is a later docs-only commit without retagging. Fixture acknowledgements do not prove actual model reasoning
+- **Status:** source0.9.42 verified at source/local/synthetic gate:211-test suite, full-draft interpretation, final36 public contracts/4 wrapper checks and affected docs/preservation passed. Original0.9.40/0.9.41 publication/install history retained;0.9.42 install/publication/reload unselected
+- **Output:** guided missing choices and inclusive1–14-day enforcement before hash/read; one batch or explicit whole-period catch-up with frozen dates/endpoint, existing caller-acknowledged progress and preserved legacy pending. Natural-language output intent stays outside literal filters; eligibility/stateless narrow inspection remain
+- **Gate:** focused missing-feature RED→GREEN and211-test temporary-HOME package suite passed. Existing wrapper covers bounded14-day completion/continuation, changed-date/no-ack rejection, old/future exclusion, legacy pending preservation and endpoint-excluded appends. Full-draft synthetic interpretation and final affected contracts/validator/syntax/179 links/10 versions passed;839 protected tracked paths and actual legacy progress digest were unchanged. Detailed evidence and prior release proof remain in the child. Fake caller acknowledgement does not prove model reasoning
 - **Lineage:** completed077 discovery/sampling and076 supplemental scopes cannot absorb the new durability/completion boundary; major078 was checked unused
-- **Exclusions:** no Memsearch/config/index mutation, live corpus/provider/model, install/reload, unrelated visual/preview/source publication, force/tag movement or Main Rules latest replacement. No successor opened
+- **Exclusions:** no real corpus/provider campaign or Memsearch/config/index mutation; no0.9.42 install/publication/reload, unrelated visual/preview changes or Main Rules latest replacement. New real analysis awaits a selected recent period; the unrestricted run remains paused. No successor phase opened
 
 ### Phase 077 — parallel topic discovery
 
@@ -102,7 +102,7 @@ The v0.1.79 Phase 013-01-04 correction is complete: both public skill versions a
 
 | Phase | Status | Current meaning |
 |---|---|---|
-| 078 | Source/local verified; publication selected | Oldest-unprocessed analysis, caller-attested completion, fixed-endpoint catch-up and MCI-only progress |
+| 078 | Source0.9.42/local/synthetic gate complete | Guided1–14-calendar-day analysis, date-bound progress and frozen catch-up; earlier release/install proofs preserved |
 | 013 | Completed baseline | Candidate packet and gated additional emitter; historical overwrite-capable behavior is not the 013-01 target policy |
 | 013-01 | Completed | Packages 0.9.30 and corrective 0.9.31 are immutable, released, and fresh-tag verified |
 | 017 | Planned / Deferred | Main RULES promotion-readiness audit; unchanged and not selected |

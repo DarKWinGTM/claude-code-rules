@@ -85,6 +85,35 @@ class ScopedIntakeTests(unittest.TestCase):
             ).strip() + "\n"
             (root / shard_name).write_text(text, encoding="utf-8")
 
+    def test_calendar_window_limits_narrow_and_supplemental_reads_without_filling_missing_days(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            for day in ["2026-05-06", "2026-05-07", "2026-05-18", "2026-05-20", "2026-05-21"]:
+                (root / f"{day}.md").write_text("### 10:00\n- bounded finding\n", encoding="utf-8")
+            controls = ["--memory-root", str(root), "--window-days", "14", "--current-day", "2026-05-20"]
+            with mock.patch.object(intake.Path, "cwd", return_value=root):
+                for extra, expected in [
+                    ([], ["2026-05-20.md", "2026-05-18.md", "2026-05-07.md"]),
+                    (["--scope", "finding"], ["2026-05-20.md", "2026-05-18.md", "2026-05-07.md"]),
+                    (["--older-than-day", "2026-05-18"], ["2026-05-07.md"]),
+                    (["--day", "2026-05-20"], ["2026-05-20.md"]),
+                    (["--lookback-minutes", "60"], ["2026-05-20.md"]),
+                ]:
+                    with self.subTest(extra=extra):
+                        report = intake.build_report(intake.parse_args(controls + extra))
+                        self.assertEqual(report["source"]["daily_shards_considered"], expected)
+                        self.assertEqual(report["scope"]["calendar_window"]["start_day"], "2026-05-07")
+                missing = intake.build_report(intake.parse_args(controls + ["--window-days", "1", "--current-day", "2026-05-19"]))
+                self.assertEqual(missing["status"], "insufficient")
+                self.assertEqual(missing["source"]["daily_shards_considered"], [])
+                config = root / "source-policy.json"
+                config.write_text('{"analysis":{"scope_policy":{"default_scope_mode":"day","scope_day_shard":"2026-05-06"}}}')
+                for extra in [["--day", "2026-05-06"], ["--older-than-day", "2026-05-21"], ["--config", str(config)]]:
+                    with self.subTest(conflict=extra), mock.patch.object(intake, "discover_daily_shards") as discover:
+                        report = intake.build_report(intake.parse_args(controls + extra))
+                        self.assertEqual(report["status"], "unavailable")
+                        discover.assert_not_called()
+
     def test_historical_default_reads_multiple_recent_cross_session_shards(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)

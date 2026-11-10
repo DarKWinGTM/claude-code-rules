@@ -1,7 +1,7 @@
 ---
 name: analysis
 description: Use when the user wants analysis of real work evidence, anchored by memsearch-backed traces and optionally strengthened by durable memory or governance context, so Claude can propose RULES or workflow improvement topics in a proposal-first format.
-version: 0.9.41
+version: 0.9.42
 ---
 
 # Memory Context Intelligence Analysis
@@ -16,8 +16,8 @@ Checked current bare-alias state:
 - do not treat bare `/analysis` as proved current runtime behavior in this wave
 
 Historical-default contract for this surface:
-- default mode: incremental, oldest unprocessed historical trace first; progress is MCI-owned and separate from Memsearch
-- default scope: broader historical memory across the user's work corpus
+- default mode: incremental, oldest unprocessed trace within the selected calendar window first; progress is MCI-owned and separate from Memsearch
+- scope: broader historical memory across the user's work corpus, limited to the chosen 1–14 calendar days including today; no unbounded historical default
 - current-session evidence becomes supporting/provenance context, with freshness value when present, not the primary scope owner
 - historical recurring patterns may surface topic candidates from repeated historical trace without requiring current-session trace as the primary gate
 - explicit narrowing such as `day=YYYY-MM-DD`, `session=<id>`, or `lookback=<minutes|hours>` remains available when the operator wants it
@@ -50,6 +50,19 @@ User arguments: $ARGUMENTS
 
 Startup only locates the available project input and returns `awaiting-caller-scope`; it does not acquire evidence or create pending progress. Interpret the request below before using its `preparation_command`. This caller-driven preparation is the only initial intake. If startup or preparation fails or is unavailable, report the actual blocker without topics or completion.
 
+## Choose the run window before preparation
+
+This command already has a clear purpose: discover eligible RULES/workflow Topics from work history. Do not ask the user to choose a purpose or learn internal mode names. After interpreting the supplied sentence and conversation, ask only for missing choices using `AskUserQuestion` question/choice dialogs before preparation:
+
+- **Period:** offer **1, 3, 7 or 14 calendar days**, counting backwards from the invocation date **including today**. Other explicit durations from 1 through 14 days are valid too. There is no automatic 14-day scan; wait for a period choice when missing. A missing calendar day does not authorize reaching further back.
+- **Topic target:** offer **No minimum**, **3 Topics**, **5 Topics**, or **10 Topics** when no target has been given. A custom target is valid. This is a desired eligible count, not guaranteed output or authorization to read more.
+
+Ask both missing choices together in one compact dialog; when only one is missing ask only that one. Preserve answers across turns and retain already supplied period, topic target, language and genuine filters. Do not ask again on every reply or batch. If dialogs are unavailable, ask the same short questions in text and wait. No corpus/progress acquisition occurs while a choice is unresolved.
+
+Resolve the invocation date from checked current-date context, show the inclusive start/end dates briefly, and call preparation with `--window-days <chosen-days> --current-day <invocation-date>`. These are internal controls, not syntax users must learn. Dates stay frozen for continuation even across midnight. A request exceeding 14 days, an older explicit day outside the chosen window, or conflicting constraints requires a corrected choice before reading; never silently clamp, drop a restriction, or widen scope. Do not use rolling-hour `lookback` as a substitute for calendar days.
+
+Plain analysis prepares one bounded batch inside the chosen period. Only an explicit request to read the whole selected period selects catch-up, still within that period. A period choice or topic target alone does not select exhaustive analysis. Always distinguish the selected date range from the actually analyzed batch and its remaining input; never resume an unrestricted historical run or reset/acknowledge its pending batch when selecting a new window.
+
 ## Interpret the user request before preparation
 
 `User arguments` are natural-language instructions to Claude, not a retrieval filter. Understand the whole sentence and conversation context, including Thai/English wording and ordinary typos; users need no special argument syntax. Claude owns this interpretation; Python receives existing retrieval controls, not a phrase whitelist or a new natural-language parser.
@@ -57,19 +70,20 @@ Startup only locates the available project input and returns `awaiting-caller-sc
 1. Keep the desired topic count, language, detail and analysis depth in the caller's working context for discovery and presentation. A requested subject can guide semantic analysis without requiring that exact wording to appear in a trace. These instructions are not text-search terms.
 2. Identify only the requested evidence restrictions and execution mode. Translate supported natural-language restrictions into existing runtime forms; preserve explicit day/session/lookback, literal text filters, config and mode. Resolve relative dates from checked date/time context. If an unsupported or materially ambiguous retrieval constraint would change the selected evidence, ask one bounded clarification before preparation; do not drop it or guess a broader scope.
 3. Call the returned `preparation_command` with `--arguments` containing only the interpreted retrieval controls. Use existing `day=`, `session=` and `lookback=` forms and existing config/mode options internally. Include free text only when the user actually requests a literal text filter, preserving its requested value. Shell-quote every value; quoted text must remain data, never executable substitutions. If literal text collides with control syntax and cannot be represented faithfully, stop for clarification rather than reinterpret it as a control.
-4. When no retrieval controls are requested, pass `--arguments ""`. This leaves existing config/source policy and incremental defaults in charge; retain the user's output instructions for the subsequent analysis. Do not forward the raw sentence, require the user to rewrite it as options, assume an exported `ARGUMENTS` variable, or interpolate user text into an executable injection fence.
+4. After the period and topic target are resolved, pass `--arguments ""` when no additional retrieval controls are requested, alongside the selected `--window-days` and frozen `--current-day`. Config/source policy may narrow this window but cannot extend it; retain the user's output instructions for the subsequent analysis. Do not forward the raw sentence, require the user to rewrite it as options, assume an exported `ARGUMENTS` variable, or interpolate user text into an executable injection fence.
 5. A requested minimum is a target, not permission to invent, duplicate, revive rejected topics, weaken eligibility, widen scope or switch to catch-up. Analyze the complete authorized batch and report the actual eligible count and any shortfall. Explicit natural-language catch-up intent selects that existing mode; count or depth requests alone do not. Completion still follows semantic analysis and eligibility, never interpretation/preparation alone.
 
-Example: `Minimium Rules 5 topic` asks for at least five RULES improvement topics. With no evidence restriction, prepare using `--arguments ""`, keep the five-topic target for analysis, and do not search for that sentence or for the word `Rules`. If the request also limits evidence to a specific day, send only that day restriction and retain the same output target. If the user explicitly asks to filter traces containing `timeout`, that literal is a real retrieval filter.
+Example: `Minimium Rules 5 topic` asks for at least five RULES improvement topics. Keep that target and ask only for the missing period. After the user chooses 7 days, prepare using `--window-days 7 --current-day <invocation-date> --arguments ""`; do not search for that sentence or for the word `Rules`. If a specific day is also requested, retain it as an additional restriction inside the selected period. If the user explicitly asks to filter traces containing `timeout`, that literal is a real retrieval filter.
 
-Internal serialization examples after interpretation: an explicit session plus literal filter uses `--arguments 'session=run-42 timeout'` (one argument value); explicit catch-up uses `--arguments "" --mode catch-up`. Add a selected config separately as `--config <shell-quoted-path>`. These are caller-generated controls, not syntax the user must learn. The `session=` control inside `--arguments` is the requested evidence session; the separate `--session-id` option is caller provenance, not an evidence filter. Preserve every selected restriction together and keep unsupported combinations blocked rather than dropping a restriction.
+Internal serialization examples after interpretation: add the mandatory `--window-days <chosen-days> --current-day <invocation-date>` to every preparation. An explicit session plus literal filter uses `--arguments 'session=run-42 timeout'` (one argument value); explicit catch-up uses `--arguments "" --mode catch-up` within that same period. Add a selected config separately as `--config <shell-quoted-path>`. These are caller-generated controls, not syntax the user must learn. The `session=` control inside `--arguments` is the requested evidence session; the separate `--session-id` option is caller provenance, not an evidence filter. Preserve every selected restriction together and keep unsupported combinations blocked rather than dropping a restriction.
 
 The prepared analysis context emitted by this runtime wrapper includes field-level evidence surfaces such as `source_classes_present`, `source_scope_label`, `source_mix_label`, `historical_strength`, `latest_seen`, `current_session_confirmation`, repeated `topic_cards`, and config-related surfaces such as `source_policy`, `config_questions`, and `suggested_config_path` for the operator-facing result.
 
 ## Default first response contract
 
 When invoked for normal operator use:
-- rely on the rendered memsearch-backed analysis context above as the primary checked evidence source
+- if choices are unresolved, the first response is the compact missing-choice dialog above, not a result or a config-setup detour
+- after preparation, rely on the rendered memsearch-backed analysis context as the primary checked evidence source
 - treat `/memory-context-intelligence:analysis` as the checked registered analysis slash surface in current runtime
 - the slash invocation itself is the request, even when the user provides no extra text after `/memory-context-intelligence:analysis`
 - do not answer that there is no request when the rendered analysis context is present; render the corresponding `available`, `blocked`, `dormant`, or `no-topics` state instead
@@ -89,7 +103,7 @@ When invoked for normal operator use:
 
 ## Incremental progress and explicit catch-up
 
-A plain invocation prepares the next oldest-unprocessed contiguous batch, not the latest ten days. Day count is a batch cap, not a historical age cutoff; record, character and byte budgets may stop inside a day. Source coverage identifies the exact complete batch, not the whole selected day. Intentional old backlog is usable historical evidence, not an automatic stale-input rejection. Explicit `day=`, `session=`, `lookback=` or text-filter inspection and configured narrow defaults remain non-advancing; source-policy changes have separate progress identities. Corpus and governance inputs remain read-only. Only MCI's own `~/.claude/memory-context-intelligence/progress.json` is written for pending/completed progress; no Memsearch index/config or Main RULES write is authorized.
+A plain invocation prepares one oldest-unprocessed contiguous batch inside `analysis_window.calendar_window`. The selected 1–14-day interval is the whole run's date boundary, while shard/record/character/byte budgets cap each batch and may stop inside a day. Source coverage identifies the exact complete batch, not the whole selected day or period. Missing dates are not replaced by older dates. Explicit `day=`, `session=`, `lookback=` or text-filter inspection and configured narrow defaults remain non-advancing and inside the same interval; source-policy and calendar-window identities isolate progress from legacy unrestricted runs. Corpus and governance inputs remain read-only. Only MCI's own `~/.claude/memory-context-intelligence/progress.json` is written for pending/completed progress; no Memsearch index/config or Main RULES write is authorized.
 
 When the payload has `progress.batch_id`:
 
@@ -97,7 +111,7 @@ When the payload has `progress.batch_id`:
 2. After the batch is fully analyzed, invoke the returned `progress.completion_command` through the caller's shell tool. Its `--outcome analyzed` means the analysis completed; replace only that outcome with `no-topics` when the completed analysis yielded zero eligible topics. It is not topic acceptance, approval to emit an artifact or Main promotion. The caller attests completion; Python does not independently verify the model's reasoning.
 3. Check the command's structured result and exit status. Only `completed` or matching `already-complete` is acknowledgement. Never acknowledge an unread, incomplete, failed or interrupted batch. For a known analysis failure, `--outcome failed` clears only that pending preparation and does not advance completed progress. If a command outcome is unknown, inspect existing MCI state rather than claiming advancement or replaying blindly.
 4. In default incremental mode, stop after this one batch. Show eligible Topic cards (or the honest zero-topic result) and a compact progress/remaining note. No eligible topic is still successful completed analysis, not a trigger to manufacture topics or read extra history.
-5. For an explicit `mode=catch-up` invocation, after successful acknowledgement follow `progress.continuation_command` through the same ordinary shell tool while `progress.remaining` is true. Analyze and acknowledge each new batch before requesting another; keep the original run endpoint and do not invoke the public Skill recursively. Stop on blocked/error/interruption; a later new invocation resumes only completed progress. Input appended after that endpoint waits for a new invocation. Deduplicate eligible topics across this invocation without keeping raw batches in a durable ledger; if caller context cannot safely retain the selected output, report the completed boundary and stop rather than claim the rest analyzed.
+5. For an explicit `mode=catch-up` invocation, after successful acknowledgement follow `progress.continuation_command` through the same ordinary shell tool while `progress.remaining` is true. Analyze and acknowledge each new batch before requesting another; keep the original run endpoint, frozen calendar window and invocation date, and do not invoke the public Skill recursively. Stop on blocked/error/interruption; a later new invocation resumes only completed progress. Input appended after that endpoint waits for a new invocation. Deduplicate eligible topics across this invocation without keeping raw batches in a durable ledger; if caller context cannot safely retain the selected output, report the completed boundary and stop rather than claim the rest analyzed.
 
 Completion and continuation commands are payload-bound runtime commands, not additional executable startup fences. Do not synthesize batch IDs, cursor positions, run IDs or a successful acknowledgement. `caught-up` means no unprocessed input remains through that invocation endpoint, not that all possible improvement topics were found. A changed prefix or corrupt/stale state stays blocked with its reason; do not reset, overwrite, skip it or widen scope automatically. Budgets too small for one complete record require a deliberate larger bounded budget or a completed source append, not truncation-as-completion.
 
@@ -138,12 +152,12 @@ Do not treat `available`, a high score, historical repetition, or adaptive-deepe
 A rejected candidate and a new candidate search are separate decisions. When the user **explicitly asks for additional or different topics** and the current candidates do not satisfy that request, inspect `analysis_window.next_older_than_day`. If it contains a day, run one bounded supplemental historical scan—exactly one supplemental analysis pass—using the same analysis surface and pass `--arguments ""` so the request text cannot accidentally become an intake filter:
 
 ```bash
-"${CLAUDE_PLUGIN_ROOT}/bin/memory-context-intelligence" analysis-surface --arguments "" --older-than-day "<analysis_window.next_older_than_day>"
+"${CLAUDE_PLUGIN_ROOT}/bin/memory-context-intelligence" analysis-surface --arguments "" --older-than-day "<analysis_window.next_older_than_day>" --window-days "<analysis_window.calendar_window.days>" --current-day "<analysis_window.calendar_window.end_day>"
 ```
 
 This is a command template, not startup context injection. After the explicit-request and scope checks pass, replace `<analysis_window.next_older_than_day>` with the actual `YYYY-MM-DD` value from the first payload and invoke the command through the caller's shell tool. Never execute the literal placeholder or this supplemental command during skill preprocessing.
 
-If the first analysis used an explicit config path, add `--config "<that same path>"` so the supplemental run preserves its source-policy limits. This reads only daily shards strictly older than every day in the first checked window, through the existing bounded intake → signals → present path; it creates a new candidate set from that distinct evidence window.
+If the first analysis used an explicit config path, add `--config "<that same path>"` so the supplemental run preserves its source-policy limits. Copy the calendar controls from the first payload too. This reads only daily shards strictly older than every day in the first checked batch and still inside the original selected calendar window, through the existing bounded intake → signals → present path; it creates a new candidate set from that distinct evidence slice. Reaching the start date ends this option; never start a new or wider period to meet a topic target.
 
 - Run this pass only for an explicit request for more/different topics; a plain `/memory-context-intelligence:analysis` invocation or a routine no-topic result does not trigger it.
 - Do not repeat or widen the pass. `supplemental_pass_used: true` means intake completed for the bounded supplemental window; an unavailable or blocked intake is an attempted but unused pass and must not be retried without a material scope/access/policy change.

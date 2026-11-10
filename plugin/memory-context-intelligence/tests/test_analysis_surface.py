@@ -3,6 +3,7 @@ from __future__ import annotations
 import importlib.util
 import json
 import os
+import shlex
 import subprocess
 import tempfile
 import unittest
@@ -19,6 +20,60 @@ SPEC.loader.exec_module(analysis_surface)
 
 
 class AnalysisSurfacePayloadTests(unittest.TestCase):
+    def test_missing_calendar_window_waits_before_input_or_progress_access(self) -> None:
+        captured: list[dict] = []
+        with patch.object(analysis_surface, "emit", side_effect=captured.append), patch.object(
+            analysis_surface, "find_memory_root", return_value=None
+        ) as find_root, patch.object(analysis_surface, "load_progress") as load_progress, patch.object(
+            analysis_surface, "run_json_command"
+        ) as run_command:
+            self.assertEqual(analysis_surface.main(["--arguments", ""]), 0)
+        self.assertEqual(captured[0]["status"], "awaiting-caller-scope")
+        self.assertEqual(captured[0]["window_choices"], [1, 3, 7, 14])
+        find_root.assert_not_called()
+        load_progress.assert_not_called()
+        run_command.assert_not_called()
+
+    def test_calendar_window_excludes_old_and_future_shards_before_hashing(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for day in ["2026-10-27", "2026-10-28", "2026-11-09", "2026-11-10", "2026-11-11"]:
+                (root / f"{day}.md").write_text("### 10:00\n- bounded finding\n", encoding="utf-8")
+            window = analysis_surface.calendar_window(14, "2026-11-10")
+            self.assertEqual(window, {"days": 14, "start_day": "2026-10-28", "end_day": "2026-11-10"})
+            shards = analysis_surface.discover_daily_shards(root, window=window)
+            endpoint = analysis_surface.progressive_endpoint(shards)
+            self.assertEqual(set(endpoint), {"2026-10-28.md", "2026-11-09.md", "2026-11-10.md"})
+            for days in [1, 3, 7, 14]:
+                with self.subTest(days=days):
+                    selected = analysis_surface.calendar_window(days, "2026-11-10")
+                    self.assertEqual((date.fromisoformat(selected["end_day"]) - date.fromisoformat(selected["start_day"])).days, days - 1)
+            for days in [0, 15]:
+                with self.subTest(invalid_days=days), self.assertRaises(ValueError):
+                    analysis_surface.calendar_window(days, "2026-11-10")
+
+    def test_invalid_calendar_window_blocks_before_input_or_progress_access(self) -> None:
+        for days in [0, 15]:
+            with self.subTest(days=days), patch.object(analysis_surface, "emit") as emit, patch.object(
+                analysis_surface, "find_memory_root"
+            ) as find_root, patch.object(analysis_surface, "load_progress") as load_progress:
+                self.assertEqual(analysis_surface.main(["--window-days", str(days)]), 0)
+                self.assertEqual(emit.call_args.args[0]["status"], "blocked")
+                find_root.assert_not_called()
+                load_progress.assert_not_called()
+
+    def test_calendar_scope_conflicts_block_before_acquisition(self) -> None:
+        for restriction in ["day=2026-10-27", "day=2026-11-11", "day=2026-02-30"]:
+            with self.subTest(restriction=restriction), patch.object(analysis_surface, "emit") as emit, patch.object(
+                analysis_surface, "run_json_command"
+            ) as run_command, patch.object(analysis_surface, "load_progress") as load_progress:
+                self.assertEqual(analysis_surface.main([
+                    "--window-days", "14", "--current-day", "2026-11-10", "--arguments", restriction,
+                ]), 0)
+                self.assertEqual(emit.call_args.args[0]["status"], "blocked")
+                run_command.assert_not_called()
+                load_progress.assert_not_called()
+
     def test_analysis_surface_passes_explicit_config_argument_and_surfaces_loaded_source_policy(self) -> None:
         captured: list[dict] = []
         present_payload = {
@@ -91,6 +146,7 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
                 ]
 
                 exit_code = analysis_surface.main([
+                    "--window-days", "14",
                     "--session-id",
                     "session-123",
                     "--current-day",
@@ -179,6 +235,7 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
                 ]
 
                 exit_code = analysis_surface.main([
+                    "--window-days", "14",
                     "--session-id",
                     "session-123",
                     "--current-day",
@@ -266,6 +323,7 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
                 ]
 
                 exit_code = analysis_surface.main([
+                    "--window-days", "14",
                     "--session-id",
                     "session-123",
                     "--current-day",
@@ -385,6 +443,7 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
                 ]
 
                 exit_code = analysis_surface.main([
+                    "--window-days", "14",
                     "--session-id",
                     "session-123",
                     "--current-day",
@@ -510,6 +569,7 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
                 ]
 
                 exit_code = analysis_surface.main([
+                    "--window-days", "14",
                     "--session-id",
                     "session-123",
                     "--current-day",
@@ -598,6 +658,7 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
                 ]
 
                 exit_code = analysis_surface.main([
+                    "--window-days", "14",
                     "--session-id",
                     "session-123",
                     "--current-day",
@@ -703,6 +764,7 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
                 ]
 
                 exit_code = analysis_surface.main([
+                    "--window-days", "14",
                     "--session-id",
                     "session-123",
                     "--current-day",
@@ -828,6 +890,7 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
                 ]
 
                 exit_code = analysis_surface.main([
+                    "--window-days", "14",
                     "--session-id",
                     "session-123",
                     "--current-day",
@@ -904,7 +967,7 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
                     ),
                 ]
 
-                self.assertEqual(analysis_surface.main([]), 0)
+                self.assertEqual(analysis_surface.main(["--window-days", "14", "--current-day", "2026-05-20"]), 0)
 
         payload = captured[0]
         self.assertEqual(
@@ -914,6 +977,7 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
                 "checked_days": ["2026-05-20", "2026-05-19", "2026-05-18"],
                 "next_older_than_day": "2026-05-18",
                 "supplemental_pass_used": False,
+                "calendar_window": {"days": 14, "start_day": "2026-05-07", "end_day": "2026-05-20"},
             },
         )
 
@@ -942,7 +1006,7 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
                 repeated = "- repeated newest-day event\n" * 12 if offset == 0 else ""
                 (memory / f"{day.isoformat()}.md").write_text("### 09:00\n- " + body + "\n" + repeated, encoding="utf-8")
             env = {"HOME": str(home), "PATH": os.environ["PATH"], "TMPDIR": str(root), "PYTHONDONTWRITEBYTECODE": "1", "LANG": "C.UTF-8"}
-            command = ["bash", str(PACKAGE_ROOT / "bin" / "memory-context-intelligence"), "analysis-surface", "--arguments", ""]
+            command = ["bash", str(PACKAGE_ROOT / "bin" / "memory-context-intelligence"), "analysis-surface", "--window-days", "14", "--current-day", date.today().isoformat(), "--arguments", ""]
             result = subprocess.run(command, cwd=root, env=env, capture_output=True, text=True, timeout=20)
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertEqual(result.stderr, "")
@@ -1018,7 +1082,7 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
 
                 self.assertEqual(
                     analysis_surface.main(
-                        ["--arguments", "", "--config", str(config_path), "--older-than-day", "2026-05-18"]
+                        ["--window-days", "14", "--current-day", "2026-05-20", "--arguments", "", "--config", str(config_path), "--older-than-day", "2026-05-18"]
                     ),
                     0,
                 )
@@ -1074,7 +1138,7 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
                 ]
 
                 self.assertEqual(
-                    analysis_surface.main(["--arguments", "", "--older-than-day", "2026-05-18"]),
+                    analysis_surface.main(["--window-days", "14", "--current-day", "2026-05-20", "--arguments", "", "--older-than-day", "2026-05-18"]),
                     0,
                 )
 
@@ -1092,6 +1156,7 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
                 "exclusive_boundary_day": "2026-05-18",
                 "supplemental_intake_status": "available",
                 "supplemental_pass_attempted": True,
+                "calendar_window": {"days": 14, "start_day": "2026-05-07", "end_day": "2026-05-20"},
             },
         )
 
@@ -1133,7 +1198,7 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
                 ]
 
                 self.assertEqual(
-                    analysis_surface.main(["--arguments", "", "--older-than-day", "2026-05-18"]),
+                    analysis_surface.main(["--window-days", "14", "--current-day", "2026-05-20", "--arguments", "", "--older-than-day", "2026-05-18"]),
                     0,
                 )
 
@@ -1172,7 +1237,7 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
                 )
 
                 self.assertEqual(
-                    analysis_surface.main(["--older-than-day", "2026-05-18"]),
+                    analysis_surface.main(["--window-days", "14", "--current-day", "2026-05-20", "--older-than-day", "2026-05-18"]),
                     0,
                 )
 
@@ -1193,6 +1258,7 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
                 "exclusive_boundary_day": "2026-05-18",
                 "supplemental_intake_status": "unavailable",
                 "supplemental_pass_attempted": True,
+                "calendar_window": {"days": 14, "start_day": "2026-05-07", "end_day": "2026-05-20"},
             },
         )
 
@@ -1205,7 +1271,7 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
         ):
             self.assertEqual(
                 analysis_surface.main(
-                    ["--arguments", "day=2026-05-20", "--older-than-day", "2026-05-18"]
+                    ["--window-days", "14", "--current-day", "2026-05-20", "--arguments", "day=2026-05-20", "--older-than-day", "2026-05-18"]
                 ),
                 0,
             )
@@ -1226,6 +1292,7 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
             self.assertEqual(
                 analysis_surface.main(
                     [
+                        "--window-days", "14", "--current-day", "2026-05-20",
                         "--arguments",
                         "day=2026-05-20",
                         "--older-than-day",
@@ -1316,6 +1383,7 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
                 ]
 
                 exit_code = analysis_surface.main([
+                    "--window-days", "14",
                     "--session-id",
                     "session-123",
                     "--current-day",
@@ -1407,7 +1475,7 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
                     ),
                 ]
 
-                self.assertEqual(analysis_surface.main([]), 0)
+                self.assertEqual(analysis_surface.main(["--window-days", "14", "--current-day", "2026-05-20"]), 0)
 
         self.assertEqual(
             captured[0]["topic_discovery_evidence"],
@@ -1469,8 +1537,17 @@ class ProgressiveWrapperTests(unittest.TestCase):
             home.mkdir()
             env = dict(os.environ, HOME=str(home), ARGUMENTS="", PYTHONDONTWRITEBYTECODE="1")
             state = home / ".claude" / "memory-context-intelligence" / "progress.json"
-            for day in range(1, 31):
-                (memory / f"2026-01-{day:02d}.md").write_text(f"### 10:00\n- evidence day {day}\n")
+            days = [(date(2026, 10, 28) + timedelta(days=offset)).isoformat() for offset in range(14)]
+            for day in ["2026-10-27", *days, "2026-11-11"]:
+                (memory / f"{day}.md").write_text(f"### 10:00\n- evidence day {day}\n")
+            source_classes = analysis_surface.load_analysis_source_policy(explicit_config_path=None, cwd=project)["enabled_source_classes"]
+            legacy_key = analysis_surface.scope_identity(memory, source_classes)
+            analysis_surface.prepare_batch(state, legacy_key, {
+                "batch_id": "legacy-pending", "expected_version": 0, "expected_position": None,
+                "next_position": None, "coverage_complete": False, "source_binding": {},
+            })
+            legacy = json.loads(state.read_text())["scopes"][legacy_key]
+            controls = ["--window-days", "14", "--current-day", "2026-11-10"]
 
             def run(*arguments):
                 result = subprocess.run(
@@ -1480,22 +1557,35 @@ class ProgressiveWrapperTests(unittest.TestCase):
                 self.assertEqual(result.returncode, 0, result.stderr + result.stdout)
                 return json.loads(result.stdout)
 
-            first = run("analysis-surface", "--mode", "catch-up", "--max-records", "10")
-            self.assertEqual(first["analysis_window"]["checked_days"], [f"2026-01-{day:02d}" for day in range(1, 11)])
+            first = run("analysis-surface", *controls, "--mode", "catch-up", "--max-records", "10")
+            self.assertEqual(first["analysis_window"]["checked_days"], days[:10])
             self.assertEqual(first["progress"]["expected_version"], 0)
-            self.assertIsNone(next(iter(json.loads(state.read_text())["scopes"].values()))["position"])
+            entries = json.loads(state.read_text())["scopes"]
+            self.assertEqual(entries[legacy_key], legacy)
+            self.assertTrue(all(entry["position"] is None for entry in entries.values()))
+            frozen = first["analysis_window"]["calendar_window"]
+            continuation = shlex.split(first["progress"]["continuation_command"])[1:]
+            self.assertEqual(continuation[continuation.index("--current-day") + 1], "2026-11-10")
+            before_ack = run(*continuation)
+            self.assertEqual(before_ack["status"], "blocked")
             run("complete", "--batch-id", first["progress"]["batch_id"], "--outcome", "no-topics")
-            with (memory / "2026-01-01.md").open("a") as handle:
+            shifted = run("analysis-surface", "--window-days", "14", "--current-day", "2026-11-11", "--continue-run", first["progress"]["run_id"])
+            self.assertEqual(shifted["status"], "blocked")
+            legacy_resume = run("analysis-surface", *controls, "--continue-run", "legacy-run")
+            self.assertEqual(legacy_resume["status"], "blocked")
+            with (memory / f"{days[0]}.md").open("a") as handle:
                 handle.write("- late append to old day\n")
-            (memory / "2026-01-31.md").write_text("### 10:00\n- after invocation endpoint\n")
-            for start in [11, 21]:
-                batch = run("analysis-surface", "--continue-run", first["progress"]["run_id"], "--max-records", "10")
-                self.assertEqual(batch["analysis_window"]["checked_days"], [f"2026-01-{day:02d}" for day in range(start, start + 10)])
-                run("complete", "--batch-id", batch["progress"]["batch_id"], "--outcome", "analyzed")
-            caught_up = run("analysis-surface", "--continue-run", first["progress"]["run_id"])
+            with (memory / f"{days[-1]}.md").open("a") as handle:
+                handle.write("- after invocation endpoint\n")
+            batch = run(*continuation)
+            self.assertEqual(batch["analysis_window"]["checked_days"], days[10:])
+            self.assertEqual(batch["analysis_window"]["calendar_window"], frozen)
+            run("complete", "--batch-id", batch["progress"]["batch_id"], "--outcome", "analyzed")
+            caught_up = run(*shlex.split(batch["progress"]["continuation_command"])[1:])
             self.assertEqual(caught_up["status"], "caught-up")
-            fresh = run("analysis-surface")
+            fresh = run("analysis-surface", *controls)
             self.assertEqual([e["content"] for e in fresh["topic_discovery_evidence"]], ["late append to old day", "after invocation endpoint"])
+            self.assertEqual(json.loads(state.read_text())["scopes"][legacy_key], legacy)
 
     def test_startup_is_fileless_before_caller_binds_slash_arguments(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -1528,7 +1618,7 @@ class ProgressiveWrapperTests(unittest.TestCase):
             home.mkdir()
             env = dict(os.environ, HOME=str(home), ARGUMENTS="", PYTHONDONTWRITEBYTECODE="1")
             command = ["bash", str(PACKAGE_ROOT / "bin" / "memory-context-intelligence")]
-            prepared = subprocess.run(command + ["analysis-surface"], cwd=project, env=env, capture_output=True, text=True, timeout=30)
+            prepared = subprocess.run(command + ["analysis-surface", "--window-days", "1", "--current-day", "2026-01-01"], cwd=project, env=env, capture_output=True, text=True, timeout=30)
             self.assertEqual(prepared.returncode, 0, prepared.stderr)
             batch_id = json.loads(prepared.stdout)["progress"]["batch_id"]
             shard.write_text("### 10:00\n- different replacement evidence\n")
@@ -1548,7 +1638,7 @@ class ProgressiveWrapperTests(unittest.TestCase):
             home = project / "home"
             home.mkdir()
             result = subprocess.run(
-                ["bash", str(PACKAGE_ROOT / "bin" / "memory-context-intelligence"), "analysis-surface", "--arguments", "day=2026-01-01"],
+                ["bash", str(PACKAGE_ROOT / "bin" / "memory-context-intelligence"), "analysis-surface", "--window-days", "1", "--current-day", "2026-01-01", "--arguments", "day=2026-01-01"],
                 cwd=project, env=dict(os.environ, HOME=str(home), PYTHONDONTWRITEBYTECODE="1"),
                 capture_output=True, text=True, timeout=30,
             )

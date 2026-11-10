@@ -131,6 +131,8 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         default=65536,
         help="Bytes read from each shard, capped at 262144.",
     )
+    parser.add_argument("--window-days", type=int, help="Optional calendar-day window, at most 14 days including current-day.")
+    parser.add_argument("--current-day", type=parse_day, default=date.today().isoformat())
     parser.add_argument("--max-age-days", type=int, default=30, help="Freshness threshold for latest shard.")
     parser.add_argument("--progress-request", type=Path, help="MCI-owned bounded batch request; never writes progress.")
     return parser.parse_args(argv)
@@ -741,9 +743,28 @@ def standard_notes(reason: str | None = None) -> list[str]:
     return notes
 
 
-def discover_daily_shards(memory_root: Path) -> list[Path]:
+def calendar_window(days: int, current_day: str) -> dict[str, Any]:
+    if type(days) is not int or not 1 <= days <= 14:
+        raise ValueError("Analysis window must be between 1 and 14 calendar days, including today.")
+    end = date.fromisoformat(parse_day(current_day))
+    return {"days": days, "start_day": (end - timedelta(days=days - 1)).isoformat(), "end_day": end.isoformat()}
+
+
+def validate_calendar_scope(window: dict[str, Any], *, day: str | None = None, older_than_day: str | None = None) -> None:
+    for value in [day, older_than_day]:
+        if value is not None:
+            if date.fromisoformat(value).isoformat() != value or not window["start_day"] <= value <= window["end_day"]:
+                raise ValueError("Requested day or supplemental boundary is outside the selected calendar window.")
+
+
+def discover_daily_shards(memory_root: Path, *, window: dict[str, Any] | None = None) -> list[Path]:
     return sorted(
-        (path for path in memory_root.iterdir() if path.is_file() and DAILY_SHARD_RE.match(path.name)),
+        (
+            path for path in memory_root.iterdir()
+            if DAILY_SHARD_RE.fullmatch(path.name)
+            and (window is None or window["start_day"] <= path.stem <= window["end_day"])
+            and path.is_file()
+        ),
         key=lambda path: path.name,
         reverse=True,
     )
@@ -1283,6 +1304,18 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
             lookback_minutes=lookback_minutes,
             scope_policy=stored_scope_policy,
         )
+    window = None
+    try:
+        if getattr(args, "window_days", None) is not None:
+            window = calendar_window(args.window_days, args.current_day)
+            validate_calendar_scope(window, day=day_shard, older_than_day=older_than_day)
+    except ValueError as exc:
+        report = availability_report(
+            memory_root=memory_root_value, memory_root_source=memory_root_source,
+            status="unavailable", evidence_strength="not-found-in-checked-scope", reason=str(exc),
+        )
+        report["scope"]["calendar_window"] = window
+        return report
     source_policy_state = build_source_policy_state(
         args,
         project_dir=project_dir,
@@ -1348,7 +1381,7 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
         report["freshness"]["max_age_days"] = max_age_days
         return report
 
-    shards = discover_daily_shards(memory_root)
+    shards = discover_daily_shards(memory_root, window=window)
     if older_than_day and "trace_evidence" not in source_policy_state["effective_source_classes"]:
         report = availability_report(
             memory_root=str(memory_root),
@@ -1558,6 +1591,7 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
         },
         "scope": {
             "basis": active_scope_basis,
+            "calendar_window": window,
             "filters": scope_filters,
             "day_shard": selected_shards[0].stem if len(selected_shards) == 1 else day_shard,
             "session_id": session_id,
