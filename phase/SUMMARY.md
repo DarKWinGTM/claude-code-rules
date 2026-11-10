@@ -3,7 +3,7 @@
 > **Current Version:** 2.35
 > **Target Design:** [../design/phase-todo-artifact.design.md](../design/phase-todo-artifact.design.md) v1.39
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5
-> **Status:** P152/v10.79 portable Skill source/library publication active. P073-23/v10.78 and earlier Runtime slices remain closed.
+> **Status:** P152/v10.79 source, unchanged Main19 installation and public release verified-in-scope; no successor opened. Earlier Runtime slices remain closed.
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,9 +21,11 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active Slice
 
-**P152 / v10.79:** [Portable Skill library](phase-152-portable-skill-library.md) curates six general on-demand procedures into `skill/`, separate from Main19 and plugins. Source/procedure checks, unchanged Rules installation and scoped publication/fresh-public proof are selected. Personal Skill deployment is excluded. [Target design](../design/design/skill-library.design.md).
+None opened after P152/v10.79. Personal Skill deployment is unselected; previous Runtime slices remain closed.
 
 ### Latest Verified Slice
+
+- **P152 / v10.79:** [Portable Skill library](phase-152-portable-skill-library.md) ships six general on-demand procedures and four references under `skill/`, separate from Main19/plugins. Node70/70, both installer fixture suites on Linux, twelve bounded candidate distinctions, actual unchanged Rules installation and preservation passed. Exact21-path source commit `d335a14fdef2225e3999b5a1ea4496063698f8d0`, immutable annotated `v10.79` object `67949d99ce7952f86f3f7010f0f1b003bc85ee99`, atomic non-force master publication and [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.79) are verified. Fresh-public44-path bytes/Git modes and exact source/tag/tree identity passed without executing downloaded code. Tasks11/12 handed proof to finalizer13; later receipts leave the tag immutable. Personal Skills/unrelated work are preserved; no Skill deployment, causal AI benefit or successor claimed. [Target design](../design/design/skill-library.design.md), [history](../changelog/changelog/v10.79-portable-skill-library.changelog.md); Patch not required.
 
 - **P073-23 / v10.78:** [Complexity and test-evidence admission](phase-073-23-complexity-and-test-evidence-admission.md) enriches Coding1.11 at its existing two owners, preserving necessary safeguards and distinct-fault test layers. Node54/54, bounded semantic review, native Linux fixtures, source preservation/references and actual root Main19 parity passed with other18/protected6 unchanged and no quarantine. Exact13-file source commit `59ae04bfb6627cbf4d796ff0140b83c017bfc1c7`, immutable annotated `v10.78` tag object `592e05f9dac9c5c3028aa34d04a086f1f5f240f7`, atomic non-force master publication and [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.78) are verified. Fresh-public33-path byte/Git-mode checks and one isolated Main19 install passed through the trusted canonical installer. Tasks1/2 handed proof to finalizer3 before closure; this later receipt does not retag or change Runtime/install semantics. No new Rule/runner/CPU-RAM/hook/plugin/Skill or successor is selected; authored virtual cases/text checks do not establish model behavior. [History](../changelog/changelog/v10.78-complexity-and-test-evidence-admission.changelog.md); Patch not required.
 

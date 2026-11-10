@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 152
-> **Status:** source/procedure checks and unchanged Main19 installation verified; selected publication/fresh-public gates pending
+> **Status:** completed in selected scope; source/procedure, unchanged Main19 installation and publication/fresh-public proof verified
 > **Target Version:** 10.79
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -37,10 +37,10 @@ Touched README/master/TODO/summary pressure remains visible: this wave adds comp
 - [x] Execute paired allowed/stop interpretation cases against the actual candidate, then fix only material mismatches.
 - [x] Run focused and existing repository/installer regressions; verify unchanged Main19 and other-owner state.
 - [x] Install/check the same Main19 with the existing canonical launcher and preservation preflight.
-- [x] Reconcile settled source/proof into affected owners; stage only the selected wave for the pending scoped commit.
-- [ ] Publish non-force to the existing remote default branch with immutable annotated tag and non-draft GitHub Release.
-- [ ] Verify fresh-public selected payload and exact tag/commit/Release identity; record the later receipt without moving the tag.
-- [ ] Finalizer receives technical/publication evidence, verifies references/protected state and closes the selected family.
+- [x] Reconcile settled source/proof into affected owners; commit only the selected21-path wave.
+- [x] Publish non-force to the existing remote default branch with immutable annotated tag and non-draft GitHub Release.
+- [x] Verify fresh-public selected payload and exact tag/commit/Release identity; record this later receipt without moving the tag.
+- [x] Finalizer receives technical/publication evidence and verifies references/protected state; this scoped receipt closes the selected family without changing the tag.
 
 ## Development Verification / TestKit Coverage
 
@@ -53,6 +53,16 @@ Selected routes: `new_focused_test` for the source library and written procedure
 - Final pre-commit check resolved415 local paths across20 selected Markdown files and scoped whitespace checks pass. Main checked1042 non-selected tracked fingerprints and335 personal Skill files unchanged; untracked directories are status-observed, not recursively certified. The unchanged installer-design shard was inspected but needs no artificial diff; the Skill design and README own the new boundary.
 - One independent candidate reader inspected all six actual bodies and four linked references, then supported the twelve allowed/stop distinctions D1/D2,T1/T2,W1/W2,C1/C2,G1/G2,R1/R2 with exact anchors. Main checked the decisions against the frozen11-file candidate/test binding (37324 bytes); no decision-changing gap surfaced. The baseline reader also returned correct distinctions, but two reads were cache notices and lacked fresh body/hash output, so no complete baseline-content or causal improvement comparison is claimed. An accidental overlapping diagnosis assignment was promptly cancelled; it supplied no independent acceptance proof. One candidate handoff initially requested exact paths before reading; exact paths resolved the input gap without broader access or a changed permission boundary.
 - Read-only reference curation preserved generic research/remedy, optional equivalence/performance, recovery/closeout and history-provenance procedures; Main verified decision-changing research/history/closeout anchors. Tool/browser CLI, file-store lifecycle, business and personal assumptions stay outside the shipped library. Static/source and synthetic interpretation are not runtime discovery, historical failure repair or measured user benefit.
+
+- Final receipt checks resolve418 local paths across the20 selected Markdown files; whitespace is clean. Frozen candidate,1042 protected tracked files,335 personal Skill files, actual Main19/manifest,4 other-owner files,2 globals and captured direct-child discovery/quarantine entries remain unchanged. Protected Git status matches the pre-wave snapshot and the unrelated two-line diagram hunk remains unstaged. A postflight checker initially compared recursive filenames with the direct-child snapshot; correcting that comparison passed without source/runtime mutation.
+
+## Publication and Closeout Receipt
+
+Source commit `d335a14fdef2225e3999b5a1ea4496063698f8d0` contains exactly the selected21 paths. It and immutable annotated `v10.79` object `67949d99ce7952f86f3f7010f0f1b003bc85ee99` were atomically non-force pushed to existing `origin/master`. The non-draft/non-prerelease [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.79), ID440110908, published at `2026-11-10T08:34:15Z`; reviewed notes and latest-release identity were read back.
+
+A fresh read-only public Git fetch matched master/tag/target/parent and source tree `bdbf8d6a1a4574901f72f034f927a0f888bcb951`. All44 selected public paths match bytes and Git modes:21 changed paths,19 Main Rules and4 launcher/installer files,535202 bytes. No downloaded code was executed; actual unchanged Main19 installation is separate canonical-source proof above.
+
+The first release-creation attempt failed opening the private notes path through the installed snap CLI. Release lookup confirmed404 before a single corrected standard-input notes attempt succeeded; no duplicate release, tag movement or push replay occurred. Tasks11/12 handed evidence to finalizer13 before closing. This receipt reconciles actual proof into existing README/changelog/TODO/phase owners, not into the immutable tagged pre-publication snapshot. No successor is opened.
 
 ## Preservation, Recovery and Limits
 

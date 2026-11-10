@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current source:** `v10.79 / P152` adds [six portable on-demand Skills](#on-demand-skills) for diagnosis, verification, continuity, communication, guidance authoring and coverage reconciliation. Main Runtime remains the same nineteen Rules; the existing launcher does not deploy Skills. Source tests, bounded paired interpretation and unchanged Rules installation are verified; publication proof is tracked in [P152](phase/phase-152-portable-skill-library.md). The [v10.78 release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.78) remains the latest published baseline until this wave is released.
+> **Current release:** [v10.79](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.79) ships [six portable on-demand Skills](#on-demand-skills) for diagnosis, verification, continuity, communication, guidance authoring and coverage reconciliation. Main Runtime remains the same nineteen Rules; the existing launcher does not deploy Skills. Source checks, bounded paired interpretation, actual unchanged Rules installation and fresh-public payload/identity checks passed in scope. [P152](phase/phase-152-portable-skill-library.md) records the release evidence and limits; personal Skill deployment is not included.
 
 <!-- CTA Buttons -->
 <p>
@@ -1192,7 +1192,9 @@ Result: ✅ Verified from actual files
   - The Quick Start block installs the compact, source-owned set of 19 active Runtime Rules.
   - Cleanup is owner-aware, not based on filenames alone.
 
-- **Released Main Runtime, v10.78:**
+- **Current v10.79 boundary:** six on-demand Skills are published as source only; Main19 and the four launcher/installer files retain their v10.78 bytes and modes. Actual unchanged Rules installation and fresh-public44-path verification passed. [P152](phase/phase-152-portable-skill-library.md) owns the scoped evidence; no personal Skill deployment is included.
+
+- **Preserved Main Runtime baseline, v10.78:**
   - Coding1.11 adds simpler-complete-alternative and material-test-evidence criteria; membership remains nineteen and the other eighteen Runtime bodies/modes are unchanged.
   - Written-contract **22/22** is included in Node **54/54**; Bash and PowerShell installer fixtures passed on Linux, not a Windows OS run.
   - Actual Main19 bytes/modes/bodies/ordered manifest and protected-file preservation passed with no new quarantine. Six authored virtual Case07 variants and one bounded semantic review do not establish model compliance or benefit.

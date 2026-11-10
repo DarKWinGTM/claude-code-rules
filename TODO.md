@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-11-10
-> **Current Release:** v10.78 published; source, actual Main19 and fresh-public payload/isolated installation verified-in-scope
-> **Active Wave:** P152/v10.79 portable Skill source, verification and publication; Main19 is unchanged and personal Skill deployment is excluded
+> **Current Release:** v10.79 published; six-Skill source, unchanged Main19 installation and fresh-public identity/payload verified-in-scope
+> **Active Wave:** none opened after P152/v10.79; personal Skill deployment remains unselected
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,11 +10,13 @@
 
 ## Active / In Progress
 
-- [ ] **P152 / v10.79 portable Skill library:** curate the selected six generic procedures under `skill/`, verify source/scenarios and unchanged Main19 installation, then scoped non-force push/tag/Release and fresh-public proof. Personal Skill deployment, tool-specific Skills and plugin changes are excluded. [Phase](phase/phase-152-portable-skill-library.md); [design](design/design/skill-library.design.md).
+No active RULES release wave remains; P152/v10.79 passed its selected source/install/publication gate. Personal Skill deployment is not selected.
 
 No active MCI corrective work remains at the selected source/document gate. P073-18 Main remains verified and closed. Earlier settings evidence and the prior internal-agent restriction violation remain separately unresolved; this source correction does not authorize restoration or model validation.
 
 ## Recently Completed
+
+- [x] **P152 / v10.79 portable Skill library:** six general procedures and four references published under `skill/`, separate from unchanged Main19. Node70/70, Bash/PowerShell Linux fixtures, twelve bounded candidate distinctions and actual Rules installation/preservation passed. Exact21-path source commit `d335a14fdef2225e3999b5a1ea4496063698f8d0`, immutable annotated `v10.79`, atomic non-force default-branch publication and [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.79) are verified. Fresh-public44-path bytes/Git modes and source/tag/tree identity passed; technical/publication evidence reached finalizer13 before tasks11/12 closed. Personal Skills and unrelated local work remain preserved; no runtime Skill deployment, causal benefit or successor claimed. [Phase](phase/phase-152-portable-skill-library.md), [design](design/design/skill-library.design.md), [history](changelog/changelog/v10.79-portable-skill-library.changelog.md).
 
 - [x] **P073-23 / v10.78 complexity and test-evidence admission:** Coding1.11 adds simpler-complete-alternative/carrying-cost and material-test-evidence criteria in existing owners. Two written-clause REDs then Node54/54, native Linux fixtures, bounded semantic review, source preservation/references and actual Main19 parity passed; other18 Rules/protected6 files are unchanged, with no new quarantine. Exact13-file source commit `59ae04bfb6627cbf4d796ff0140b83c017bfc1c7`, immutable annotated `v10.78`, atomic non-force `origin/master` publication and [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.78) are verified. Fresh-public bytes/Git modes match33 selected paths and one isolated Main19 installation passed through the trusted installer. Tasks1/2 handed evidence to finalizer3; later receipts do not retag or change Runtime semantics. Unrelated dirty/plugin/support/diagram state stays preserved and unpublished. No causal AI benefit, active-session reload or successor claimed. [Phase](phase/phase-073-23-complexity-and-test-evidence-admission.md), [history](changelog/changelog/v10.78-complexity-and-test-evidence-admission.changelog.md).
 
