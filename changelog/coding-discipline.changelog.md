@@ -1,7 +1,7 @@
 # Changelog - Coding Discipline
 
 > **Parent Document:** [../coding-discipline.md](../coding-discipline.md)
-> **Current Version:** 1.12
+> **Current Version:** 1.13
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 ---
 
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.13 | 2026-11-13 | **[Required approved refactor plans and affected-structure assessment](#version-113)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.12 | 2026-11-11 | **[Clarified lifecycle and operational reporting](#version-112)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.11 | 2026-11-10 | **[Added complexity and test-evidence admission criteria](#version-111)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.10 | 2026-10-25 | **[Added caller-first prevention and bound workflow proof](#version-110)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
@@ -27,6 +28,17 @@
 | | | Summary: Created `coding-discipline.md` as a body-sufficient merged runtime owner for maintainable code structure, proportionate verification, and tactical-to-strategic convergence in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-113"></a>
+## Version 1.13: Approved refactoring and structural assessment
+
+**Date:** 2026-11-13
+**Session:** 08244912-a195-4926-84e6-8c202c667ba5
+
+- Assess affected structure before material additions, during cumulative growth and before closeout; no hard LOC limit or mandatory split of cohesive code.
+- Require a concrete proportional plan and explicit user approval before any refactor, including local/low-risk transformations. Scope, before/after responsibilities/dependencies, protected contracts, ordered steps, functional/structural proof and stop/recovery must be understandable before mutation. Small chat plans and existing exact approval remain sufficient.
+- Remove the direct low-risk-repair shortcut. Normal non-refactoring feature/fix edits remain allowed; labels cannot bypass consent. Meaningful responsibility movement, not file/helper counts, establishes structural improvement.
+- [P073-25](../phase/phase-073-25-approved-refactoring-and-repository-review.md) owns matching proof and installation/publication status. Written-contract checks and synthetic interpretation do not establish historical cause or future model compliance.
 
 <a id="version-112"></a>
 ## Version 1.12: Clarified lifecycle and operational reporting

@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-11-11
-> **Current Release:** v10.80 published/latest; Main19 and coordinated MCI0.9.43 local installation plus103 selected public file bytes/modes verified-in-scope
-> **Active Wave:** P073-24/MCI075-01 technical gates verified; this receipt-only finalization retains immutable source tags. No successor selected
+> **Last Updated:** 2026-11-13
+> **Current Release:** v10.80 remains published/latest; v10.81 source candidate is under selected install/publication verification
+> **Active Wave:** P073-25 approved refactoring, repository review guidance and plural Skills source; source checks passed, remaining gates in the linked phase
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,7 +10,7 @@
 
 ## Active / In Progress
 
-The selected P073-24/MCI075-01 source/install/publication work is verified-in-scope; no additional implementation or successor is opened. Current-session reload/adoption is user-owned and excluded, not pending technical work. Personal Skill deployment remains unselected.
+- [ ] [P073-25 / v10.81](phase/phase-073-25-approved-refactoring-and-repository-review.md): source Node61/61/native fixtures, twelve guided synthetic decisions and scoped preservation passed; finish Main19 installation, immutable source/tag/Release/public readback and receipt-only finalization. Main owns edits; tasks34/35 feed36 and finalizer37. No extra Runtime Rule, personal Skill deployment, plugin update or actual hosted PR review is selected. RAM/OOM Task32 stays paused.
 
 Earlier MCI corrective source gates remain closed; the selected enrichment work above is a distinct child. P073-18 Main remains verified and closed. Earlier settings evidence and the prior internal-agent restriction violation remain separately unresolved; this source correction does not authorize restoration or model validation.
 

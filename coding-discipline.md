@@ -1,6 +1,6 @@
 # Coding Discipline
-> **Current Version:** 1.12
-> **Design:** [design/coding-discipline.design.md](design/coding-discipline.design.md) v1.12
+> **Current Version:** 1.13
+> **Design:** [design/coding-discipline.design.md](design/coding-discipline.design.md) v1.13
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [changelog/coding-discipline.changelog.md](changelog/coding-discipline.changelog.md)
 > **Absorbed:** maintainable-code-structure-and-decomposition v1.2, development-verification-and-debug-strategy v1.1, tactical-strategic-programming v1.3
@@ -21,6 +21,10 @@ Before a material condition/representation/structure, trace behavior, valid inpu
 
 An addition is overengineering when a simpler complete alternative preserves behavior/safety/clarity and supported benefit cannot justify its burden. Ask what the alternative loses; possible benefit or new boundary alone does not earn added machinery. Weigh state/transitions, paths, dependencies, indirection, change propagation and setup/runtime/maintenance cost, including work created only to support the addition. Defer hypothetical reversible generalization, not analysis of hard-to-reverse contracts or required safeguards. Passing tests proves checked correctness, not necessity. Compare meaning/cost, not quotas or scores.
 
+Inspect affected structure before material additions, during cumulative growth and before non-trivial closeout. Check responsibilities, cohesion/coupling, change reasons, state/dependency lifecycles, side effects, callers and test boundaries. A large cohesive unit may stay local; no hard LOC limits or automatic splitting. Do not silently accumulate mixed responsibilities through small edits or turn affected-code assessment into repository-wide cleanup.
+
+Structural transformations below are recommendations, not permission to refactor existing code; apply the plan and approval gate before mutation.
+
 | Checked condition | Required proportionate decision |
 |---|---|
 | cohesive responsibility, inline flow clearer | keep local; do not extract obvious expressions, assignments or wrappers |
@@ -35,7 +39,13 @@ For material interface design, start with concrete caller usage, input/output an
 
 Helpers must earn indirection: a real concept, rule, process, reusable behavior or useful test/side-effect boundary should be clearer than inline code. Single-use helpers need meaningful names. Avoid trivial one-line/pass-through wrappers, excessive parameter threading and call-chain hopping; inline helpers with no semantic value.
 
-For checked God-function/file pressure, inventory responsibilities, compare under/over-decomposition and select a cohesive family seam. Preserve behavior; verify functional and structural improvement. Proceed with clear low-risk touched repair, bound broad/runtime-critical work. Progress means moved responsibility/decisions, reduced burden or clearer state/dependency/test boundaries—not files/aliases/facades/delegation. Batch by responsibility, not helper/task/phase/patch.
+For checked God-function/file pressure, inventory responsibilities, compare under/over-decomposition and propose a cohesive family seam. Preserve behavior; verify functional and structural improvement after approved execution. Progress means moved responsibility/decisions, reduced burden or clearer state/dependency/test boundaries, not files/aliases/facades/delegation. Batch by responsibility, not helper/task/phase/patch.
+
+### Refactor plan and approval
+
+Before any refactor of existing code, including local or low-risk extraction, splitting, renaming or reorganization, present a concrete proportional plan and obtain explicit user approval before mutation. A feature/fix request is not consent to restructure existing code; ordinary scoped edits that do not restructure it are not automatically refactors. Classify the actual transformation, not its label; local/tiny/tactical/behavior-preserving labels do not bypass approval.
+
+The plan states checked pressure and the simpler sufficient alternative; before/after responsibilities and dependencies; scope/exclusions and protected behavior/callers/failures/side effects; ordered small transformations; functional and structural proof; risks and stop/recovery. A short chat plan suffices for a small refactor, with no mandatory new artifact. Reuse approval when an existing approved plan covers the transformation; [Execution](execution-and-goal-frame.md) owns continuation, material-deviation consultation and independent authorized work.
 
 ### Semantic source naming
 
@@ -169,8 +179,9 @@ After migration cutover keep one active source/path/authority for the migrated r
 
 ## Trigger Dispatch and Boundaries
 
-- material source/state growth or a smell → Part A ownership/representation/decomposition gate; detection alone is not repair
-- refactor or selected implementation → behavior preservation/completeness and Part B matching proof
+- material/cumulative source growth or a smell → affected-structure assessment and proportional proposal; detection alone is not refactor permission
+- refactor → concrete plan and explicit user approval before mutation, then behavior preservation and functional/structural proof
+- selected implementation → completeness and Part B matching proof; do not silently add a refactor
 - bug/missing value → discrimination and regression/gap classification before architecture
 - changed architecture/state authority → selected path proof plus safety delta/approval; former-path inactivity only for affected migration scope
 - temporary debt/path → Part C target and closure trigger; final-form local work needs no ceremonial track

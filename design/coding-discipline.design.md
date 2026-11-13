@@ -1,7 +1,7 @@
 # Design - Coding Discipline
 
 > **Parent Rule:** [../coding-discipline.md](../coding-discipline.md)
-> **Current Version:** 1.12
+> **Current Version:** 1.13
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [../changelog/coding-discipline.changelog.md](../changelog/coding-discipline.changelog.md)
 
@@ -25,6 +25,14 @@ It consolidates previously separate rule chains into one body-sufficient runtime
 ## Scope
 
 This design owns the target-state shape for responsibility boundaries, helper/comment discipline, behavior-preserving refactor, debug/test depth, and tactical convergence.
+
+### Structural assessment and approved refactoring
+
+Inspect affected structure before material additions, during cumulative growth and before non-trivial closeout. Assess responsibilities, cohesion/coupling, change reasons, state/dependency lifecycles, side effects, callers and test boundaries. Length is a signal, not a hard LOC limit or automatic split; a large cohesive unit may stay local. Do not silently let small edits accumulate unrelated responsibilities, or broaden assessment into repository-wide cleanup.
+
+Before any refactor, including local or low-risk extraction/splitting, present a concrete proportional plan and obtain explicit user approval. The plan identifies checked pressure and the simpler sufficient alternative, before/after responsibilities and dependencies, scope/exclusions, protected behavior/callers/failures/side effects, ordered small transformations, functional and structural proof, risks and stop/recovery. A short chat plan is sufficient for a small transformation; no mandatory new artifact. An approved plan covering the transformation can be reused without asking again. A feature/fix request is not consent to restructure existing code; ordinary scoped edits that do not restructure it are not automatically refactors. Classify the actual transformation, not its label.
+
+[Execution](execution-and-goal-frame.design.md) owns continuation and material-deviation consultation; structural advice is not mutation authority. Meaningful improvement moves responsibilities/decisions, reduces original-unit burden or clarifies state/dependency/test boundaries while preserving behavior. More helpers/files, a facade or passing tests alone is not structural proof.
 
 ### Contract-first coding
 

@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.80</b><br><sub>Runtime Clarity and Lifecycle</sub>
+  <b>v10.81 candidate</b><br><sub>Approved Refactors and Repository Review</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current release:** [v10.80](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.80) ships actionable handoffs, plain synthesis, distinct work states, obligation review and lifetime-based artifact placement. Main19 is **191,506 → 172,625 Unicode characters (9.86% net reduction)** including additions, with substantive owners and safety/proof controls retained. Source Node56/56, native Linux fixtures and semantic checks passed; Main19 installation and103 selected public file bytes/Git modes are verified. Coordinated [MCI0.9.43](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/memory-context-intelligence--v0.9.43) admits trace-supported enrichment at existing owners and passed212 package tests plus21-file installed-runtime parity. [P073-24](phase/phase-073-24-runtime-clarity-lifecycle-compaction.md) records synthetic feedback/baseline limits; no measured model benefit is claimed. Open sessions still need the appropriate new context/plugin reload; installation does not prove adoption.
+> **Current candidate:** v10.81 adds affected-structure assessment and concrete approved plans before every refactor, including local/low-risk work. Exact approved transformations continue without repeated questions; material scope changes need consultation. Root [AGENTS.md](AGENTS.md) guides Codex review, and the six source-only Skills now live under `skills/`. Main19 membership/installers stay unchanged; personal Skills and plugins are not deployed or updated. Node61/61, native Bash installer fixtures and twelve bounded synthetic decisions passed; actual installation and public release verification remain pending in [P073-25](phase/phase-073-25-approved-refactoring-and-repository-review.md). [v10.80](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.80) remains the latest published release until those gates pass. No model-benefit or actual hosted-review claim.
 
 <!-- CTA Buttons -->
 <p>
@@ -249,18 +249,18 @@ These capabilities summarize the current operating model at the front-page level
 
 ## On-demand Skills
 
-Rules define the behavioral baseline; Skills provide a procedure when a matching task needs it. The six curated Skills in [`skill/`](skill/) are reusable across projects without a required browser CLI, language, provider or business system.
+Rules define the behavioral baseline; Skills provide a procedure when a matching task needs it. The six curated Skills in [`skills/`](skills/) are reusable across projects without a required browser CLI, language, provider or business system.
 
 | Skill | Use it for |
 |---|---|
-| [Evidence-based diagnosis and remediation](skill/evidence-based-diagnosis-and-remediation/SKILL.md) | Discriminate causes, evaluate findings and research feasible remedies |
-| [Software test validation](skill/software-test-validation/SKILL.md) | Select useful proof, reuse the fitting harness and interpret failures |
-| [Workflow continuity](skill/workflow-continuity/SKILL.md) | Resume checked work, preserve passed gates and hand off exact blockers |
-| [Technical communication](skill/technical-communication/SKILL.md) | Explain checked meaning, results and next actions clearly |
-| [Validating agent guidance](skill/validating-agent-guidance/SKILL.md) | Evaluate instruction drafts and extract provenance-bound reusable lessons |
-| [Coverage receipt reconciliation](skill/coverage-receipt-reconciliation/SKILL.md) | Reconcile existing reports, reached assertions and overlapping coverage |
+| [Evidence-based diagnosis and remediation](skills/evidence-based-diagnosis-and-remediation/SKILL.md) | Discriminate causes, evaluate findings and research feasible remedies |
+| [Software test validation](skills/software-test-validation/SKILL.md) | Select useful proof, reuse the fitting harness and interpret failures |
+| [Workflow continuity](skills/workflow-continuity/SKILL.md) | Resume checked work, preserve passed gates and hand off exact blockers |
+| [Technical communication](skills/technical-communication/SKILL.md) | Explain checked meaning, results and next actions clearly |
+| [Validating agent guidance](skills/validating-agent-guidance/SKILL.md) | Evaluate instruction drafts and extract provenance-bound reusable lessons |
+| [Coverage receipt reconciliation](skills/coverage-receipt-reconciliation/SKILL.md) | Reconcile existing reports, reached assertions and overlapping coverage |
 
-**Source and use:** start with the linked `SKILL.md`; read its linked references only when that procedure needs them. This repository's singular `skill/` directory is authoring/release source, not a Claude Code auto-discovery directory. An explicitly selected deployment would place one whole selected Skill directory, including its linked references, under `<project-root>/.claude/skills/` or the user's runtime Skill directory. Inspect the destination owner and any same-name collision first; do not overwrite an independently managed Skill or create a second writer. No Skill installer or automatic synchronization is provided in this release.
+**Source and use:** start with the linked `SKILL.md`; read its linked references only when that procedure needs them. This repository's `skills/` directory is authoring/release source, not a Claude Code auto-discovery directory. An explicitly selected deployment would place one whole selected Skill directory, including its linked references, under `<project-root>/.claude/skills/` or the user's runtime Skill directory. Inspect the destination owner and any same-name collision first; do not overwrite an independently managed Skill or create a second writer. No Skill installer or automatic synchronization is provided in this release.
 
 The existing launcher still installs only the nineteen Rules to `.claude/rules/`. It does not deploy this library or change companion plugins. These curated versions omit personal/project policy, tool-specific commands and local operational history; the original personal library is not overwritten or migrated. Plugin-bundled Skills continue to install through their own packages, without standalone duplicates.
 
@@ -1278,6 +1278,10 @@ These rules evolve based on real-world usage:
 - 💬 **User feedback** → Your experience matters
 - 🔐 **Safety considerations** → Stronger boundaries and safer defaults
 - ⚡ **Context discipline** → Keeping runtime guidance useful without unnecessary bloat
+
+### Repository Code Review
+
+[`AGENTS.md`](AGENTS.md) maps repository owners and supplies Codex review guidance for Runtime semantics, refactor consent, installer ownership and affected consumers. It is source guidance, not part of the nineteen installed Rules. Hosted GitHub integration and its review settings control when a review runs; adding this file does not enable or schedule reviews, auto-fix changes or merge pull requests. See the [official Codex GitHub review guide](https://learn.chatgpt.com/docs/third-party/github) for setup. Tests and required approvals remain separate.
 
 ### 📝 Contribution Guidelines
 

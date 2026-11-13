@@ -33,6 +33,15 @@ Current RULES require the assistant to:
 
 ---
 
+## Refactor-consent continuation variants
+
+These virtual cases extend scope/continuation coverage; they are not additional observed incidents.
+
+- A bounded refactor plan is approved, then a new cross-service ownership change is discovered: retain exact approved work and proof, consult before the new affected action, and continue independent authorized work.
+- A feature request has ambiguous output or a material user-owned trade-off: ask one bounded substantive question before the affected action. If the unknown is a source/SDK fact, inspect the fitting source instead of asking the user to guess.
+- A goal passes its selected gate while optional cleanup remains: close the goal and leave the refactor unselected. If the selected outcome truly requires a structural dependency, retain its approval blocker rather than mutating without consent or claiming completion.
+- Review output recommends a refactor: treat it as a proposal, not approval. Do not turn the finding into a task or mutation merely because a helper is available.
+
 ## Observed case
 
 Checked transcript-derived example:

@@ -68,6 +68,37 @@ test('complexity admission compares a simpler complete alternative and its carry
   requiresClause(structure, /Passing tests[\s\S]*not necessity/i);
 });
 
+test('structural assessment catches cumulative growth without mandatory splitting', () => {
+  requiresClause(coding, /affected structure before material additions, during cumulative growth and before non-trivial closeout/i);
+  requiresClause(coding, /cohesion\/coupling[\s\S]*state\/dependency[\s\S]*test boundaries/i);
+  requiresClause(coding, /large cohesive unit[\s\S]*no hard LOC/i);
+  requiresClause(coding, /Do not silently accumulate mixed responsibilities/i);
+});
+
+test('every refactor requires a concrete proportional plan and explicit approval', () => {
+  requiresClause(coding, /Before any refactor[\s\S]*including local or low-risk[\s\S]*explicit user approval/i);
+  requiresClause(coding, /before\/after responsibilities and dependencies[\s\S]*scope\/exclusions[\s\S]*callers\/failures\/side effects/i);
+  requiresClause(coding, /ordered small transformations[\s\S]*functional and structural proof[\s\S]*stop\/recovery/i);
+  requiresClause(coding, /short chat plan[\s\S]*no mandatory new artifact/i);
+  requiresClause(coding, /Structural transformations below are recommendations[\s\S]*plan and approval/i);
+  assert.doesNotMatch(coding, /Proceed with clear low-risk touched repair/i);
+  assert.doesNotMatch(execution, /Proceed with safe local cohesive repair/i);
+});
+
+test('approved refactors continue while material deviations wait for consultation', () => {
+  requiresClause(execution, /approved plan[\s\S]*without repeat permission/i);
+  requiresClause(execution, /material scope, contract, ownership or risk[\s\S]*before the affected action/i);
+  requiresClause(execution, /Independent authorized work continues[\s\S]*proposal waits/i);
+  requiresClause(coding, /feature\/fix request is not consent[\s\S]*ordinary scoped edits[\s\S]*not automatically refactors/i);
+  requiresClause(coding, /actual transformation[\s\S]*not its label/i);
+});
+
+test('material user ambiguity is clarified without outsourcing checkable facts', () => {
+  requiresClause(execution, /user intent, required output, scope, acceptance or material trade-off[\s\S]*ask one bounded substantive question[\s\S]*before the affected action/i);
+  requiresClause(execution, /Inspect checkable technical facts directly/i);
+  requiresClause(execution, /Do not invent a broader objective/i);
+});
+
 test('test admission requires a distinct evidence gap without count-based quotas', () => {
   const proof = coding.split('### Select the smallest meaningful proof')[1]?.split('### Debug and root-cause discrimination')[0];
   assert.ok(proof, 'the existing verification owner must remain active');

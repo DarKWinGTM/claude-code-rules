@@ -1,7 +1,7 @@
 # Design - Execution and Goal Frame
 
 > **Parent Rule:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.40
+> **Current Version:** 1.41
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [../changelog/execution-and-goal-frame.changelog.md](../changelog/execution-and-goal-frame.changelog.md)
 
@@ -29,6 +29,12 @@ This design owns the target-state shape for execution continuity, goal-set revie
 Understand selected behavior and decision-changing facts before mechanism selection; establish enough data/owner/lifecycle/dependency/failure/acceptance context to compare realistic approaches and order required changes and proof. Distinguish a tentative user method from an explicit constraint, and investigate technical unknowns rather than asking the user to guess platform capabilities. For a pivotal design assumption, connect actual platform capability and the controllable operation/transport boundary to the intended consumer and desired outcome before endorsing costly dependent elaboration. A component check defined around our own assumed behavior does not establish that causal link. Prioritize source/contract inspection or the smallest authorized check/reversible experiment by consequence and reversal cost; revise affected options from the result. Provisional design remains valid without treating an unresolved premise as settled fact. This is proportional reasoning, not mandatory waterfall, exhaustive research, fixed alternative counts, per-design PoC/live proof or per-edit artifacts. User-owned constraints, decisions and existing safety/approval remain binding. [Coding Discipline](coding-discipline.design.md) owns predicates/state/representation and test execution; [Evidence Discipline](evidence-discipline.design.md) owns claim and nonfinding thresholds.
 
 Temporary development/test/no-live constraints govern execution, not Product behavior by implication. Test isolation stays at its fitting boundary; selected runtime modes/feature flags remain valid. Unverified assumptions must not become permanent eligibility conditions. Preserve user choices, safety/approval, valid completed work and selected terminal proof.
+
+### Refactor consent and scope clarification
+
+Proactive assessment does not select structural mutation. [Coding Discipline](coding-discipline.design.md) owns the concrete plan and functional/structural proof; explicit user approval is required before any refactor, even a safe local one. A feature/fix objective, a smell or an internal review cannot supply that consent. Continue transformations already covered by the approved plan without repeat permission; pause the affected action and consult before materially changing its scope, contract, ownership or risk. Independent authorized work continues while a refactor proposal waits. Do not bypass this gate by calling restructuring a small fix, tactical repair or normal feature implementation.
+
+When user intent, required output, scope, acceptance or material trade-off remains ambiguous, ask one bounded substantive question before the affected action. Inspect checkable technical facts directly rather than asking the user to guess them. Do not invent a broader objective or repeatedly ask about already approved safe steps. Large cohesive code and ordinary non-refactoring feature/fix work remain valid; an unselected optional refactor does not block an otherwise complete goal, while a necessary structural dependency remains visibly approval-blocked.
 
 ### Decision and documentation cadence
 

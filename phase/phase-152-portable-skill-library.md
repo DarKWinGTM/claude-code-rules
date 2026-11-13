@@ -9,6 +9,8 @@
 > **Design References:** [Master](../design/design.md) v10.79; [Skill library](../design/design/skill-library.design.md) v10.79
 > **Patch References:** none; additive final-form source with a directly reviewable scoped Git diff
 
+Current-path maintenance: [P073-25](phase-073-25-approved-refactoring-and-repository-review.md) normalizes this existing source library to `skills/` without changing its procedures or selecting deployment. Original `skill/` literals below describe the completed v10.79 publication, not a second active source.
+
 ## Objective and Lineage
 
 Ship six curated cross-project Skills under `skill/`, separate from Main19 and companion plugins, then install/check the unchanged Rules and publish the selected source/tag/GitHub Release. Do not overwrite or migrate personal Skills.

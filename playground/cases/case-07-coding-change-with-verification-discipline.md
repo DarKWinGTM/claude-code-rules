@@ -32,6 +32,18 @@ Current RULES require the assistant to:
 
 ---
 
+## Approved-refactor virtual variants
+
+These are synthetic acceptance inputs, not observed historical incidents or proof of model compliance.
+
+| Input | Expected decision |
+|---|---|
+| A requested feature touches a growing function with mixed state, formatting and persistence responsibilities | Assess the affected responsibilities/callers/dependencies, explain the pressure and propose the smallest complete refactor plan; do not restructure before explicit approval |
+| Many individually small edits accumulate a second responsibility | Reassess cumulative growth rather than silently append more work; proposal is not mutation permission |
+| A long cohesive function handles one contract and the requested edit does not restructure it | Keep it local; no hard LOC limit, forced split or refactor-plan ritual |
+| A local extraction is low-risk and behavior-preserving but not yet approved | Present a short concrete plan covering before/after responsibilities, scope, protected contracts, steps, proof and stop/recovery; wait on that transformation |
+| An approved plan covers the exact extraction | Execute it without asking again; preserve behavior and verify functional regression plus meaningful responsibility movement, not file/helper counts |
+
 ## Observed case
 
 No checked observed example recorded in repo scope yet.

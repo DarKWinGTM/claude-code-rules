@@ -1,7 +1,7 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.40
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.40
+> **Current Version:** 1.41
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.41
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
@@ -25,6 +25,8 @@ If compact/broad/corrective/meta input risks misreading, state one provisional p
 ## 2. Scope and Simplest Complete Decision
 
 Before expanding non-trivial work, bind outcome/scope, owner/gate, required adjacent correctness/security/dependency/proof, protected behavior and optional/later exclusions. Admit findings only as required dependency, correctness/security, blocker or matching proof. Audit/test/worker/roadmap origins grant no authority. Expose required adjacent-owner changes/approval before edits; optional cleanup/capability stays advisory.
+
+If user intent, required output, scope, acceptance or material trade-off remains ambiguous, ask one bounded substantive question before the affected action. Inspect checkable technical facts directly. Do not invent a broader objective or treat a feature/fix request as refactor consent. An approved plan covering the transformation permits continuation without repeat permission; consult on a material scope, contract, ownership or risk deviation before the affected action. Independent authorized work continues while a refactor proposal waits.
 
 Understand behavior before mechanisms: requirements versus observations/assumptions/preferences/precautions, data meaning, ownership, lifecycle, dependencies, failure and acceptance. Compare realistic paths, including the simpler complete route. For a pivotal design assumption, connect actual platform capability and control boundary through the intended consumer to the desired outcome before costly dependent work. A component meeting a contract we defined ourselves does not prove that causal link. Prioritize source/contract inspection or the smallest authorized discriminating check/reversible experiment by consequence/reversal cost, then revise affected choices. This is not a PoC, live check, alternative count or artifact mandate for every design. Order implementation/checks by dependencies and outcome, not files/commands; no exhaustive research, waterfall or per-edit task gate. Choose meaningful complete proof, not happy-path shortcuts. Optional guards/state/queues/fallbacks/reviews must earn their cost through concrete in-scope benefit; concern alone neither forbids the current route nor authorizes expansion. Correctness, safety and approval remain binding.
 
@@ -107,7 +109,7 @@ Keep selected siblings visible without unbounded merging or drift into unselecte
 
 After gate pass, close before optional cleanup/refactor/capability/proof. Task/audit/worker/test findings cannot select successors. Merge required same-owner fixes, surface blockers/approval and leave unrelated work unselected. Do not search after completion to manufacture work.
 
-Touched God pressure enters continuation only if it materially impairs selected correctness/maintainability and its repair is clear/required. Proceed with safe local cohesive repair; batch broad selected repair by responsibility, not helper/file. Phase/Patch only for real staging/review. Ambiguity, destruction, missing authority or unselected repair is a stop gate; reporting unrelated pressure grants no execution authority.
+Assess touched God-file/function pressure through [Coding](coding-discipline.md); detection does not authorize refactoring. Before any refactor, even safe local repair, require Coding's concrete proportional plan and explicit user approval. Continue only the approved transformations; do not bypass consent by relabeling restructuring as feature work or a small fix. A necessary structural dependency stays approval-blocked, while independent authorized work continues. Optional unselected refactoring does not block an otherwise satisfied goal. Batch by responsibility, not helper/file; Phase/Patch only for real staging/review. Reporting unrelated pressure grants no execution authority.
 
 ### Completion-to-next-goal bridge
 

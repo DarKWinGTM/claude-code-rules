@@ -1,11 +1,11 @@
 import assert from 'node:assert/strict';
-import { readFileSync, readdirSync, lstatSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, lstatSync } from 'node:fs';
 import { dirname, extname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import test from 'node:test';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const library = resolve(root, 'skill');
+const library = resolve(root, 'skills');
 const names = [
   'coverage-receipt-reconciliation',
   'evidence-based-diagnosis-and-remediation',
@@ -52,6 +52,17 @@ test('library contains only the selected six Skills and portable document payloa
   const folders = readdirSync(library).filter((name) => lstatSync(resolve(library, name)).isDirectory()).sort();
   assert.deepEqual(folders, names);
   assert.ok(documents().length >= names.length);
+});
+
+test('canonical Skill catalog resolves through the plural source with no former alias', () => {
+  assert.equal(library, resolve(root, 'skills'));
+  assert.equal(existsSync(resolve(root, 'skill')), false, 'former source must not remain active');
+  const readme = readFileSync(resolve(root, 'README.md'), 'utf8');
+  for (const name of names) {
+    const link = `skills/${name}/SKILL.md`;
+    assert.ok(readme.includes(`](${link})`), `missing current catalog link: ${link}`);
+    assert.ok(lstatSync(resolve(root, link)).isFile());
+  }
 });
 
 test('all linked Skill documents resolve inside the library', () => {
@@ -121,12 +132,12 @@ test('receipt reconciliation preserves reached states, bindings and unique cover
   assert.match(text, /rerun only affected/i);
 });
 
-test('Rules installers keep Skills outside their nineteen-file payload', () => {
+test('Rules installers keep Skills and repository guidance outside their nineteen-file payload', () => {
   const bash = readFileSync(resolve(root, 'script/setup-claude-code-rules.sh'), 'utf8');
   const powershell = readFileSync(resolve(root, 'script/setup-claude-code-rules.ps1'), 'utf8');
   const shellFiles = bash.match(/active_rule_files=\(([\s\S]+?)\n\)/)?.[1].match(/[\w-]+\.md/g);
   const psFiles = powershell.match(/\$activeRuleFiles\s*=\s*@\(([\s\S]+?)\n\s*\)/)?.[1].match(/[\w-]+\.md/g);
   assert.equal(shellFiles?.length, 19);
   assert.deepEqual(psFiles, shellFiles);
-  assert.ok(shellFiles.every((name) => !name.includes('SKILL')));
+  assert.ok(shellFiles.every((name) => !name.includes('SKILL') && name !== 'AGENTS.md'));
 });

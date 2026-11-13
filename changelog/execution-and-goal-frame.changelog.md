@@ -1,7 +1,7 @@
 # Changelog - Execution and Goal Frame
 
 > **Parent Document:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.40
+> **Current Version:** 1.41
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.41 | 2026-11-13 | **[Bounded refactor consent and material scope clarification](#version-141)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.40 | 2026-11-11 | **[Clarified lifecycle and operational reporting](#version-140)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.39 | 2026-10-27 | **[Connected pivotal mechanism checks to intended outcomes without blocking exploration](#version-139)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
 | 1.38 | 2026-10-16 | **[Refined work-preserving settled synthesis instead of progress-driven sync](#version-138)** | 4a8d9ac0-ecf9-40c4-961e-634583157b6c |
@@ -56,6 +57,17 @@
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-141"></a>
+## Version 1.41: Refactor consent and material scope clarification
+
+**Date:** 2026-11-13
+**Session:** 08244912-a195-4926-84e6-8c202c667ba5
+
+- Consult before an affected action when user intent, output, scope, acceptance or a material trade-off remains ambiguous; inspect checkable technical facts directly instead of inventing a broader objective.
+- Reuse approval for transformations covered by an approved plan without repeat permission; ask before material scope/contract/ownership/risk deviations. A feature/fix request or smell is not structural-mutation consent.
+- Replace direct safe-local-refactor continuation with Coding's concrete plan plus explicit approval. Independent authorized work continues while proposals wait; an optional unselected refactor does not block a satisfied goal, and necessary structural dependencies remain visibly approval-blocked.
+- [P073-25](../phase/phase-073-25-approved-refactoring-and-repository-review.md) owns source/synthetic/install/publication gates and limits, not this version history.
 
 <a id="version-140"></a>
 ## Version 1.40: Clarified lifecycle and operational reporting

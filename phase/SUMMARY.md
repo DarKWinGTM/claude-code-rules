@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.35
+> **Current Version:** 2.36
 > **Target Design:** [../design/phase-todo-artifact.design.md](../design/phase-todo-artifact.design.md) v1.40
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5
-> **Status:** P073-24/v10.80 and coordinated MCI075-01/0.9.43 source/install/publication gates verified-in-scope; receipt-only documentation preserves immutable source tags
+> **Status:** P073-25/v10.81 active; source/synthetic checks passed, installation/publication pending. P073-24/MCI075-01 remain closed
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,7 +21,7 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active Slice
 
-[P073-24 — Runtime clarity, storage lifetime and compaction](phase-073-24-runtime-clarity-lifecycle-compaction.md) is verified-in-scope: Main19 semantic/source checks, actual19-file installation, coordinated MCI21-file installation, atomic immutable source publication and103 selected public byte/Git-mode checks passed. The child records source/tag/Release identities, the feedback-corrected synthetic handoff omission and baseline-enrichment limit. This receipt changes documentation only; no successor, reload or causal-benefit claim is selected. Coordinated [MCI075-01](../plugin/memory-context-intelligence/phase/phase-075-01-incremental-rule-enrichment.md) retains separate eligibility ownership; previous slices remain closed.
+[P073-25: Approved refactoring and repository review](phase-073-25-approved-refactoring-and-repository-review.md) is active: Coding1.13/Execution1.41 require proportional approved refactor plans and bounded scope questions; root AGENTS provides review guidance, and the source-only library moves to `skills/`. Node61/61, native Bash installer fixtures, eight full-Main19 and four AGENTS guided synthetic decisions passed; actual Main19 installation and scoped git/tag/Release/public readback remain selected gates. Tasks34/35 hand source evidence to install/publication36 and finalizer37. Previous P073-24/MCI075-01 and P152 remain completed; no plugin update, Skill deployment, session reload or hosted PR operation is selected.
 
 ### Latest Verified Slice
 

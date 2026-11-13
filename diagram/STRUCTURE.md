@@ -64,6 +64,7 @@ This file currently uses a Kroki-compatible Mermaid source block as the canonica
 flowchart TB
   subgraph FrontPage[README / Front Page]
     README["README.md<br/>Overview / current release / install / current-state"]
+    ReviewGuidance["AGENTS.md<br/>Repository map / code-review guidance, not automation"]
   end
 
   subgraph Runtime[Active Runtime Rule Layer]
@@ -73,7 +74,7 @@ flowchart TB
   end
 
   subgraph Procedures[On-demand Skill Source]
-    SkillSource["skill/name/SKILL.md<br/>Six portable procedures, separate from Main19"]
+    SkillSource["skills/name/SKILL.md<br/>Six portable procedures, separate from Main19"]
   end
 
   subgraph Design[Textual Target-State Truth]
@@ -108,6 +109,8 @@ flowchart TB
   end
 
   README --> RootRules
+  README --> ReviewGuidance
+  ReviewGuidance -. reviews changes to .-> RootRules
   README --> SkillSource
   DesignRoot --> SkillSource
   RootRules -. govern selected work .-> SkillSource
@@ -170,7 +173,8 @@ flowchart TB
 ## Authority boundaries
 
 - `design/` owns semantic truth and target-state meaning.
-- `skill/` owns six curated on-demand procedures under the [Skill library design](../design/design/skill-library.design.md); it is source, not runtime discovery or part of the nineteen-Rule installer. Personal Skills and plugin packages retain separate deployment/ownership boundaries.
+- `AGENTS.md` maps repository owners and code-review guidance; it is not a Main19 Rule, installer payload or review trigger.
+- `skills/` owns six curated on-demand procedures under the [Skill library design](../design/design/skill-library.design.md); it is source, not runtime discovery or part of the nineteen-Rule installer. Personal Skills and plugin packages retain separate deployment/ownership boundaries.
 - `diagram/` owns Kroki-compatible visual synthesis and relationship explanation.
 - If text and diagram differ, `design/` wins semantically.
 - `diagram/STRUCTURE.md` is the global structural view, not a substitute for design semantics.
