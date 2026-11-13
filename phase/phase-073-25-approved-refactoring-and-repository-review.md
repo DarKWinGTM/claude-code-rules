@@ -3,7 +3,7 @@
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 073-25
 > **Current Version:** 10.81
-> **Status:** Source/synthetic checks verified-in-scope; installation and publication pending
+> **Status:** Source/synthetic/installation/public-source verified-in-scope; docs-only receipts recorded outside the immutable tag
 > **Target Design:** [System design](../design/design.md) v10.81
 > **Design References:** [Coding](../design/coding-discipline.design.md) v1.13; [Execution](../design/execution-and-goal-frame.design.md) v1.41; [Repository model](../design/design/repository-model.design.md); [Skill library](../design/design/skill-library.design.md)
 > **Patch References:** none; approved plan and scoped source diff supply the before/after boundary
@@ -31,9 +31,9 @@ Completed [P073-24](phase-073-24-runtime-clarity-lifecycle-compaction.md) owns d
 - [x] Normalize target contracts, observe four new Runtime written-contract REDs and the plural-library packaging RED, then implement at existing owners.
 - [x] Run the final selected Node regressions and native Bash installer fixtures.
 - [x] Finish full-final-Main19 interpretation and separate AGENTS/source review, then selected links/versions/preservation and exact staged postflight.
-- [ ] Commit selected source, retain fresh pre-install recovery, install Main19 through the existing launcher and verify exact parity/manifest/other-owner preservation.
-- [ ] Atomic non-force master plus immutable annotated tag; Main latest non-draft/non-prerelease Release; bounded fresh public commit/tag/Release/selected byte/Git-mode readback.
-- [ ] Record actual receipts, docs-only follow-up push without retagging, and final reconciliation.
+- [x] Commit selected source, retain fresh pre-install recovery, install Main19 through the existing launcher and verify exact parity/manifest/other-owner preservation.
+- [x] Atomic non-force master plus immutable annotated tag; Main latest non-draft/non-prerelease Release; bounded fresh public commit/tag/Release/selected byte/Git-mode readback.
+- [x] Record actual receipts in the selected six owners without changing Runtime/Skills or retagging. Finalizer37 owns this docs-only follow-up push/readback and records its terminal witness in the live task and retained evidence.
 
 ## Development Verification / TestKit Coverage
 
@@ -45,7 +45,15 @@ The fresh Main19 reader loaded all nineteen complete bodies across four bound pa
 
 Main verified ten moved Skill documents byte/mode-exact, seventeen other Runtime Rules unchanged,1,070 protected tracked source files unchanged,539 selected file links resolving, both original owner-history suffixes exact, aligned nineteen-owner arrays and scoped whitespace. Only the two original TrialSource diagram additions remain unstaged. One workspace-local settings fingerprint changed before any installation; no cause is attributed and no restoration is selected. The original private baseline remains retained separately from the current install-window prestate; whole-wave config preservation is not claimed.
 
-Installation and public readback remain pending. Existing dense overview/design/changelog/summary bodies receive only bounded current navigation and owner-specific contracts; broader preservation-first rollover stays deferred to those owners, with history retained. No whole-project/untracked-tree convergence claim.
+Actual Main19 installation and public-source readback passed in the selected scope. Existing dense overview/design/changelog/summary bodies receive only bounded current navigation and owner-specific contracts; broader preservation-first rollover stays deferred to those owners, with history retained. No whole-project/untracked-tree convergence claim.
+
+## Installation and Publication Receipt
+
+- **Source:** exact33-file commit `f6b003ccb30bf1f910f1dee549d104b212e70ca5`, parent `cef9b7ccffc83070530a8a01ff0ccb259da87da9`. Main19 membership/installer sources and all ten moved Skill bodies/modes remain unchanged outside the selected two Runtime owners.
+- **Installation:** the existing launcher exited0 for the selected project target. All nineteen substantive bodies, bytes, Git blobs, filesystem modes and ordered ownership-manifest rows match the source commit. Fresh nineteen-file plus manifest recovery was retained before dispatch. The344 install-window protected fingerprints and six other-owner target entries stayed unchanged, with no quarantine or Skill/plugin deployment. The earlier unattributed workspace-settings drift remains a distinct whole-wave preservation limit, not an installer change or selected restoration.
+- **Publication:** fresh ancestry/tag/Release-availability checks preceded an atomic non-force master/tag push. Immutable annotated `v10.81` object `8b2afd269826eaad6cb821f092f926623239225e` peels to the source commit. [Main Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.81), published `2026-11-13T10:59:07Z`, is latest, non-draft and non-prerelease; its reviewed body and target were read back.
+- **Public payload:** fresh commit/parent/master/tag/peel/Release checks plus50 selected file bodies, Git modes and blob identities passed, covering646,071 bytes. The former `skill/` source is absent from the bound public tree; no downloaded code was executed. This is selected source/Runtime proof, not whole-project convergence.
+- **Receipt boundary:** this later docs-only follow-up touches only README, TODO, phase summary/this phase and master/version-detail changelogs. These six updated document bodies are outside source-tag document parity; Runtime, AGENTS and Skill source remain at the immutable source commit. Tasks34/35/36 handed completed proof to finalizer37, which owns the receipt push/readback terminal witness and closes last. No successor selected.
 
 ## Publication, Stop and Recovery
 

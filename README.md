@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.81 candidate</b><br><sub>Approved Refactors and Repository Review</sub>
+  <b>v10.81</b><br><sub>Approved Refactors and Repository Review</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current candidate:** v10.81 adds affected-structure assessment and concrete approved plans before every refactor, including local/low-risk work. Exact approved transformations continue without repeated questions; material scope changes need consultation. Root [AGENTS.md](AGENTS.md) guides Codex review, and the six source-only Skills now live under `skills/`. Main19 membership/installers stay unchanged; personal Skills and plugins are not deployed or updated. Node61/61, native Bash installer fixtures and twelve bounded synthetic decisions passed; actual installation and public release verification remain pending in [P073-25](phase/phase-073-25-approved-refactoring-and-repository-review.md). [v10.80](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.80) remains the latest published release until those gates pass. No model-benefit or actual hosted-review claim.
+> **Current release:** [v10.81](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.81) adds affected-structure assessment and concrete approved plans before every refactor, including local/low-risk work. Exact approved transformations continue without repeated questions; material scope changes need consultation. Root [AGENTS.md](AGENTS.md) guides Codex review, and the six source-only Skills live under `skills/`. Main19 membership/installers remain unchanged; no personal Skill deployment or plugin update. Node61/61, native Bash fixtures, twelve guided synthetic decisions, actual Main19 installation parity and fresh-public bytes/Git modes for50 selected files passed. The source tag is immutable; a separate docs-only receipt records installation/publication in [P073-25](phase/phase-073-25-approved-refactoring-and-repository-review.md#installation-and-publication-receipt). No model-benefit, current-session adoption or actual hosted-review claim.
 
 <!-- CTA Buttons -->
 <p>

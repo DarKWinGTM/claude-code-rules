@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-11-13
-> **Current Release:** v10.80 remains published/latest; v10.81 source candidate is under selected install/publication verification
-> **Active Wave:** P073-25 approved refactoring, repository review guidance and plural Skills source; source checks passed, remaining gates in the linked phase
+> **Current Release:** v10.81 published/latest; source, actual Main19 installation and scoped public payload verified
+> **Active Wave:** P073-25 technical gates verified; this docs-only receipt is finalized through task37. No successor selected; RAM/OOM Task32 remains paused
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,11 +10,13 @@
 
 ## Active / In Progress
 
-- [ ] [P073-25 / v10.81](phase/phase-073-25-approved-refactoring-and-repository-review.md): source Node61/61/native fixtures, twelve guided synthetic decisions and scoped preservation passed; finish Main19 installation, immutable source/tag/Release/public readback and receipt-only finalization. Main owns edits; tasks34/35 feed36 and finalizer37. No extra Runtime Rule, personal Skill deployment, plugin update or actual hosted PR review is selected. RAM/OOM Task32 stays paused.
+P073-25 source/install/publication gates are verified; finalizer37 records and verifies this separate receipt commit. RAM/OOM Task32 stays paused; no successor execution is selected.
 
-Earlier MCI corrective source gates remain closed; the selected enrichment work above is a distinct child. P073-18 Main remains verified and closed. Earlier settings evidence and the prior internal-agent restriction violation remain separately unresolved; this source correction does not authorize restoration or model validation.
+Earlier MCI corrective/enrichment gates and P073-18 Main remain closed; they are not part of P073-25. Earlier settings evidence and the prior internal-agent restriction violation remain separately unresolved; this release does not authorize restoration or model validation.
 
 ## Recently Completed
+
+- [x] **P073-25 / v10.81:** proactive affected-structure assessment, concrete plan plus explicit approval before every refactor, bounded scope clarification, root Codex review guidance and canonical source-only `skills/`. Node61/61, native Bash fixtures, eight full-Main19/four AGENTS guided decisions and selected source review passed. Exact33-file source `f6b003ccb30bf1f910f1dee549d104b212e70ca5`, actual Main19/manifest parity,344 install-window protected fingerprints/six other-owner target entries, immutable annotated `v10.81`, atomic non-force master/tag push, latest [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.81) and fresh-public50-file bytes/Git modes passed. Source tasks34/35 and install/publication36 handed evidence to finalizer37. This docs-only receipt does not retag or change Runtime/Skill behavior; [phase receipt and limits](phase/phase-073-25-approved-refactoring-and-repository-review.md#installation-and-publication-receipt) retain the earlier unattributed pre-install settings drift and uncounted extra review dispatch. No new Rule, personal Skill/plugin deployment, current-session adoption, causal benefit, hosted review or whole-project convergence claim.
 
 - [x] **P073-24 / v10.80 + MCI075-01 / package0.9.43:** actionable handoffs, plain synthesis, distinct states, obligation review and lifetime storage in the same19 owners; net9.86% character reduction. MCI permits trace-supported existing-owner enrichment while retaining suppression controls. Source Node56/56, MCI212/212, native fixtures/validator, scoped semantic/synthetic acceptance with disclosed limits, actual19+21-runtime parity and103-file fresh public bytes/Git modes passed. Exact86-path source `9c76f5600ce5b5d607b4c0169809ef418e4c7650`, immutable Main/plugin tags and both Releases are verified; Main alone is latest. [Main receipt](phase/phase-073-24-runtime-clarity-lifecycle-compaction.md#installation-and-publication-receipt) and [plugin receipt/exclusions](plugin/memory-context-intelligence/changelog/v0.1.91-incremental-rule-enrichment.changelog.md) preserve the checks and limits. This later docs-only record does not retag or change runtime; no causal model benefit, current-session adoption or whole-project convergence claimed.
 
