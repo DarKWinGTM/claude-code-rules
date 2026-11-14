@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.82</b><br><sub>Context-Sensitive Data Decisions</sub>
+  <b>v10.83</b><br><sub>Governed Skill Design</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
@@ -33,9 +33,7 @@
 </tr>
 </table>
 
-> **Current release:** [v10.82](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.82) enriches Coding1.14 with purpose/lifecycle-based data choices, hash guarantees/inputs and computation/loop validity. Legitimate projections/history, security work and fresh validation remain valid; no blanket hash/copy/loop ban or automatic cache. Approved refactor/scope contracts, Main19 membership/installers, root [AGENTS.md](AGENTS.md) and source-only `skills/` stay unchanged. Selected Node65/65, native Bash fixtures and seven guided synthetic decisions passed; bounded review found no material defect. Actual Main19 installation/manifest parity and fresh-public bytes/Git modes for36 selected files passed. The source tag is immutable; [P073-26 receipts](phase/phase-073-26-context-sensitive-data-decisions.md#installation-and-publication-receipt) separate this docs-only follow-up from source-tag parity. No model/performance benefit, current-session adoption or hosted-review claim.
-
-> **Selected development:** v10.83 adds the maintainable-code Skill, per-Skill design/history and bounded diagnosis/continuity refinements. [P152-01](phase/phase-152-01-governed-skill-development-and-adoption.md) tracks source checks, preservation-first root Skill adoption, unchanged Rules installation and publication separately; this is not yet the current release.
+> **Current release:** [v10.83](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.83) adds `designing-maintainable-code`1.0, local design/history for all seven curated Skills, and bounded diagnosis/continuity1.1 refinements. Choose structure from contracts, semantic responsibility and data lifecycles rather than size quotas or speculative abstraction. Source checks77/77, both Linux installer fixture suites and paired synthetic interpretations passed; selected native Skill adoption preserves enriched existing content. Main19 behavior/membership/installers and [AGENTS.md](AGENTS.md) stay unchanged. Actual Rule installation/readback and60-path fresh-public byte/Git-mode checks passed. [P152-01 receipts and limits](phase/phase-152-01-governed-skill-development-and-adoption.md#installation-and-publication-receipt) separate this follow-up from the immutable source tag and retain the incomplete pre-install preservation witness. No causal model/performance, full-session reload, native Windows or whole-project claim.
 
 <!-- CTA Buttons -->
 <p>

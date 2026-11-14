@@ -3,7 +3,7 @@
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 152-01
 > **Parent Phase:** [P152](phase-152-portable-skill-library.md)
-> **Status:** active; approved source, installation and publication gates pending
+> **Status:** verified in selected scope; source/procedure, native adoption, Main19 installation and immutable publication proof passed
 > **Target Version:** 10.83
 > **Session:** 10d553c2-05c0-41bc-af76-96be83d99cfe
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -30,8 +30,8 @@ P152 owns the existing source/distribution capability and its installation/publi
 - [x] Local targets/history and source procedures implemented; source tests and bounded interpretation verified (tasks3/5).
 - [x] Selected runtime procedures retained/adopted and new Skill installed with target readback; no destructive replacement (task4).
 - [x] Unchanged Main19 installed once; body/byte/mode/ordered-manifest parity checked. Installer write scope excludes other owners; the incomplete preflight snapshot limits historical byte-preservation proof as recorded below.
-- [ ] Scoped source commit, atomic non-force branch/tag publication, immutable Release and fresh-public payload verified (task6).
-- [ ] Settled proof/limits reconciled into the existing governed owners; finalizer closes last (task7).
+- [x] Scoped source commit, atomic non-force branch/tag publication, immutable Release and fresh-public payload verified (task6).
+- [x] Settled proof/limits reconciled into the existing governed owners; finalizer7 publishes/verifies this separate receipt and closes last.
 
 ## Development Verification / TestKit Coverage
 
@@ -62,6 +62,16 @@ The existing native proposal/promoter owner accepted and landed exactly two sele
 - Workflow and REA are retained unchanged: current-direction/scope-correction guidance covers replacement/cancellation, the entrypoint preserves selected threads, and REA already excludes unnecessary ordinary-source setup. A literal `cancel`-word assertion was a checker mismatch, not a missing runtime behavior. No extra patch was made to satisfy it.
 
 The harness subsequently listed the new Skill. That is discovery evidence for this session's listing, not proof of model benefit, repeated reliability or a complete session reload. Private recovery/run accounts remain outside source and discovery.
+
+## Installation and Publication Receipt
+
+Source commit `c14f7928be8810e7bbdd8c777f6ab7b387410ee7` contains exactly33 selected changed paths and has the checked prior master as its sole parent. The two pre-existing `TrialSource` diagram lines remain in the working tree but outside this commit; unrelated plugin/support work was not staged. Source and immutable annotated `v10.83` object `2384bc3031e12af811b87e4b5926e38ce8234287` were atomically non-force pushed to existing `origin/master`; remote master, tag and peeled source identities matched.
+
+A fresh read-only public Git fetch verified that tag/commit and tree `6c620ce44a7f45f610a1728f96f247db3a6e333f`. All60 selected public paths match the frozen bytes and Git modes: selected source/governance/procedure proof plus unchanged Main19 and relied-upon installer/review owners. No downloaded code was executed or adopted as implementation authority.
+
+The non-draft/non-prerelease latest [v10.83 Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.83), ID445141257, published at `2026-11-14T08:20:44Z`; target commit, notes and latest identity were read back. The first CLI attempt could not open the hidden local notes path. Exact Release lookup confirmed404/no creation before the supported inline public-notes input succeeded; no permission change, duplicate Release or push replay was used.
+
+Technical tasks3/5/4/6 handed evidence to the existing finalizer7 before closure. This later documentation receipt reconciles actual proof and preserved limits into README/changelog/TODO/phase owners; it is not part of the immutable source-tag byte snapshot. Its follow-up publication leaves the source tag unchanged. No successor is selected.
 
 ## Stop, Recovery and Limits
 
