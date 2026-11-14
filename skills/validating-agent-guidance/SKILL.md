@@ -5,6 +5,11 @@ description: Use when authoring or reviewing agent instructions, Skills and work
 
 # Validating Agent Guidance
 
+> **Current Version:** 1.0
+> **Design:** [design/validating-agent-guidance.design.md](design/validating-agent-guidance.design.md) v1.0
+> **Session:** 10d553c2-05c0-41bc-af76-96be83d99cfe
+> **Full history:** [changelog/validating-agent-guidance.changelog.md](changelog/validating-agent-guidance.changelog.md)
+
 Check whether the actual draft supports the intended decisions, including the nearest case that should not trigger it. Separate instruction clarity, source/package correctness, synthetic interpretation and real-world benefit.
 
 ## Procedure

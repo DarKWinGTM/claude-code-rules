@@ -74,7 +74,9 @@ flowchart TB
   end
 
   subgraph Procedures[On-demand Skill Source]
-    SkillSource["skills/name/SKILL.md<br/>Six portable procedures, separate from Main19"]
+    SkillDesign["skills/name/design/name.design.md<br/>Procedure target / invariants / proof"]
+    SkillSource["skills/name/SKILL.md<br/>Seven portable procedures, separate from Main19"]
+    SkillHistory["skills/name/changelog/name.changelog.md<br/>Local version / change history"]
   end
 
   subgraph Design[Textual Target-State Truth]
@@ -112,7 +114,9 @@ flowchart TB
   README --> ReviewGuidance
   ReviewGuidance -. reviews changes to .-> RootRules
   README --> SkillSource
-  DesignRoot --> SkillSource
+  DesignRoot --> SkillDesign
+  SkillDesign --> SkillSource
+  SkillSource --> SkillHistory
   RootRules -. govern selected work .-> SkillSource
   README --> DesignRoot
   README --> Structure
@@ -174,7 +178,7 @@ flowchart TB
 
 - `design/` owns semantic truth and target-state meaning.
 - `AGENTS.md` maps repository owners and code-review guidance; it is not a Main19 Rule, installer payload or review trigger.
-- `skills/` owns six curated on-demand procedures under the [Skill library design](../design/design/skill-library.design.md); it is source, not runtime discovery or part of the nineteen-Rule installer. Personal Skills and plugin packages retain separate deployment/ownership boundaries.
+- `skills/` owns seven curated on-demand procedures under the [Skill library design](../design/design/skill-library.design.md). Each `SKILL.md` links local `design/<name>.design.md` target/proof and `changelog/<name>.changelog.md` history; these are maintainer sources, not additional invocation steps. Develop here before separately selected runtime adoption, resolving existing additions rather than overwriting them. This remains outside runtime discovery and the nineteen-Rule installer; plugin packages keep their own ownership.
 - `diagram/` owns Kroki-compatible visual synthesis and relationship explanation.
 - If text and diagram differ, `design/` wins semantically.
 - `diagram/STRUCTURE.md` is the global structural view, not a substitute for design semantics.

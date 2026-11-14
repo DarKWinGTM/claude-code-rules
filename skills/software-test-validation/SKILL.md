@@ -5,6 +5,11 @@ description: Use when choosing verification for a software change, running tests
 
 # Software Test Validation
 
+> **Current Version:** 1.0
+> **Design:** [design/software-test-validation.design.md](design/software-test-validation.design.md) v1.0
+> **Session:** 10d553c2-05c0-41bc-af76-96be83d99cfe
+> **Full history:** [changelog/software-test-validation.changelog.md](changelog/software-test-validation.changelog.md)
+
 Select proof that can change the decision, then run it through the existing test owner. The task's contract and risk determine useful depth, not a tool preference, file count or coverage quota.
 
 ## Procedure

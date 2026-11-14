@@ -28,6 +28,8 @@ A useful paired benchmark holds workload, inputs, environment and measurement bo
 
 ## Synthesize and Stop
 
-Recommend the best-supported route with its decisive evidence, trade-off, implementation owner and matching proof. Mark untested assumptions and the exact next discriminator. Source/local evidence may support a conditional design without a mandatory live experiment. An explicitly selected live terminal gate stays pending until its prerequisite is available; optional stronger evidence does not reopen an independently satisfied gate.
+Distinguish a method/tool blocker from a blocker of the goal. Missing an optional investigation tool is not evidence of goal infeasibility; continue supported source/contract conclusions and realistic alternatives without installing unrelated machinery. If a required capability or binding constraint is contradicted, limit or reject that method at the earned scope and state what remains unresolved.
+
+Give the supported answer first, then its conditions, decisive evidence and any next discriminator that could change it. Recommend the best-supported route with its trade-off, implementation owner and matching proof. Mark untested assumptions and the exact next discriminator. Source/local evidence may support a conditional design without a mandatory live experiment. An explicitly selected live terminal gate stays pending until its prerequisite is available; optional stronger evidence does not reopen an independently satisfied gate.
 
 Research results do not approve new infrastructure, publication, deployment or consequential experiments. Hand any material scope/authority choice back to its existing owner; stop when more research would not change the selected decision.

@@ -3,7 +3,7 @@
 > **Current Version:** 2.36
 > **Target Design:** [../design/phase-todo-artifact.design.md](../design/phase-todo-artifact.design.md) v1.40
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5
-> **Status:** P073-26/v10.82 source/synthetic/installed/public-source verified; docs-only receipts preserve the immutable source tag. No successor selected; prior slices remain closed
+> **Status:** P152-01 active: governed Skill procedures, selected Claude installation and v10.83 publication; P073-26/v10.82 and prior receipts remain closed
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,7 +21,9 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active Slice
 
-No successor is selected. [P073-26](phase-073-26-context-sensitive-data-decisions.md) source/install/publication gates are verified; tasks39/40 handed evidence to finalizer41 for this separate docs-only receipt and its commit/push/readback witness. Other18 Runtime owners, AGENTS, Skills, installers and unrelated work stay preserved. RAM/OOM Task32 remains paused; P073-25/P073-24/MCI075-01/P152 remain closed. No Product/benchmark/plugin/config/reload or hosted PR work selected.
+[P152-01 / v10.83](phase-152-01-governed-skill-development-and-adoption.md) is active under the existing [Skill-library](../design/design/skill-library.design.md) family: add a researched maintainable-code procedure, refine diagnosis/continuity, retain the already-covered external REA procedure, and give every existing/newly separated source Skill its own local design/history. Selected completion includes preserving enriched root Skills during native adoption, unchanged Main19 installation, scoped push/tag/Release and public verification. Source/procedure77/77 and paired-case interpretation passed; new root Skill plus missing diagnosis delta landed through the native owner, and unchanged Main19 installation/readback passed. Scoped publication and final receipts remain pending; the child records the incomplete Main19 preflight preservation witness.
+
+The earlier six-Skill governance source proof23/23 remains a bounded baseline, not proof of these behavioral or deployment changes. [P152](phase-152-portable-skill-library.md) and [P073-26](phase-073-26-context-sensitive-data-decisions.md) publication receipts remain closed provenance. Main19/AGENTS/installers have no behavioral change; companion plugin/config, Product refactor/benchmark/live work and hosted PR remain excluded. RAM/OOM Task32 stays paused; the child owns current execution and proof without rewriting prior releases.
 
 ### Latest Verified Slice
 

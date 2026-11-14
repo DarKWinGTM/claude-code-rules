@@ -11,6 +11,10 @@
 
 Current-path maintenance: [P073-25](phase-073-25-approved-refactoring-and-repository-review.md) normalizes this existing source library to `skills/` without changing its procedures or selecting deployment. Original `skill/` literals below describe the completed v10.79 publication, not a second active source.
 
+Later selected procedure/adoption/release work is tracked by [P152-01](phase-152-01-governed-skill-development-and-adoption.md), preserving this completed receipt. Source-governance maintenance is owned by the [library design](../design/design/skill-library.design.md#skill-local-governance) and each Skill's local design/history: establish aligned metadata and source-first development while preserving the six operational bodies and four references. This is not a rewrite or reopening of the completed v10.79 receipt below. A later selected runtime update requires its own checked destination reconciliation; source checks alone do not prove that adoption.
+
+The 2026-11-14 maintenance source gate passed: focused local-governance assertions first failed for six missing version chains, then the existing Skill-library suite passed23/23. A broad incumbent `evidence-*` filename assertion initially misclassified semantic design/history names; the bounded checker correction retains capture/installed-metadata exclusions. All ten original operational files match their pre-edit source after removing only the six new metadata blocks. The23 selected library/owner documents resolve58 local links; scoped whitespace passes. No runtime deployment, model evaluation, Product/installer run or publication was performed for this gate. Pre-existing unrelated diagram additions remain intact.
+
 ## Objective and Lineage
 
 Ship six curated cross-project Skills under `skill/`, separate from Main19 and companion plugins, then install/check the unchanged Rules and publish the selected source/tag/GitHub Release. Do not overwrite or migrate personal Skills.

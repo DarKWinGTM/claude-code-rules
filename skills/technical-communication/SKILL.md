@@ -5,6 +5,11 @@ description: Use when explaining technical behavior, reviewing user-facing techn
 
 # Technical Communication
 
+> **Current Version:** 1.0
+> **Design:** [design/technical-communication.design.md](design/technical-communication.design.md) v1.0
+> **Session:** 10d553c2-05c0-41bc-af76-96be83d99cfe
+> **Full history:** [changelog/technical-communication.changelog.md](changelog/technical-communication.changelog.md)
+
 Explain checked meaning before relying on identifiers. Give the reader enough mechanism and consequence to understand the result or make the next decision, without turning the answer into a transcript or another policy layer.
 
 ## Procedure

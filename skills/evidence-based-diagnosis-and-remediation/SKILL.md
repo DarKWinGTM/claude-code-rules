@@ -5,6 +5,11 @@ description: Use when diagnosing failures, evaluating audit findings, or researc
 
 # Evidence-Based Diagnosis and Remediation
 
+> **Current Version:** 1.1
+> **Design:** [design/evidence-based-diagnosis-and-remediation.design.md](design/evidence-based-diagnosis-and-remediation.design.md) v1.1
+> **Session:** 10d553c2-05c0-41bc-af76-96be83d99cfe
+> **Full history:** [changelog/evidence-based-diagnosis-and-remediation.changelog.md](changelog/evidence-based-diagnosis-and-remediation.changelog.md)
+
 Turn a reported symptom or uncertain proposal into a supported next decision. Keep observation, hypothesis, selected correction and verification separate. This procedure complements existing evidence and safety rules; it does not select wider implementation or live access.
 
 ## Procedure
@@ -26,4 +31,4 @@ Keep private data and credentials out of reports. Reconcile an operation's canon
 
 ## Output
 
-State the observed failure, supported mechanism or current hypothesis, decisive evidence and limits, selected remedy or next discriminator, and matching verification result. Say what remains unresolved and what specific input/state would resolve it. Source checks and local/fake evidence do not prove live behavior, historical attribution or repeated reliability.
+For feasibility, give the supported answer first, followed by its conditions, decisive evidence and any necessary next discriminator; setup advice is not a substitute for an answer supported by the available evidence. For diagnosis, state the observed failure, supported mechanism or current hypothesis, decisive evidence and limits, selected remedy or next discriminator, and matching verification result. Say what remains unresolved and what specific input/state would resolve it. Source checks and local/fake evidence do not prove live behavior, historical attribution or repeated reliability.

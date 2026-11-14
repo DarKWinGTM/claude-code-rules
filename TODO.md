@@ -2,7 +2,7 @@
 
 > **Last Updated:** 2026-11-14
 > **Current Release:** v10.82 published/latest; source, actual Main19 installation and scoped public payload verified
-> **Active Wave:** P073-26 technical gates verified; this docs-only receipt follows the immutable source tag. Task41 owns its publication witness; no successor selected. RAM/OOM Task32 remains paused
+> **Active Wave:** P152-01 / v10.83 selected: Skill-local design, researched code-design procedure, diagnosis/continuity refinements, Claude installation and scoped publication. RAM/OOM Task32 remains paused
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,11 +10,22 @@
 
 ## Active / In Progress
 
-No successor execution is selected. RAM/OOM Task32 stays paused. Finalizer41 owns this record's docs-only commit/push/readback terminal witness after source/install tasks39/40 handed off checked evidence; this does not open another wave.
+[P152-01](phase/phase-152-01-governed-skill-development-and-adoption.md) has verified source/procedure and selected installation gates; scoped v10.83 publication and final receipts remain. `designing-maintainable-code`1.0 and seven Skill-local design/history chains are implemented. The existing Node checks passed77/77, paired baseline/candidate readings both reached the ten expected decisions, and bounded source review found no material issue. Research supports design criteria, not causal Skill effectiveness or measured performance. The [library owner](design/design/skill-library.design.md#skill-local-governance) retains source-first development and missing-delta adoption, not automatic synchronization.
+
+The three earlier reviews retain separate dispositions:
+- `evidence-based-diagnosis-and-remediation`: source1.1 and the missing native feasibility-output delta are verified; optional-method blockers do not become goal impossibility, and supported feasibility answers lead the output. Enriched runtime content/references remain intact.
+- `reverse-engineer-anything`: retained unchanged outside the curated library; existing necessity/setup gates cover the selected concern. No import, setup or duplicate patch.
+- `workflow-continuity`: source1.1 preserves selected threads across reprioritization while honoring explicit cancellation/replacement; already-covered root guidance is retained, not rewritten. Assistant proposals remain unselected.
+
+Native create+patch terminal accounts and exact installed candidates passed;951 original files were reconciled, distinguishing947 unchanged files from the selected diagnosis changes and native metadata counters. Unchanged Main19 installation/readback also passed. The phase records the failed ad hoc preflight and missing complete original other-owner hash snapshot; no historical byte-parity claim fills that gap. No Product refactor, benchmark or causal benefit is selected or claimed. The earlier zero-topic historical batch is not three verified defects.
+
+RAM/OOM Task32 stays paused. P073-26 and earlier immutable-tag receipts remain closed provenance; P152-01 publication/finalization does not rewrite them.
 
 Earlier MCI corrective/enrichment gates and P073-18 Main remain closed; they are not part of P073-25. Earlier settings evidence and the prior internal-agent restriction violation remain separately unresolved; this release does not authorize restoration or model validation.
 
 ## Recently Completed
+
+- [x] **Native-Skill local governance (source only, 2026-11-14):** six local design/history chains and aligned entrypoint metadata; source-first ownership/navigation added without changing the ten operational bodies/references. Existing library suite23/23,58 resolved local links across23 selected documents and scoped whitespace/preservation checks passed. [Maintenance receipt](phase/phase-152-portable-skill-library.md) is separate from the completed v10.79 publication. Root runtime reconciliation remains selected/pending; no deployment, model benefit, commit or release is claimed.
 
 - [x] **P073-26 / v10.82 technical gates:** Coding1.14 purpose/lifecycle-based data/hash/loop decisions preserve legitimate projections/history, security and fresh validation without blanket bans or new machinery. Focused RED5→GREEN5/5, final Node65/65, native Bash fixtures, seven fresh guided interpretations and bounded review passed. Exact13-file source `e3ef0b61b0bf33faeee5d8a0269e4ff621be661b`, actual Main19/manifest parity with six other-owner target entries unchanged, immutable annotated `v10.82`, atomic non-force master/tag push, latest [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.82) and fresh-public36-file bytes/Git modes passed. Tasks39/40 handed evidence to finalizer41 for this separate six-document receipt and its push/readback witness. [Phase receipts/limits](phase/phase-073-26-context-sensitive-data-decisions.md#installation-and-publication-receipt) distinguish source-tag parity; no Product/plugin/Skill/config/reload, causal model/performance or whole-project claim.
 

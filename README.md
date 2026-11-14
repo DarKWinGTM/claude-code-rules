@@ -25,7 +25,7 @@
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>6 on-demand Skills</b><br><sub>Source library · separate install</sub>
+  <b>7 on-demand Skills</b><br><sub>Source library · separate install</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -34,6 +34,8 @@
 </table>
 
 > **Current release:** [v10.82](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.82) enriches Coding1.14 with purpose/lifecycle-based data choices, hash guarantees/inputs and computation/loop validity. Legitimate projections/history, security work and fresh validation remain valid; no blanket hash/copy/loop ban or automatic cache. Approved refactor/scope contracts, Main19 membership/installers, root [AGENTS.md](AGENTS.md) and source-only `skills/` stay unchanged. Selected Node65/65, native Bash fixtures and seven guided synthetic decisions passed; bounded review found no material defect. Actual Main19 installation/manifest parity and fresh-public bytes/Git modes for36 selected files passed. The source tag is immutable; [P073-26 receipts](phase/phase-073-26-context-sensitive-data-decisions.md#installation-and-publication-receipt) separate this docs-only follow-up from source-tag parity. No model/performance benefit, current-session adoption or hosted-review claim.
+
+> **Selected development:** v10.83 adds the maintainable-code Skill, per-Skill design/history and bounded diagnosis/continuity refinements. [P152-01](phase/phase-152-01-governed-skill-development-and-adoption.md) tracks source checks, preservation-first root Skill adoption, unchanged Rules installation and publication separately; this is not yet the current release.
 
 <!-- CTA Buttons -->
 <p>
@@ -249,10 +251,11 @@ These capabilities summarize the current operating model at the front-page level
 
 ## On-demand Skills
 
-Rules define the behavioral baseline; Skills provide a procedure when a matching task needs it. The six curated Skills in [`skills/`](skills/) are reusable across projects without a required browser CLI, language, provider or business system.
+Rules define the behavioral baseline; Skills provide a procedure when a matching task needs it. The seven curated Skills in [`skills/`](skills/) are reusable across projects without a required browser CLI, language, provider or business system.
 
 | Skill | Use it for |
 |---|---|
+| [Designing maintainable code](skills/designing-maintainable-code/SKILL.md) | Choose useful responsibility boundaries, abstractions, data lifecycles and simpler complete implementations |
 | [Evidence-based diagnosis and remediation](skills/evidence-based-diagnosis-and-remediation/SKILL.md) | Discriminate causes, evaluate findings and research feasible remedies |
 | [Software test validation](skills/software-test-validation/SKILL.md) | Select useful proof, reuse the fitting harness and interpret failures |
 | [Workflow continuity](skills/workflow-continuity/SKILL.md) | Resume checked work, preserve passed gates and hand off exact blockers |
@@ -260,7 +263,9 @@ Rules define the behavioral baseline; Skills provide a procedure when a matching
 | [Validating agent guidance](skills/validating-agent-guidance/SKILL.md) | Evaluate instruction drafts and extract provenance-bound reusable lessons |
 | [Coverage receipt reconciliation](skills/coverage-receipt-reconciliation/SKILL.md) | Reconcile existing reports, reached assertions and overlapping coverage |
 
-**Source and use:** start with the linked `SKILL.md`; read its linked references only when that procedure needs them. This repository's `skills/` directory is authoring/release source, not a Claude Code auto-discovery directory. An explicitly selected deployment would place one whole selected Skill directory, including its linked references, under `<project-root>/.claude/skills/` or the user's runtime Skill directory. Inspect the destination owner and any same-name collision first; do not overwrite an independently managed Skill or create a second writer. No Skill installer or automatic synchronization is provided in this release.
+**Development:** each existing or newly separated curated Skill owns and links its local `design/<name>.design.md` and `changelog/<name>.changelog.md`, with aligned version/session metadata. Develop these repository-owned procedures from `skills/` first; the library design owns shared curation/deployment boundaries, while each local design owns its procedure's target, invariants and proof. Maintainer documents are source navigation, not extra steps to load during ordinary invocation. The initial local governance baseline preserves the six operational bodies and four references.
+
+**Source and use:** start with the linked `SKILL.md`; read its procedural references only when needed. This repository's `skills/` directory is authoring/release source, not a Claude Code auto-discovery directory. A separately selected deployment targets `<project-root>/.claude/skills/` or the user's runtime Skill directory, retaining operational reference closure and resolving any included maintainer-document navigation. Inspect the destination owner and same-name differences first: an installed Skill can contain independently managed additions, so source-first development does not authorize overwriting them, dual-editing or automatic synchronization. The governance source addition does not establish runtime adoption. User-selected runtime updates follow checked source changes only after ownership/difference reconciliation or exact replacement approval; no automatic installer or synchronization service is implied.
 
 The existing launcher still installs only the nineteen Rules to `.claude/rules/`. It does not deploy this library or change companion plugins. These curated versions omit personal/project policy, tool-specific commands and local operational history; the original personal library is not overwritten or migrated. Plugin-bundled Skills continue to install through their own packages, without standalone duplicates.
 

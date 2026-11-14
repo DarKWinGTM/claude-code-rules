@@ -5,6 +5,11 @@ description: Use when reconciling overlapping test reports, conflicting coverage
 
 # Coverage Receipt Reconciliation
 
+> **Current Version:** 1.0
+> **Design:** [design/coverage-receipt-reconciliation.design.md](design/coverage-receipt-reconciliation.design.md) v1.0
+> **Session:** 10d553c2-05c0-41bc-af76-96be83d99cfe
+> **Full history:** [changelog/coverage-receipt-reconciliation.changelog.md](changelog/coverage-receipt-reconciliation.changelog.md)
+
 Determine what existing results actually prove against the selected acceptance gate. This procedure owns coverage accounting; software-test-validation selects/runs useful proof, and workflow-continuity owns continuation and persistent status.
 
 ## Procedure
