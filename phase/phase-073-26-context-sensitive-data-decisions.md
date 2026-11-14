@@ -3,7 +3,7 @@
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 073-26
 > **Current Version:** 10.82
-> **Status:** Source and guided synthetic interpretation verified-in-scope; source commit, actual installation/publication and receipts pending
+> **Status:** Source/synthetic/installation/public-source verified-in-scope; docs-only receipts recorded outside the immutable tag
 > **Target Design:** [System design](../design/design.md) v10.82
 > **Design References:** [Coding](../design/coding-discipline.design.md) v1.14; [Runtime inventory](../design/design/runtime-architecture.design.md)
 > **Patch References:** none; approved research-backed plan and scoped source diff supply the review boundary
@@ -30,9 +30,9 @@ Completed [P073-25](phase-073-25-approved-refactoring-and-repository-review.md) 
 - [x] Research-backed approved route, checked source/namespace and retained private pre-edit baseline.
 - [x] Normalize Coding target, observe five focused missing-contract REDs, implement existing-owner guidance and observe focused GREEN5/5.
 - [x] Finish Case07/guided interpretation, final selected regressions and exact source/link/version/preservation postflight. Task39 owns this gate.
-- [ ] Commit selected source, then fresh Main19/manifest recovery; actual existing-launcher installation and parity/other-owner preservation. Task39 hands source evidence to Task40, which owns installation/publication.
-- [ ] Atomic non-force source/master/tag, immutable annotated v10.82, latest non-draft/non-prerelease Release and bounded fresh public source/readback.
-- [ ] Six-owner docs-only receipts, separate commit/push/readback without retagging; Task41 closes last after evidence handoff.
+- [x] Commit selected source, retain fresh Main19/manifest recovery, run actual existing-launcher installation and verify parity/other-owner preservation. Task39 handed source evidence to Task40.
+- [x] Atomic non-force source/master/tag, immutable annotated v10.82, latest non-draft/non-prerelease Release and bounded fresh public source/readback.
+- [x] Record actual six-owner docs-only receipts without retagging. Task41 owns this separate follow-up commit/push/readback terminal witness in the live task and retained evidence, and closes last after source/install/publication handoff.
 
 ## Development Verification / TestKit Coverage
 
@@ -48,7 +48,10 @@ Dense overview/design/changelog/summary parents receive only bounded current nav
 
 ## Installation and Publication Receipt
 
-Pending actual installation/publication. Source-tag and later docs-only receipt identities will remain distinct; no tag movement or advance success claim.
+- **Source:** exact13-file commit `e3ef0b61b0bf33faeee5d8a0269e4ff621be661b`, parent `bd3c1fff020234146d48288830a1aa6823f29ab2`. Other18 Runtime owners, AGENTS, source Skills and installer membership/bodies remain unchanged. Immutable annotated `v10.82` object `1925342c66f2f029cc090172aeb5ecca810fa9a4` peels to that source.
+- **Installation:** existing launcher exited0; all19 substantive bodies, bytes, blobs, filesystem modes and ordered ownership rows match source, covering180,109 bytes. Fresh19+manifest recovery was retained and rechecked before dispatch; all six other-owner target entries stayed unchanged. No quarantine, config/Skill/plugin deployment or session reload.
+- **Publication:** atomic non-force master/tag push exited0. [Main Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.82), published `2026-11-14T03:29:40Z`, is latest, non-draft and non-prerelease with exact reviewed body/target. Fresh public commit/parent/tree/master/tag/peel/Release and36 selected file bodies/Git modes/blob identities match, covering561,427 bytes. No downloaded code was executed.
+- **Receipt boundary:** this follow-up changes only README, TODO, phase summary/this child and master/version-detail changelogs. These six document bodies are outside source-tag document parity; Runtime, AGENTS, Skills and installers remain at the immutable source. Tasks39/40 handed checked evidence to finalizer41, which owns the docs-only commit/push/readback terminal witness and closes last. No whole-project convergence, native Windows, current-session adoption, hosted review, repeated reliability or causal model/performance benefit claim. No successor selected.
 
 ## Stop and Recovery
 

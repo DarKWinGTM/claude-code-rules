@@ -3,7 +3,7 @@
 > **Project:** Claude Code Rules System
 > **Current Version:** 10.82
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5
-> **Latest Published Version:** 10.81
+> **Latest Published Version:** 10.82
 > **Version Shards:** [changelog/](changelog/)
 > **Legacy Archive:** [done/master-legacy-v6.3-v9.59.changelog.md](done/master-legacy-v6.3-v9.59.changelog.md)
 
@@ -13,7 +13,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 10.82 | 2026-11-14 | **[Context-sensitive data decisions — source/synthetic verified; install/publication pending](changelog/v10.82-context-sensitive-data-decisions.changelog.md#version-1082)** | 08244912-a195-4926-84e6-8c202c667ba5 |
+| 10.82 | 2026-11-14 | **[Released context-sensitive data decisions — installed/public source verified](changelog/v10.82-context-sensitive-data-decisions.changelog.md#version-1082)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 10.81 | 2026-11-13 | **[Released approved refactoring and repository review — installed/public source verified](changelog/v10.81-approved-refactoring-and-repository-review.changelog.md#version-1081)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 10.80 | 2026-11-11 | **[Released runtime clarity, lifecycle and same-owner compaction — installed/public payload verified](changelog/v10.80-runtime-clarity-lifecycle-compaction.changelog.md#version-1080)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 10.79 | 2026-11-10 | **[Released portable Skill library — source, unchanged Rules installation and fresh-public tag/payload verified](changelog/v10.79-portable-skill-library.changelog.md#version-1079)** | 08244912-a195-4926-84e6-8c202c667ba5 |

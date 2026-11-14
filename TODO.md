@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-11-14
-> **Current Release:** v10.81 published/latest; v10.82 source candidate under verification
-> **Active Wave:** P073-26 contextual data/hash decisions: source39 → install/publication40 → final receipts41. RAM/OOM Task32 remains paused
+> **Current Release:** v10.82 published/latest; source, actual Main19 installation and scoped public payload verified
+> **Active Wave:** P073-26 technical gates verified; this docs-only receipt follows the immutable source tag. Task41 owns its publication witness; no successor selected. RAM/OOM Task32 remains paused
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,11 +10,13 @@
 
 ## Active / In Progress
 
-- [ ] [P073-26 / v10.82](phase/phase-073-26-context-sensitive-data-decisions.md): Coding1.14 contextual data/hash guidance, existing source/Case07 proof, actual unchanged-membership Main19 installation, scoped push/tag/latest Release/readback and six-owner receipts. Task39 is active;40/41 follow its gates. Preserve unrelated work and required security/history/recovery; no Product changes, new Rule/framework/cache, plugin/Skill deployment or session reload. RAM/OOM Task32 stays paused.
+No successor execution is selected. RAM/OOM Task32 stays paused. Finalizer41 owns this record's docs-only commit/push/readback terminal witness after source/install tasks39/40 handed off checked evidence; this does not open another wave.
 
 Earlier MCI corrective/enrichment gates and P073-18 Main remain closed; they are not part of P073-25. Earlier settings evidence and the prior internal-agent restriction violation remain separately unresolved; this release does not authorize restoration or model validation.
 
 ## Recently Completed
+
+- [x] **P073-26 / v10.82 technical gates:** Coding1.14 purpose/lifecycle-based data/hash/loop decisions preserve legitimate projections/history, security and fresh validation without blanket bans or new machinery. Focused RED5→GREEN5/5, final Node65/65, native Bash fixtures, seven fresh guided interpretations and bounded review passed. Exact13-file source `e3ef0b61b0bf33faeee5d8a0269e4ff621be661b`, actual Main19/manifest parity with six other-owner target entries unchanged, immutable annotated `v10.82`, atomic non-force master/tag push, latest [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.82) and fresh-public36-file bytes/Git modes passed. Tasks39/40 handed evidence to finalizer41 for this separate six-document receipt and its push/readback witness. [Phase receipts/limits](phase/phase-073-26-context-sensitive-data-decisions.md#installation-and-publication-receipt) distinguish source-tag parity; no Product/plugin/Skill/config/reload, causal model/performance or whole-project claim.
 
 - [x] **P073-25 / v10.81:** proactive affected-structure assessment, concrete plan plus explicit approval before every refactor, bounded scope clarification, root Codex review guidance and canonical source-only `skills/`. Node61/61, native Bash fixtures, eight full-Main19/four AGENTS guided decisions and selected source review passed. Exact33-file source `f6b003ccb30bf1f910f1dee549d104b212e70ca5`, actual Main19/manifest parity,344 install-window protected fingerprints/six other-owner target entries, immutable annotated `v10.81`, atomic non-force master/tag push, latest [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.81) and fresh-public50-file bytes/Git modes passed. Source tasks34/35 and install/publication36 handed evidence to finalizer37. This docs-only receipt does not retag or change Runtime/Skill behavior; [phase receipt and limits](phase/phase-073-25-approved-refactoring-and-repository-review.md#installation-and-publication-receipt) retain the earlier unattributed pre-install settings drift and uncounted extra review dispatch. No new Rule, personal Skill/plugin deployment, current-session adoption, causal benefit, hosted review or whole-project convergence claim.
 

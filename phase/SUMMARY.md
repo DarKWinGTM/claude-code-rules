@@ -3,7 +3,7 @@
 > **Current Version:** 2.36
 > **Target Design:** [../design/phase-todo-artifact.design.md](../design/phase-todo-artifact.design.md) v1.40
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5
-> **Status:** P073-26/v10.82 source/synthetic verified-in-scope; actual Main19 install/publication and receipts pending. P073-25 and prior slices remain closed
+> **Status:** P073-26/v10.82 source/synthetic/installed/public-source verified; docs-only receipts preserve the immutable source tag. No successor selected; prior slices remain closed
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,9 +21,11 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active Slice
 
-[P073-26 / v10.82](phase-073-26-context-sensitive-data-decisions.md) enriches Coding1.14 with purpose/lifecycle/alternatives, hash input/guarantee and loop/invalidation decisions at its existing owner. Task39 owns source/proof,40 actual Main19 installation/publication and41 final receipts; these gates remain pending until checked. Preserve other18 Runtime owners, AGENTS, Skills, installers and unrelated work. RAM/OOM Task32 stays paused; P073-25/P073-24/MCI075-01/P152 stay closed. No Product/benchmark/plugin/config/reload or hosted PR work selected.
+No successor is selected. [P073-26](phase-073-26-context-sensitive-data-decisions.md) source/install/publication gates are verified; tasks39/40 handed evidence to finalizer41 for this separate docs-only receipt and its commit/push/readback witness. Other18 Runtime owners, AGENTS, Skills, installers and unrelated work stay preserved. RAM/OOM Task32 remains paused; P073-25/P073-24/MCI075-01/P152 remain closed. No Product/benchmark/plugin/config/reload or hosted PR work selected.
 
 ### Latest Verified Slice
+
+- **P073-26 / v10.82:** [Context-sensitive data decisions](phase-073-26-context-sensitive-data-decisions.md) enriches Coding1.14 at its existing owner; purpose/lifecycle/alternatives, hash guarantees/inputs and loop validity preserve legitimate copies/history, security and fresh checks. Node65/65, native Bash fixtures, seven guided synthetic decisions, bounded review and actual Main19/manifest parity passed with six other-owner target entries unchanged. Exact13-file source `e3ef0b61b0bf33faeee5d8a0269e4ff621be661b`, immutable annotated `v10.82`, atomic non-force publication, latest [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.82) and fresh-public36-file byte/Git-mode proof passed. [Receipt boundary/limits](phase-073-26-context-sensitive-data-decisions.md#installation-and-publication-receipt) separate this later six-document record from source-tag parity; no model/performance/adoption/Windows/hosted claim.
 
 - **P073-25 / v10.81:** [Approved refactoring and repository review](phase-073-25-approved-refactoring-and-repository-review.md) delivers Coding1.13/Execution1.41, root AGENTS guidance and source-only `skills/`. Node61/61, native Bash fixtures, eight full-Main19/four AGENTS guided decisions, selected source review, actual Main19/manifest parity and scoped preservation passed. Exact33-file source `f6b003ccb30bf1f910f1dee549d104b212e70ca5`, immutable annotated `v10.81`, atomic non-force publication, latest [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.81) and fresh-public50-file byte/Git-mode proof are verified. [Receipt and exclusions](phase-073-25-approved-refactoring-and-repository-review.md#installation-and-publication-receipt) separate the later six-document receipt from source-tag parity; no hosted/model/adoption claim.
 

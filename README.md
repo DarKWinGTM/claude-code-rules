@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.82 source</b><br><sub>Context-Sensitive Data Decisions</sub>
+  <b>v10.82</b><br><sub>Context-Sensitive Data Decisions</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current source: v10.82** enriches Coding1.14 with purpose/lifecycle-based data choices, hash guarantees and inputs, computation validity and loop/invalidation reasoning. Legitimate projections/history, security work and fresh validation remain valid; no blanket hash/copy/loop ban or automatic cache. Approved refactor/scope contracts, Main19 membership/installers, root [AGENTS.md](AGENTS.md) and source-only `skills/` stay unchanged. Selected Node65/65, native Bash fixtures and seven guided synthetic decisions passed; bounded review found no material defect. [P073-26](phase/phase-073-26-context-sensitive-data-decisions.md) tracks the verified source scope and required actual installation/publication, still pending. Latest published release remains [v10.81](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.81). No model/performance benefit, session-adoption or hosted-review claim.
+> **Current release:** [v10.82](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.82) enriches Coding1.14 with purpose/lifecycle-based data choices, hash guarantees/inputs and computation/loop validity. Legitimate projections/history, security work and fresh validation remain valid; no blanket hash/copy/loop ban or automatic cache. Approved refactor/scope contracts, Main19 membership/installers, root [AGENTS.md](AGENTS.md) and source-only `skills/` stay unchanged. Selected Node65/65, native Bash fixtures and seven guided synthetic decisions passed; bounded review found no material defect. Actual Main19 installation/manifest parity and fresh-public bytes/Git modes for36 selected files passed. The source tag is immutable; [P073-26 receipts](phase/phase-073-26-context-sensitive-data-decisions.md#installation-and-publication-receipt) separate this docs-only follow-up from source-tag parity. No model/performance benefit, current-session adoption or hosted-review claim.
 
 <!-- CTA Buttons -->
 <p>
