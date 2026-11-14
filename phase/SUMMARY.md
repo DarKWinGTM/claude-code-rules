@@ -3,7 +3,7 @@
 > **Current Version:** 2.36
 > **Target Design:** [../design/phase-todo-artifact.design.md](../design/phase-todo-artifact.design.md) v1.40
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5
-> **Status:** P073-25/v10.81 source/synthetic/installed/public-source verified; docs-only receipts preserve the immutable source tag. No successor selected; P073-24/MCI075-01 remain closed
+> **Status:** P073-26/v10.82 source/synthetic verified-in-scope; actual Main19 install/publication and receipts pending. P073-25 and prior slices remain closed
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,7 +21,7 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active Slice
 
-No successor is selected. P073-25 source/install/publication gates are verified; tasks34/35/36 handed evidence to finalizer37 for this docs-only receipt and its publication readback. RAM/OOM Task32 stays paused. Previous P073-24/MCI075-01 and P152 remain completed; no plugin update, Skill deployment, session reload or hosted PR operation is selected.
+[P073-26 / v10.82](phase-073-26-context-sensitive-data-decisions.md) enriches Coding1.14 with purpose/lifecycle/alternatives, hash input/guarantee and loop/invalidation decisions at its existing owner. Task39 owns source/proof,40 actual Main19 installation/publication and41 final receipts; these gates remain pending until checked. Preserve other18 Runtime owners, AGENTS, Skills, installers and unrelated work. RAM/OOM Task32 stays paused; P073-25/P073-24/MCI075-01/P152 stay closed. No Product/benchmark/plugin/config/reload or hosted PR work selected.
 
 ### Latest Verified Slice
 

@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.81</b><br><sub>Approved Refactors and Repository Review</sub>
+  <b>v10.82 source</b><br><sub>Context-Sensitive Data Decisions</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current release:** [v10.81](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.81) adds affected-structure assessment and concrete approved plans before every refactor, including local/low-risk work. Exact approved transformations continue without repeated questions; material scope changes need consultation. Root [AGENTS.md](AGENTS.md) guides Codex review, and the six source-only Skills live under `skills/`. Main19 membership/installers remain unchanged; no personal Skill deployment or plugin update. Node61/61, native Bash fixtures, twelve guided synthetic decisions, actual Main19 installation parity and fresh-public bytes/Git modes for50 selected files passed. The source tag is immutable; a separate docs-only receipt records installation/publication in [P073-25](phase/phase-073-25-approved-refactoring-and-repository-review.md#installation-and-publication-receipt). No model-benefit, current-session adoption or actual hosted-review claim.
+> **Current source: v10.82** enriches Coding1.14 with purpose/lifecycle-based data choices, hash guarantees and inputs, computation validity and loop/invalidation reasoning. Legitimate projections/history, security work and fresh validation remain valid; no blanket hash/copy/loop ban or automatic cache. Approved refactor/scope contracts, Main19 membership/installers, root [AGENTS.md](AGENTS.md) and source-only `skills/` stay unchanged. Selected Node65/65, native Bash fixtures and seven guided synthetic decisions passed; bounded review found no material defect. [P073-26](phase/phase-073-26-context-sensitive-data-decisions.md) tracks the verified source scope and required actual installation/publication, still pending. Latest published release remains [v10.81](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.81). No model/performance benefit, session-adoption or hosted-review claim.
 
 <!-- CTA Buttons -->
 <p>

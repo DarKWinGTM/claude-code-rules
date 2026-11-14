@@ -3,11 +3,11 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.81
+> **Current Version:** 10.82
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
-> **Selected Target:** v10.81 requires concrete approved refactor plans, affected-structure assessment and material scope clarification in existing Runtime owners; repository AGENTS review guidance and canonical source-only skills/ remain outside Main19
+> **Selected Target:** v10.82 enriches existing Coding with contextual data/hash/lifecycle decisions, preserving security/history/recovery and approved refactor/scope contracts; Main19 membership and source-only AGENTS/Skills boundaries remain unchanged
 
 ---
 
@@ -15,7 +15,7 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-Selected `v10.81 / P073-25` keeps the [nineteen owners](design/runtime-architecture.design.md). [Coding](coding-discipline.design.md) v1.13 assesses affected structure before material additions, during cumulative growth and before closeout; every refactor requires a concrete proportional plan and explicit user approval, including low-risk local transformations. [Execution](execution-and-goal-frame.design.md) v1.41 preserves already approved continuation, consults before material scope/contract/ownership/risk deviations and keeps independent authorized work moving. Large cohesive code and normal non-refactoring feature/fix work remain valid; no hard LOC limit, surprise refactor, new Rule or runtime machinery. Root [AGENTS.md](../AGENTS.md) supplies repository code-review guidance, not a scheduler or install payload. The [Skill library](design/skill-library.design.md) has one active source under `skills/`, with personal/plugin owners and discovery/deployment unchanged. [P073-25](../phase/phase-073-25-approved-refactoring-and-repository-review.md) owns source/synthetic/install/publication proof; session adoption, hosted PR execution and causal model benefit are not implied. Prior communication/lifecycle and [compaction](design/runtime-compaction.design.md) contracts remain intact; version/release history belongs to changelog.
+Selected `v10.82 / P073-26` keeps the [nineteen owners](design/runtime-architecture.design.md). [Coding](coding-discipline.design.md) v1.14 selects representations and computation from purpose, lifecycle, alternatives and carrying cost; hash guarantees/input domains, operation intent, loop validity and nonce/freshness remain distinct. Legitimate projections, immutable history, precision, isolation, security and fresh validation stay protected; no universal hash/copy/loop ban, algorithm/canonicalizer, cache or pipeline. Preserve affected-structure assessment and concrete plan plus explicit approval before every refactor, including local work; [Execution](execution-and-goal-frame.design.md) v1.41 retains approved continuation and material-deviation consultation. Root [AGENTS](../AGENTS.md) review guidance and the source-only [Skill library](design/skill-library.design.md) under `skills/` remain outside Main19. [P073-26](../phase/phase-073-26-context-sensitive-data-decisions.md) owns matching source/synthetic/install/publication proof, not model/performance benefit or session adoption. [P073-25](../phase/phase-073-25-approved-refactoring-and-repository-review.md) remains completed provenance; prior communication/lifecycle and [compaction](design/runtime-compaction.design.md) contracts remain intact.
 
 Preserved `v10.79 / P152` adds a [portable Skill library](design/skill-library.design.md) of six general on-demand procedures originally published under `skill/` (current source: `skills/`), curated from personal-library inputs without deploying, overwriting or migrating those inputs. Rules retain behavioral authority; Skills supply task procedures, not another policy layer. Main19 and plugin installers remain unchanged. [P152](../phase/phase-152-portable-skill-library.md) owns source/procedure proof, unchanged Rules installation and scoped publication.
 

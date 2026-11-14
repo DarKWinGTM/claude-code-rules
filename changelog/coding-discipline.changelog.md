@@ -1,7 +1,7 @@
 # Changelog - Coding Discipline
 
 > **Parent Document:** [../coding-discipline.md](../coding-discipline.md)
-> **Current Version:** 1.13
+> **Current Version:** 1.14
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 ---
 
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.14 | 2026-11-14 | **[Context-sensitive data and hash decisions](#version-114)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.13 | 2026-11-13 | **[Required approved refactor plans and affected-structure assessment](#version-113)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.12 | 2026-11-11 | **[Clarified lifecycle and operational reporting](#version-112)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.11 | 2026-11-10 | **[Added complexity and test-evidence admission criteria](#version-111)** | 08244912-a195-4926-84e6-8c202c667ba5 |
@@ -28,6 +29,17 @@
 | | | Summary: Created `coding-discipline.md` as a body-sufficient merged runtime owner for maintainable code structure, proportionate verification, and tactical-to-strategic convergence in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-114"></a>
+## Version 1.14: Context-sensitive data and hash decisions
+
+**Date:** 2026-11-14
+**Session:** 08244912-a195-4926-84e6-8c202c667ba5
+
+- Enrich existing state/complexity owners with purpose → lifecycle/constraints → alternatives/trade-offs → simplest complete choice. Consumers include checked operator/protocol/privacy/audit/history/recovery contracts; unknown purpose does not authorize creation or deletion. Legitimate projections and immutable history remain valid; one owner need not mean one object/format.
+- Select hash guarantees and input domains before primitives. Distinguish exact bytes, deterministic serialization, domain meaning and logical-operation intent; retain precision, trustworthy digest bindings and security guarantees without a universal algorithm/canonicalizer or direct-comparison mandate.
+- Trace computation/invalidation lifecycles, discarded intermediate work and frequency/cardinality/downstream cost. Deterministic rehash is not nonce generation; preserve fresh validation, isolation, failure ordering and required nonce/salt/freshness while avoiding invented self-invalidation/hash-search. No cache/pipeline reflex.
+- Include representation carrying cost without letting its own guards/tests justify its existence. Match performance claims to the changed lifecycle; primitive improvement is not whole-path CPU/memory proof. Extend existing Case07/source checks; preserve refactor approval and other18 Runtime owners. [P073-26](../phase/phase-073-26-context-sensitive-data-decisions.md) owns actual proof, installation/publication and limits; no model-benefit claim.
 
 <a id="version-113"></a>
 ## Version 1.13: Approved refactoring and structural assessment

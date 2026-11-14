@@ -64,8 +64,49 @@ test('complexity admission compares a simpler complete alternative and its carry
   requiresClause(structure, /boundary alone does not earn added machinery/i);
   requiresClause(structure, /state\/transitions[\s\S]*change propagation[\s\S]*maintenance cost/i);
   requiresClause(structure, /work created only to support the addition/i);
+  requiresClause(structure, /allocation[\s\S]*serialization[\s\S]*hash[\s\S]*retention[\s\S]*synchronization/i);
+  requiresClause(structure, /guards\/tests[\s\S]*not independent evidence[\s\S]*safeguards before first use/i);
   requiresClause(structure, /hard-to-reverse contracts[\s\S]*required safeguards/i);
   requiresClause(structure, /Passing tests[\s\S]*not necessity/i);
+});
+
+test('data representations follow purpose and lifecycle rather than copy counts', () => {
+  const state = coding.split('### Canonical state and deliberate transformations')[1]?.split('### Names, comments and governed references')[0];
+  assert.ok(state, 'the existing state owner must remain active');
+  requiresClause(state, /purpose[\s\S]*consumer[\s\S]*protocol\/operator[\s\S]*existing data/i);
+  requiresClause(state, /unknown purpose[\s\S]*bounded diagnosis[\s\S]*not[\s\S]*creation or deletion/i);
+  requiresClause(state, /reuse, derive, transform, copy\/snapshot and persist/i);
+  requiresClause(state, /one object or format[\s\S]*read-heavy[\s\S]*staleness[\s\S]*historical truth/i);
+  requiresClause(state, /rebuildability[\s\S]*not deletion permission/i);
+});
+
+test('hash selection preserves input meaning and logical operation intent', () => {
+  const state = coding.split('### Canonical state and deliberate transformations')[1]?.split('### Names, comments and governed references')[0];
+  requiresClause(state, /required guarantee[\s\S]*collision[\s\S]*threat\/entropy/i);
+  requiresClause(state, /exact bytes[\s\S]*deterministic serialization[\s\S]*domain meaning/i);
+  requiresClause(state, /key sorting[\s\S]*precision[\s\S]*absence\/null[\s\S]*ordering/i);
+  requiresClause(state, /trusted digest[\s\S]*retained digest alone[\s\S]*fresh bytes/i);
+  requiresClause(state, /unkeyed hash[\s\S]*authentication[\s\S]*confidentiality[\s\S]*password[\s\S]*high-entropy token/i);
+  requiresClause(state, /content equality[\s\S]*operation intent[\s\S]*retries[\s\S]*intentional new operations/i);
+});
+
+test('computation placement preserves validity isolation and failure ordering', () => {
+  const state = coding.split('### Canonical state and deliberate transformations')[1]?.split('### Names, comments and governed references')[0];
+  requiresClause(state, /owner → inputs → result\/digest → consumer → invalidation/i);
+  requiresClause(state, /parse\/normalize\/clone\/serialize\/hash\/snapshot[\s\S]*discarded or overwritten/i);
+  requiresClause(state, /immutable snapshots[\s\S]*mutable isolation[\s\S]*evaluation\/error\/side-effect ordering/i);
+  requiresClause(state, /fresh[\s\S]*hashing inside loops[\s\S]*not[\s\S]*cache/i);
+  requiresClause(coding, /primitive benchmark[\s\S]*not whole-path CPU\/memory evidence/i);
+});
+
+test('loop hashing distinguishes stable identity freshness and required unique nonces', () => {
+  const state = coding.split('### Canonical state and deliberate transformations')[1]?.split('### Names, comments and governed references')[0];
+  requiresClause(state, /frequency[\s\S]*cardinality[\s\S]*per-item[\s\S]*rebuild\/write/i);
+  requiresClause(state, /deterministic rehash[\s\S]*not nonce generation/i);
+  requiresClause(state, /time\/random\/counter[\s\S]*stable identity[\s\S]*self-invalidating/i);
+  requiresClause(state, /freshness\/audit[\s\S]*not[\s\S]*exclude fields/i);
+  requiresClause(state, /nonce[\s\S]*salt[\s\S]*protocol\/security[\s\S]*never reuse a required-unique nonce/i);
+  requiresClause(state, /hash-until-condition[\s\S]*equality\/versioning[\s\S]*checked implementations/i);
 });
 
 test('structural assessment catches cumulative growth without mandatory splitting', () => {

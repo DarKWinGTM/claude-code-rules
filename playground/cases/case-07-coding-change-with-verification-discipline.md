@@ -86,24 +86,38 @@ See [P073-22](../../phase/phase-073-22-mechanism-backed-design-feasibility.md) f
 
 ### Contract-first coding acceptance variants
 
-These twelve declared virtual scenarios specify expected decisions under Coding Discipline v1.8 and Execution and Goal Frame v1.35. Source-clause checks support these expectations; no model responses, observed Product failures or causal behavior improvement are asserted.
+These twelve declared virtual scenarios originated under Coding Discipline v1.8 and Execution and Goal Frame v1.35; rows4/9 include the contextual-data clarification in Coding1.14. Source-clause checks support written expectations; no model responses, observed Product failures or causal behavior improvement are asserted by this table.
 
 | # | Situation | Expected decision and nearest boundary |
 |---|---|---|
 | 1 | A nullable count is known zero or unknown. | Preserve the distinction; validate type/range at the owning boundary, not by treating every falsy value as absent. |
 | 2 | An operation accepts an absent optional input, but receives a malformed supplied value or lacks a required input. | Accept permitted absence; reject malformed supplied data and missing operation-required input. |
 | 3 | A total and one component differ numerically. | Compare meaning, units and stage before inventing an equality/arithmetic rule; diagnostic availability alone grants no decision authority. |
-| 4 | A validated value is reused by another consumer, then its input or trust/transaction context changes. | Reuse while relevant assumptions hold; recheck for mutation, fresh reads, trust changes or transaction/recovery obligations, not merely because a function changed. |
+| 4 | A validated value is reused by another consumer, or an unchanged snapshot is built then discarded; later its input or trust/transaction context changes. | Reuse or avoid redundant construction while relevant assumptions hold; recheck for mutation, fresh reads, trust changes or transaction/recovery obligations, not merely because a function changed. Preserve immutable snapshots, mutable isolation and evaluation/error/side-effect ordering without adding a cache by default. |
 | 5 | A canonical result is available, but new evidence genuinely contradicts it. | Avoid routine consumer re-adjudication; reconcile the contradiction at its owner without overriding required safeguards. |
 | 6 | Processing reaches a terminal outcome while delivery, integrity or settlement carries an independent failure. | Apply the owning completion/failure contract; neither a sticky first error nor the latest event may erase independent outcome dimensions. |
 | 7 | A selector sends an ineligible state to a correctly rejecting consumer guard. | Trace producer/selector → state → consumer and repair the actual contract mismatch; do not weaken the guard merely to obtain success. |
 | 8 | A single-writer path handles sensitive or transaction-critical data. | Choose controls from actual readers/writers, lifecycle and failure model; preserve identity, authorization, integrity, atomicity, privacy and recovery. |
-| 9 | A consumer needs a narrow projection while retained history supports audit or recovery. | Match access/persistence to that consumer; preserve distinct historical, fidelity, comparison and recovery contracts rather than deleting copies by count. |
+| 9 | A consumer needs a narrow or read-heavy projection while retained history supports audit or recovery. | Compare reuse/derive/transform/copy/persist against the actual contract, read benefit, refresh/write cost, consistency and acceptable staleness. Preserve distinct historical, privacy, fidelity, comparison and recovery forms rather than deleting copies by count; rebuildability is not deletion permission. |
 | 10 | Several policies share one management/editor surface. | Share the interaction where useful without silently moving persistence or creating a second policy authority. |
 | 11 | A development task prohibits live calls while Product has configured behavior or an intentionally selected runtime mode. | Constrain this work at its fitting test/development boundary; do not disable Product behavior by implication, and retain explicitly selected modes. |
 | 12 | A small edit needs focused proof, or a material integration needs dependency-ordered implementation/checks. | Scale understanding and verification to the decision; no per-`if` worksheet, mandatory waterfall or performance claim from correctness-only tests. |
 
 Governing owners: [Coding Discipline](../../coding-discipline.md) owns predicates/state/controls and matching proof; [Execution and Goal Frame](../../execution-and-goal-frame.md) owns selected outcome, route, scope and closure. These variants extend the existing case rather than introduce another rule or test framework.
+
+### Context-sensitive data and hash variants
+
+These paired virtual inputs specify Coding1.14 decisions. They are not historical incidents, measured savings or executed model responses; any separate guided-reader evidence belongs in the selected phase, not this table.
+
+| Paired input | Expected decision and nearest boundary |
+|---|---|
+| Canonical data already serves the need, but a full mirror is proposed because its own guards/tests need it; another workload repeatedly performs an expensive read transformation. | Compare the simpler complete route and actual lifecycle benefit, not supporting work as independent necessity. A read-heavy projection may justify refresh/storage cost if consistency, acceptable staleness, privacy and rebuild needs fit; no automatic mirror, cache or pipeline. Required safeguards still precede first use. |
+| A frozen financial/audit snapshot differs from current data; an exported field has no current code reader, or its purpose is unknown. | Retain checked historical/operator/wire/recovery contracts and immutable meaning. Unknown purpose requires bounded diagnosis, not speculative creation or deletion. Fewer fields/copies does not prove improvement or authorize refactoring. |
+| Local semantic equality has no digest; alternatively a trusted digest already binds the relevant unchanged inputs. | Compare contract-correct alternatives before constructing SHA; reuse may be appropriate, but neither direct comparison nor one algorithm is universal. A retained digest alone does not establish that fresh source bytes still match. |
+| A protocol checks exact serialized bytes; another operation compares domain values where decimal precision, units, absence/null or array order matter. | Preserve each input domain and guarantee. Deterministic key ordering is not universal semantic equality; do not impose JCS, change numeric precision or weaken exact-byte verification. Unkeyed hashes do not supply source authentication, confidentiality or public-safe disclosure. |
+| A loop computes an unchanged snapshot/hash and overwrites it; another loop receives distinct events or freshly read data and must reject a failure before a write. | Trace owner→inputs→result→consumer→invalidation and compare frequency/cardinality/per-item/downstream cost. Avoid unused duplicate work only while assumptions hold; preserve revalidation, immutable isolation and failure ordering. Hashing inside the latter loop may remain necessary; no cache reflex. |
+| Each cycle adds generated time/random/version to stable content identity and triggers rebuild; another protocol requires a unique nonce, audit freshness or salted password work. | Diagnose self-invalidation without claiming an observed incident. Preserve required freshness/salt and nonce uniqueness; do not reuse required-unique nonces, delete fields arbitrarily or invent hash-until-condition search for equality/versioning. Password work factors are not automatic policy for every high-entropy token; use checked security implementations. |
+| A request retries one logical operation; another intentionally repeats identical parameters. A primitive benchmark is faster. | Preserve the selected operation identity/lifetime/parameter contract; content equality alone must not merge intentional new operations. Primitive improvement does not prove workflow CPU/memory benefit. No new idempotency subsystem, benchmark campaign or whole-system claim follows. |
 
 ---
 

@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-11-13
-> **Current Release:** v10.81 published/latest; source, actual Main19 installation and scoped public payload verified
-> **Active Wave:** P073-25 technical gates verified; this docs-only receipt is finalized through task37. No successor selected; RAM/OOM Task32 remains paused
+> **Last Updated:** 2026-11-14
+> **Current Release:** v10.81 published/latest; v10.82 source candidate under verification
+> **Active Wave:** P073-26 contextual data/hash decisions: source39 → install/publication40 → final receipts41. RAM/OOM Task32 remains paused
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,7 +10,7 @@
 
 ## Active / In Progress
 
-P073-25 source/install/publication gates are verified; finalizer37 records and verifies this separate receipt commit. RAM/OOM Task32 stays paused; no successor execution is selected.
+- [ ] [P073-26 / v10.82](phase/phase-073-26-context-sensitive-data-decisions.md): Coding1.14 contextual data/hash guidance, existing source/Case07 proof, actual unchanged-membership Main19 installation, scoped push/tag/latest Release/readback and six-owner receipts. Task39 is active;40/41 follow its gates. Preserve unrelated work and required security/history/recovery; no Product changes, new Rule/framework/cache, plugin/Skill deployment or session reload. RAM/OOM Task32 stays paused.
 
 Earlier MCI corrective/enrichment gates and P073-18 Main remain closed; they are not part of P073-25. Earlier settings evidence and the prior internal-agent restriction violation remain separately unresolved; this release does not authorize restoration or model validation.
 

@@ -1,7 +1,7 @@
 # Runtime Architecture - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.81
+> **Current Version:** 10.82
 > **Session:** 08244912-a195-4926-84e6-8c202c667ba5
 > **Section:** Rule architecture
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
@@ -17,7 +17,7 @@ Exactly nineteen source-owned root Rules retain one body-sufficient owner per re
 | 2 | `action-safety.md` | `action-safety.design.md v1.9` | destructive/private/topology/emergency/retry gates, same-operation outcome reconciliation |
 | 3 | `audience-surface-disclosure-control.md` | `audience-surface-disclosure-control.design.md v1.3` | direct-user transparency and generated audience disclosure |
 | 4 | `authority-and-scope.md` | `authority-and-scope.design.md v2.10` | user precedence, advisory selection and Active Project Root |
-| 5 | `coding-discipline.md` | `coding-discipline.design.md v1.13` | affected-structure assessment and approved refactor plans, simpler-complete-alternative complexity and distinct-test-evidence admission, caller-first coding, required-lifetime source/evidence/scratch placement and architecture fitness |
+| 5 | `coding-discipline.md` | `coding-discipline.design.md v1.14` | contextual data/hash/input/loop-lifecycle and carrying-cost decisions; approved refactor plans, structure/complexity/test-evidence assessment, caller-first coding, lifetime storage and architecture fitness |
 | 6 | `communication-register.md` | `communication-register.design.md v1.30` | plain action/outcome language, user/peer recipient clarity, signal, agreement and explicit retraction |
 | 7 | `document-governance.md` | `document-governance.design.md v1.24` | artifact roles, affected-owner synthesis, chain selection, diagram/Patch and UDVC-1 eligibility |
 | 8 | `document-integrity.md` | `document-integrity.design.md v1.16` | references, lossless rollover, payload/project proof and preservation |
