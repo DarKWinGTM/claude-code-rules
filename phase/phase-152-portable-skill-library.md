@@ -15,7 +15,7 @@ Later procedure/adoption/release work completed under [P152-01 / v10.83](phase-1
 
 The 2026-11-14 maintenance source gate passed: focused local-governance assertions first failed for six missing version chains, then the existing Skill-library suite passed23/23. A broad incumbent `evidence-*` filename assertion initially misclassified semantic design/history names; the bounded checker correction retains capture/installed-metadata exclusions. All ten original operational files match their pre-edit source after removing only the six new metadata blocks. The23 selected library/owner documents resolve58 local links; scoped whitespace passes. No runtime deployment, model evaluation, Product/installer run or publication was performed for this gate. Pre-existing unrelated diagram additions remain intact.
 
-Current selected child: [P152-02 / v10.84](phase-152-02-context-aware-discussion-continuity.md) develops context-aware discussion continuity at the existing task/execution and workflow owners, with separate native adoption, Main19 installation and scoped release proof. Its pending gates do not reopen the completed receipts below.
+Latest child: [P152-02 / v10.84](phase-152-02-context-aware-discussion-continuity.md) verifies context-aware discussion continuity at the existing task/execution and workflow owners, selected native adoption, Main19 installation and scoped immutable publication. Its separate completion receipt leaves the v10.84 source tag and earlier completed receipts unchanged; no successor is selected.
 
 ## Objective and Lineage
 

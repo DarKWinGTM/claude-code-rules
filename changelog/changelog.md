@@ -3,7 +3,7 @@
 > **Project:** Claude Code Rules System
 > **Current Version:** 10.84
 > **Session:** 10d553c2-05c0-41bc-af76-96be83d99cfe
-> **Latest Published Version:** 10.83
+> **Latest Published Version:** 10.84
 > **Version Shards:** [changelog/](changelog/)
 > **Legacy Archive:** [done/master-legacy-v6.3-v9.59.changelog.md](done/master-legacy-v6.3-v9.59.changelog.md)
 
@@ -13,7 +13,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 10.84 | 2026-11-15 | **[Context-aware discussion continuity — source/adoption/install verified; publication pending](changelog/v10.84-context-aware-discussion-continuity.changelog.md#version-1084)** | 10d553c2-05c0-41bc-af76-96be83d99cfe |
+| 10.84 | 2026-11-15 | **[Released context-aware discussion continuity — selected installation and public source verified](changelog/v10.84-context-aware-discussion-continuity.changelog.md#version-1084)** | 10d553c2-05c0-41bc-af76-96be83d99cfe |
 | 10.83 | 2026-11-14 | **[Released governed Skill design and maintainable-code procedure — selected installation/public source verified](changelog/v10.83-governed-skill-design-and-maintainable-code.changelog.md#version-1083)** | 10d553c2-05c0-41bc-af76-96be83d99cfe |
 | 10.82 | 2026-11-14 | **[Released context-sensitive data decisions — installed/public source verified](changelog/v10.82-context-sensitive-data-decisions.changelog.md#version-1082)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 10.81 | 2026-11-13 | **[Released approved refactoring and repository review — installed/public source verified](changelog/v10.81-approved-refactoring-and-repository-review.changelog.md#version-1081)** | 08244912-a195-4926-84e6-8c202c667ba5 |

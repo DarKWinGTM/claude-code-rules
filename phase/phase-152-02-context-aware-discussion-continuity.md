@@ -3,7 +3,7 @@
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 152-02
 > **Parent Phase:** [P152](phase-152-portable-skill-library.md)
-> **Status:** source/procedure, native adoption and Main19 installation verified; publication/final receipt pending
+> **Status:** source/procedure, selected native adoption, Main19 installation and immutable publication verified; separate completion receipt reconciled
 > **Target Version:** 10.84
 > **Session:** 10d553c2-05c0-41bc-af76-96be83d99cfe
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -34,8 +34,8 @@ Main implements only in the canonical source root. Reuse the two Rule chains, ex
 - [x] Two Rule designs/bodies/history and workflow1.2 local chain implemented; master/library/README navigation aligned.
 - [x] Existing selected source suites, installer fixtures and bounded full-draft interpretation pass; preservation/links/versions and meaningful native task readback checked (task8).
 - [x] Native workflow delta adopted with full candidate/readback and enriched-content preservation; Main19 installed and checked (task9).
-- [ ] Scoped source commit and immutable v10.84 tag/Release published and fresh-public selected bytes/Git modes checked (task10).
-- [ ] Actual results/limits reconciled at fitting owners, final public receipt checked and finalizer10 closed last.
+- [x] Scoped source commit and immutable v10.84 tag/Release published and fresh-public selected bytes/Git modes checked (task10).
+- [x] Actual results/limits reconciled at fitting owners; finalizer10 retains the independent after-commit public receipt/status readback gate and closes last only after it passes.
 
 ## Development Verification / TestKit Coverage
 
@@ -63,7 +63,13 @@ The source-approved workflow discussion delta landed through the supported nativ
 
 The unchanged launcher completed one actual Main19 installation after fresh target/source/neighbor matching and complete original19-plus-manifest byte backups. All19 installed bodies, bytes, source modes and ordered SHA-256/Git-blob manifest entries match. Four other-owner Rule files and four global neighbors are preserved; no quarantine delta or staging residue remains. These are actual selected installation/readback results, separate from Linux fixtures, session reload or model behavior. Finalizer10 received task9's exact receipts/limits before installation-task closure.
 
-Current next action: task10 publishes the scoped source and immutable v10.84 tag/Release, verifies fresh-public selected bytes/Git modes, then publishes/checks the separate final receipt without moving the source tag. Publication remains pending, not implied by installed parity.
+## Publication and Final Receipt
+
+Exact20-path source commit `2c05f484b716370d7cfa33a3478513b740d18b02` has parent `c9e995dc3b693ee612a56541ef0e41d3b78630bc`. The immutable annotated `v10.84` object is `0ac067cec872017ca63b28a5dd863de5a9d942e2`; its peel selects that exact source commit. Atomic non-force fast-forward published only the selected source commit and new tag to the existing master/tag targets. The non-draft/non-prerelease latest [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.84) and its public-safe notes were read back.
+
+A fresh public reference fetch matched source commit/tree/tag/peel and64 selected artifact bytes/Git modes: this wave's20 paths, Main19, all25 curated Skill files, four unchanged launcher/installer files and AGENTS, with overlaps counted once. No downloaded code ran and the reference repository never became source authority. The first filtered fetch stopped on an installed Git2.25.1 setup requirement; configuring only that bare verification repository's documented partial-clone/promisor support enabled the changed read-only fetch. Published source and Runtime were not altered to repair the checker. The1,104 protected tracked fingerprints remain unchanged;1,115 baseline untracked names are not recursive byte-preservation certification.
+
+This later documentation-only receipt is not part of the immutable tagged snapshot and does not retag it. Finalizer10 verifies the exact follow-up commit, remote master, selected public bytes/modes and native status readback after committing/pushing, then closes last. This authored snapshot cannot certify its own future publication; the terminal finalizer/remote witness supplies that separate proof. Source/procedure and installation tasks handed their evidence to that owner before closure. No successor, Header change or replay of v10.83 is selected.
 
 ## Safety and Recovery
 
@@ -71,4 +77,4 @@ Before native landing verify exact candidate, owner/run/root binding, selected i
 
 Stop affected actions for changed bytes/modes, concurrent ownership, missing capability/approval, failed required proof or remote/tag conflict. Reconcile unknown operation outcomes before retry. Use captured exact selected pre-state only under applicable recovery approval; do not delete/reset source or move public tags. Preserve independent completed effects and report blocked proof at its earned layer.
 
-Selected installation/readback is verified; publication remains pending. No session reload, deterministic loss prevention, causal model/user benefit, native Windows or whole-project convergence is claimed. Other live/private sessions and their boards remain untouched.
+Selected source/procedure, installation/readback and immutable public-source proof are verified. Finalizer10 retains the separate follow-up-publication/status readback gate. No session reload, deterministic loss prevention, causal model/user benefit, native Windows or whole-project convergence is claimed. Other live/private sessions and their boards remain untouched.

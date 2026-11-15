@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-11-15
-> **Current Release:** v10.83 published/latest; v10.84 source/adoption/install verified, publication pending
-> **Active Wave:** P152-02 context-aware discussion continuity; RAM/OOM Task32 remains paused
+> **Current Release:** v10.84 published/latest; source/procedure, selected native adoption, Main19 installation and fresh-public payload verified
+> **Active Wave:** P152-02 closeout receipt, no successor selected; RAM/OOM Task32 remains paused
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,13 +10,13 @@
 
 ## Active / In Progress
 
-- [ ] **P152-02 / v10.84:** context-aware ongoing discussion capture in Tasks1.41/Execution1.42 and workflow1.2; readable user/assistant topic memory, selective branches and real proposal/selection boundaries. Source82/82, full-draft interpretations, actual task readback, enriched-preserving native adoption and Main19/ordered-manifest byte/mode verification passed. Scoped publication/final receipt remains pending. [Current phase](phase/phase-152-02-context-aware-discussion-continuity.md) owns proof and limits; baseline also supported expected actions, so no causal benefit is claimed. No new Rule/Skill/backend/hook or other-session mutation.
-
 RAM/OOM Task32 stays paused. P073-26, P152-01 and earlier immutable-tag receipts remain closed provenance; the current wave does not rewrite them.
 
 Earlier MCI corrective/enrichment gates and P073-18 Main remain closed; they are not part of P073-25. Earlier settings evidence and the prior internal-agent restriction violation remain separately unresolved; this release does not authorize restoration or model validation.
 
 ## Recently Completed
+
+- [x] **P152-02 / v10.84:** Tasks1.41/Execution1.42 and workflow1.2 preserve readable user/assistant discussion memory through context-aware records without granting implementation approval. Node82/82, Linux installer fixtures, full-draft interpretations and actual task readback passed; baseline also supported expected actions, so no causal benefit is claimed. Enriched-preserving native patch/readback and actual Main19/ordered-manifest bytes/modes passed with other-owner/global preservation. Exact20-path source `2c05f484b716370d7cfa33a3478513b740d18b02`, immutable annotated `v10.84`, atomic non-force publication, latest [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.84) and64-path fresh-public source bytes/Git modes are verified. Finalizer10 checks this separate receipt's publication/readback without moving the tag. Unrelated diagram/plugin/support state stays preserved/unpublished. [Phase proof/receipt](phase/phase-152-02-context-aware-discussion-continuity.md#publication-and-final-receipt), [history](changelog/changelog/v10.84-context-aware-discussion-continuity.changelog.md). No successor, deterministic retention, full-session reload, native Windows or whole-project claim.
 
 - [x] **P152-01 / v10.83:** seven Skill-local design/history chains and researched `designing-maintainable-code`1.0; diagnosis1.1 and its missing native feasibility delta verified, workflow1.1 source with already-covered root guidance retained, and external REA retained unchanged. Source77/77, both Linux installer fixtures, paired synthetic readings and bounded source review passed; baseline also passed, so no causal benefit is claimed. Native create+patch candidate/readback and951-file reconciliation preserve enriched additions. Actual unchanged Main19/ordered-manifest parity passed, with the incomplete original other-owner preflight witness explicitly retained. Exact33-path source `c14f7928be8810e7bbdd8c777f6ab7b387410ee7`, immutable annotated `v10.83`, atomic non-force master/tag publication, latest [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.83) and60-path fresh-public bytes/Git modes are verified. Existing finalizer7 receives the separate documentation receipt without retagging; unrelated plugin/support and two trial-source diagram lines stay preserved/unpublished. [Phase proof/limits](phase/phase-152-01-governed-skill-development-and-adoption.md), [library owner](design/design/skill-library.design.md#skill-local-governance), [history](changelog/changelog/v10.83-governed-skill-design-and-maintainable-code.changelog.md). No new successor, Product refactor, benchmark, full-session reload or whole-project convergence claim; the earlier zero-topic batch is not three historical defects.
 

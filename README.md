@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.83</b><br><sub>Governed Skill Design</sub>
+  <b>v10.84</b><br><sub>Discussion Continuity</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current release:** [v10.83](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.83). [P152-02 / v10.84](phase/phase-152-02-context-aware-discussion-continuity.md) is the active candidate: context-aware task records help the user and assistant retain evolving design details, concurrent topics and useful branches before docs sync. Tasks1.41, Execution1.42 and workflow-continuity1.2 choose timing/granularity from context, not a fixed template or task count, while keeping discussion separate from implementation approval. Source82/82 and bounded full-draft interpretations passed; selected native workflow adoption preserves enriched content, and actual Main19/ordered-manifest byte/mode readback passed. Publication remains pending. Main19 and seven-Skill membership, installers and [AGENTS.md](AGENTS.md) stay unchanged; two Rule bodies change. No deterministic loss-prevention, automatic session/UI reload or causal-benefit claim is made. [v10.83 receipts and limits](phase/phase-152-01-governed-skill-development-and-adoption.md#installation-and-publication-receipt) remain preserved provenance.
+> **Current release:** [v10.84](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.84) refines Tasks1.41, Execution1.42 and workflow-continuity1.2 so task records serve as readable shared memory during evolving, concurrent and branching discussion. Timing/granularity follow context, not a fixed template or task count; recording remains separate from implementation approval. Source82/82, Linux installer fixtures, bounded full-draft interpretations and actual task readback passed. Selected native adoption preserves enriched Skill content; actual Main19/ordered-manifest byte/mode parity and64-path fresh-public source checks passed. Main19 and seven-Skill membership, installers and [AGENTS.md](AGENTS.md) stay unchanged; two Rule bodies change. [P152-02 receipts and limits](phase/phase-152-02-context-aware-discussion-continuity.md#publication-and-final-receipt) distinguish the later completion record from the immutable source tag. Baseline interpretations also supported expected actions: no causal benefit, deterministic loss prevention, automatic session/UI reload, native Windows or whole-project convergence is claimed. [v10.83](phase/phase-152-01-governed-skill-development-and-adoption.md#installation-and-publication-receipt) remains preserved provenance.
 
 <!-- CTA Buttons -->
 <p>
