@@ -3,7 +3,7 @@
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 152-02
 > **Parent Phase:** [P152](phase-152-portable-skill-library.md)
-> **Status:** source/procedure, selected native adoption, Main19 installation and immutable publication verified; separate completion receipt reconciled
+> **Status:** source/procedure, selected installation and immutable publication verified; final native-board administrative closure readback unverified
 > **Target Version:** 10.84
 > **Session:** 10d553c2-05c0-41bc-af76-96be83d99cfe
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -35,7 +35,8 @@ Main implements only in the canonical source root. Reuse the two Rule chains, ex
 - [x] Existing selected source suites, installer fixtures and bounded full-draft interpretation pass; preservation/links/versions and meaningful native task readback checked (task8).
 - [x] Native workflow delta adopted with full candidate/readback and enriched-content preservation; Main19 installed and checked (task9).
 - [x] Scoped source commit and immutable v10.84 tag/Release published and fresh-public selected bytes/Git modes checked (task10).
-- [x] Actual results/limits reconciled at fitting owners; finalizer10 retains the independent after-commit public receipt/status readback gate and closes last only after it passes.
+- [x] Actual results/limits reconciled at fitting owners and the separate receipt's public/installed readback passed.
+- [ ] Final native-board administrative closure readback remains unverified after the completion acknowledgment; preserve the exact discrepancy/resume condition below without reopening completed technical gates.
 
 ## Development Verification / TestKit Coverage
 
@@ -70,6 +71,12 @@ Exact20-path source commit `2c05f484b716370d7cfa33a3478513b740d18b02` has parent
 A fresh public reference fetch matched source commit/tree/tag/peel and64 selected artifact bytes/Git modes: this wave's20 paths, Main19, all25 curated Skill files, four unchanged launcher/installer files and AGENTS, with overlaps counted once. No downloaded code ran and the reference repository never became source authority. The first filtered fetch stopped on an installed Git2.25.1 setup requirement; configuring only that bare verification repository's documented partial-clone/promisor support enabled the changed read-only fetch. Published source and Runtime were not altered to repair the checker. The1,104 protected tracked fingerprints remain unchanged;1,115 baseline untracked names are not recursive byte-preservation certification.
 
 This later documentation-only receipt is not part of the immutable tagged snapshot and does not retag it. Finalizer10 verifies the exact follow-up commit, remote master, selected public bytes/modes and native status readback after committing/pushing, then closes last. This authored snapshot cannot certify its own future publication; the terminal finalizer/remote witness supplies that separate proof. Source/procedure and installation tasks handed their evidence to that owner before closure. No successor, Header change or replay of v10.83 is selected.
+
+### Native-board Administrative Readback Limit
+
+The separate seven-document receipt commit `429b1cb332b8a6e986a5364647ac588a0ab35660` was non-force published and read back; fresh public64 current paths,64 tagged-source paths, installed Main19/native workflow and protected state passed. Task8/9 closure readbacks had also passed before finalization. Task10's subsequent completion update returned success, but immediate supported TaskGet returned `Task not found` and TaskList returned `No tasks found`. Persisted final task status/continued board visibility is therefore unverified. These observations establish neither an automatic cleanup mechanism, deletion, actual loss nor a native defect.
+
+Preserve all completed technical/publication proof; do not recreate/reset the board, invent replacement tasks or repeat the same status update/readback while owner state is unchanged. Administrative retry posture is `NO_RETRY_UNTIL_CHANGE`: resume only when the supported owner exposes the original record/status or checked lifecycle evidence resolves this exact discrepancy. This correction records the bounded gap at existing owners; it does not reopen source work, installation or the immutable release. The correction's public commit/readback remains a separate witness from unavailable native-board closure.
 
 ## Safety and Recovery
 

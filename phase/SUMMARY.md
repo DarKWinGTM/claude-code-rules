@@ -3,7 +3,7 @@
 > **Current Version:** 2.37
 > **Target Design:** [../design/phase-todo-artifact.design.md](../design/phase-todo-artifact.design.md) v1.41
 > **Session:** 10d553c2-05c0-41bc-af76-96be83d99cfe
-> **Status:** P152-02/v10.84 source/procedure, selected installation and immutable publication verified; separate completion receipt reconciled, no successor selected
+> **Status:** P152-02/v10.84 technical delivery/publication verified; final native-board closure readback unverified, no successor selected
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,7 +21,7 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active Slice
 
-No successor is selected after [P152-02 / v10.84](phase-152-02-context-aware-discussion-continuity.md) passed source/procedure, selected native adoption, Main19 installation and immutable publication gates. Tasks1.41, Execution1.42 and workflow1.2 make task records useful shared discussion memory while preserving implementation authority. Finalizer10 independently checks this later completion receipt's publication/readback before closing; the immutable source tag remains unchanged. Completed [P152-01 / v10.83](phase-152-01-governed-skill-development-and-adoption.md) and its preservation limits remain provenance. RAM/OOM Task32 stays paused; companion plugin/config, Product work and hosted PR remain excluded.
+No successor is selected after [P152-02 / v10.84](phase-152-02-context-aware-discussion-continuity.md) passed source/procedure, selected native adoption, Main19 installation and immutable publication gates. Tasks1.41, Execution1.42 and workflow1.2 make task records useful shared discussion memory while preserving implementation authority. The separate receipt's public/installed readback passed, but final Task10 update acknowledgment was followed by missing-task/empty-list readback; native-board administrative closure is unverified under the [child's scoped limit](phase-152-02-context-aware-discussion-continuity.md#native-board-administrative-readback-limit). The immutable source tag remains unchanged. Completed [P152-01 / v10.83](phase-152-01-governed-skill-development-and-adoption.md) and its preservation limits remain provenance. RAM/OOM Task32 stays paused; companion plugin/config, Product work and hosted PR remain excluded.
 
 The earlier six-Skill governance23/23 and [P152](phase-152-portable-skill-library.md)/[P073-26](phase-073-26-context-sensitive-data-decisions.md) receipts remain preserved provenance, not rewritten acceptance. The [library owner](../design/design/skill-library.design.md) and local Skill designs retain target truth; the child owns this wave's proof and limits.
 
@@ -257,7 +257,7 @@ Current P073-19 source/install recovery is governed by its [child phase](phase-0
 
 ## Next State
 
-P152-02/v10.84 source/procedure, selected native workflow adoption, Main19 installation and immutable tag/Release/fresh-public source gates passed. Finalizer10 independently verifies this separate receipt's after-commit publication/public bytes and native status before closing last; the source tag remains immutable and no additional successor is selected. Product, plugin/support/additional changes and model-effect proof remain excluded.
+P152-02/v10.84 source/procedure, selected native workflow adoption, Main19 installation, immutable tag/Release and separate receipt/public-byte gates passed. Only final native-board administrative closure readback remains unverified under the child's supported-owner/lifecycle resume condition; no unchanged retry, board reset/recreation or new implementation is selected. The source tag remains immutable and no additional successor is selected. Product, plugin/support/additional changes and model-effect proof remain excluded.
 
 Preserved P073-19 boundary: source/install, scoped publication, exact public-tag payload, disposable installation and Release receipt gates passed. Its real final task received that narrow status reconciliation before closing last, with no successor selected at that boundary. Original P073-16–18 unpublished histories remained intact as the included Main baseline; v10.68/P151 remained its immutable published predecessor.
 
