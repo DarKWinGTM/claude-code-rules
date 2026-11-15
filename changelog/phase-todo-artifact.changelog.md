@@ -1,8 +1,8 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.40
-> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
+> **Current Version:** 1.41
+> **Session:** 10d553c2-05c0-41bc-af76-96be83d99cfe
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.41 | 2026-11-15 | **[Context-aware discussion continuity and user-visible topic memory](#version-141)** | 10d553c2-05c0-41bc-af76-96be83d99cfe |
 | 1.40 | 2026-11-11 | **[Clarified lifecycle and operational reporting](#version-140)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.39 | 2026-10-16 | **[Separated task-local docs handoff from final reconciliation closure](#version-139)** | 4a8d9ac0-ecf9-40c4-961e-634583157b6c |
 | 1.38 | 2026-10-15 | **[Added real finalization task and evidence-before-last-closure handoff](#version-138)** | b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 |
@@ -55,6 +56,16 @@
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-141"></a>
+## Version 1.41: Context-aware discussion continuity
+
+**Date:** 2026-11-15
+**Session:** 10d553c2-05c0-41bc-af76-96be83d99cfe
+
+- Admit meaningful ongoing discussion records before implementation selection, helping the user and assistant remember evolving details, concurrent topics and useful branches. Reconcile the former execution-only wording rather than append a contradictory exception.
+- Make Task List use proactive under material continuity risk while choosing timing/granularity from context; no fixed template, tree, turn count, task-per-message or dashboard requirement. Preserve real requirements/options/open questions and valid prior detail in readable supported records, not only unchecked metadata.
+- Recording is not implementation permission or a new design authority; topic links are not execution dependencies. Retain lifecycle, cancellation, privacy, ownership and honest tool/retention limits. [P152-02](../phase/phase-152-02-context-aware-discussion-continuity.md) owns source/interpretation/adoption/install/publication proof, not a causal data-loss-prevention claim.
 
 <a id="version-140"></a>
 ## Version 1.40: Clarified lifecycle and operational reporting

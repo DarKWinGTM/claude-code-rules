@@ -1,8 +1,8 @@
 # Design - Execution and Goal Frame
 
 > **Parent Rule:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.41
-> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
+> **Current Version:** 1.42
+> **Session:** 10d553c2-05c0-41bc-af76-96be83d99cfe
 > **Full history:** [../changelog/execution-and-goal-frame.changelog.md](../changelog/execution-and-goal-frame.changelog.md)
 
 ---
@@ -37,6 +37,8 @@ Proactive assessment does not select structural mutation. [Coding Discipline](co
 When user intent, required output, scope, acceptance or material trade-off remains ambiguous, ask one bounded substantive question before the affected action. Inspect checkable technical facts directly rather than asking the user to guess them. Do not invent a broader objective or repeatedly ask about already approved safe steps. Large cohesive code and ordinary non-refactoring feature/fix work remain valid; an unselected optional refactor does not block an otherwise complete goal, while a necessary structural dependency remains visibly approval-blocked.
 
 ### Decision and documentation cadence
+
+Discussion also has a continuity obligation before implementation is selected: use the task owner's context-sensitive admission to preserve user-visible topic memory as material details and branches evolve. Do not wait for settled choices, docs sync or an expected compaction warning. Tracking supports ongoing analysis without authorizing implementation or turning unresolved options into execution blockers; the task owner supplies granularity and recoverable-record boundaries. The procedure may adapt to context, but flexibility is not permission to leave substantial discussion unrecorded.
 
 Once outcome, owner, route, material facts and proof are sufficient, continue required implementation and checks. Documentation supports that flow through synthesis, not a parallel stream of progress reporting. Use task/working records for continuation-relevant evolving detail; consolidate proof-supported conclusions when sufficiently settled for reference or handoff at a natural work boundary, without interrupting implementation/debug/check flow. Changed detail, a passed check or a completed task does not itself create a sync checkpoint. Unrelated unfinished work need not delay a useful settled update, nor must every update wait for family closure. Material design/contract changes and approval prerequisites still precede dependent action; failure, security stops or handoff may need a minimal truthful resume checkpoint rather than full sync or a completion claim. [Document Governance](document-governance.design.md) owns synthesis/content selection; [Phase, TODO, and Artifact Initiation](phase-todo-artifact.design.md) owns task-local evidence handoff and final reconciliation.
 

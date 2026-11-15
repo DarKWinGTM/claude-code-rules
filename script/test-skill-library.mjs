@@ -183,6 +183,24 @@ test('continuation distinguishes reprioritization, cancellation and unselected s
   assert.match(text, /assistant proposals[\s\S]*unselected/i);
 });
 
+test('continuity is discoverable during ongoing discussion, not only recovery', () => {
+  const text = source('workflow-continuity');
+  assert.match(text, /^description: Use when .*discussion.*resuming/m);
+  assert.match(text, /user[\s\S]*remember[\s\S]*threads/i);
+  assert.match(text, /proactive[\s\S]*task[\s\S]*continuity/i);
+  assert.match(text, /short[\s\S]*self-contained[\s\S]*no[\s\S]*task/i);
+});
+
+test('discussion continuity preserves readable detail without imposing a task template', () => {
+  const text = source('workflow-continuity');
+  assert.match(text, /requirements[\s\S]*alternatives[\s\S]*open questions/i);
+  assert.match(text, /readable[\s\S]*metadata/i);
+  assert.match(text, /retain[\s\S]*valid[\s\S]*detail/i);
+  assert.match(text, /independently revisitable[\s\S]*not[\s\S]*tree/i);
+  assert.match(text, /recording[\s\S]*not[\s\S]*implementation/i);
+  assert.match(text, /unavailable[\s\S]*limitation[\s\S]*not[\s\S]*backend/i);
+});
+
 test('communication distinguishes actual action, inspection and proof limits', () => {
   const text = source('technical-communication');
   assert.match(text, /meaning[\s\S]*mechanism[\s\S]*consequence/i);

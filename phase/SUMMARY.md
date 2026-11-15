@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.36
-> **Target Design:** [../design/phase-todo-artifact.design.md](../design/phase-todo-artifact.design.md) v1.40
-> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
-> **Status:** P152-01/v10.83 source, selected installation and immutable publication verified; completion receipt reconciled, no successor opened
+> **Current Version:** 2.37
+> **Target Design:** [../design/phase-todo-artifact.design.md](../design/phase-todo-artifact.design.md) v1.41
+> **Session:** 10d553c2-05c0-41bc-af76-96be83d99cfe
+> **Status:** P152-02/v10.84 source/procedure, selected native adoption and Main19 installation verified; publication/final receipt pending
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,7 +21,7 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active Slice
 
-No successor is opened after [P152-01 / v10.83](phase-152-01-governed-skill-development-and-adoption.md) passed its selected source/procedure, native adoption, unchanged Main19 installation and scoped publication gates. Its completion receipt retains the incomplete pre-install preservation witness and separates later documentation from the immutable source tag. RAM/OOM Task32 stays paused; companion plugin/config, Product refactor/benchmark/live work and hosted PR remain excluded.
+[P152-02 / v10.84](phase-152-02-context-aware-discussion-continuity.md) is active for context-aware discussion continuity: two existing Rule owners and workflow1.2 make task records useful shared memory for the user and assistant while preserving discussion/implementation separation. Source82/82, bounded full-draft interpretations, actual task readback, selected native adoption and Main19 installation/readback passed; scoped immutable publication/final receipt remains pending. Completed [P152-01 / v10.83](phase-152-01-governed-skill-development-and-adoption.md) and its preservation limits remain unchanged provenance. RAM/OOM Task32 stays paused; companion plugin/config, Product work and hosted PR remain excluded.
 
 The earlier six-Skill governance23/23 and [P152](phase-152-portable-skill-library.md)/[P073-26](phase-073-26-context-sensitive-data-decisions.md) receipts remain preserved provenance, not rewritten acceptance. The [library owner](../design/design/skill-library.design.md) and local Skill designs retain target truth; the child owns this wave's proof and limits.
 
@@ -255,7 +255,9 @@ Current P073-19 source/install recovery is governed by its [child phase](phase-0
 
 ## Next State
 
-P073-19 source/install, scoped publication, exact public-tag payload, disposable installation and Release receipt gates passed. The real final task receives this narrow status reconciliation before closing last; no new phase or successor is selected. Original P073-16–18 unpublished histories remain intact as the included Main baseline; v10.68/P151 remains the immutable published predecessor. Product, plugin/support/additional changes and model-effect proof remain outside scope.
+P152-02/v10.84 continues at scoped publication/final receipt after verified source/procedure, selected native workflow adoption and Main19 installation. Finalizer10 owns immutable tag/Release, fresh-public byte/mode proof and the separate receipt; no additional successor is selected. Product, plugin/support/additional changes and model-effect proof remain excluded.
+
+Preserved P073-19 boundary: source/install, scoped publication, exact public-tag payload, disposable installation and Release receipt gates passed. Its real final task received that narrow status reconciliation before closing last, with no successor selected at that boundary. Original P073-16–18 unpublished histories remained intact as the included Main baseline; v10.68/P151 remained its immutable published predecessor.
 
 ---
 

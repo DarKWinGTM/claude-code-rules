@@ -1,8 +1,8 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.41
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.41
-> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
+> **Current Version:** 1.42
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.42
+> **Session:** 10d553c2-05c0-41bc-af76-96be83d99cfe
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
 ## Rule Statement
@@ -75,6 +75,8 @@ Use Goal/Output/Gate framing only when it aids drift/proof/navigation; obvious p
 ## 4. Required Continuation and Selected Proof
 
 With startup resolved and no real gate, continue locked work/semantics/proof/convergence. Headline implementation cannot close uncovered behavior/failure/state/proof: finish, verify, explicitly defer-with-owner, block or exclude. Continue required safe checks/debug/scenarios, not stop at edits/milestones.
+
+During discussion, preserve user-visible continuity through the [task owner](phase-todo-artifact.md) as material details and branches evolve. Do not wait for settled choices or docs sync; context determines useful record depth and timing, not whether substantial discussion may be forgotten. Recording discussion is not implementation approval and does not turn unresolved options into execution blockers.
 
 Documentation synthesizes work, not a parallel progress feed. Keep evolving continuation detail in task/working records; consolidate settled proof at useful reference/handoff boundaries without interrupting implementation/debug/checks. A changed detail, passed check or completed task alone is not a sync checkpoint. Unrelated unfinished work need not delay a settled update; docs need not all wait for family closure. Design/contract/approval prerequisites still precede dependent action. Failure/security/handoff may need a minimal truthful resume record, not full sync or completion. [Governance](document-governance.md) owns synthesis; [tasks](phase-todo-artifact.md) own evidence handoff/final reconciliation.
 

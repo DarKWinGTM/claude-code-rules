@@ -1,8 +1,8 @@
 # Changelog - Execution and Goal Frame
 
 > **Parent Document:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.41
-> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
+> **Current Version:** 1.42
+> **Session:** 10d553c2-05c0-41bc-af76-96be83d99cfe
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.42 | 2026-11-15 | **[Discussion working memory before settled synthesis](#version-142)** | 10d553c2-05c0-41bc-af76-96be83d99cfe |
 | 1.41 | 2026-11-13 | **[Bounded refactor consent and material scope clarification](#version-141)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.40 | 2026-11-11 | **[Clarified lifecycle and operational reporting](#version-140)** | 08244912-a195-4926-84e6-8c202c667ba5 |
 | 1.39 | 2026-10-27 | **[Connected pivotal mechanism checks to intended outcomes without blocking exploration](#version-139)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
@@ -57,6 +58,16 @@
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-142"></a>
+## Version 1.42: Discussion working memory before settled synthesis
+
+**Date:** 2026-11-15
+**Session:** 10d553c2-05c0-41bc-af76-96be83d99cfe
+
+- Connect ongoing discussion to the existing task owner as details and branches evolve; preserve user-visible continuity before settled choices, docs sync or a compaction warning.
+- Keep timing/depth context-sensitive without treating flexibility as permission to forget substantial discussion. Recording does not approve implementation or turn open options into execution blockers.
+- Retain work-preserving documentation synthesis, owner boundaries, selected scope/proof and all safety/approval gates. [P152-02](../phase/phase-152-02-context-aware-discussion-continuity.md) owns matching source/procedure, native adoption, installation and publication proof; wording alone is not model benefit or runtime adoption.
 
 <a id="version-141"></a>
 ## Version 1.41: Refactor consent and material scope clarification

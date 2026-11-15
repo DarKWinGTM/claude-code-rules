@@ -11,6 +11,7 @@ const intake = source('safe-io.md');
 const coding = source('coding-discipline.md');
 const evidence = source('evidence-discipline.md');
 const execution = source('execution-and-goal-frame.md');
+const tasks = source('phase-todo-artifact.md');
 const presentation = source('explanation-and-presentation.md');
 const requiresClause = (text, pattern) => assert.ok(pattern.test(text), `Missing written contract: ${pattern.source}`);
 
@@ -246,6 +247,32 @@ test('issue review reconciles selected obligations at meaningful continuity boun
   requiresClause(execution, /start or resume[\s\S]*correction, failure or scope change[\s\S]*material status or closeout/i);
   requiresClause(execution, /selected obligations[\s\S]*current evidence[\s\S]*remaining/i);
   requiresClause(execution, /not[\s\S]*every command[\s\S]*rerun/i);
+});
+
+test('discussion tasks proactively preserve user-visible topic memory without fixed ceremony', () => {
+  const discussion = tasks.split('### Discussion continuity')[1]?.split('### Phase-linked task lifecycle')[0];
+  assert.ok(discussion, 'discussion admission belongs at the existing task owner');
+  requiresClause(discussion, /user[\s\S]*remember[\s\S]*threads/i);
+  requiresClause(discussion, /proactively[\s\S]*task/i);
+  requiresClause(discussion, /independently revisitable[\s\S]*not[\s\S]*tree/i);
+  requiresClause(discussion, /not[\s\S]*fixed[\s\S]*template[\s\S]*turn count/i);
+  assert.doesNotMatch(tasks, /Materialize tasks for selected execution only/);
+});
+
+test('discussion capture is readable and cannot grant implementation authority', () => {
+  const discussion = tasks.split('### Discussion continuity')[1]?.split('### Phase-linked task lifecycle')[0] ?? '';
+  requiresClause(discussion, /requirements[\s\S]*alternatives[\s\S]*open questions/i);
+  requiresClause(discussion, /readable[\s\S]*metadata/i);
+  requiresClause(discussion, /recording[\s\S]*not[\s\S]*implementation/i);
+  requiresClause(discussion, /topic links[\s\S]*not[\s\S]*execution dependencies/i);
+  requiresClause(discussion, /retention[\s\S]*guarantee/i);
+});
+
+test('discussion working memory does not wait for settled decisions or docs sync', () => {
+  requiresClause(execution, /discussion[\s\S]*continuity[\s\S]*task[\s\S]*owner/i);
+  requiresClause(execution, /not[\s\S]*wait[\s\S]*settled[\s\S]*docs sync/i);
+  requiresClause(execution, /discussion[\s\S]*not[\s\S]*implementation/i);
+  requiresClause(execution, /Documentation synthesizes work, not a parallel progress feed/);
 });
 
 test('artifact placement follows required lifetime rather than temporary path names', () => {

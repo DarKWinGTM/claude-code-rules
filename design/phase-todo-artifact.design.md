@@ -1,8 +1,8 @@
 # Design - Phase, TODO, and Artifact Initiation
 
 > **Parent Rule:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.40
-> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
+> **Current Version:** 1.41
+> **Session:** 10d553c2-05c0-41bc-af76-96be83d99cfe
 > **Full history:** [../changelog/phase-todo-artifact.changelog.md](../changelog/phase-todo-artifact.changelog.md)
 
 ---
@@ -11,7 +11,7 @@
 
 ### Operational clarification
 
-At Execution-owned continuity boundaries reconcile done/remaining/blocked obligations in the existing outcome-sized task/phase record; do not manufacture tasks, command checklists or proposal obligations.
+At Execution-owned continuity boundaries reconcile done/remaining/blocked obligations in the existing outcome-sized task/phase record. During meaningful ongoing discussion preserve readable topic memory under this owner's contextual admission; do not manufacture execution work, command checklists or approval of proposed options.
 
 
 `phase-todo-artifact.md` is the active runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking.
@@ -25,6 +25,16 @@ It consolidates previously separate rule chains into one body-sufficient runtime
 ## Scope
 
 This design owns the target-state shape for artifact initiation control, phase implementation, and TODO standards.
+
+### Discussion continuity
+
+Treat the native Task List as shared working memory that helps the user and assistant remember evolving discussion threads, not only approved implementation. Proactively preserve substantial analysis/design when accumulating detail, concurrent topics or branching questions make continuity fragile. Assess meaning and likely revisit cost, not message counts or a mandatory task template; a short self-contained exchange need not create a record.
+
+Reuse the relevant topic record and separate an independently revisitable branch only when that improves navigation. A parent/map is optional, not a compulsory tree. Preserve substantive requirements, contract details, alternatives, reasons and open/revised choices with their actual provenance and selection state. Keep valid prior detail when incorporating new material; neither headlines alone nor a transcript dump meet the goal. Names and readable descriptions should help the user find where to return without a dashboard or repeated status feed.
+
+Keep continuation-critical content in a surface the supported read path actually returns. Metadata may supplement it but cannot be its only unverified recovery path. At meaningful continuity boundaries check relevant details, not update acknowledgments alone; after compaction or returning to a branch, read the relevant records rather than only their titles. Do not wait for settled decisions or docs sync to preserve evolving discussion.
+
+Recording discussion authorizes neither implementation nor every option; topic links are not execution dependencies. Use supported lifecycle fields and keep tentative/paused/unresolved meaning explicit in the content. End a record at its selected discussion boundary, not automatically after one answer. Task state guarantees neither indefinite retention nor complete capture. If tools or readback are unavailable, disclose the limitation without inventing a backend, resetting records or blocking otherwise useful conversation. Existing safety, privacy, shared-board ownership and governed design authority remain binding.
 
 ### Working record and finalization handoff
 

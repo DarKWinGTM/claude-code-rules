@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-11-14
-> **Current Release:** v10.83 published/latest; selected source/procedure, native Skill adoption, Main19 installation and fresh-public payload verified
-> **Active Wave:** none newly selected after P152-01 closeout; RAM/OOM Task32 remains paused
+> **Last Updated:** 2026-11-15
+> **Current Release:** v10.83 published/latest; v10.84 source/adoption/install verified, publication pending
+> **Active Wave:** P152-02 context-aware discussion continuity; RAM/OOM Task32 remains paused
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,7 +10,9 @@
 
 ## Active / In Progress
 
-RAM/OOM Task32 stays paused. P073-26 and earlier immutable-tag receipts remain closed provenance; P152-01 publication/finalization does not rewrite them.
+- [ ] **P152-02 / v10.84:** context-aware ongoing discussion capture in Tasks1.41/Execution1.42 and workflow1.2; readable user/assistant topic memory, selective branches and real proposal/selection boundaries. Source82/82, full-draft interpretations, actual task readback, enriched-preserving native adoption and Main19/ordered-manifest byte/mode verification passed. Scoped publication/final receipt remains pending. [Current phase](phase/phase-152-02-context-aware-discussion-continuity.md) owns proof and limits; baseline also supported expected actions, so no causal benefit is claimed. No new Rule/Skill/backend/hook or other-session mutation.
+
+RAM/OOM Task32 stays paused. P073-26, P152-01 and earlier immutable-tag receipts remain closed provenance; the current wave does not rewrite them.
 
 Earlier MCI corrective/enrichment gates and P073-18 Main remain closed; they are not part of P073-25. Earlier settings evidence and the prior internal-agent restriction violation remain separately unresolved; this release does not authorize restoration or model validation.
 

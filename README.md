@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current release:** [v10.83](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.83) adds `designing-maintainable-code`1.0, local design/history for all seven curated Skills, and bounded diagnosis/continuity1.1 refinements. Choose structure from contracts, semantic responsibility and data lifecycles rather than size quotas or speculative abstraction. Source checks77/77, both Linux installer fixture suites and paired synthetic interpretations passed; selected native Skill adoption preserves enriched existing content. Main19 behavior/membership/installers and [AGENTS.md](AGENTS.md) stay unchanged. Actual Rule installation/readback and60-path fresh-public byte/Git-mode checks passed. [P152-01 receipts and limits](phase/phase-152-01-governed-skill-development-and-adoption.md#installation-and-publication-receipt) separate this follow-up from the immutable source tag and retain the incomplete pre-install preservation witness. No causal model/performance, full-session reload, native Windows or whole-project claim.
+> **Current release:** [v10.83](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.83). [P152-02 / v10.84](phase/phase-152-02-context-aware-discussion-continuity.md) is the active candidate: context-aware task records help the user and assistant retain evolving design details, concurrent topics and useful branches before docs sync. Tasks1.41, Execution1.42 and workflow-continuity1.2 choose timing/granularity from context, not a fixed template or task count, while keeping discussion separate from implementation approval. Source82/82 and bounded full-draft interpretations passed; selected native workflow adoption preserves enriched content, and actual Main19/ordered-manifest byte/mode readback passed. Publication remains pending. Main19 and seven-Skill membership, installers and [AGENTS.md](AGENTS.md) stay unchanged; two Rule bodies change. No deterministic loss-prevention, automatic session/UI reload or causal-benefit claim is made. [v10.83 receipts and limits](phase/phase-152-01-governed-skill-development-and-adoption.md#installation-and-publication-receipt) remain preserved provenance.
 
 <!-- CTA Buttons -->
 <p>
@@ -256,7 +256,7 @@ Rules define the behavioral baseline; Skills provide a procedure when a matching
 | [Designing maintainable code](skills/designing-maintainable-code/SKILL.md) | Choose useful responsibility boundaries, abstractions, data lifecycles and simpler complete implementations |
 | [Evidence-based diagnosis and remediation](skills/evidence-based-diagnosis-and-remediation/SKILL.md) | Discriminate causes, evaluate findings and research feasible remedies |
 | [Software test validation](skills/software-test-validation/SKILL.md) | Select useful proof, reuse the fitting harness and interpret failures |
-| [Workflow continuity](skills/workflow-continuity/SKILL.md) | Resume checked work, preserve passed gates and hand off exact blockers |
+| [Workflow continuity](skills/workflow-continuity/SKILL.md) | Keep evolving discussion threads readable and recoverable for the user and assistant; resume selected work without losing passed gates |
 | [Technical communication](skills/technical-communication/SKILL.md) | Explain checked meaning, results and next actions clearly |
 | [Validating agent guidance](skills/validating-agent-guidance/SKILL.md) | Evaluate instruction drafts and extract provenance-bound reusable lessons |
 | [Coverage receipt reconciliation](skills/coverage-receipt-reconciliation/SKILL.md) | Reconcile existing reports, reached assertions and overlapping coverage |
@@ -308,10 +308,10 @@ The existing launcher still installs only the nineteen Rules to `.claude/rules/`
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
 | [`coding-discipline.md`](coding-discipline.md) | Contract-first coding discipline | Semantic ownership, simpler-complete-alternative complexity criteria, distinct test evidence and proportionate functional/architecture proof |
-| [`execution-and-goal-frame.md`](execution-and-goal-frame.md) | Evidence-led development and goal framing | Understands behavior before mechanisms, orders necessary work/proof, and preserves architecture, scope and reachable closure |
+| [`execution-and-goal-frame.md`](execution-and-goal-frame.md) | Evidence-led development and goal framing | Preserves ongoing discussion continuity, orders selected work/proof, and keeps scope and reachable closure intact |
 | [`goal-authoring-and-route-support.md`](goal-authoring-and-route-support.md) | Governed `/goal` authoring and route support | Constructs proof-layer-aware goals, orders prerequisites, and preserves verified `Plan reference` and `/plan` overflow guards |
 | [`worker-routing-and-context.md`](worker-routing-and-context.md) | Worker routing and context control | Uses the smallest effective lane and owns checked Agent Team reuse/steer/wait/partition/respawn decisions |
-| [`phase-todo-artifact.md`](phase-todo-artifact.md) | Artifact initiation, phase, and TODO doctrine | Resolves design then conditional diagram startup, creates Patch chronology from one UTC instant, governs live `/phase`, and separates TODO from live tasks |
+| [`phase-todo-artifact.md`](phase-todo-artifact.md) | Artifact initiation, phase, and TODO doctrine | Admits useful discussion records, governs artifact/phase lineage and separates durable TODO from live task memory |
 
 ---
 

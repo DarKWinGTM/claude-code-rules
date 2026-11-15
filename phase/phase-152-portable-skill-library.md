@@ -15,6 +15,8 @@ Later procedure/adoption/release work completed under [P152-01 / v10.83](phase-1
 
 The 2026-11-14 maintenance source gate passed: focused local-governance assertions first failed for six missing version chains, then the existing Skill-library suite passed23/23. A broad incumbent `evidence-*` filename assertion initially misclassified semantic design/history names; the bounded checker correction retains capture/installed-metadata exclusions. All ten original operational files match their pre-edit source after removing only the six new metadata blocks. The23 selected library/owner documents resolve58 local links; scoped whitespace passes. No runtime deployment, model evaluation, Product/installer run or publication was performed for this gate. Pre-existing unrelated diagram additions remain intact.
 
+Current selected child: [P152-02 / v10.84](phase-152-02-context-aware-discussion-continuity.md) develops context-aware discussion continuity at the existing task/execution and workflow owners, with separate native adoption, Main19 installation and scoped release proof. Its pending gates do not reopen the completed receipts below.
+
 ## Objective and Lineage
 
 Ship six curated cross-project Skills under `skill/`, separate from Main19 and companion plugins, then install/check the unchanged Rules and publish the selected source/tag/GitHub Release. Do not overwrite or migrate personal Skills.

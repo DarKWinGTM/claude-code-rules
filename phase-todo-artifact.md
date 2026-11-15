@@ -1,13 +1,13 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.40
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.40
-> **Session:** 08244912-a195-4926-84e6-8c202c667ba5
+> **Current Version:** 1.41
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.41
+> **Session:** 10d553c2-05c0-41bc-af76-96be83d99cfe
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.35, todo-standards v2.28
 
 ## Rule Statement
 
-**Core Principle: Activate artifacts, phases and live tasks only for real ownership/persistence/output gates. Track bounded outcomes rather than commands/files/helpers, preserve strict lineage and selected semantic proof, and keep durable/live state compact. Findings and available helpers do not recursively generate work.**
+**Core Principle: Activate artifacts, phases and live tasks for real ownership, continuity or output needs. Preserve user-visible discussion memory and track bounded execution outcomes, not commands/files/helpers. Keep granularity contextual, lineage and selected proof intact, and durable/live state readable. Findings and available helpers do not recursively authorize work.**
 
 พูดง่าย ๆ: หลายคำสั่งเป็นงานเดียวได้; เปิดเอกสาร/task/phaseเมื่อมีหน้าที่จริง และจบตามผลลัพธ์ที่เลือก.
 
@@ -82,7 +82,17 @@ Summary/Patch-derived children use exact timestamped `Patch References`, not ID/
 
 `TODO.md` indexes durable active/deferred work, release/wave context and brief completed highlights with reachable history/done. It is not version authority/live board/roadmap/release timeline/log. Changelog owns version detail, phase stage detail; live tasks coordinate outcomes without replacing persistence.
 
-Admit tasks for multiple meaningful outcomes/gates, phase work, material handoff/continuity or explicit request—not command/file counts or implementation plus focused test. One outcome stays one task unless owner/approval/rollback/proof/resume differs. Keep ordered substeps, selections, changes, actual checks/evidence and remainder inside, in the working language; honor Thai checklist requests. Checkpoint real continuation risk, not each command/finding/helper.
+Admit tasks for meaningful discussion continuity, multiple outcomes/gates, phase work, material handoff or explicit request—not command/file counts or implementation plus focused test. Keep one execution outcome together unless owner/approval/rollback/proof/resume differs; discussion granularity follows useful topic continuity below. Keep ordered substeps, selections, changes, actual checks/evidence and remainder where relevant, in the working language; honor Thai checklist requests. Checkpoint real continuation risk, not each command/finding/helper.
+
+### Discussion continuity
+
+Use the Task List as shared working memory that helps the user and assistant remember evolving threads. Proactively create or update fitting task records when accumulated detail, concurrent topics or branching questions make continuity fragile. Assess meaning and revisit value, not a fixed template, turn count or schedule. A short self-contained exchange need not create a task; flexibility is not permission to omit substantial discussion until it is settled or near compaction.
+
+Reuse the relevant topic record; separate an independently revisitable branch when that improves recall, not to impose a tree or one task per message. Preserve substantive requirements, alternatives, reasons, contract details and open questions with their actual decision/proposal/assumption/revised status. Incorporate new material without losing valid prior detail. Meaningful names and readable descriptions should help the user find where to return, without a dashboard or repeated progress feed. Do not copy the transcript or private internal reasoning.
+
+Keep continuation-critical content in readable records returned by the supported read path, not only metadata without checked recovery. At meaningful continuity boundaries verify substantive readback, not an update acknowledgment alone. After compaction or returning to a branch, read relevant record contents rather than titles only. If tools or readback are unavailable, state the limitation without inventing persistence, resetting/recreating records or adding a backend; continue useful discussion where possible.
+
+Recording a topic does not authorize implementation or select every option; topic links are not execution dependencies. Use supported lifecycle fields and preserve tentative/paused meaning in the content. Close at the selected discussion boundary, not after each answer. Task state is not a retention or completeness guarantee. Selected docs synthesis belongs at the governed design owner; safety, privacy and existing board ownership remain binding.
 
 ### Phase-linked task lifecycle
 
@@ -96,7 +106,7 @@ Admit tasks for multiple meaningful outcomes/gates, phase work, material handoff
 
 Consume execution's proof-selection policy rather than reconstruct it: close satisfied source/non-live tasks before optional live/rendered observation, which stays excluded/advisory without a task until selected. If preflight repairs an infeasible assistant-inferred Goal/plan point, remove that accidental blocker immediately and retain completed proof; explicitly selected live proof remains blocked with its enabling condition under `NO_RETRY_UNTIL_CHANGE`. Do not silently demote required proof or leave optional proof blocking the current family.
 
-Materialize tasks for selected execution only when admitted; authoring alone is not execution. Worker support cannot manufacture task boundaries. Ask one substantive work question only for insufficient scope/gate/access/approval, never internal routing menus. Progress layout belongs to presentation and must not become a dashboard or pause ceremony.
+Materialize execution tasks only for admitted selected work; useful discussion records may precede execution selection under the continuity guidance above. Authoring or recording alone is not execution permission. Worker support cannot manufacture task boundaries. Ask one substantive work question only for insufficient scope/gate/access/approval, never internal routing menus. Progress layout belongs to presentation and must not become a dashboard or pause ceremony.
 
 ### Evidence handoff and finalization
 
